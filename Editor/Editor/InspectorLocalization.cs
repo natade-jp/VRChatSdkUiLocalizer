@@ -3,9 +3,10 @@ using System.Reflection;
 using HarmonyLib;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 /// <summary>
-/// Unity Inspectorの表示文字列を翻訳
+/// Unity InspectorおよびVRChat SDK UIの表示文字列を翻訳
 /// </summary>
 [InitializeOnLoad]
 internal static class InspectorLocalization
@@ -17,7 +18,7 @@ internal static class InspectorLocalization
         FindEditorLanguageProperty();
 
     /// <summary>
-    /// Inspector翻訳を初期化
+    /// 翻訳処理を初期化
     /// </summary>
     static InspectorLocalization()
     {
@@ -46,156 +47,297 @@ internal static class InspectorLocalization
 
         harmony.UnpatchAll(HarmonyId);
 
-        InstallGuiStyleDrawPatch(harmony);
-        InstallBeginPropertyPatch(harmony);
-        InstallHandlePrefixLabelPatch(harmony);
+        InstallInspectorPatches(harmony);
+        InstallControlPanelPatches(harmony);
     }
 
     /// <summary>
-    /// GUIStyle.Drawへのフックを設定
+    /// Inspector用フックを設定
     /// </summary>
-    private static void InstallGuiStyleDrawPatch(
+    private static void InstallInspectorPatches(
         Harmony harmony)
     {
-        MethodInfo target = typeof(GUIStyle).GetMethod(
-            "Draw",
-            BindingFlags.Instance | BindingFlags.NonPublic,
-            null,
-            new[]
-            {
-                typeof(Rect),
-                typeof(GUIContent),
-                typeof(int),
-                typeof(bool),
-                typeof(bool),
-                typeof(bool),
-                typeof(bool)
-            },
-            null);
+        // Inspectorのセクション名やHelpBoxなど、
+        // GUIStyle.Drawへ直接渡されるGUIContentを翻訳するためのフック
+        PatchPrefix(
+            harmony,
+            AccessTools.Method(
+                typeof(GUIStyle),
+                "Draw",
+                new[]
+                {
+                    typeof(Rect),
+                    typeof(GUIContent),
+                    typeof(int),
+                    typeof(bool),
+                    typeof(bool),
+                    typeof(bool),
+                    typeof(bool)
+                }),
+            nameof(GuiStyleDrawPrefix),
+            "UnityEngine.GUIStyle.Draw");
 
+        // SerializedPropertyから生成されるInspectorの
+        // プロパティ名やTooltipを翻訳するためのフック
+        // Pull、Gravity、Integration Typeなどで使用
+        PatchPostfix(
+            harmony,
+            AccessTools.Method(
+                typeof(EditorGUI),
+                "BeginPropertyInternal",
+                new[]
+                {
+                    typeof(Rect),
+                    typeof(GUIContent),
+                    typeof(SerializedProperty)
+                }),
+            nameof(BeginPropertyPostfix),
+            "UnityEditor.EditorGUI.BeginPropertyInternal");
+
+        // Vector3Fieldなどで使用されるPrefix Labelを
+        // 翻訳するためのフック
+        // ContactやPhysBone ColliderのRotationなどで使用
+        PatchPrefix(
+            harmony,
+            AccessTools.Method(
+                typeof(EditorGUI),
+                "HandlePrefixLabelInternal",
+                new[]
+                {
+                    typeof(Rect),
+                    typeof(Rect),
+                    typeof(GUIContent),
+                    typeof(int),
+                    typeof(GUIStyle)
+                }),
+            nameof(HandlePrefixLabelInternalPrefix),
+            "UnityEditor.EditorGUI.HandlePrefixLabelInternal");
+    }
+
+    /// <summary>
+    /// SDK Control Panel用フックを設定
+    /// </summary>
+    private static void InstallControlPanelPatches(
+        Harmony harmony)
+    {
+        Type controlPanelType =
+            AccessTools.TypeByName(
+                "VRCSdkControlPanel");
+
+        // SDK Control PanelのBuilder画面を最初に構築した直後に
+        // Visual Tree内の固定文字列を翻訳するためのフック
+        // Prepare Your Content、Buildなどで使用
+        PatchPostfix(
+            harmony,
+            AccessTools.Method(
+                controlPanelType,
+                "ShowBuilders"),
+            nameof(ShowBuildersPostfix),
+            "VRCSdkControlPanel.ShowBuilders");
+
+        Type stepFoldoutType =
+            AccessTools.TypeByName(
+                "VRC.SDKBase.Editor.Elements.StepFoldout");
+
+        // StepFoldoutのタイトルが後から変更される場合に
+        // 新しいタイトルを翻訳するためのフック
+        // Review Any Alerts (10)などで使用
+        PatchPrefix(
+            harmony,
+            AccessTools.Method(
+                stepFoldoutType,
+                "SetTitle",
+                new[] { typeof(string) }),
+            nameof(StepFoldoutSetTitlePrefix),
+            "VRC.SDKBase.Editor.Elements.StepFoldout.SetTitle");
+
+        Type avatarSelectorType =
+            AccessTools.TypeByName(
+                "VRC.SDK3A.Editor.Elements.AvatarSelector");
+
+        // AvatarSelectorはShowBuildersより後に生成され、
+        // コンストラクタ内でAvatarSelector.uxmlをCloneTreeするため、
+        // 生成完了後のVisual Treeを翻訳するためのフック
+        // Selected Avatarなどで使用
+        PatchPostfix(
+            harmony,
+            AccessTools.Constructor(
+                avatarSelectorType,
+                Type.EmptyTypes),
+            nameof(AvatarSelectorPostfix),
+            "VRC.SDK3A.Editor.Elements.AvatarSelector.ctor");
+    }
+
+    /// <summary>
+    /// Harmony Prefixを登録
+    /// </summary>
+    private static void PatchPrefix(
+        Harmony harmony,
+        MethodBase target,
+        string patchMethodName,
+        string targetName)
+    {
         if (target == null)
         {
             Debug.LogWarning(
-                "[InspectorLocalization] " +
-                "UnityEngine.GUIStyle.Drawが見つかりません。");
+                $"[InspectorLocalization] " +
+                $"{targetName}が見つかりません。");
 
             return;
         }
 
-        MethodInfo prefix =
-            typeof(InspectorLocalization).GetMethod(
-                nameof(GuiStyleDrawPrefix),
-                BindingFlags.Static | BindingFlags.NonPublic);
+        MethodInfo patch =
+            AccessTools.Method(
+                typeof(InspectorLocalization),
+                patchMethodName);
 
-        if (prefix == null)
+        if (patch == null)
         {
             Debug.LogWarning(
-                "[InspectorLocalization] " +
-                $"{nameof(GuiStyleDrawPrefix)}が見つかりません。");
+                $"[InspectorLocalization] " +
+                $"{patchMethodName}が見つかりません。");
 
             return;
         }
 
         harmony.Patch(
             target,
-            prefix: new HarmonyMethod(prefix));
+            prefix: new HarmonyMethod(patch));
     }
 
     /// <summary>
-    /// EditorGUI.BeginPropertyInternalへのフックを設定
+    /// Harmony Postfixを登録
     /// </summary>
-    private static void InstallBeginPropertyPatch(
-        Harmony harmony)
+    private static void PatchPostfix(
+        Harmony harmony,
+        MethodBase target,
+        string patchMethodName,
+        string targetName)
     {
-        MethodInfo target = typeof(EditorGUI).GetMethod(
-            "BeginPropertyInternal",
-            BindingFlags.Static | BindingFlags.NonPublic,
-            null,
-            new[]
-            {
-                typeof(Rect),
-                typeof(GUIContent),
-                typeof(SerializedProperty)
-            },
-            null);
-
         if (target == null)
         {
             Debug.LogWarning(
-                "[InspectorLocalization] " +
-                "UnityEditor.EditorGUI.BeginPropertyInternalが" +
-                "見つかりません。");
+                $"[InspectorLocalization] " +
+                $"{targetName}が見つかりません。");
 
             return;
         }
 
-        MethodInfo postfix =
-            typeof(InspectorLocalization).GetMethod(
-                nameof(BeginPropertyPostfix),
-                BindingFlags.Static | BindingFlags.NonPublic);
+        MethodInfo patch =
+            AccessTools.Method(
+                typeof(InspectorLocalization),
+                patchMethodName);
 
-        if (postfix == null)
+        if (patch == null)
         {
             Debug.LogWarning(
-                "[InspectorLocalization] " +
-                $"{nameof(BeginPropertyPostfix)}が見つかりません。");
+                $"[InspectorLocalization] " +
+                $"{patchMethodName}が見つかりません。");
 
             return;
         }
 
         harmony.Patch(
             target,
-            postfix: new HarmonyMethod(postfix));
+            postfix: new HarmonyMethod(patch));
     }
 
     /// <summary>
-    /// EditorGUI.HandlePrefixLabelInternalへのフックを設定
+    /// SDK Builder初期UIを翻訳
     /// </summary>
-    private static void InstallHandlePrefixLabelPatch(
-        Harmony harmony)
+    private static void ShowBuildersPostfix(
+        object __instance)
     {
-        MethodInfo target = typeof(EditorGUI).GetMethod(
-            "HandlePrefixLabelInternal",
-            BindingFlags.Static | BindingFlags.NonPublic,
-            null,
-            new[]
-            {
-                typeof(Rect),
-                typeof(Rect),
-                typeof(GUIContent),
-                typeof(int),
-                typeof(GUIStyle)
-            },
-            null);
+        FieldInfo builderPanelField =
+            AccessTools.Field(
+                __instance.GetType(),
+                "_builderPanel");
 
-        if (target == null)
+        if (builderPanelField == null)
         {
             Debug.LogWarning(
                 "[InspectorLocalization] " +
-                "UnityEditor.EditorGUI.HandlePrefixLabelInternalが" +
-                "見つかりません。");
+                "_builderPanelが見つかりません。");
 
             return;
         }
 
-        MethodInfo prefix =
-            typeof(InspectorLocalization).GetMethod(
-                nameof(HandlePrefixLabelInternalPrefix),
-                BindingFlags.Static | BindingFlags.NonPublic);
+        VisualElement builderPanel =
+            builderPanelField.GetValue(__instance)
+                as VisualElement;
 
-        if (prefix == null)
+        if (builderPanel == null)
         {
             Debug.LogWarning(
                 "[InspectorLocalization] " +
-                $"{nameof(HandlePrefixLabelInternalPrefix)}が" +
-                "見つかりません。");
+                "_builderPanelが取得できません。");
 
             return;
         }
 
-        harmony.Patch(
-            target,
-            prefix: new HarmonyMethod(prefix));
+        TranslateVisualElement(builderPanel);
+    }
+
+    /// <summary>
+    /// StepFoldoutタイトルを翻訳
+    /// </summary>
+    private static void StepFoldoutSetTitlePrefix(
+        ref string title)
+    {
+        title = Translate(title);
+    }
+
+    /// <summary>
+    /// AvatarSelectorのUIを翻訳
+    /// </summary>
+    private static void AvatarSelectorPostfix(
+        object __instance)
+    {
+        if (__instance is not VisualElement root)
+        {
+            return;
+        }
+
+        TranslateVisualElement(root);
+    }
+
+    /// <summary>
+    /// VisualElement配下の表示文字列を翻訳
+    /// </summary>
+    private static void TranslateVisualElement(
+        VisualElement root)
+    {
+        if (root == null)
+        {
+            return;
+        }
+
+        foreach (Label label
+                 in root.Query<Label>().ToList())
+        {
+            label.text =
+                Translate(label.text);
+
+            label.tooltip =
+                Translate(label.tooltip);
+        }
+
+        foreach (Button button
+                 in root.Query<Button>().ToList())
+        {
+            button.text =
+                Translate(button.text);
+
+            button.tooltip =
+                Translate(button.tooltip);
+        }
+
+        foreach (VisualElement element
+                 in root.Query<VisualElement>().ToList())
+        {
+            element.tooltip =
+                Translate(element.tooltip);
+        }
     }
 
     /// <summary>
@@ -266,44 +408,49 @@ internal static class InspectorLocalization
     }
 
     /// <summary>
+    /// 表示文字列を翻訳
+    /// </summary>
+    private static string Translate(
+        string text)
+    {
+        if (string.IsNullOrEmpty(text))
+        {
+            return text;
+        }
+
+        if (!TryGetEditorLanguage(
+                out SystemLanguage language))
+        {
+            return text;
+        }
+
+        return TranslationDictionary.Translate(
+            language,
+            text);
+    }
+
+    /// <summary>
     /// GUIContentの表示文字列を翻訳
     /// </summary>
     private static void TranslateContent(
-        GUIContent content,
-        SystemLanguage language)
+        GUIContent content)
     {
         if (content == null)
         {
             return;
         }
 
-        string text;
-        string tooltip;
-
         try
         {
-            text = content.text;
-            tooltip = content.tooltip;
+            content.text =
+                Translate(content.text);
+
+            content.tooltip =
+                Translate(content.tooltip);
         }
         catch
         {
-            return;
-        }
-
-        if (!string.IsNullOrEmpty(text))
-        {
-            content.text =
-                TranslationDictionary.Translate(
-                    language,
-                    text);
-        }
-
-        if (!string.IsNullOrEmpty(tooltip))
-        {
-            content.tooltip =
-                TranslationDictionary.Translate(
-                    language,
-                    tooltip);
+            // Unity内部のGUIContent取得失敗は無視
         }
     }
 
@@ -313,13 +460,7 @@ internal static class InspectorLocalization
     private static void GuiStyleDrawPrefix(
         GUIContent content)
     {
-        if (!TryGetEditorLanguage(
-                out SystemLanguage language))
-        {
-            return;
-        }
-
-        TranslateContent(content, language);
+        TranslateContent(content);
     }
 
     /// <summary>
@@ -328,13 +469,7 @@ internal static class InspectorLocalization
     private static void BeginPropertyPostfix(
         ref GUIContent __result)
     {
-        if (!TryGetEditorLanguage(
-                out SystemLanguage language))
-        {
-            return;
-        }
-
-        TranslateContent(__result, language);
+        TranslateContent(__result);
     }
 
     /// <summary>
@@ -343,12 +478,6 @@ internal static class InspectorLocalization
     private static void HandlePrefixLabelInternalPrefix(
         GUIContent label)
     {
-        if (!TryGetEditorLanguage(
-                out SystemLanguage language))
-        {
-            return;
-        }
-
-        TranslateContent(label, language);
+        TranslateContent(label);
     }
 }

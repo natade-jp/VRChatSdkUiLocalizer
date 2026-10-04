@@ -3,6 +3,13 @@
 # ---------------------
 # VRC Contact Sender
 # https://creators.vrchat.com/common-components/contacts/
+#
+# Reference source:
+# Packages/com.vrchat.base/Editor/VRCSDK/Plugins/VRC.SDK3.Dynamics.Contact.Editor.dll
+#
+# Related classes:
+# VRC.SDK3.Dynamics.Contact.VRCContactBaseEditor
+# VRC.SDK3.Dynamics.Contact.VRCContactSenderEditor
 # ---------------------
 
 # Sender固有の翻訳項目は現在なし

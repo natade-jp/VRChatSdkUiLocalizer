@@ -1,0 +1,7 @@
+﻿# 動作確認用
+Type,Source,Translation
+Exact,"Forces","力_TEST"
+Exact,"Integration Type","積分方式_TEST"
+Exact,"Pull","復元力_TEST"
+Exact,"Gravity","重力_TEST"
+Partial,"Click [?] button in the Options section to read full documentation.","説明_TEST"

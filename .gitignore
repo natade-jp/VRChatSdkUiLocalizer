@@ -1,0 +1,20 @@
+# IDE
+.vs/
+.idea/
+
+# Visual Studio / Rider generated files
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.log
+*~

@@ -1,0 +1,11 @@
+﻿Type,Source,Translation
+
+# ---------------------
+# VRC Contact Sender
+# https://creators.vrchat.com/common-components/contacts/
+# ---------------------
+
+# Sender固有の翻訳項目は現在なし
+#
+# Root / Shape / Filtering / Collision Tagsなどの共通項目は
+# VRCContactBase.csvで定義

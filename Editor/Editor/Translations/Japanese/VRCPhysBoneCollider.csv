@@ -1,0 +1,70 @@
+﻿Type,Source,Translation
+
+# ---------------------
+# VRC Phys Bone Collider
+# https://creators.vrchat.com/common-components/physbones/
+# ---------------------
+
+# Root
+Exact,Root Transform,ルートトランスフォーム
+Exact,Global Collision,グローバル衝突
+
+# Global Collision - Other
+Exact,Content Types,コンテンツタイプ
+Exact,Nothing,なし
+Exact,Everything,すべて
+Exact,Avatar,アバター
+Exact,World,ワールド
+Exact,Allow Self,自身を許可
+Exact,Allow Others,他者を許可
+
+# Shape
+Exact,Shape,形状
+Exact,Shape Type,形状タイプ
+Exact,Sphere,球
+Exact,Capsule,カプセル
+Exact,Plane,平面
+Exact,Radius,半径
+Exact,Height,高さ
+Exact,Position,位置
+Exact,Rotation,回転
+Exact,Inside Bounds,境界内に制限
+Exact,Bones As Spheres,ボーンを球として扱う
+
+# Warning
+Exact,"Global collision is not supported on Plane colliders.","Planeコライダーではグローバル衝突を使用できません。"
+
+# ---------------------
+# Tooltips
+# ---------------------
+
+# Root Transform
+Exact,"Transform where this collider is placed.  If empty, we use this game object's transform.","このコライダーを配置するトランスフォームです。空の場合は、このゲームオブジェクトのトランスフォームを使用します。"
+
+# Shape Type
+Exact,"Type of collision shape used by this collider.","このコライダーで使用する衝突形状の種類です。"
+
+# Inside Bounds
+Exact,"When enabled, this collider contains bones inside its bounds.","有効にすると、このコライダーの境界内にボーンを収めるように衝突判定を行います。"
+
+# Radius
+Exact,"Size of the collider extending from its origin.","コライダーの原点から広がる大きさです。"
+
+# Height
+Exact,"Height of the capsule along the Y axis, including the half-spheres at each end.","両端の半球を含む、Y軸方向のカプセルの高さです。"
+
+# Position
+Exact,"Position offset from the root transform.","ルートトランスフォームからの位置のオフセットです。"
+
+# Rotation
+Exact,"Rotation offset from the root transform.","ルートトランスフォームからの回転のオフセットです。"
+
+# Bones As Spheres
+Exact,"When enabled, this collider treats bones as spheres instead of capsules. This may be advantageous in situations where bones are constantly resting on colliders.  It will also be easier for colliders to pass through bones unintentionally.","有効にすると、このコライダーはボーンをカプセルではなく球として扱います。ボーンが常にコライダーに接している場合などに有効なことがあります。一方で、コライダーが意図せずボーンをすり抜けやすくなります。"
+
+# Global Collision
+Exact,"Allows other PhysBones to potentially collide with this collider even if it's not part of their Colliders lists.
+
+The PhysBone's Allow Collision rules will still apply when deciding whether to actually process a collision.","他のPhysBoneのCollidersリストにこのコライダーが含まれていなくても、このコライダーとの衝突を可能にします。
+
+実際に衝突を処理するかどうかの判定には、PhysBone側のAllow Collisionの設定も適用されます。"

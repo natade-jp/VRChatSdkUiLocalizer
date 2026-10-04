@@ -15,7 +15,7 @@ internal static class InspectorLocalization
 
     private static readonly PropertyInfo EditorLanguageProperty =
         FindEditorLanguageProperty();
-    
+
     /// <summary>
     /// Inspector翻訳を初期化
     /// </summary>
@@ -48,6 +48,7 @@ internal static class InspectorLocalization
 
         InstallGuiStyleDrawPatch(harmony);
         InstallBeginPropertyPatch(harmony);
+        InstallHandlePrefixLabelPatch(harmony);
     }
 
     /// <summary>
@@ -148,6 +149,56 @@ internal static class InspectorLocalization
     }
 
     /// <summary>
+    /// EditorGUI.HandlePrefixLabelInternalへのフックを設定
+    /// </summary>
+    private static void InstallHandlePrefixLabelPatch(
+        Harmony harmony)
+    {
+        MethodInfo target = typeof(EditorGUI).GetMethod(
+            "HandlePrefixLabelInternal",
+            BindingFlags.Static | BindingFlags.NonPublic,
+            null,
+            new[]
+            {
+                typeof(Rect),
+                typeof(Rect),
+                typeof(GUIContent),
+                typeof(int),
+                typeof(GUIStyle)
+            },
+            null);
+
+        if (target == null)
+        {
+            Debug.LogWarning(
+                "[InspectorLocalization] " +
+                "UnityEditor.EditorGUI.HandlePrefixLabelInternalが" +
+                "見つかりません。");
+
+            return;
+        }
+
+        MethodInfo prefix =
+            typeof(InspectorLocalization).GetMethod(
+                nameof(HandlePrefixLabelInternalPrefix),
+                BindingFlags.Static | BindingFlags.NonPublic);
+
+        if (prefix == null)
+        {
+            Debug.LogWarning(
+                "[InspectorLocalization] " +
+                $"{nameof(HandlePrefixLabelInternalPrefix)}が" +
+                "見つかりません。");
+
+            return;
+        }
+
+        harmony.Patch(
+            target,
+            prefix: new HarmonyMethod(prefix));
+    }
+
+    /// <summary>
     /// Editor Languageプロパティを検索
     /// </summary>
     private static PropertyInfo FindEditorLanguageProperty()
@@ -215,42 +266,60 @@ internal static class InspectorLocalization
     }
 
     /// <summary>
-    /// GUI描画文字列を翻訳
+    /// GUIContentの表示文字列を翻訳
     /// </summary>
-    private static void GuiStyleDrawPrefix(
-        GUIContent content)
+    private static void TranslateContent(
+        GUIContent content,
+        SystemLanguage language)
     {
         if (content == null)
         {
             return;
         }
 
-        if (!TryGetEditorLanguage(
-                out SystemLanguage language))
-        {
-            return;
-        }
-
         string text;
+        string tooltip;
 
         try
         {
             text = content.text;
+            tooltip = content.tooltip;
         }
         catch
         {
             return;
         }
 
-        if (string.IsNullOrEmpty(text))
+        if (!string.IsNullOrEmpty(text))
+        {
+            content.text =
+                TranslationDictionary.Translate(
+                    language,
+                    text);
+        }
+
+        if (!string.IsNullOrEmpty(tooltip))
+        {
+            content.tooltip =
+                TranslationDictionary.Translate(
+                    language,
+                    tooltip);
+        }
+    }
+
+    /// <summary>
+    /// GUI描画文字列を翻訳
+    /// </summary>
+    private static void GuiStyleDrawPrefix(
+        GUIContent content)
+    {
+        if (!TryGetEditorLanguage(
+                out SystemLanguage language))
         {
             return;
         }
 
-        content.text =
-            TranslationDictionary.Translate(
-                language,
-                text);
+        TranslateContent(content, language);
     }
 
     /// <summary>
@@ -259,31 +328,27 @@ internal static class InspectorLocalization
     private static void BeginPropertyPostfix(
         ref GUIContent __result)
     {
-        if (__result == null)
-        {
-            return;
-        }
-
         if (!TryGetEditorLanguage(
                 out SystemLanguage language))
         {
             return;
         }
 
-        if (!string.IsNullOrEmpty(__result.text))
+        TranslateContent(__result, language);
+    }
+
+    /// <summary>
+    /// Prefix Labelの表示文字列を翻訳
+    /// </summary>
+    private static void HandlePrefixLabelInternalPrefix(
+        GUIContent label)
+    {
+        if (!TryGetEditorLanguage(
+                out SystemLanguage language))
         {
-            __result.text =
-                TranslationDictionary.Translate(
-                    language,
-                    __result.text);
+            return;
         }
 
-        if (!string.IsNullOrEmpty(__result.tooltip))
-        {
-            __result.tooltip =
-                TranslationDictionary.Translate(
-                    language,
-                    __result.tooltip);
-        }
+        TranslateContent(label, language);
     }
 }

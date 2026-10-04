@@ -1,0 +1,82 @@
+﻿Type,Source,Translation
+
+# ---------------------
+# VRC Contact Base
+# Receiver / Sender 共通
+# https://creators.vrchat.com/common-components/contacts/
+# ---------------------
+
+# Root
+Exact,Root Transform,ルートトランスフォーム
+
+# Shape
+Exact,Shape,形状
+Exact,Shape Type,形状タイプ
+Exact,Sphere,球
+Exact,Capsule,カプセル
+Exact,Box,ボックス
+Exact,Radius,半径
+Exact,Height,高さ
+Exact,Size,サイズ
+Exact,Position,位置
+Exact,Rotation,回転
+
+# Filtering
+Exact,Filtering,フィルタリング
+Exact,Content Types,コンテンツタイプ
+Exact,Local Only,ローカルのみ
+
+# Content Types
+Exact,Nothing,なし
+Exact,Everything,すべて
+Exact,Avatar,アバター
+Exact,World,ワールド
+
+# Collision Tags
+Exact,Collision Tags,衝突タグ
+Exact,Add,追加
+Exact,Up,上へ
+Exact,Down,下へ
+Exact,Delete,削除
+Exact,Custom,カスタム
+
+# Collision Tagsの定義済みタグ名およびタグ選択UIは翻訳対象外
+
+# Collision Tags Warning
+Exact,"There are too many collision tags attached to this contact. Only the first 16 tags will be used.","このContactに設定されている衝突タグが多すぎます。最初の16個のタグのみが使用されます。"
+Exact,"You must have at least one collision tag, otherwise this contact won't do anything.","少なくとも1つの衝突タグを設定してください。設定しない場合、このContactは動作しません。"
+
+# ---------------------
+# Tooltips
+# ---------------------
+
+# Root Transform
+Exact,"Transform where this contact is placed.  If empty, we use this game object's transform.","このContactを配置するトランスフォームです。空の場合は、このゲームオブジェクトのトランスフォームを使用します。"
+
+# Shape Type
+Exact,"Type of collision shape used by this contact.","このContactで使用する衝突形状の種類です。"
+
+# Radius
+Exact,"Size of the collider extending from its origin.","コライダーの原点から広がる大きさです。"
+
+# Height
+Exact,"Height of the capsule along the Y axis, including the half-spheres at each end.","両端の半球を含む、Y軸方向のカプセルの高さです。"
+
+# Size
+Exact,"Size of the box collider along each axis.","各軸方向のBoxコライダーの大きさです。"
+
+# Position
+Exact,"Position offset from the root transform.","ルートトランスフォームからの位置のオフセットです。"
+
+# Rotation
+Exact,"Rotation offset from the root transform.","ルートトランスフォームからの回転のオフセットです。"
+
+# Local Only
+Exact,"Limit this contact to only work on the local client.","このContactをローカルクライアント上でのみ動作するように制限します。"
+
+# Content Types
+Exact,"Limit this contact to only detect other contact components from the chosen sources of content.","このContactが検出する他のContactコンポーネントを、選択したコンテンツの種類に制限します。"
+
+# Collision Tags
+# NOTE: SDK原文末尾の改行はTranslationDictionary側で分離されるためSourceには含めない
+Exact,"List of strings that specify what it can affect/be affected by.  For a successful collision to occur, both the sender and receiver need at least one matching pair of strings.  Collision tags are case sensitive.","このContactが影響を与える、または影響を受ける対象を指定する文字列の一覧です。接触を検出するには、SenderとReceiverの両方に少なくとも1組の一致する文字列が必要です。Collision Tagでは大文字と小文字が区別されます。"

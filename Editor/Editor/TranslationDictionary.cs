@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
@@ -247,6 +249,13 @@ internal static class TranslationDictionary
                             translation.TranslationText);
                         break;
 
+                    case TranslationCsvReader.TranslationType.Format:
+                        AddFormat(
+                            translationSet,
+                            translation.Source,
+                            translation.TranslationText);
+                        break;
+
                     case TranslationCsvReader.TranslationType.Partial:
                         AddPartial(
                             translationSet,
@@ -279,6 +288,14 @@ internal static class TranslationDictionary
             return translated;
         }
 
+        if (TryTranslateFormat(
+                translationSet,
+                text,
+                out translated))
+        {
+            return translated;
+        }
+
         string result = text;
 
         foreach (
@@ -294,6 +311,79 @@ internal static class TranslationDictionary
         }
 
         return result;
+    }
+
+    /// <summary>
+    /// Format翻訳を検索
+    /// </summary>
+    private static bool TryTranslateFormat(
+        TranslationSet translationSet,
+        string text,
+        out string translated)
+    {
+        foreach (
+            FormatTranslationEntry entry
+            in translationSet.Format)
+        {
+            if (!string.IsNullOrEmpty(entry.Prefix) &&
+                !text.StartsWith(
+                    entry.Prefix,
+                    StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            Match match =
+                entry.Pattern.Match(text);
+
+            if (!match.Success)
+            {
+                continue;
+            }
+
+            translated =
+                ApplyFormatTranslation(
+                    entry,
+                    match);
+
+            return true;
+        }
+
+        translated = null;
+        return false;
+    }
+
+    /// <summary>
+    /// Format翻訳を適用
+    /// </summary>
+    private static string ApplyFormatTranslation(
+        FormatTranslationEntry entry,
+        Match match)
+    {
+        return PlaceholderPattern.Replace(
+            entry.Translation,
+            placeholderMatch =>
+            {
+                if (!int.TryParse(
+                        placeholderMatch.Groups[1].Value,
+                        out int index))
+                {
+                    return placeholderMatch.Value;
+                }
+
+                string groupName =
+                    GetFormatGroupName(index);
+
+                Group group =
+                    match.Groups[groupName];
+
+                if (!group.Success)
+                {
+                    return placeholderMatch.Value;
+                }
+
+                return group.Value;
+            });
     }
 
     /// <summary>
@@ -355,6 +445,38 @@ internal static class TranslationDictionary
     }
 
     /// <summary>
+    /// Format翻訳を追加
+    /// </summary>
+    private static void AddFormat(
+        TranslationSet translationSet,
+        string source,
+        string translation)
+    {
+        foreach (
+            FormatTranslationEntry entry
+            in translationSet.Format)
+        {
+            if (entry.Source == source)
+            {
+                return;
+            }
+        }
+
+        Regex pattern =
+            CreateFormatPattern(source);
+
+        string prefix =
+            GetFormatPrefix(source);
+
+        translationSet.Format.Add(
+            new FormatTranslationEntry(
+                source,
+                translation,
+                prefix,
+                pattern));
+    }
+
+    /// <summary>
     /// 部分一致翻訳を追加
     /// </summary>
     private static void AddPartial(
@@ -379,6 +501,93 @@ internal static class TranslationDictionary
     }
 
     /// <summary>
+    /// Format用正規表現を生成
+    /// </summary>
+    private static Regex CreateFormatPattern(
+        string source)
+    {
+        var pattern =
+            new StringBuilder("^");
+
+        int position = 0;
+
+        foreach (
+            Match match
+            in PlaceholderPattern.Matches(source))
+        {
+            if (match.Index > position)
+            {
+                pattern.Append(
+                    Regex.Escape(
+                        source.Substring(
+                            position,
+                            match.Index - position)));
+            }
+
+            int index =
+                int.Parse(match.Groups[1].Value);
+
+            pattern.Append("(?<");
+            pattern.Append(GetFormatGroupName(index));
+            pattern.Append(">.*?)");
+
+            position =
+                match.Index + match.Length;
+        }
+
+        if (position < source.Length)
+        {
+            pattern.Append(
+                Regex.Escape(
+                    source.Substring(position)));
+        }
+
+        pattern.Append("$");
+
+        return new Regex(
+            pattern.ToString(),
+            RegexOptions.CultureInvariant);
+    }
+
+    /// <summary>
+    /// Formatの固定接頭辞を取得
+    /// </summary>
+    private static string GetFormatPrefix(
+        string source)
+    {
+        Match match =
+            PlaceholderPattern.Match(source);
+
+        if (!match.Success)
+        {
+            return source;
+        }
+
+        if (match.Index == 0)
+        {
+            return string.Empty;
+        }
+
+        return source.Substring(
+            0,
+            match.Index);
+    }
+
+    /// <summary>
+    /// Formatのグループ名を取得
+    /// </summary>
+    private static string GetFormatGroupName(
+        int index)
+    {
+        return "value" + index;
+    }
+
+    private static readonly Regex PlaceholderPattern =
+        new Regex(
+            @"\{(\d+)\}",
+            RegexOptions.CultureInvariant);
+
+    /// <summary>
     /// 言語別翻訳辞書
     /// </summary>
     private sealed class TranslationSet
@@ -387,11 +596,42 @@ internal static class TranslationDictionary
             new Dictionary<string, string>(
                 StringComparer.Ordinal);
 
+        internal List<FormatTranslationEntry> Format { get; } =
+            new List<FormatTranslationEntry>();
+
         internal List<TranslationEntry> Partial { get; } =
             new List<TranslationEntry>();
 
         internal int Count =>
-            Exact.Count + Partial.Count;
+            Exact.Count +
+            Format.Count +
+            Partial.Count;
+    }
+
+    /// <summary>
+    /// Format翻訳項目
+    /// </summary>
+    private sealed class FormatTranslationEntry
+    {
+        internal string Source { get; }
+        internal string Translation { get; }
+        internal string Prefix { get; }
+        internal Regex Pattern { get; }
+
+        /// <summary>
+        /// Format翻訳項目を初期化
+        /// </summary>
+        internal FormatTranslationEntry(
+            string source,
+            string translation,
+            string prefix,
+            Regex pattern)
+        {
+            Source = source;
+            Translation = translation;
+            Prefix = prefix;
+            Pattern = pattern;
+        }
     }
 
     /// <summary>

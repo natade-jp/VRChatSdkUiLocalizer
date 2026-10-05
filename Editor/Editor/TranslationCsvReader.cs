@@ -15,7 +15,8 @@ internal static class TranslationCsvReader
     internal enum TranslationType
     {
         Exact,
-        Partial
+        Partial,
+        Format
     }
 
     /// <summary>
@@ -97,8 +98,8 @@ internal static class TranslationCsvReader
             }
 
             string typeText = record.Fields[0];
-            string source = record.Fields[1];
-            string translation = record.Fields[2];
+            string source = DecodeEscapes(record.Fields[1]);
+            string translation = DecodeEscapes(record.Fields[2]);
 
             if (string.IsNullOrWhiteSpace(typeText) ||
                 string.IsNullOrWhiteSpace(source) ||
@@ -118,7 +119,7 @@ internal static class TranslationCsvReader
                 warning?.Invoke(
                     $"CSVの{record.Line}行目のType " +
                     $"\"{typeText}\" は不正です。" +
-                    "Exact または Partial を指定してください。" +
+                    "Exact、Partial または Format を指定してください。" +
                     "このレコードを無視します。");
 
                 continue;
@@ -178,8 +179,31 @@ internal static class TranslationCsvReader
             return true;
         }
 
+        if (string.Equals(
+                value,
+                "Format",
+                StringComparison.Ordinal))
+        {
+            type = TranslationType.Format;
+            return true;
+        }
+
         type = default;
         return false;
+    }
+
+    /// <summary>
+    /// CSV内のエスケープ表現を変換
+    /// </summary>
+    private static string DecodeEscapes(
+        string value)
+    {
+        if (string.IsNullOrEmpty(value))
+        {
+            return value;
+        }
+
+        return value.Replace("\\n", "\n");
     }
 
     /// <summary>

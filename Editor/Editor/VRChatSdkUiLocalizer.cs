@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 /// Unity InspectorおよびVRChat SDK UIの表示文字列を翻訳
 /// </summary>
 [InitializeOnLoad]
-internal static class InspectorLocalization
+internal static class VRChatSdkUiLocalizer
 {
     private const string HarmonyId =
         "net.natade.vrchat-sdk-inspector-jp-localization";
@@ -20,7 +20,7 @@ internal static class InspectorLocalization
     /// <summary>
     /// 翻訳処理を初期化
     /// </summary>
-    static InspectorLocalization()
+    static VRChatSdkUiLocalizer()
     {
         try
         {
@@ -28,13 +28,13 @@ internal static class InspectorLocalization
             InstallPatches();
 
             Debug.Log(
-                $"[InspectorLocalization] 初期化しました " +
+                $"[VRChatSdkUiLocalizer] 初期化しました " +
                 $"({TranslationDictionary.Count}件の翻訳)");
         }
         catch (Exception ex)
         {
             Debug.LogError(
-                $"[InspectorLocalization] 初期化に失敗しました\n{ex}");
+                $"[VRChatSdkUiLocalizer] 初期化に失敗しました\n{ex}");
         }
     }
 
@@ -206,7 +206,7 @@ internal static class InspectorLocalization
         if (target == null)
         {
             Debug.LogWarning(
-                $"[InspectorLocalization] " +
+                $"[VRChatSdkUiLocalizer] " +
                 $"{targetName}が見つかりません。");
 
             return;
@@ -214,13 +214,13 @@ internal static class InspectorLocalization
 
         MethodInfo patch =
             AccessTools.Method(
-                typeof(InspectorLocalization),
+                typeof(VRChatSdkUiLocalizer),
                 patchMethodName);
 
         if (patch == null)
         {
             Debug.LogWarning(
-                $"[InspectorLocalization] " +
+                $"[VRChatSdkUiLocalizer] " +
                 $"{patchMethodName}が見つかりません。");
 
             return;
@@ -243,7 +243,7 @@ internal static class InspectorLocalization
         if (target == null)
         {
             Debug.LogWarning(
-                $"[InspectorLocalization] " +
+                $"[VRChatSdkUiLocalizer] " +
                 $"{targetName}が見つかりません。");
 
             return;
@@ -251,13 +251,13 @@ internal static class InspectorLocalization
 
         MethodInfo patch =
             AccessTools.Method(
-                typeof(InspectorLocalization),
+                typeof(VRChatSdkUiLocalizer),
                 patchMethodName);
 
         if (patch == null)
         {
             Debug.LogWarning(
-                $"[InspectorLocalization] " +
+                $"[VRChatSdkUiLocalizer] " +
                 $"{patchMethodName}が見つかりません。");
 
             return;
@@ -282,7 +282,7 @@ internal static class InspectorLocalization
         if (builderPanelField == null)
         {
             Debug.LogWarning(
-                "[InspectorLocalization] " +
+                "[VRChatSdkUiLocalizer] " +
                 "_builderPanelが見つかりません。");
 
             return;
@@ -295,7 +295,7 @@ internal static class InspectorLocalization
         if (builderPanel == null)
         {
             Debug.LogWarning(
-                "[InspectorLocalization] " +
+                "[VRChatSdkUiLocalizer] " +
                 "_builderPanelが取得できません。");
 
             return;
@@ -395,7 +395,7 @@ internal static class InspectorLocalization
         if (localizationDatabaseType == null)
         {
             Debug.LogWarning(
-                "[InspectorLocalization] " +
+                "[VRChatSdkUiLocalizer] " +
                 "LocalizationDatabaseが見つかりません。");
 
             return null;
@@ -411,7 +411,7 @@ internal static class InspectorLocalization
         if (property == null)
         {
             Debug.LogWarning(
-                "[InspectorLocalization] " +
+                "[VRChatSdkUiLocalizer] " +
                 "currentEditorLanguageが見つかりません。");
         }
 

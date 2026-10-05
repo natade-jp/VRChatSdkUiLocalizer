@@ -1,12 +1,12 @@
 {
-  "name": "net.natade.vrchat-sdk-inspector-localization",
-  "displayName": "VRChat SDK Inspector Localization",
-  "version": "0.1.0",
-  "unity": "2022.3",
-  "description": "Adds localization support for VRChat SDK Inspector UI based on the Unity Editor language.",
-  "author": {
-    "name": "natade-jp",
-    "url": "https://github.com/natade-jp"
-  },
-  "license": "MIT"
+	"name": "net.natade.vrchat-sdk-ui-localizer",
+	"displayName": "VRChat SDK UI Localizer",
+	"version": "0.1.0",
+	"unity": "2022.3",
+	"description": "Localizes VRChat SDK UI based on the Unity Editor language.",
+	"author": {
+		"name": "natade-jp",
+		"url": "https://github.com/natade-jp"
+	},
+	"license": "MIT"
 }

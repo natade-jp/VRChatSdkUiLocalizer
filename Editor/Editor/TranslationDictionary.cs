@@ -42,7 +42,7 @@ internal static class TranslationDictionary
         if (directory == null)
         {
             Debug.LogWarning(
-                "[InspectorLocalization] 翻訳フォルダが見つかりません。");
+                "[VRChatSdkUiLocalizer] 翻訳フォルダが見つかりません。");
             return;
         }
 
@@ -178,7 +178,7 @@ internal static class TranslationDictionary
                 out SystemLanguage language))
         {
             Debug.LogWarning(
-                $"[InspectorLocalization] " +
+                $"[VRChatSdkUiLocalizer] " +
                 $"不明な言語フォルダです: {languageName}");
             return;
         }
@@ -186,7 +186,7 @@ internal static class TranslationDictionary
         if (translations.ContainsKey(language))
         {
             Debug.LogWarning(
-                $"[InspectorLocalization] " +
+                $"[VRChatSdkUiLocalizer] " +
                 $"言語フォルダが重複しています: {languageName}");
             return;
         }
@@ -235,7 +235,7 @@ internal static class TranslationDictionary
         if (asset == null)
         {
             Debug.LogWarning(
-                $"[InspectorLocalization] " +
+                $"[VRChatSdkUiLocalizer] " +
                 $"CSVを読み込めません: {path}");
             return;
         }
@@ -251,7 +251,7 @@ internal static class TranslationDictionary
                         reader,
                         message =>
                             Debug.LogWarning(
-                                $"[InspectorLocalization] " +
+                                $"[VRChatSdkUiLocalizer] " +
                                 $"{path}: {message}"));
 
             foreach (
@@ -296,7 +296,7 @@ internal static class TranslationDictionary
         catch (Exception ex)
         {
             Debug.LogWarning(
-                $"[InspectorLocalization] " +
+                $"[VRChatSdkUiLocalizer] " +
                 $"CSVの読み込みに失敗しました: {path}\n" +
                 ex.Message);
         }
@@ -323,7 +323,7 @@ internal static class TranslationDictionary
             if (DebugLoggedTexts.Add(key))
             {
                 Debug.Log(
-                    $"[InspectorLocalization] Debug ({target}): " +
+                    $"[VRChatSdkUiLocalizer] Debug ({target}): " +
                     text);
             }
 

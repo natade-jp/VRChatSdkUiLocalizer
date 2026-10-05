@@ -1,16 +1,17 @@
-# VRChat SDK Inspector Localization
+# VRChat SDK UI Localizer
 
-VRChat SDKのInspectorやSDK Control Panelに表示されるテキストを、Unity Editorの言語設定に応じて翻訳するUnity Editor拡張です。
+VRChat SDKのInspectorやSDK Control Panelなど、Unity Editor上に表示されるVRChat SDK独自のUIを、Unity Editorの言語設定に応じて翻訳するUnity Editor拡張です。
 
 Unity標準のローカライズでは翻訳されないVRChat SDK独自の表示を補完します。
 
 ## Features
 
-- Unity Editorの言語設定に応じてVRChat SDKの表示を翻訳
+- Unity Editorの言語設定に応じてVRChat SDKのUIを翻訳
 - VRChat SDKのInspectorに対応
 - VRChat SDK Control Panelに対応
 - Unity本体やVRChat SDKのファイルを変更せずに動作
 - CSVファイルによる翻訳データの管理
+- Inspector用とSDK UI用の翻訳データを分離
 - 言語ごとに翻訳データを分離
 - 複数言語への拡張に対応
 
@@ -21,7 +22,8 @@ Translations/
 ├─ Japanese/
 │  ├─ VRCPhysBone.csv
 │  ├─ VRCContactReceiver.csv
-│  └─ ...
+│  ├─ VRCAvatarDescriptor.csv
+│  └─ VRCSDKControlPanel.csv
 ├─ Korean/
 └─ ...
 ```
@@ -35,27 +37,53 @@ Translations/
 翻訳データはCSV形式で記述します。
 
 ```csv
-Type,Source,Translation
-Exact,Gravity,重力
-Partial,Review Any Alerts,警告を確認
-Format,"Triangles: {0} (Recommended: {1})","ポリゴン数: {0}（推奨: {1}）"
+Target,Type,Source,Translation
+Inspector,Exact,Gravity,重力
+SDK,Exact,Prepare Your Content,コンテンツの準備
+SDK,Format,"Triangles: {0} (Recommended: {1})","ポリゴン数: {0}（推奨: {1}）"
 ```
 
 各列の意味は次のとおりです。
 
 | 列 | 内容 |
 | --- | --- |
+| `Target` | 翻訳対象 |
 | `Type` | 翻訳方法 |
 | `Source` | VRChat SDKで表示される元のテキスト |
 | `Translation` | 翻訳後のテキスト |
+
+### Target
+
+`Target`では翻訳を適用するUIの種類を指定します。
+
+現在は次の2種類に対応しています。
+
+| Target | 対象 |
+| --- | --- |
+| `Inspector` | VRChat SDKのInspectorなど、UnityのIMGUIを使用して表示されるUI |
+| `SDK` | SDK Control Panelなど、VRChat SDK側で構築されるUI |
+
+例えば、Inspectorの`Gravity`を翻訳する場合は次のように記述します。
+
+```csv
+Inspector,Exact,Gravity,重力
+```
+
+SDK Control Panelの表示を翻訳する場合は`SDK`を指定します。
+
+```csv
+SDK,Exact,Prepare Your Content,コンテンツの準備
+```
+
+翻訳データはTargetごとに分けて処理されるため、`SDK`用の翻訳がInspector側へ適用されることはありません。
 
 ### Exact
 
 `Source`と表示テキスト全体が完全に一致した場合に翻訳します。
 
 ```csv
-Exact,Gravity,重力
-Exact,Build,ビルド
+Inspector,Exact,Gravity,重力
+SDK,Exact,Build,ビルド
 ```
 
 固定されたラベルやメッセージなど、表示内容が変化しないテキストに使用します。
@@ -67,7 +95,7 @@ Exact,Build,ビルド
 表示テキストに`Source`が含まれている場合、その部分だけを置き換えます。
 
 ```csv
-Partial,Review Any Alerts,警告を確認
+SDK,Partial,Review Any Alerts,警告を確認
 ```
 
 例えば、実際の表示が次の場合、
@@ -91,7 +119,7 @@ Review Any Alerts (10)
 `{0}`、`{1}`などを可変部分として扱う翻訳方法です。
 
 ```csv
-Format,"Triangles: {0} (Recommended: {1})","ポリゴン数: {0}（推奨: {1}）"
+SDK,Format,"Triangles: {0} (Recommended: {1})","ポリゴン数: {0}（推奨: {1}）"
 ```
 
 例えば、
@@ -111,20 +139,48 @@ Triangles: 35836 (Recommended: 32000)
 複数の可変部分を使用できます。
 
 ```csv
-Format,"Mesh Renderers: {0} (Maximum: {1}, Recommended: {2})","Mesh Renderer: {0}（最大: {1}、推奨: {2}）"
+SDK,Format,"Mesh Renderers: {0} (Maximum: {1}, Recommended: {2})","Mesh Renderer: {0}（最大: {1}、推奨: {2}）"
 ```
 
 `Translation`側ではプレースホルダーの順序を変更することもできます。
 
 ```csv
-Format,"{0} of {1}","全{1}件中{0}件"
+SDK,Format,"{0} of {1}","全{1}件中{0}件"
 ```
 
 そのため、英語と翻訳先の言語で語順が異なる場合にも対応できます。
 
+### Debug
+
+`Debug`は、実際にUnity上で使用されているテキストを確認するための調査用Typeです。
+
+`Source`に指定した文字列が表示テキストに含まれている場合、その表示テキスト全体をUnity Consoleへ出力します。
+
+```csv
+SDK,Debug,Mesh Renderers,
+```
+
+例えば、実際の表示テキストが次の場合、
+
+```text
+Mesh Renderers: 17 (Maximum: 16, Recommended: 8)
+```
+
+`Source`の`Mesh Renderers`が含まれているため、このテキスト全体がConsoleへ出力されます。
+
+`Debug`では翻訳は行われません。`Translation`は使用しないため空欄にできます。
+
+また、Debugによる検出後も通常の翻訳処理は継続されます。
+
+同一の表示テキストは繰り返し描画されても1回だけConsoleへ出力されます。翻訳データを再読み込みすると、この出力履歴もリセットされます。
+
+誤って大量のテキストへ一致することを防ぐため、`Debug`の`Source`には5文字以上を指定する必要があります。
+
 ### 翻訳の優先順位
 
-翻訳は次の順序で試行されます。
+表示テキストに対して、まず`Debug`による検出が行われます。
+
+その後、翻訳は次の順序で試行されます。
 
 1. `Exact`
 2. `Format`
@@ -134,12 +190,14 @@ Format,"{0} of {1}","全{1}件中{0}件"
 
 どちらにも一致しなかった場合、`Partial`による部分置換が行われます。
 
+`Debug`は翻訳方法ではなく調査用の機能であるため、通常の翻訳処理を妨げません。
+
 ### 改行
 
 CSV内では`\n`を使用して改行を記述できます。
 
 ```csv
-Exact,"Are you sure?\nSome shaders might use these!","本当によろしいですか？\n一部のShaderでは使用されている可能性があります！"
+SDK,Exact,"Are you sure?\nSome shaders might use these!","本当によろしいですか？\n一部のShaderでは使用されている可能性があります！"
 ```
 
 `\n`はCSVの読み込み時に実際の改行へ変換されます。
@@ -151,13 +209,13 @@ Exact,"Are you sure?\nSome shaders might use these!","本当によろしいで�
 カンマを含むフィールドはダブルクォートで囲みます。
 
 ```csv
-Exact,"Hello, World","こんにちは、世界"
+SDK,Exact,"Hello, World","こんにちは、世界"
 ```
 
 ダブルクォート自体を含める場合は、CSVの仕様に従って`""`と記述します。
 
 ```csv
-Exact,"Click ""Build"" to continue.","「Build」をクリックして続行してください。"
+SDK,Exact,"Click ""Build"" to continue.","「Build」をクリックして続行してください。"
 ```
 
 UTF-8のBOMあり・BOMなしの両方に対応しています。
@@ -173,8 +231,8 @@ UTF-8のBOMあり・BOMなしの両方に対応しています。
 # Reference source:
 # Packages/com.vrchat.base/Editor/...
 
-Type,Source,Translation
-Exact,Gravity,重力
+Target,Type,Source,Translation
+Inspector,Exact,Gravity,重力
 ```
 
 ダブルクォートで囲まれたフィールド内の`#`は通常の文字として扱われます。
@@ -192,9 +250,11 @@ Translations/
    └─ VRCSDKControlPanel.csv
 ```
 
-ファイル名そのものは翻訳処理には使用されないため、コンポーネントや機能ごとに分割できます。
+ファイル名そのものは翻訳処理には使用されないため、コンポーネントや機能ごとに自由に分割できます。
 
-同じ`Source`が複数のCSVファイルに存在する場合は、先に読み込まれた翻訳が使用されます。
+翻訳対象はファイル名ではなく、各レコードの`Target`によって決まります。
+
+同じ`Target`および`Type`で同じ`Source`が複数のCSVファイルに存在する場合は、先に読み込まれた翻訳が使用されます。
 
 ### 翻訳の再読み込み
 
@@ -209,6 +269,8 @@ VRChat SDK
 CSVを変更するたびにUnityを再起動する必要はありません。
 
 表示済みのInspectorやSDK Control Panelについては、再表示や再構築が必要になる場合があります。
+
+`Debug`で一度Consoleへ出力されたテキストの記録も、翻訳データの再読み込み時にリセットされます。
 
 ## Requirements
 

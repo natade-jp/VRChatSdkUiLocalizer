@@ -38,6 +38,12 @@ internal static class InspectorLocalization
         }
     }
 
+    [MenuItem("VRChat SDK/Localization/Reload Translations")]
+    private static void ReloadTranslations()
+    {
+        TranslationDictionary.Load();
+    }
+
     /// <summary>
     /// Harmonyフックを設定
     /// </summary>
@@ -135,6 +141,16 @@ internal static class InspectorLocalization
             nameof(ShowBuildersPostfix),
             "VRCSdkControlPanel.ShowBuilders");
 
+        // Validation UIの構築完了後に翻訳
+        // Error、Warning、Performance、Info、Linkなどで使用
+        PatchPostfix(
+            harmony,
+            AccessTools.Method(
+                controlPanelType,
+                "CreateIssuesGUI"),
+            nameof(CreateIssuesGuiPostfix),
+            "VRCSdkControlPanel.CreateIssuesGUI");
+
         Type stepFoldoutType =
             AccessTools.TypeByName(
                 "VRC.SDKBase.Editor.Elements.StepFoldout");
@@ -151,21 +167,31 @@ internal static class InspectorLocalization
             nameof(StepFoldoutSetTitlePrefix),
             "VRC.SDKBase.Editor.Elements.StepFoldout.SetTitle");
 
-        Type avatarSelectorType =
+        Type avatarBuilderType =
             AccessTools.TypeByName(
-                "VRC.SDK3A.Editor.Elements.AvatarSelector");
+                "VRC.SDK3A.Editor.VRCSdkControlPanelAvatarBuilder");
 
-        // AvatarSelectorはShowBuildersより後に生成され、
-        // コンストラクタ内でAvatarSelector.uxmlをCloneTreeするため、
-        // 生成完了後のVisual Treeを翻訳するためのフック
-        // Selected Avatarなどで使用
+        // Avatar情報UIの構築完了後に翻訳
+        // Name、Visibility、Primary Styleなどで使用
         PatchPostfix(
             harmony,
-            AccessTools.Constructor(
-                avatarSelectorType,
-                Type.EmptyTypes),
-            nameof(AvatarSelectorPostfix),
-            "VRC.SDK3A.Editor.Elements.AvatarSelector.ctor");
+            AccessTools.Method(
+                avatarBuilderType,
+                "CreateContentInfoGUI",
+                new[] { typeof(VisualElement) }),
+            nameof(AvatarBuilderGuiPostfix),
+            "VRC.SDK3A.Editor.VRCSdkControlPanelAvatarBuilder.CreateContentInfoGUI");
+
+        // AvatarビルドUIの構築完了後に翻訳
+        // Build Type、Platform(s)、Build & Publishなどで使用
+        PatchPostfix(
+            harmony,
+            AccessTools.Method(
+                avatarBuilderType,
+                "CreateBuildGUI",
+                new[] { typeof(VisualElement) }),
+            nameof(AvatarBuilderGuiPostfix),
+            "VRC.SDK3A.Editor.VRCSdkControlPanelAvatarBuilder.CreateBuildGUI");
     }
 
     /// <summary>
@@ -279,6 +305,15 @@ internal static class InspectorLocalization
     }
 
     /// <summary>
+    /// Validation UIを翻訳
+    /// </summary>
+    private static void CreateIssuesGuiPostfix(
+        VisualElement __result)
+    {
+        TranslateVisualElement(__result);
+    }
+
+    /// <summary>
     /// StepFoldoutタイトルを翻訳
     /// </summary>
     private static void StepFoldoutSetTitlePrefix(
@@ -288,16 +323,11 @@ internal static class InspectorLocalization
     }
 
     /// <summary>
-    /// AvatarSelectorのUIを翻訳
+    /// Avatar BuilderのUIを翻訳
     /// </summary>
-    private static void AvatarSelectorPostfix(
-        object __instance)
+    private static void AvatarBuilderGuiPostfix(
+        VisualElement root)
     {
-        if (__instance is not VisualElement root)
-        {
-            return;
-        }
-
         TranslateVisualElement(root);
     }
 

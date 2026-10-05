@@ -8,7 +8,7 @@ using UnityEditor;
 using UnityEngine;
 
 /// <summary>
-/// Inspector用翻訳辞書
+/// 翻訳辞書
 /// </summary>
 internal static class TranslationDictionary
 {
@@ -18,6 +18,10 @@ internal static class TranslationDictionary
     private static readonly Dictionary<SystemLanguage, TranslationSet>
         translations =
             new Dictionary<SystemLanguage, TranslationSet>();
+
+    private static readonly HashSet<string> DebugLoggedTexts =
+        new HashSet<string>(
+            StringComparer.Ordinal);
 
     /// <summary>
     /// 翻訳件数
@@ -31,6 +35,7 @@ internal static class TranslationDictionary
     internal static void Load()
     {
         translations.Clear();
+        DebugLoggedTexts.Clear();
 
         string directory = FindTranslationDirectory();
 
@@ -59,6 +64,7 @@ internal static class TranslationDictionary
     /// </summary>
     internal static string Translate(
         SystemLanguage language,
+        TranslationCsvReader.TranslationTarget target,
         string text)
     {
         if (string.IsNullOrEmpty(text))
@@ -69,6 +75,13 @@ internal static class TranslationDictionary
         if (!translations.TryGetValue(
                 language,
                 out TranslationSet translationSet))
+        {
+            return text;
+        }
+
+        if (!translationSet.Targets.TryGetValue(
+                target,
+                out TargetTranslationSet targetSet))
         {
             return text;
         }
@@ -84,9 +97,14 @@ internal static class TranslationDictionary
             return text;
         }
 
+        LogDebugText(
+            target,
+            targetSet,
+            body);
+
         string translated =
             TranslateBody(
-                translationSet,
+                targetSet,
                 body);
 
         if (translated == body)
@@ -240,27 +258,37 @@ internal static class TranslationDictionary
                 TranslationCsvReader.Translation translation
                 in csvTranslations)
             {
+                TargetTranslationSet targetSet =
+                    translationSet.GetOrCreate(
+                        translation.Target);
+
                 switch (translation.Type)
                 {
                     case TranslationCsvReader.TranslationType.Exact:
                         AddExact(
-                            translationSet,
+                            targetSet,
                             translation.Source,
                             translation.TranslationText);
                         break;
 
                     case TranslationCsvReader.TranslationType.Format:
                         AddFormat(
-                            translationSet,
+                            targetSet,
                             translation.Source,
                             translation.TranslationText);
                         break;
 
                     case TranslationCsvReader.TranslationType.Partial:
                         AddPartial(
-                            translationSet,
+                            targetSet,
                             translation.Source,
                             translation.TranslationText);
+                        break;
+
+                    case TranslationCsvReader.TranslationType.Debug:
+                        AddDebug(
+                            targetSet,
+                            translation.Source);
                         break;
                 }
             }
@@ -275,10 +303,39 @@ internal static class TranslationDictionary
     }
 
     /// <summary>
+    /// デバッグ対象の文字列を出力
+    /// </summary>
+    private static void LogDebugText(
+        TranslationCsvReader.TranslationTarget target,
+        TargetTranslationSet translationSet,
+        string text)
+    {
+        foreach (string source in translationSet.Debug)
+        {
+            if (!text.Contains(source))
+            {
+                continue;
+            }
+
+            string key =
+                target + "\n" + text;
+
+            if (DebugLoggedTexts.Add(key))
+            {
+                Debug.Log(
+                    $"[InspectorLocalization] Debug ({target}): " +
+                    text);
+            }
+
+            return;
+        }
+    }
+
+    /// <summary>
     /// 本文を翻訳
     /// </summary>
     private static string TranslateBody(
-        TranslationSet translationSet,
+        TargetTranslationSet translationSet,
         string text)
     {
         if (translationSet.Exact.TryGetValue(
@@ -317,7 +374,7 @@ internal static class TranslationDictionary
     /// Format翻訳を検索
     /// </summary>
     private static bool TryTranslateFormat(
-        TranslationSet translationSet,
+        TargetTranslationSet translationSet,
         string text,
         out string translated)
     {
@@ -430,7 +487,7 @@ internal static class TranslationDictionary
     /// 完全一致翻訳を追加
     /// </summary>
     private static void AddExact(
-        TranslationSet translationSet,
+        TargetTranslationSet translationSet,
         string source,
         string translation)
     {
@@ -448,7 +505,7 @@ internal static class TranslationDictionary
     /// Format翻訳を追加
     /// </summary>
     private static void AddFormat(
-        TranslationSet translationSet,
+        TargetTranslationSet translationSet,
         string source,
         string translation)
     {
@@ -480,7 +537,7 @@ internal static class TranslationDictionary
     /// 部分一致翻訳を追加
     /// </summary>
     private static void AddPartial(
-        TranslationSet translationSet,
+        TargetTranslationSet translationSet,
         string source,
         string translation)
     {
@@ -498,6 +555,21 @@ internal static class TranslationDictionary
             new TranslationEntry(
                 source,
                 translation));
+    }
+
+    /// <summary>
+    /// デバッグ対象を追加
+    /// </summary>
+    private static void AddDebug(
+        TargetTranslationSet translationSet,
+        string source)
+    {
+        if (translationSet.Debug.Contains(source))
+        {
+            return;
+        }
+
+        translationSet.Debug.Add(source);
     }
 
     /// <summary>
@@ -592,6 +664,43 @@ internal static class TranslationDictionary
     /// </summary>
     private sealed class TranslationSet
     {
+        internal Dictionary<
+            TranslationCsvReader.TranslationTarget,
+            TargetTranslationSet> Targets { get; } =
+                new Dictionary<
+                    TranslationCsvReader.TranslationTarget,
+                    TargetTranslationSet>();
+
+        internal int Count =>
+            Targets.Values.Sum(set => set.Count);
+
+        /// <summary>
+        /// 対象別翻訳辞書を取得
+        /// </summary>
+        internal TargetTranslationSet GetOrCreate(
+            TranslationCsvReader.TranslationTarget target)
+        {
+            if (!Targets.TryGetValue(
+                    target,
+                    out TargetTranslationSet translationSet))
+            {
+                translationSet =
+                    new TargetTranslationSet();
+
+                Targets.Add(
+                    target,
+                    translationSet);
+            }
+
+            return translationSet;
+        }
+    }
+
+    /// <summary>
+    /// 対象別翻訳辞書
+    /// </summary>
+    private sealed class TargetTranslationSet
+    {
         internal Dictionary<string, string> Exact { get; } =
             new Dictionary<string, string>(
                 StringComparer.Ordinal);
@@ -602,10 +711,14 @@ internal static class TranslationDictionary
         internal List<TranslationEntry> Partial { get; } =
             new List<TranslationEntry>();
 
+        internal List<string> Debug { get; } =
+            new List<string>();
+
         internal int Count =>
             Exact.Count +
             Format.Count +
-            Partial.Count;
+            Partial.Count +
+            Debug.Count;
     }
 
     /// <summary>

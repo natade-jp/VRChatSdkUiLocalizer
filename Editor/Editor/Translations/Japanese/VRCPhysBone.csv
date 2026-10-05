@@ -1,8 +1,8 @@
-﻿Type,Source,Translation
+﻿Target,Type,Source,Translation
 
 # ---------------------
 # VRC Phys Bone
-# https://creators.vrchat.com/common-components/physbones/
+# https://creators.vrchat.com/avatars/avatar-dynamics/physbones/
 #
 # Reference source:
 # Packages/com.vrchat.base/Editor/VRCSDK/Plugins/VRC.SDK3.Dynamics.PhysBone.Editor.dll
@@ -13,149 +13,149 @@
 # ---------------------
 
 # Version
-Exact,Version 1.0,バージョン 1.0
-Exact,Version 1.1,バージョン 1.1
+Inspector,Exact,Version 1.0,バージョン 1.0
+Inspector,Exact,Version 1.1,バージョン 1.1
 
 # Version Tooltip
-Exact,"This feature isn't available in this version, please choose a newer PhysBones version to gain access.","この機能は現在のバージョンでは使用できません。使用するには、より新しいPhysBoneのバージョンを選択してください。"
+Inspector,Exact,"This feature isn't available in this version, please choose a newer PhysBones version to gain access.","この機能は現在のバージョンでは使用できません。使用するには、より新しいPhysBoneのバージョンを選択してください。"
 
 # Transforms
-Exact,Transforms,トランスフォーム
-Exact,Root Transform,ルートトランスフォーム
-Exact,Ignore Transforms,無視するトランスフォーム
-Exact,Ignore Other Phys Bones,他のPhysBoneを無視
-Exact,Endpoint Position,末端位置
-Exact,Multi Child Type,複数子ボーンの処理
-Exact,Ignore,無視
-Exact,First,最初
-Exact,Average,平均
+Inspector,Exact,Transforms,トランスフォーム
+Inspector,Exact,Root Transform,ルートトランスフォーム
+Inspector,Exact,Ignore Transforms,無視するトランスフォーム
+Inspector,Exact,Ignore Other Phys Bones,他のPhysBoneを無視
+Inspector,Exact,Endpoint Position,末端位置
+Inspector,Exact,Multi Child Type,複数子ボーンの処理
+Inspector,Exact,Ignore,無視
+Inspector,Exact,First,最初
+Inspector,Exact,Average,平均
 
 # Transforms HelpBox
-Exact,"This PhysBone has no parent. It is strongly recommended that you make the PhysBone a child of another game object to avoid unusual behavior.","このPhysBoneには親がありません。予期しない動作を避けるため、PhysBoneを別のGameObjectの子にすることを強く推奨します。"
-Exact,"The root transform of this PhysBone has no parent. It is strongly recommended that you make the PhysBone's root transform a child of another game object to avoid unusual behavior.","このPhysBoneのルートトランスフォームには親がありません。予期しない動作を避けるため、PhysBoneのルートトランスフォームを別のGameObjectの子にすることを強く推奨します。"
+Inspector,Exact,"This PhysBone has no parent. It is strongly recommended that you make the PhysBone a child of another game object to avoid unusual behavior.","このPhysBoneには親がありません。予期しない動作を避けるため、PhysBoneを別のGameObjectの子にすることを強く推奨します。"
+Inspector,Exact,"The root transform of this PhysBone has no parent. It is strongly recommended that you make the PhysBone's root transform a child of another game object to avoid unusual behavior.","このPhysBoneのルートトランスフォームには親がありません。予期しない動作を避けるため、PhysBoneのルートトランスフォームを別のGameObjectの子にすることを強く推奨します。"
 
 # Forces
-Exact,Forces,力
-Exact,Integration Type,積分方式
-Exact,Simplified,簡易
-Exact,Advanced,詳細
-Exact,Pull,復元力
-Exact,Spring,ばね
-Exact,Momentum,慣性
-Exact,Stiffness,剛性
-Exact,Gravity,重力
-Exact,Gravity Falloff,重力減衰
-Exact,Immobile Type,固定方式
-Exact,All Motion,すべての動き
-Exact,World (Experimental),ワールド（実験的）
+Inspector,Exact,Forces,力
+Inspector,Exact,Integration Type,積分方式
+Inspector,Exact,Simplified,簡易
+Inspector,Exact,Advanced,詳細
+Inspector,Exact,Pull,復元力
+Inspector,Exact,Spring,ばね
+Inspector,Exact,Momentum,慣性
+Inspector,Exact,Stiffness,剛性
+Inspector,Exact,Gravity,重力
+Inspector,Exact,Gravity Falloff,重力減衰
+Inspector,Exact,Immobile Type,固定方式
+Inspector,Exact,All Motion,すべての動き
+Inspector,Exact,World (Experimental),ワールド（実験的）
 # TODO: Immobileは訳語を再確認
-Exact,Immobile,固定
+Inspector,Exact,Immobile,固定
 
 # Limits
-Exact,Limits,制限
-Exact,Limit Type,制限方式
-Exact,None,なし
-Exact,Angle,角度
-Exact,Hinge,ヒンジ
-Exact,Polar,極座標
-Exact,Max Angle,最大角度
-Exact,Max Pitch,最大ピッチ
-Exact,Max Yaw,最大ヨー
-Exact,Rotation,回転
-Exact,Pitch,ピッチ
-Exact,Roll,ロール
-Exact,Yaw,ヨー
+Inspector,Exact,Limits,制限
+Inspector,Exact,Limit Type,制限方式
+Inspector,Exact,None,なし
+Inspector,Exact,Angle,角度
+Inspector,Exact,Hinge,ヒンジ
+Inspector,Exact,Polar,極座標
+Inspector,Exact,Max Angle,最大角度
+Inspector,Exact,Max Pitch,最大ピッチ
+Inspector,Exact,Max Yaw,最大ヨー
+Inspector,Exact,Rotation,回転
+Inspector,Exact,Pitch,ピッチ
+Inspector,Exact,Roll,ロール
+Inspector,Exact,Yaw,ヨー
 
 # Collision
-Exact,Collision,衝突
-Exact,Allow Collision,衝突を許可
-Exact,Radius,半径
-Exact,Colliders,コライダー
+Inspector,Exact,Collision,衝突
+Inspector,Exact,Allow Collision,衝突を許可
+Inspector,Exact,Radius,半径
+Inspector,Exact,Colliders,コライダー
 
 # Allow Collision - Other
-Exact,Content Types,コンテンツタイプ
-Exact,Nothing,なし
-Exact,Everything,すべて
-Exact,Avatar,アバター
-Exact,World,ワールド
+Inspector,Exact,Content Types,コンテンツタイプ
+Inspector,Exact,Nothing,なし
+Inspector,Exact,Everything,すべて
+Inspector,Exact,Avatar,アバター
+Inspector,Exact,World,ワールド
 # TODO: Collision・Grab・Poseで共通するため訳語を再確認
-Exact,Allow Self,自身を許可
-Exact,Allow Others,他者を許可
+Inspector,Exact,Allow Self,自身を許可
+Inspector,Exact,Allow Others,他者を許可
 
 # Stretch & Squish
-Exact,Stretch & Squish,伸縮
-Exact,Max Stretch,最大伸長
-Exact,Max Squish,最大圧縮
-Exact,Stretch Motion,伸縮への動きの影響
+Inspector,Exact,Stretch & Squish,伸縮
+Inspector,Exact,Max Stretch,最大伸長
+Inspector,Exact,Max Squish,最大圧縮
+Inspector,Exact,Stretch Motion,伸縮への動きの影響
 
 # Grab & Pose
-Exact,Grab & Pose,つかみ・ポーズ
-Exact,Allow Grabbing,つかむことを許可
-Exact,Allow Posing,ポーズを許可
-Exact,Grab Movement,つかんだときの移動
-Exact,Snap To Hand,手にスナップ
+Inspector,Exact,Grab & Pose,つかみ・ポーズ
+Inspector,Exact,Allow Grabbing,つかむことを許可
+Inspector,Exact,Allow Posing,ポーズを許可
+Inspector,Exact,Grab Movement,つかんだときの移動
+Inspector,Exact,Snap To Hand,手にスナップ
 
 # Options
-Exact,Options,オプション
-Exact,Parameter,パラメーター
-Exact,Is Animated,アニメーションを許可
-Exact,Reset When Disabled,無効化時にリセット
+Inspector,Exact,Options,オプション
+Inspector,Exact,Parameter,パラメーター
+Inspector,Exact,Is Animated,アニメーションを許可
+Inspector,Exact,Reset When Disabled,無効化時にリセット
 
 # Options HelpBox
-Partial,"Click [?] button in the Options section to read full documentation.","[?]ボタンをクリックすると、Optionsの詳しい説明を確認できます。"
-Exact,"Choose a parameter name to use this feature.","この機能を使用するには、パラメーター名を指定してください。"
-Exact,"Only enable IsAnimated if you are animating the bone transforms affected by this component. Leaving this disabled is better for performance.","このコンポーネントの影響を受けるボーンのTransformをアニメーションさせる場合にのみ、Is Animatedを有効にしてください。無効のままにしておく方がパフォーマンスに優れています。"
+Inspector,Partial,"Click [?] button in the Options section to read full documentation.","[?]ボタンをクリックすると、Optionsの詳しい説明を確認できます。"
+Inspector,Exact,"Choose a parameter name to use this feature.","この機能を使用するには、パラメーター名を指定してください。"
+Inspector,Exact,"Only enable IsAnimated if you are animating the bone transforms affected by this component. Leaving this disabled is better for performance.","このコンポーネントの影響を受けるボーンのTransformをアニメーションさせる場合にのみ、Is Animatedを有効にしてください。無効のままにしておく方がパフォーマンスに優れています。"
 
 # Gizmos
-Exact,Gizmos,ギズモ
-Exact,Show Gizmos,ギズモを表示
-Exact,Bone Opacity,ボーンの不透明度
-Exact,Limit Opacity,制限の不透明度
+Inspector,Exact,Gizmos,ギズモ
+Inspector,Exact,Show Gizmos,ギズモを表示
+Inspector,Exact,Bone Opacity,ボーンの不透明度
+Inspector,Exact,Limit Opacity,制限の不透明度
 
 # Play Mode
-Exact,Execution Group,実行グループ
+Inspector,Exact,Execution Group,実行グループ
 
 # ---------------------
 # Tooltips
 # ---------------------
 
 # Integration Type
-Exact,"Determines how forces are applied.  Certain kinds of motion may require using a specific integration type.","力をどのように適用するかを決定します。動きの種類によっては、特定の積分方式を使用する必要があります。"
+Inspector,Exact,"Determines how forces are applied.  Certain kinds of motion may require using a specific integration type.","力をどのように適用するかを決定します。動きの種類によっては、特定の積分方式を使用する必要があります。"
 
 # Root Transform
-Exact,"The transform where this component begins.  If left blank, we assume we start at this game object.","このコンポーネントの開始位置となるトランスフォームです。空の場合は、このゲームオブジェクトから開始します。"
+Inspector,Exact,"The transform where this component begins.  If left blank, we assume we start at this game object.","このコンポーネントの開始位置となるトランスフォームです。空の場合は、このゲームオブジェクトから開始します。"
 
 # Ignore Transforms
-Exact,"List of ignored transforms that shouldn't be affected by this component.  Ignored transforms automatically include any of that transform's children.","このコンポーネントの影響を受けないトランスフォームの一覧です。無視するトランスフォームの子も自動的に対象外になります。"
+Inspector,Exact,"List of ignored transforms that shouldn't be affected by this component.  Ignored transforms automatically include any of that transform's children.","このコンポーネントの影響を受けないトランスフォームの一覧です。無視するトランスフォームの子も自動的に対象外になります。"
 
 # Ignore Other Phys Bones
-Exact,"When enabled, automatically ignore transforms targeted by another physbone component. These are determined at initialization and regardless if the components are enabled or disabled.","有効にすると、他のPhysBoneコンポーネントの対象となっているトランスフォームを自動的に無視します。対象は初期化時に決定され、各コンポーネントの有効・無効には影響されません。"
+Inspector,Exact,"When enabled, automatically ignore transforms targeted by another physbone component. These are determined at initialization and regardless if the components are enabled or disabled.","有効にすると、他のPhysBoneコンポーネントの対象となっているトランスフォームを自動的に無視します。対象は初期化時に決定され、各コンポーネントの有効・無効には影響されません。"
 
 # Endpoint Position
-Exact,"Vector used to create additional bones at each endpoint of the chain. Only used if the value is non-zero.","チェーンの各末端に追加のボーンを作成するためのベクトルです。値が0以外の場合にのみ使用されます。"
+Inspector,Exact,"Vector used to create additional bones at each endpoint of the chain. Only used if the value is non-zero.","チェーンの各末端に追加のボーンを作成するためのベクトルです。値が0以外の場合にのみ使用されます。"
 
 # Multi Child Type
-Exact,"Determines how transforms with multiple children are handled. By default those transforms are ignored.","複数の子を持つトランスフォームをどのように扱うかを決定します。デフォルトでは無視されます。"
+Inspector,Exact,"Determines how transforms with multiple children are handled. By default those transforms are ignored.","複数の子を持つトランスフォームをどのように扱うかを決定します。デフォルトでは無視されます。"
 
 # Pull
-Exact,"Amount of force used to return bones to their rest position.","ボーンを元の位置へ戻す力の強さです。"
+Inspector,Exact,"Amount of force used to return bones to their rest position.","ボーンを元の位置へ戻す力の強さです。"
 
 # Spring
-Exact,"Amount bones will wobble when trying to reach their rest position.","ボーンが元の位置へ戻ろうとするときの揺れの強さです。"
+Inspector,Exact,"Amount bones will wobble when trying to reach their rest position.","ボーンが元の位置へ戻ろうとするときの揺れの強さです。"
 
 # Stiffness
-Exact,"Amount bones will try and stay at their current orientation.","ボーンが現在の向きを維持しようとする強さです。"
+Inspector,Exact,"Amount bones will try and stay at their current orientation.","ボーンが現在の向きを維持しようとする強さです。"
 
 # Gravity
-Exact,"Amount of gravity applied to bones.  Positive value pulls bones down, negative pulls upwards.","ボーンに適用する重力の強さです。正の値では下方向、負の値では上方向に力がかかります。"
+Inspector,Exact,"Amount of gravity applied to bones.  Positive value pulls bones down, negative pulls upwards.","ボーンに適用する重力の強さです。正の値では下方向、負の値では上方向に力がかかります。"
 
 # Gravity Falloff
 # NOTE: "degress" はSDK原文の表記
-Exact,"Reduces gravity while bones are at their rest orientation.  Gravity will increase as bones rotate away from their rest orientation, reaching full gravity at 90 degress from rest.","ボーンが元の向きにあるときの重力を弱めます。元の向きから回転するにつれて重力が強くなり、90度回転すると設定された重力がすべて適用されます。"
+Inspector,Exact,"Reduces gravity while bones are at their rest orientation.  Gravity will increase as bones rotate away from their rest orientation, reaching full gravity at 90 degress from rest.","ボーンが元の向きにあるときの重力を弱めます。元の向きから回転するにつれて重力が強くなり、90度回転すると設定された重力がすべて適用されます。"
 
 # Immobile Type
 # NOTE: 末尾の改行はTranslationDictionary側で分離されるためSourceには含めない
-Exact,"Determines how immobile is calculated.
+Inspector,Exact,"Determines how immobile is calculated.
 
 All Motion - Reduces any motion as calculated from the root transform's parent.World - Reduces positional movement from locomotion, any movement due to animations or IK still affect bones normally.","Immobileの計算方法を決定します。
 
@@ -163,57 +163,57 @@ All Motion - ルートトランスフォームの親を基準として、あら�
 World - 移動による位置変化の影響を抑えます。アニメーションやIKによる動きは通常どおりボーンへ影響します。"
 
 # Immobile
-Exact,"Reduces the effect movement has on bones. The greater the value the less motion affects the chain as determined by the Immobile Type.","動きがボーンへ与える影響を抑えます。値が大きいほど、Immobile Typeで指定した方式に従ってチェーンが動きの影響を受けにくくなります。"
+Inspector,Exact,"Reduces the effect movement has on bones. The greater the value the less motion affects the chain as determined by the Immobile Type.","動きがボーンへ与える影響を抑えます。値が大きいほど、Immobile Typeで指定した方式に従ってチェーンが動きの影響を受けにくくなります。"
 
 # Allow Collision
-Exact,"Whether to allow collision with colliders other than the ones specified on this component. This includes each player's hands as defined by their avatar as well as any global colliders in the world.","このコンポーネントで指定したもの以外のコライダーとの衝突を許可するかどうかです。これには、各プレイヤーのアバターで定義された手や、ワールド内のグローバルコライダーが含まれます。"
+Inspector,Exact,"Whether to allow collision with colliders other than the ones specified on this component. This includes each player's hands as defined by their avatar as well as any global colliders in the world.","このコンポーネントで指定したもの以外のコライダーとの衝突を許可するかどうかです。これには、各プレイヤーのアバターで定義された手や、ワールド内のグローバルコライダーが含まれます。"
 
 # Radius
-Exact,"Collision radius around each bone.  Used for both collision and grabbing.","各ボーンの周囲に設定する衝突判定の半径です。衝突とつかむ操作の両方に使用されます。"
+Inspector,Exact,"Collision radius around each bone.  Used for both collision and grabbing.","各ボーンの周囲に設定する衝突判定の半径です。衝突とつかむ操作の両方に使用されます。"
 
 # Colliders
-Exact,"List of colliders that specifically collide with these bones. These will always collide regardless of what Allow Collision is set to.","これらのボーンと衝突するコライダーの一覧です。Allow Collisionの設定に関係なく、ここで指定したコライダーとは常に衝突します。"
+Inspector,Exact,"List of colliders that specifically collide with these bones. These will always collide regardless of what Allow Collision is set to.","これらのボーンと衝突するコライダーの一覧です。Allow Collisionの設定に関係なく、ここで指定したコライダーとは常に衝突します。"
 
 # Limit Type
-Exact,"Type of angular limit applied to each bone.","各ボーンに適用する角度制限の種類です。"
+Inspector,Exact,"Type of angular limit applied to each bone.","各ボーンに適用する角度制限の種類です。"
 
 # Max Angle / Max Pitch / Max Yaw
-Exact,"Maximum angle each bone can rotate from its rest position.","各ボーンが元の向きから回転できる最大角度です。"
+Inspector,Exact,"Maximum angle each bone can rotate from its rest position.","各ボーンが元の向きから回転できる最大角度です。"
 
 # Rotation
-Exact,"Rotates the angular limits on each axis.","各軸の角度制限の向きを回転させます。"
+Inspector,Exact,"Rotates the angular limits on each axis.","各軸の角度制限の向きを回転させます。"
 
 # Allow Grabbing
-Exact,"Allows players to grab the bones.","プレイヤーがボーンをつかめるようにします。"
+Inspector,Exact,"Allows players to grab the bones.","プレイヤーがボーンをつかめるようにします。"
 
 # Allow Posing
-Exact,"Allows players to pose the bones after grabbing.","プレイヤーがボーンをつかんだ後、その姿勢を固定できるようにします。"
+Inspector,Exact,"Allows players to pose the bones after grabbing.","プレイヤーがボーンをつかんだ後、その姿勢を固定できるようにします。"
 
 # Snap To Hand
-Exact,"When a bone is grabbed it will snap to the hand grabbing it.","ボーンをつかんだとき、つかんだ手の位置へスナップします。"
+Inspector,Exact,"When a bone is grabbed it will snap to the hand grabbing it.","ボーンをつかんだとき、つかんだ手の位置へスナップします。"
 
 # Grab Movement
-Exact,"Controls how grabbed bones move.
+Inspector,Exact,"Controls how grabbed bones move.
 A value of zero results in bones using pull & spring to reach the grabbed position.
 A value of one results in bones immediately moving to the grabbed position.","つかんだボーンの動き方を調整します。
 0の場合はPullとSpringを使用して、つかんだ位置へ移動します。
 1の場合は、つかんだ位置へ即座に移動します。"
 
 # Max Stretch
-Exact,"Maximum amount the bones can stretch.  This value is a multiple of the original bone length.","ボーンが伸びることのできる最大量です。元のボーンの長さに対する倍率で指定します。"
+Inspector,Exact,"Maximum amount the bones can stretch.  This value is a multiple of the original bone length.","ボーンが伸びることのできる最大量です。元のボーンの長さに対する倍率で指定します。"
 
 # Max Squish
-Exact,"Maximum amount the bones can shrink.  This value is a multiple of the original bone length.","ボーンが縮むことのできる最大量です。元のボーンの長さに対する倍率で指定します。"
+Inspector,Exact,"Maximum amount the bones can shrink.  This value is a multiple of the original bone length.","ボーンが縮むことのできる最大量です。元のボーンの長さに対する倍率で指定します。"
 
 # Stretch Motion
-Exact,"The amount motion will affect the stretch/squish of the bones.  A value of zero means bones will only stretch/squish as a result of grabbing or collisions.","動きがボーンの伸縮に与える影響の強さです。0の場合、ボーンはつかむ操作または衝突によってのみ伸縮します。"
+Inspector,Exact,"The amount motion will affect the stretch/squish of the bones.  A value of zero means bones will only stretch/squish as a result of grabbing or collisions.","動きがボーンの伸縮に与える影響の強さです。0の場合、ボーンはつかむ操作または衝突によってのみ伸縮します。"
 
 # Is Animated
-Exact,"Allows bone transforms to be animated.  Each frame bone rest position will be updated according to what was animated.","ボーンのトランスフォームをアニメーションできるようにします。各フレームで、アニメーションされた状態に応じてボーンの基準位置が更新されます。"
+Inspector,Exact,"Allows bone transforms to be animated.  Each frame bone rest position will be updated according to what was animated.","ボーンのトランスフォームをアニメーションできるようにします。各フレームで、アニメーションされた状態に応じてボーンの基準位置が更新されます。"
 
 # Reset When Disabled
 # NOTE: "automatially" はSDK原文の表記
-Exact,"When this component becomes disabled, the bones will automatially reset to their default rest position.","このコンポーネントが無効になると、ボーンをデフォルトの基準位置へ自動的にリセットします。"
+Inspector,Exact,"When this component becomes disabled, the bones will automatially reset to their default rest position.","このコンポーネントが無効になると、ボーンをデフォルトの基準位置へ自動的にリセットします。"
 
 # Parameter
-Exact,"Keyname used to provide multiple parameters to the avatar controller.","アバターコントローラーへ複数のパラメーターを提供するために使用するキー名です。"
+Inspector,Exact,"Keyname used to provide multiple parameters to the avatar controller.","アバターコントローラーへ複数のパラメーターを提供するために使用するキー名です。"

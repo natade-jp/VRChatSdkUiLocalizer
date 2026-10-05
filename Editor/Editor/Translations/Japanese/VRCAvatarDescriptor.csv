@@ -1,4 +1,4 @@
-﻿Type,Source,Translation
+﻿Target,Type,Source,Translation
 
 # ---------------------
 # VRC Avatar Descriptor
@@ -19,46 +19,46 @@
 # ---------------------
 
 # General
-Exact,Select this avatar in the SDK control panel,SDKコントロールパネルでこのアバターを選択
-Exact,Unity Version:,Unityバージョン:
-Exact,Rig Type:,リグタイプ:
-Exact,Humanoid,ヒューマノイド
-Exact,Non-humanoid,非ヒューマノイド
+Inspector,Exact,Select this avatar in the SDK control panel,SDKコントロールパネルでこのアバターを選択
+Inspector,Exact,Unity Version:,Unityバージョン:
+Inspector,Exact,Rig Type:,リグタイプ:
+Inspector,Exact,Humanoid,ヒューマノイド
+Inspector,Exact,Non-humanoid,非ヒューマノイド
 
 # ---------------------
 # View
 # ---------------------
 
-Exact,View,ビュー
-Exact,View Position,視点位置
-Exact,Edit,編集
-Exact,Return,戻る
+Inspector,Exact,View,ビュー
+Inspector,Exact,View Position,視点位置
+Inspector,Exact,Edit,編集
+Inspector,Exact,Return,戻る
 
 # ---------------------
 # LipSync
 # ---------------------
 
-Exact,LipSync,リップシンク
-Exact,Mode,モード
-Exact,Auto Detect!,自動検出！
+Inspector,Exact,LipSync,リップシンク
+Inspector,Exact,Mode,モード
+Inspector,Exact,Auto Detect!,自動検出！
 
 # LipSync - Mode
-Exact,Default,デフォルト
-Exact,Jaw Flap Bone,顎ボーン
-Exact,Jaw Flap Blend Shape,顎ブレンドシェイプ
-Exact,Viseme Blend Shape,ビセームブレンドシェイプ
-Exact,Viseme Parameter Only,ビセームパラメーターのみ
+Inspector,Exact,Default,デフォルト
+Inspector,Exact,Jaw Flap Bone,顎ボーン
+Inspector,Exact,Jaw Flap Blend Shape,顎ブレンドシェイプ
+Inspector,Exact,Viseme Blend Shape,ビセームブレンドシェイプ
+Inspector,Exact,Viseme Parameter Only,ビセームパラメーターのみ
 
 # LipSync - Jaw Flap Bone
-Exact,Jaw Bone,顎ボーン
-Exact,Rotation States,回転状態
-Exact,Closed,閉じる
-Exact,Open,開く
-Exact,Preview,プレビュー
+Inspector,Exact,Jaw Bone,顎ボーン
+Inspector,Exact,Rotation States,回転状態
+Inspector,Exact,Closed,閉じる
+Inspector,Exact,Open,開く
+Inspector,Exact,Preview,プレビュー
 
 # LipSync - Blend Shape
-Exact,Face Mesh,顔メッシュ
-Exact,Jaw Flap Blend Shape,顎ブレンドシェイプ
+Inspector,Exact,Face Mesh,顔メッシュ
+Inspector,Exact,Jaw Flap Blend Shape,顎ブレンドシェイプ
 
 # Viseme names are not translated
 
@@ -66,117 +66,117 @@ Exact,Jaw Flap Blend Shape,顎ブレンドシェイプ
 # Eye Look
 # ---------------------
 
-Exact,Eye Look,視線
-Exact,Enable,有効化
-Exact,Disable,無効化
+Inspector,Exact,Eye Look,視線
+Inspector,Exact,Enable,有効化
+Inspector,Exact,Disable,無効化
 
 # Eye Look - General
-Exact,General,一般
-Exact,Eye Movements,目の動き
-Exact,Calm,穏やか
-Exact,Excited,興奮
-Exact,Shy,控えめ
-Exact,Confident,自信あり
+Inspector,Exact,General,一般
+Inspector,Exact,Eye Movements,目の動き
+Inspector,Exact,Calm,穏やか
+Inspector,Exact,Excited,興奮
+Inspector,Exact,Shy,控えめ
+Inspector,Exact,Confident,自信あり
 
 # Eye Look - Eyes
-Exact,Eyes,目
-Exact,Transforms,トランスフォーム
-Exact,Left Eye Bone,左目ボーン
-Exact,Right Eye Bone,右目ボーン
-Exact,Rotation States,回転状態
-Exact,Looking Straight,正面
-Exact,Looking Up,上を見る
-Exact,Looking Down,下を見る
-Exact,Looking Left,左を見る
-Exact,Looking Right,右を見る
+Inspector,Exact,Eyes,目
+Inspector,Exact,Transforms,トランスフォーム
+Inspector,Exact,Left Eye Bone,左目ボーン
+Inspector,Exact,Right Eye Bone,右目ボーン
+Inspector,Exact,Rotation States,回転状態
+Inspector,Exact,Looking Straight,正面
+Inspector,Exact,Looking Up,上を見る
+Inspector,Exact,Looking Down,下を見る
+Inspector,Exact,Looking Left,左を見る
+Inspector,Exact,Looking Right,右を見る
 
 # Eye Look - Eyelids
-Exact,Eyelids,まぶた
-Exact,Eyelid Type,まぶたタイプ
-Exact,None,なし
-Exact,Bones,ボーン
-Exact,Blendshapes,ブレンドシェイプ
+Inspector,Exact,Eyelids,まぶた
+Inspector,Exact,Eyelid Type,まぶたタイプ
+Inspector,Exact,None,なし
+Inspector,Exact,Bones,ボーン
+Inspector,Exact,Blendshapes,ブレンドシェイプ
 
 # Eye Look - Eyelid Bones
-Exact,Upper Left Eyelid,左上まぶた
-Exact,Upper Right Eyelid,右上まぶた
-Exact,Lower Left Eyelid,左下まぶた
-Exact,Lower Right Eyelid,右下まぶた
-Exact,Upper Eyelids,上まぶた
-Exact,Lower Eyelids,下まぶた
+Inspector,Exact,Upper Left Eyelid,左上まぶた
+Inspector,Exact,Upper Right Eyelid,右上まぶた
+Inspector,Exact,Lower Left Eyelid,左下まぶた
+Inspector,Exact,Lower Right Eyelid,右下まぶた
+Inspector,Exact,Upper Eyelids,上まぶた
+Inspector,Exact,Lower Eyelids,下まぶた
 
 # Eye Look - Eyelid Blendshapes
-Exact,Eyelids Mesh,まぶたメッシュ
-Exact,Blendshape States,ブレンドシェイプ状態
-Exact,Blink,まばたき
+Inspector,Exact,Eyelids Mesh,まぶたメッシュ
+Inspector,Exact,Blendshape States,ブレンドシェイプ状態
+Inspector,Exact,Blink,まばたき
 
 # ---------------------
 # Playable Layers
 # ---------------------
 
-Exact,Playable Layers,再生レイヤー
-Exact,Reset to Default,デフォルトに戻す
-Exact,Customize,カスタマイズ
-Exact,Base,ベース
-Exact,Special,特殊
+Inspector,Exact,Playable Layers,再生レイヤー
+Inspector,Exact,Reset to Default,デフォルトに戻す
+Inspector,Exact,Customize,カスタマイズ
+Inspector,Exact,Base,ベース
+Inspector,Exact,Special,特殊
 
 # Playable Layers - Layer Types
-Exact,Additive,加算
-Exact,Gesture,ジェスチャー
-Exact,Action,アクション
-Exact,FX,FX
-Exact,Sitting,座り
-Exact,TPose,Tポーズ
-Exact,IKPose,IKポーズ
+Inspector,Exact,Additive,加算
+Inspector,Exact,Gesture,ジェスチャー
+Inspector,Exact,Action,アクション
+Inspector,Exact,FX,FX
+Inspector,Exact,Sitting,座り
+Inspector,Exact,TPose,Tポーズ
+Inspector,Exact,IKPose,IKポーズ
 
 # Playable Layers - Default Controllers
-Exact,Default Locomotion,デフォルトの移動
-Exact,Default Idle,デフォルトのアイドル
-Exact,Default Gesture,デフォルトのジェスチャー
-Exact,Default Action,デフォルトのアクション
-Exact,Default Non-Transform,デフォルトの非トランスフォーム
-Exact,Default Sitting,デフォルトの座り
-Exact,Default TPose,デフォルトのTポーズ
-Exact,Default IKPose,デフォルトのIKポーズ
+Inspector,Exact,Default Locomotion,デフォルトの移動
+Inspector,Exact,Default Idle,デフォルトのアイドル
+Inspector,Exact,Default Gesture,デフォルトのジェスチャー
+Inspector,Exact,Default Action,デフォルトのアクション
+Inspector,Exact,Default Non-Transform,デフォルトの非トランスフォーム
+Inspector,Exact,Default Sitting,デフォルトの座り
+Inspector,Exact,Default TPose,デフォルトのTポーズ
+Inspector,Exact,Default IKPose,デフォルトのIKポーズ
 
 # ---------------------
 # Lower Body
 # ---------------------
 
-Exact,Lower Body,下半身
-Exact,Use Auto-Footsteps for 3 and 4 point tracking,3点・4点トラッキングで自動足音を使用
-Exact,Force Locomotion animations for 6 point tracking,6点トラッキングで移動アニメーションを強制
+Inspector,Exact,Lower Body,下半身
+Inspector,Exact,Use Auto-Footsteps for 3 and 4 point tracking,3点・4点トラッキングで自動足音を使用
+Inspector,Exact,Force Locomotion animations for 6 point tracking,6点トラッキングで移動アニメーションを強制
 
 # ---------------------
 # Expressions
 # ---------------------
 
-Exact,Expressions,表情
-Exact,Reset To Default,デフォルトに戻す
-Exact,Menu,メニュー
-Exact,Parameters,パラメーター
+Inspector,Exact,Expressions,表情
+Inspector,Exact,Reset To Default,デフォルトに戻す
+Inspector,Exact,Menu,メニュー
+Inspector,Exact,Parameters,パラメーター
 
 # ---------------------
 # Colliders
 # ---------------------
 
-Exact,Colliders,コライダー
-Exact,Head,頭
-Exact,Torso,胴体
-Exact,Hand,手
-Exact,Foot,足
-Exact,Finger Index,人差し指
-Exact,Finger Middle,中指
-Exact,Finger Ring,薬指
-Exact,Finger Little,小指
+Inspector,Exact,Colliders,コライダー
+Inspector,Exact,Head,頭
+Inspector,Exact,Torso,胴体
+Inspector,Exact,Hand,手
+Inspector,Exact,Foot,足
+Inspector,Exact,Finger Index,人差し指
+Inspector,Exact,Finger Middle,中指
+Inspector,Exact,Finger Ring,薬指
+Inspector,Exact,Finger Little,小指
 
 # Colliders - Mode
-Exact,Automatic,自動
-Exact,Custom,カスタム
-Exact,Disabled,無効
+Inspector,Exact,Automatic,自動
+Inspector,Exact,Custom,カスタム
+Inspector,Exact,Disabled,無効
 
 # Colliders - Custom
-Exact,Radius,半径
-Exact,Height,高さ
-Exact,Position,位置
-Exact,Rotation,回転
+Inspector,Exact,Radius,半径
+Inspector,Exact,Height,高さ
+Inspector,Exact,Position,位置
+Inspector,Exact,Rotation,回転

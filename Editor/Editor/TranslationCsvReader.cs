@@ -10,13 +10,23 @@ using System.Text;
 internal static class TranslationCsvReader
 {
     /// <summary>
+    /// 翻訳対象
+    /// </summary>
+    internal enum TranslationTarget
+    {
+        Inspector,
+        SDK
+    }
+
+    /// <summary>
     /// 翻訳種別
     /// </summary>
     internal enum TranslationType
     {
         Exact,
         Partial,
-        Format
+        Format,
+        Debug
     }
 
     /// <summary>
@@ -24,6 +34,7 @@ internal static class TranslationCsvReader
     /// </summary>
     internal sealed class Translation
     {
+        internal TranslationTarget Target { get; }
         internal TranslationType Type { get; }
         internal string Source { get; }
         internal string TranslationText { get; }
@@ -33,11 +44,13 @@ internal static class TranslationCsvReader
         /// 翻訳レコードを初期化
         /// </summary>
         internal Translation(
+            TranslationTarget target,
             TranslationType type,
             string source,
             string translationText,
             int line)
         {
+            Target = target;
             Type = type;
             Source = source;
             TranslationText = translationText;
@@ -73,11 +86,17 @@ internal static class TranslationCsvReader
         CsvRecord header = records.Current;
 
         if (!header.Fields.SequenceEqual(
-                new[] { "Type", "Source", "Translation" }))
+                new[]
+                {
+                    "Target",
+                    "Type",
+                    "Source",
+                    "Translation"
+                }))
         {
             warning?.Invoke(
                 $"CSVの{header.Line}行目のヘッダーが不正です。" +
-                "ヘッダーは Type,Source,Translation にしてください。");
+                "ヘッダーは Target,Type,Source,Translation にしてください。");
 
             return Array.Empty<Translation>();
         }
@@ -88,7 +107,7 @@ internal static class TranslationCsvReader
         {
             CsvRecord record = records.Current;
 
-            if (record.Fields.Length != 3)
+            if (record.Fields.Length != 4)
             {
                 warning?.Invoke(
                     $"CSVの{record.Line}行目の列数が不正です。" +
@@ -97,16 +116,30 @@ internal static class TranslationCsvReader
                 continue;
             }
 
-            string typeText = record.Fields[0];
-            string source = DecodeEscapes(record.Fields[1]);
-            string translation = DecodeEscapes(record.Fields[2]);
+            string targetText = record.Fields[0];
+            string typeText = record.Fields[1];
+            string source = DecodeEscapes(record.Fields[2]);
+            string translation = DecodeEscapes(record.Fields[3]);
 
-            if (string.IsNullOrWhiteSpace(typeText) ||
-                string.IsNullOrWhiteSpace(source) ||
-                string.IsNullOrWhiteSpace(translation))
+            if (string.IsNullOrWhiteSpace(targetText) ||
+                string.IsNullOrWhiteSpace(typeText) ||
+                string.IsNullOrWhiteSpace(source))
             {
                 warning?.Invoke(
                     $"CSVの{record.Line}行目に空欄があります。" +
+                    "このレコードを無視します。");
+
+                continue;
+            }
+
+            if (!TryParseTarget(
+                    targetText,
+                    out TranslationTarget target))
+            {
+                warning?.Invoke(
+                    $"CSVの{record.Line}行目のTarget " +
+                    $"\"{targetText}\" は不正です。" +
+                    "Inspector または SDK を指定してください。" +
                     "このレコードを無視します。");
 
                 continue;
@@ -119,7 +152,28 @@ internal static class TranslationCsvReader
                 warning?.Invoke(
                     $"CSVの{record.Line}行目のType " +
                     $"\"{typeText}\" は不正です。" +
-                    "Exact、Partial または Format を指定してください。" +
+                    "Exact、Partial、Format または Debug を指定してください。" +
+                    "このレコードを無視します。");
+
+                continue;
+            }
+
+            if (type != TranslationType.Debug &&
+                string.IsNullOrWhiteSpace(translation))
+            {
+                warning?.Invoke(
+                    $"CSVの{record.Line}行目のTranslationが空です。" +
+                    "このレコードを無視します。");
+
+                continue;
+            }
+
+            if (type == TranslationType.Debug &&
+                source.Length < 5)
+            {
+                warning?.Invoke(
+                    $"CSVの{record.Line}行目のDebug Sourceは" +
+                    "5文字以上にしてください。" +
                     "このレコードを無視します。");
 
                 continue;
@@ -127,6 +181,7 @@ internal static class TranslationCsvReader
 
             result.Add(
                 new Translation(
+                    target,
                     type,
                     source,
                     translation,
@@ -152,6 +207,35 @@ internal static class TranslationCsvReader
             warning?.Invoke(ex.Message);
             return false;
         }
+    }
+
+    /// <summary>
+    /// 翻訳対象を解析
+    /// </summary>
+    private static bool TryParseTarget(
+        string value,
+        out TranslationTarget target)
+    {
+        if (string.Equals(
+                value,
+                "Inspector",
+                StringComparison.Ordinal))
+        {
+            target = TranslationTarget.Inspector;
+            return true;
+        }
+
+        if (string.Equals(
+                value,
+                "SDK",
+                StringComparison.Ordinal))
+        {
+            target = TranslationTarget.SDK;
+            return true;
+        }
+
+        target = default;
+        return false;
     }
 
     /// <summary>
@@ -185,6 +269,15 @@ internal static class TranslationCsvReader
                 StringComparison.Ordinal))
         {
             type = TranslationType.Format;
+            return true;
+        }
+
+        if (string.Equals(
+                value,
+                "Debug",
+                StringComparison.Ordinal))
+        {
+            type = TranslationType.Debug;
             return true;
         }
 
@@ -359,7 +452,8 @@ internal static class TranslationCsvReader
     /// <summary>
     /// CSV内の改行コードをLFへ統一
     /// </summary>
-    private static string Normalize(string value)
+    private static string Normalize(
+        string value)
     {
         return value
             .Replace("\r\n", "\n")

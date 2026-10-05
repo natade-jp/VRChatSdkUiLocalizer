@@ -319,7 +319,10 @@ internal static class InspectorLocalization
     private static void StepFoldoutSetTitlePrefix(
         ref string title)
     {
-        title = Translate(title);
+        title =
+            Translate(
+                title,
+                TranslationCsvReader.TranslationTarget.SDK);
     }
 
     /// <summary>
@@ -346,27 +349,37 @@ internal static class InspectorLocalization
                  in root.Query<Label>().ToList())
         {
             label.text =
-                Translate(label.text);
+                Translate(
+                    label.text,
+                    TranslationCsvReader.TranslationTarget.SDK);
 
             label.tooltip =
-                Translate(label.tooltip);
+                Translate(
+                    label.tooltip,
+                    TranslationCsvReader.TranslationTarget.SDK);
         }
 
         foreach (Button button
                  in root.Query<Button>().ToList())
         {
             button.text =
-                Translate(button.text);
+                Translate(
+                    button.text,
+                    TranslationCsvReader.TranslationTarget.SDK);
 
             button.tooltip =
-                Translate(button.tooltip);
+                Translate(
+                    button.tooltip,
+                    TranslationCsvReader.TranslationTarget.SDK);
         }
 
         foreach (VisualElement element
                  in root.Query<VisualElement>().ToList())
         {
             element.tooltip =
-                Translate(element.tooltip);
+                Translate(
+                    element.tooltip,
+                    TranslationCsvReader.TranslationTarget.SDK);
         }
     }
 
@@ -441,7 +454,8 @@ internal static class InspectorLocalization
     /// 表示文字列を翻訳
     /// </summary>
     private static string Translate(
-        string text)
+        string text,
+        TranslationCsvReader.TranslationTarget target)
     {
         if (string.IsNullOrEmpty(text))
         {
@@ -456,6 +470,7 @@ internal static class InspectorLocalization
 
         return TranslationDictionary.Translate(
             language,
+            target,
             text);
     }
 
@@ -473,10 +488,14 @@ internal static class InspectorLocalization
         try
         {
             content.text =
-                Translate(content.text);
+                Translate(
+                    content.text,
+                    TranslationCsvReader.TranslationTarget.Inspector);
 
             content.tooltip =
-                Translate(content.tooltip);
+                Translate(
+                    content.tooltip,
+                    TranslationCsvReader.TranslationTarget.Inspector);
         }
         catch
         {

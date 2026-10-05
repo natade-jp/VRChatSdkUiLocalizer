@@ -1,4 +1,4 @@
-﻿Type,Source,Translation
+﻿Target,Type,Source,Translation
 
 # ---------------------
 # VRC Contact Receiver
@@ -13,54 +13,54 @@
 # ---------------------
 
 # Filtering
-Exact,Allow Self,自身を許可
-Exact,Allow Others,他者を許可
+Inspector,Exact,Allow Self,自身を許可
+Inspector,Exact,Allow Others,他者を許可
 
 # Receiver
-Exact,Receiver,レシーバー
-Exact,Receiver Type,レシーバータイプ
-Exact,Constant,常時
-Exact,On Enter,接触時
-Exact,Proximity,近接度
-Exact,Parameter,パラメーター
-Exact,Min Velocity,最小速度
-Exact,Use Face Proximity,+Z面を基準に近接度を計算
+Inspector,Exact,Receiver,レシーバー
+Inspector,Exact,Receiver Type,レシーバータイプ
+Inspector,Exact,Constant,常時
+Inspector,Exact,On Enter,接触時
+Inspector,Exact,Proximity,近接度
+Inspector,Exact,Parameter,パラメーター
+Inspector,Exact,Min Velocity,最小速度
+Inspector,Exact,Use Face Proximity,+Z面を基準に近接度を計算
 
 # Help - Constant
 # NOTE: "receiver." と "Otherwise" の間はSDK原文では半角スペース2個
-Exact,"The parameter will be set to 1 while a contact sender is inside the receiver.  Otherwise the value defaults to 0.","Contact SenderがReceiver内にある間、パラメーターは1になります。それ以外の場合は0になります。"
+Inspector,Exact,"The parameter will be set to 1 while a contact sender is inside the receiver.  Otherwise the value defaults to 0.","Contact SenderがReceiver内にある間、パラメーターは1になります。それ以外の場合は0になります。"
 
 # Help - On Enter
 # NOTE: "frame." と "Otherwise" の間はSDK原文では半角スペース2個
 # NOTE: "greater then" はSDK原文の表記
-Exact,"Upon first contact if the two contacts' combined velocities are greater then the minVelocity then the parameter will be set to 1 for a single frame.  Otherwise the value defaults to 0.","最初に接触したとき、2つのContactの合成速度がminVelocityを上回っている場合、パラメーターは1フレームだけ1になります。それ以外の場合は0になります。"
+Inspector,Exact,"Upon first contact if the two contacts' combined velocities are greater then the minVelocity then the parameter will be set to 1 for a single frame.  Otherwise the value defaults to 0.","最初に接触したとき、2つのContactの合成速度がminVelocityを上回っている場合、パラメーターは1フレームだけ1になります。それ以外の場合は0になります。"
 
 # Help - Proximity
 # center / +Z face は実行時に組み立てられるため両方の完成形を登録
-Exact,"Set a value between 0-1 representing how close a contact is to the receiver's center. (0.0 furthest, 1.0 closest)  If multiple senders are detected it will give you the closest value.","Receiverの中心へのContactの近さを0～1の値で表します。（0.0が最も遠く、1.0が最も近い）複数のSenderを検出した場合は、最も近い値になります。"
-Exact,"Set a value between 0-1 representing how close a contact is to the receiver's +Z face. (0.0 furthest, 1.0 closest)  If multiple senders are detected it will give you the closest value.","Receiverの+Z面へのContactの近さを0～1の値で表します。（0.0が最も遠く、1.0が最も近い）複数のSenderを検出した場合は、最も近い値になります。"
+Inspector,Exact,"Set a value between 0-1 representing how close a contact is to the receiver's center. (0.0 furthest, 1.0 closest)  If multiple senders are detected it will give you the closest value.","Receiverの中心へのContactの近さを0～1の値で表します。（0.0が最も遠く、1.0が最も近い）複数のSenderを検出した場合は、最も近い値になります。"
+Inspector,Exact,"Set a value between 0-1 representing how close a contact is to the receiver's +Z face. (0.0 furthest, 1.0 closest)  If multiple senders are detected it will give you the closest value.","Receiverの+Z面へのContactの近さを0～1の値で表します。（0.0が最も遠く、1.0が最も近い）複数のSenderを検出した場合は、最も近い値になります。"
 
 # Help - Parameter
 # NOTE: 各文の区切りはSDK原文では半角スペース2個
-Exact,"It's not necessary to use a synced parameter as defined by the VRCExpressionParameters object.  This parameter is already updated on both the local and remote machine.  If you choose to use a synced parameter we recommend using the Local Only option.","VRCExpressionParametersで定義された同期パラメーターを使用する必要はありません。このパラメーターはローカル側とリモート側の両方ですでに更新されます。同期パラメーターを使用する場合は、Local Onlyオプションの使用を推奨します。"
+Inspector,Exact,"It's not necessary to use a synced parameter as defined by the VRCExpressionParameters object.  This parameter is already updated on both the local and remote machine.  If you choose to use a synced parameter we recommend using the Local Only option.","VRCExpressionParametersで定義された同期パラメーターを使用する必要はありません。このパラメーターはローカル側とリモート側の両方ですでに更新されます。同期パラメーターを使用する場合は、Local Onlyオプションの使用を推奨します。"
 
 # Help - World Proximity
 # center / +Z face は実行時に組み立てられるため両方の完成形を登録
-Exact,"Udon scripts can find the proximity between a receiver and sender using the method VRCContactReceiver.CalculateProximity(). This is a value between 0-1 representing how close a contact is to the receiver's center. (0.0 furthest, 1.0 closest)","Udonスクリプトでは、VRCContactReceiver.CalculateProximity()メソッドを使用してReceiverとSenderの近接度を取得できます。これはReceiverの中心へのContactの近さを0～1で表す値です。（0.0が最も遠く、1.0が最も近い）"
-Exact,"Udon scripts can find the proximity between a receiver and sender using the method VRCContactReceiver.CalculateProximity(). This is a value between 0-1 representing how close a contact is to the receiver's +Z face. (0.0 furthest, 1.0 closest)","Udonスクリプトでは、VRCContactReceiver.CalculateProximity()メソッドを使用してReceiverとSenderの近接度を取得できます。これはReceiverの+Z面へのContactの近さを0～1で表す値です。（0.0が最も遠く、1.0が最も近い）"
+Inspector,Exact,"Udon scripts can find the proximity between a receiver and sender using the method VRCContactReceiver.CalculateProximity(). This is a value between 0-1 representing how close a contact is to the receiver's center. (0.0 furthest, 1.0 closest)","Udonスクリプトでは、VRCContactReceiver.CalculateProximity()メソッドを使用してReceiverとSenderの近接度を取得できます。これはReceiverの中心へのContactの近さを0～1で表す値です。（0.0が最も遠く、1.0が最も近い）"
+Inspector,Exact,"Udon scripts can find the proximity between a receiver and sender using the method VRCContactReceiver.CalculateProximity(). This is a value between 0-1 representing how close a contact is to the receiver's +Z face. (0.0 furthest, 1.0 closest)","Udonスクリプトでは、VRCContactReceiver.CalculateProximity()メソッドを使用してReceiverとSenderの近接度を取得できます。これはReceiverの+Z面へのContactの近さを0～1で表す値です。（0.0が最も遠く、1.0が最も近い）"
 
 # ---------------------
 # Tooltips
 # ---------------------
 
 # Allow Self
-Exact,"Allow this contact to be affected by yourself.","このContactが自分自身の影響を受けることを許可します。"
+Inspector,Exact,"Allow this contact to be affected by yourself.","このContactが自分自身の影響を受けることを許可します。"
 
 # Allow Others
-Exact,"Allow this contact to be affected by other people.","このContactが他のプレイヤーの影響を受けることを許可します。"
+Inspector,Exact,"Allow this contact to be affected by other people.","このContactが他のプレイヤーの影響を受けることを許可します。"
 
 # Use Face Proximity
-Exact,"Controls how proximity is calculated when Shape Type is set to Box.
+Inspector,Exact,"Controls how proximity is calculated when Shape Type is set to Box.
 
 If unticked (default), proximity is calculated as the sender's distance from the center of the box.
 
@@ -71,11 +71,11 @@ If ticked, proximity is calculated as the sender's distance from the positive Z 
 オンの場合、Boxの+Z面からSenderまでの距離を基準に近接度を計算します。"
 
 # Receiver Type
-Exact,"How the receiver reacts to incoming collisions and sets the parameter value.","Receiverが接触を検出したときの動作と、パラメーター値の設定方法を指定します。"
+Inspector,Exact,"How the receiver reacts to incoming collisions and sets the parameter value.","Receiverが接触を検出したときの動作と、パラメーター値の設定方法を指定します。"
 
 # Parameter
 # NOTE: 2文の間はSDK原文では半角スペース2個
-Exact,"The parameter updated on the animation controller.  This parameter DOES NOT need to be defined on the avatar descriptor.","Animation Controller上で更新されるパラメーターです。このパラメーターをAvatar Descriptorで定義する必要はありません。"
+Inspector,Exact,"The parameter updated on the animation controller.  This parameter DOES NOT need to be defined on the avatar descriptor.","Animation Controller上で更新されるパラメーターです。このパラメーターをAvatar Descriptorで定義する必要はありません。"
 
 # Min Velocity
-Exact,"Minimum velocity needed from an incoming collider to affect this trigger.","このReceiverを反応させるために必要な、接触してくるColliderの最小速度です。"
+Inspector,Exact,"Minimum velocity needed from an incoming collider to affect this trigger.","このReceiverを反応させるために必要な、接触してくるColliderの最小速度です。"

@@ -15,6 +15,44 @@ Unity標準のローカライズでは翻訳されないVRChat SDK独自の表�
 - 言語ごとに翻訳データを分離
 - 複数言語への拡張に対応
 
+## Usage
+
+### インストール
+
+あらかじめUnityプロジェクトへVRChat SDKをインストールしてください。
+
+その後、本パッケージをUnityプロジェクトへインストールします。
+
+本ツールはVRChat SDKに含まれるHarmonyを利用するため、VRChat SDKがインストールされている必要があります。
+
+Avatar用SDKなどの個別パッケージに含まれる型を直接依存関係として参照せず、利用可能なUIに対して翻訳処理を適用します。
+
+### Unity Editorの言語設定
+
+翻訳に使用する言語は、Unity Editorの言語設定に連動します。
+
+Unity Editorの言語を変更するには、次の設定を開きます。
+
+```text
+Edit
+└─ Preferences
+   └─ Languages
+```
+
+`Editor language`から使用する言語を選択します。
+
+例えば`日本語`を選択すると、`Translations/Japanese/`に配置された翻訳データが使用されます。
+
+Unity Editorを英語に戻した場合は、VRChat SDKの元の英語表示が使用されます。
+
+### 翻訳の確認
+
+言語を変更した後、VRChat SDKのコンポーネントをInspectorで表示するか、VRChat SDK Control Panelを開いて翻訳を確認します。
+
+すでに表示されているInspectorやSDK Control Panelには変更がすぐに反映されない場合があります。その場合は、対象を選択し直すかSDK Control Panelを開き直してください。
+
+## Translations
+
 翻訳データは次のように言語ごとのフォルダへ配置します。
 
 ```text
@@ -28,7 +66,7 @@ Translations/
 └─ ...
 ```
 
-言語フォルダ名にはUnityの `SystemLanguage` の名前を使用します。
+言語フォルダ名にはUnityの`SystemLanguage`の名前を使用します。
 
 現在は日本語への翻訳を対象としています。
 
@@ -45,12 +83,12 @@ SDK,Format,"Triangles: {0} (Recommended: {1})","ポリゴン数: {0}（推奨: {
 
 各列の意味は次のとおりです。
 
-| 列 | 内容 |
-| --- | --- |
-| `Target` | 翻訳対象 |
-| `Type` | 翻訳方法 |
-| `Source` | VRChat SDKで表示される元のテキスト |
-| `Translation` | 翻訳後のテキスト |
+| 列            | 内容                               |
+| ------------- | ---------------------------------- |
+| `Target`      | 翻訳対象                           |
+| `Type`        | 翻訳方法                           |
+| `Source`      | VRChat SDKで表示される元のテキスト |
+| `Translation` | 翻訳後のテキスト                   |
 
 ### Target
 
@@ -58,10 +96,10 @@ SDK,Format,"Triangles: {0} (Recommended: {1})","ポリゴン数: {0}（推奨: {
 
 現在は次の2種類に対応しています。
 
-| Target | 対象 |
-| --- | --- |
+| Target      | 対象                                                          |
+| ----------- | ------------------------------------------------------------- |
 | `Inspector` | VRChat SDKのInspectorなど、UnityのIMGUIを使用して表示されるUI |
-| `SDK` | SDK Control Panelなど、VRChat SDK側で構築されるUI |
+| `SDK`       | SDK Control Panelなど、VRChat SDK側で構築されるUI             |
 
 例えば、Inspectorの`Gravity`を翻訳する場合は次のように記述します。
 
@@ -280,6 +318,8 @@ CSVを変更するたびにUnityを再起動する必要はありません。
 本パッケージはVRChat SDKに含まれるHarmonyを利用します。
 
 Harmonyによる実行時の処理を利用しているため、Unity本体やVRChat SDKのファイルを直接変更する必要はありません。
+
+Avatar用SDKなどの個別パッケージに含まれるUIについては、そのパッケージがインストールされている場合に翻訳対象となります。
 
 ## License
 

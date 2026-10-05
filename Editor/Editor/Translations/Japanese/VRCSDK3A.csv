@@ -1,0 +1,371 @@
+﻿Type,Source,Translation
+
+# ---------------------
+# VRChat Avatar 3.0
+#
+# Reference source:
+# Packages\com.vrchat.avatars\Editor\VRCSDK\SDK3A
+# ---------------------
+
+Partial,No avatars found.  Please select an avatar in the hierarchy window before using this feature.,アバターが見つかりません。この機能を使用する前に、Hierarchyウィンドウでアバターを選択してください。
+Partial,This operation will remove all DynamicBone components and replace them with PhysBone components on your avatar. This process attempts to match settings but the result may not appear to be the same. This is not reversible so please make a backup before continuing!,この操作では、アバター上のすべてのDynamicBoneコンポーネントを削除し、PhysBoneコンポーネントに置き換えます。設定が一致するよう変換を試みますが、結果が同じ見た目になるとは限りません。この操作は元に戻せないため、続行する前にバックアップを作成してください！
+Partial,DynamicBone not found in the project.,プロジェクト内にDynamicBoneが見つかりません。
+Partial,Encountered critical error while attempting to this operation.,この操作の実行中に重大なエラーが発生しました。
+Partial,A mixture of game objects and animation clips are selected. Please select only game objects or only animation clips and try again.,GameObjectとAnimation Clipが混在して選択されています。GameObjectのみ、またはAnimation Clipのみを選択して、もう一度お試しください。
+Partial,"No convertible objects are selected. Please select a game object, prefab or animation clip to use this feature.",変換可能なオブジェクトが選択されていません。この機能を使用するには、GameObject、Prefab、またはAnimation Clipを選択してください。
+Partial,Auto Convert Constraints,Constraintを自動変換
+Format,All Unity constraints on {0} will be replaced with equivalent VRChat constraints.\n\n,「{0}」上のすべてのUnity Constraintは、同等のVRChat Constraintに置き換えられます。\n\n
+Partial,"If {(hasMultiple ? ""an"" : ""this"")} {subject} references any animation clips that animate the replaced Unity constraints, those animation ","【要確認・元ソース参照】If {(hasMultiple ? ""an"" : ""this"")} {subject} references any animation clips that animate the replaced Unity constraints, those animation "
+Partial,clips will be automatically updated so they target the newly created VRChat constraints instead.\n\n,【要確認・元ソース参照】clips will be automatically updated so they target the newly created VRChat constraints instead.\n\n
+Partial,"If your animator setup is very complex, you may want to back up your project first!",Animatorの構成が非常に複雑な場合は、先にプロジェクトをバックアップすることをおすすめします！
+Partial,Multiple Objects,複数のオブジェクト
+Format,All animation tracks targeting Unity constraints in the selected animation {0} will be updated to target VRChat constraints instead.\n\n,選択したAnimation {0}内でUnity Constraintを対象としているすべてのAnimation Trackは、代わりにVRChat Constraintを対象とするよう更新されます。\n\n
+Format,Please note that only the first {0} sources of a VRChat constraint can be animated due to engine limitations.\n\n,エンジンの制限により、VRChat Constraintでアニメーションできるのは最初の{0}個のSourceだけです。\n\n
+Partial,Multiple Clips,複数のクリップ
+Format,"Auto Convert Constraints: The game object \""{0}\"" already contains one or more VRChat constraints of type {1}. ",Constraint自動変換: GameObject「{0}」には、すでに{1}型のVRChat Constraintが1つ以上存在します。 
+Partial,Animating components of the same type on the same game object is not supported. You may need to move the duplicate types to their own game objects.,同じGameObject上にある同種のコンポーネントをアニメーションさせることはサポートされていません。重複するコンポーネントをそれぞれ別のGameObjectへ移動する必要がある場合があります。
+Format,Convert Constraints ({0}),Constraintを変換 ({0})
+Partial,Convert Constraints,Constraintを変換
+Partial,Constraint conversion failed! Please check for associated errors in the console for more information.,Constraintの変換に失敗しました。詳細についてはConsoleの関連エラーを確認してください。
+Partial,Constraint conversion finished with one or more issues. Please check for associated warnings and errors in the console for more information.,Constraintの変換は完了しましたが、1件以上の問題があります。詳細についてはConsoleの関連する警告とエラーを確認してください。
+Format,Rebind Property {0},PropertyをRebind {0}
+Format,"Auto Convert Constraints: The clip \""{0}\"" animates the transform reference of one or more sources. ",Constraint自動変換: Clip「{0}」は1つ以上のSourceのTransform参照をアニメーションさせています。 
+Partial,"VRChat constraints do not support animating per-source transform references. You may need to use an alternative approach instead, such as having multiple sources referring to different transforms and animating their weights to switch between them.",VRChat Constraintでは、SourceごとのTransform参照をアニメーションさせることはできません。異なるTransformを参照する複数のSourceを用意し、Weightをアニメーションさせて切り替えるなど、別の方法を使用する必要があります。
+Partial,Auto Convert Constraints: Cannot perform binding mapping because the given Unity constraint type is null.,Constraint自動変換: 指定されたUnity Constraintの型がnullのため、Bindingのマッピングを実行できません。
+Partial,Auto Convert Constraints: Cannot perform binding mapping because the given Unity constraint property name is null or empty.,Constraint自動変換: 指定されたUnity Constraintのプロパティ名がnullまたは空のため、Bindingのマッピングを実行できません。
+Format,Auto Convert Constraints: Failed to map the type {0} to a VRChat constraint type.,Constraint自動変換: 型{0}をVRChat Constraintの型へマッピングできませんでした。
+Format,"Auto Convert Constraints: Failed to convert animation property \""{0}\"" because it is out of range. Only the first {1} sources of a VRChat constraint can be animated due to engine limitations.",Constraint自動変換: Animation Property「{0}」は範囲外のため変換できませんでした。エンジンの制限により、VRChat Constraintでアニメーションできるのは最初の{1}個のSourceだけです。
+Format,"Auto Convert Constraints: Failed to convert animation property \""{0}\"" because it wasn't recognized by the converter.",Constraint自動変換: Animation Property「{0}」をConverterが認識できなかったため変換できませんでした。
+Partial,"An animation is currently being previewed. The animation preview must be stopped first, otherwise previewed values could become permanent.\n\nPlease stop previewing the animation before using this feature.",現在Animationをプレビュー中です。先にAnimationのプレビューを停止しないと、プレビュー中の値がそのまま適用される可能性があります。\n\nこの機能を使用する前にAnimationのプレビューを停止してください。
+Partial,"Auto Convert Constraints: An animation is currently being previewed. The animation preview must be stopped first, otherwise previewed values could become permanent.",Constraint自動変換: 現在Animationをプレビュー中です。先にAnimationのプレビューを停止しないと、プレビュー中の値がそのまま適用される可能性があります。
+Partial,Locomotion Control,ロコモーション制御
+Partial,Debug String,デバッグ文字列
+Format,Parameter '{0}' not found. Make sure you defined in the Animator window's Parameters tab.,パラメーター「{0}」が見つかりません。AnimatorウィンドウのParametersタブで定義されていることを確認してください。
+Partial,Unable to find animator window.,Animatorウィンドウが見つかりません。
+Partial,Drag & drop your AudioSource below to automatically fill the path relative to the avatar root.,下にAudioSourceをドラッグ＆ドロップすると、アバターのRootからの相対パスが自動入力されます。
+Partial,This audio source is not part of the hierarchy of an avatar with a valid descriptor.,このAudioSourceは、有効なDescriptorを持つアバターのHierarchy内にありません。
+Partial,Select an 'Int' avatar parameter below. The value of this parameter will determine which clip is selected.,下からInt型のアバターパラメーターを選択してください。このパラメーターの値によって選択されるClipが決まります。
+Partial,Parameter Name,パラメーター名
+Partial,AudioSource settings,AudioSource設定
+Partial,Random Volume,ランダム音量
+Partial,Random Pitch,ランダムピッチ
+Partial,Play settings,再生設定
+Partial,Stop Audio Source,Audio Sourceを停止
+Partial,Play Audio Source,Audio Sourceを再生
+Partial,On Enter,開始時
+Partial,On Exit,終了時
+Partial,Play On Enter Delay In Seconds,Enter時の再生遅延（秒）
+Partial,"If the audio source has not finished playing when entering this state, settings with 'Apply If Stopped' will not be applied.",このStateへ入った時点でAudioSourceの再生が終了していない場合、「Apply If Stopped」の設定は適用されません。
+Partial,Pose Space,Pose Space
+Partial,Enter or exit a pose space based on the avatar's current pose.,アバターの現在のPoseに基づいてPose Spaceへ入る、またはPose Spaceから出ます。
+Partial,Delay Time (s),遅延時間（秒）
+Partial,Delay Time (%),遅延時間（%）
+Partial,Tracking Control,トラッキング制御
+Partial,No Change,変更なし
+Partial,Left Hand,左手
+Partial,Right Hand,右手
+Partial,Left Foot,左足
+Partial,Right Foot,右足
+Partial,Left Fingers,左手の指
+Partial,Right Fingers,右手の指
+Partial,Eyes & Eyelids,目とまぶた
+Partial,Mouth & Jaw,口と顎
+Partial,Select this avatar in the SDK control panel,SDK Control Panelでこのアバターを選択
+Partial,Unity Version: ,Unityバージョン: 
+Partial,Rig Type: ,Rigタイプ: 
+Partial,Playable Layers,Playable Layers
+Partial,Reset to Default,デフォルトに戻す
+Partial,This will erase any custom layer settings. Are you sure?,カスタムLayer設定がすべて消去されます。よろしいですか？
+Partial,Lower Body,下半身
+Partial,Use Auto-Footsteps for 3 and 4 point tracking,3点・4点トラッキングでAuto-Footstepsを使用
+Partial,Force Locomotion animations for 6 point tracking,6点トラッキングでLocomotion Animationを強制
+Partial,Default BlendShapes,デフォルトBlendShape
+Format,Link Left + Right for '{0}'?\n(using values of: {1}),「{0}」のLeft + Rightをリンクしますか？\n（使用する値: {1}）
+Partial,Eye Look,視線
+Partial,Eye Movements,目の動き
+Partial,Left Eye Bone,左目のボーン
+Partial,Right Eye Bone,右目のボーン
+Partial,Rotation States,回転状態
+Partial,Looking Straight,正面を見る
+Partial,Looking Up,上を見る
+Partial,Looking Down,下を見る
+Partial,Looking Left,左を見る
+Partial,Looking Right,右を見る
+Partial,Upper Eyelids,上まぶた
+Partial,Lower Eyelids,下まぶた
+Partial,Eyelids Mesh,まぶたのメッシュ
+Partial,Blendshape States,BlendShape状態
+Partial,Auto Detect!,自動検出!
+Partial,Face Mesh,顔のメッシュ
+Partial,Jaw Flap Blend Shape,顎のBlendShape
+Partial,Jaw Bone,顎のボーン
+Partial,Finger Index,人差し指
+Partial,Finger Middle,中指
+Partial,Finger Ring,薬指
+Partial,Finger Little,小指
+Format,{0} L,{0} L
+Format,{0} R,{0} R
+Partial,Reset To Default,デフォルトに戻す
+Partial,This will erase any custom expression settings. Are you sure?,カスタムExpression設定がすべて消去されます。よろしいですか？
+Partial,"This behaviour modifies parameters on this and all other animation controllers referenced on the avatar descriptor.\n\nKeep in mind only parameters defined in your VRCExpressionParameter object will be synced across the network.\n\nAdditionally, synced parameters are clamped between Int [0,255] and Float [-1,1]. Operations that modify these parameters will be clipped inside those bounds.","このBehaviourは、このAnimation ControllerとAvatar Descriptorから参照されている他のすべてのAnimation Controllerのパラメーターを変更します。\n\nネットワーク経由で同期されるのは、VRCExpressionParameterオブジェクトで定義されているパラメーターだけです。\n\nまた、同期されるパラメーターはInt [0,255]、Float [-1,1]の範囲に制限されます。これらのパラメーターを変更する操作は、その範囲内に制限されます。"
+Partial,Using Add & Random may not produce the same result when run on remote instance of the avatar.  When using these modes it's suggested you use a synced parameter and use the local only option.,AddおよびRandomを使用すると、リモート側のアバターでは同じ結果にならない場合があります。これらのModeを使用する場合は、同期パラメーターを使用し、Local Onlyオプションを利用することをおすすめします。
+Format,{0} parameters don't support the {1} type,{0}型のパラメーターは{1}タイプをサポートしていません
+Partial,Min Value,最小値
+Partial,Max Value,最大値
+Partial,Source parameter can't be the Trigger type,SourceパラメーターにTrigger型は使用できません
+Format,Value will be converted from a {0} to a {1}.,値は{0}から{1}へ変換されます。
+Partial,Player Mobility,プレイヤーの移動
+Partial,Can Use Station From Station,Stationから別のStationを使用可能
+Partial,Animator Controller,Animator Controller
+Partial,Disable Station Exit,Stationからの退出を無効化
+Partial,Player Enter Location,プレイヤーの進入位置
+Partial,Player Exit Location,プレイヤーの退出位置
+Partial,API Object,APIオブジェクト
+Partial,Advanced Options,詳細オプション
+Partial,Volumetric Radius,ボリューム半径
+Partial,Enable Spatialization,空間化を有効化
+Partial,Use AudioSource Volume Curve,AudioSourceの音量カーブを使用
+Partial,Add Default Parameters,デフォルトパラメーターを追加
+Partial,Copy from Animator,Animatorからコピー
+Format,{0}/{1} Synced Bits,{0}/{1} 同期Bit
+Partial,VRC SDK,VRC SDK
+Partial,No Animator selected.,Animatorが選択されていません。
+Partial,No new variables found to add to your parameters.,パラメーターに追加できる新しい変数が見つかりません。
+Format,Do you want to add these {0} parameters to your list?\n{1},これら{0}個のパラメーターを一覧へ追加しますか？\n{1}
+Partial,Added parameters from animator.,Animatorからパラメーターを追加しました。
+Partial,New Control,新しいControl
+Partial,Your avatar was built successfully!,アバターのビルドに成功しました!
+Partial,You can find it in the &quot;SDK Test Avatars&quot; section of your avatars list,アバター一覧の「SDK Test Avatars」セクションから確認できます
+Partial,Something went wrong when setting your avatar as a fallback,アバターをフォールバックに設定する際に問題が発生しました
+Partial,We recommend taking a look at the console for more details,詳細についてはConsoleを確認することをおすすめします
+Partial,Check Console for more details,詳細はConsoleを確認してください
+Partial,Selected Avatar,選択中のアバター
+Partial,Per-Platform Overrides Active,プラットフォーム別オーバーライド有効
+Partial,Configure Per-Platform Overrides,プラットフォーム別オーバーライド設定
+Partial,Your avatar failed to build or upload because of the following reason,次の理由によりアバターのビルドまたはアップロードに失敗しました
+Partial,Your avatar was uploaded to VRChat!,アバターがVRChatにアップロードされました!
+Partial,See it on the VRChat Website,VRChatのWebサイトで確認
+Partial,Click or hold to activate. The button remains active for a minimum 0.2s.\n,クリックまたは長押しで有効化します。ボタンは最低0.2秒間有効になります。\n
+Format,"While active, the (Parameter) is set to {0}.\n",有効な間、(Parameter)は{0}に設定されます。\n
+Format,"When inactive, the (Parameter) is reset to {0}.",無効になると、(Parameter)は{0}に戻ります。
+Partial,Click to toggle on or off.\n,クリックするたびにオン／オフを切り替えます。\n
+Format,"When turned on, the (Parameter) is set to {0}.\n",オンになると、(Parameter)は{0}に設定されます。\n
+Format,"When turned off, the (Parameter) is reset to {0}.",オフになると、(Parameter)は{0}に戻ります。
+Partial,Opens another expression menu.\n,別のExpression Menuを開きます。\n
+Format,"When opened, the (Parameter) is set to {0}.\n",開くと、(Parameter)は{0}に設定されます。\n
+Format,"When closed, (Parameter) is reset to {0}.",閉じると、(Parameter)は{0}に戻ります。
+Partial,Puppet menu that maps the joystick to two parameters (-1 to +1).\n,ジョイスティックを2つのパラメーター（-1～+1）に割り当てるPuppet Menuです。\n
+Partial,Puppet menu that maps the joystick to four parameters (0 to 1).\n,ジョイスティックを4つのパラメーター（0～1）に割り当てるPuppet Menuです。\n
+Partial,Puppet menu that sets a value based on joystick rotation. (0 to 1)\n,ジョイスティックの回転に基づいて値（0～1）を設定するPuppet Menuです。\n
+Partial,This parameter does not exist on the current parameter list.,このパラメーターは現在のパラメーター一覧に存在しません。
+Partial,[Bool] is not a valid parameter type for this control.,このControlでは[Bool]は有効なパラメーター型ではありません。
+Partial,"The Value set when this control is activated should be a value other than zero, so it doesn't match the value set when the control is deactivated. Otherwise, the control may not behave correctly.",このControlを有効にしたときに設定するValueは、無効時の値と同じにならないよう0以外にしてください。同じ値の場合、Controlが正しく動作しないことがあります。
+Partial,Sub Menu,サブメニュー
+Partial,Up Label,上ラベル
+Partial,Right Label,右ラベル
+Partial,Down Label,下ラベル
+Partial,Left Label,左ラベル
+Partial,Up Param,上パラメーター
+Partial,Right Param,右パラメーター
+Partial,Down Param,下パラメーター
+Partial,Left Param,左パラメーター
+Partial,This allows you to override the uploaded avatar object for specific platforms.,特定のプラットフォーム向けに、アップロードするアバターオブジェクトを上書きできます。
+Partial,Add per-platform override,プラットフォーム別オーバーライドを追加
+Partial,Not Specified,未指定
+Partial,Build process has encountered an error,ビルド処理中にエラーが発生しました
+Partial,Build was blocked by the SDK Callback,SDK Callbackによってビルドがブロックされました
+Partial,Content has validation errors,コンテンツにValidationエラーがあります
+Partial,Current User does not own the target content,現在のユーザーは対象コンテンツを所有していません
+Partial,Content failed to upload,コンテンツのアップロードに失敗しました
+Partial,This exact bundle was already uploaded,同一のBundleはすでにアップロードされています
+Partial,0/256 Synced Bits,0/256 同期Bit
+Partial,"Expression Parameters are values used to control your avatar either through your Expressions Menu, or through tools like OSC.",Expression Parametersは、Expressions MenuやOSCなどのツールからアバターを制御するために使用する値です。
+Partial,Learn More,詳細を見る
+Partial,Build Type,ビルドタイプ
+Partial,You must fix the issues listed above before you can Upload a Build,Buildをアップロードする前に、上記の問題を修正する必要があります
+Partial,Run Performance Streaming,Performance Streamingを実行
+Partial,Add notes to streamline the review process,審査を円滑にするためのメモを追加
+Partial,This avatar is marked for sale &amp; will be reviewed before being available for purchase.,このアバターは販売対象に設定されているため、購入可能になる前に審査されます。
+Partial,Primary Style,プライマリースタイル
+Partial,Secondary Style,セカンダリースタイル
+Partial,Content Warnings,コンテンツ警告
+Partial,Last Updated,最終更新
+Partial,Supported Platforms,対応プラットフォーム
+Partial,Failed to find avatar for Multi Platform Build,マルチプラットフォームビルド用のアバターが見つかりませんでした
+Partial,Avatar Options,アバターオプション
+Partial,Show All Avatar Performance Details,アバターのPerformance詳細をすべて表示
+Partial,Multiple pipelines are present. V3 pipeline will take priority,複数のPipelineが存在します。V3 Pipelineが優先されます
+Partial,A VRCSceneDescriptor or VRCAvatarDescriptor\nis required to build VRChat SDK Content,VRChat SDK ContentをビルドするにはVRCSceneDescriptorまたはVRCAvatarDescriptorが必要です
+Partial,Building – Please Wait ...,ビルド中 – お待ちください...
+Partial,This avatar uses Visemes but the Face Mesh is not specified.,このアバターではVisemeを使用していますが、Face Meshが指定されていません。
+Partial,"This avatar does not contain an Animator, you need to add an Animator component for the avatar to work",このアバターにはAnimatorがありません。アバターを動作させるにはAnimatorコンポーネントを追加する必要があります
+Partial,"This avatar does not contain an Animator, and will not animate in VRChat.",このアバターにはAnimatorがないため、VRChat上でアニメーションしません。
+Partial,This avatar is not imported as a humanoid rig and will not play VRChat's provided animation set.,このアバターはHumanoid Rigとしてインポートされていないため、VRChatが提供するAnimation Setは再生されません。
+Partial,Your avatar is disabled in the scene hierarchy!,Scene Hierarchyでアバターが無効になっています！
+Partial,"Your avatar is humanoid, but its feet aren't specified!",アバターはHumanoidですが、足が指定されていません！
+Partial,Avatar feet are beneath the avatar's origin (the floor). That's probably not what you want.,アバターの足がアバターの原点（床）より下にあります。意図した配置ではない可能性があります。
+Partial,"Your avatar is humanoid, but its upper arms aren't specified!",アバターはHumanoidですが、上腕が指定されていません！
+Partial,This avatar is too short. The minimum is 20cm shoulder height.,このアバターは低すぎます。肩の高さは最低20cm必要です。
+Partial,This avatar is shorter than average.,このアバターは平均より低めです。
+Partial,This avatar is too tall. The maximum is 5m shoulder height.,このアバターは高すぎます。肩の高さは最大5mです。
+Partial,This avatar is taller than average.,このアバターは平均より高めです。
+Format,"Your avatar contains too many VRCHeadChop components. The maximum allowed count is {0}, but this avatar contains a total of {1}. Please remove {2} of them.",アバターのVRCHeadChopコンポーネントが多すぎます。最大{0}個までですが、このアバターには合計{1}個あります。{2}個削除してください。
+Partial,Your avatar contains one or more VRCHeadChop components. Be sure to read the documentation and make sure you know what you're doing!,アバターに1つ以上のVRCHeadChopコンポーネントがあります。ドキュメントを読み、設定内容を理解したうえで使用してください！
+Partial,VRCHeadChop Component,VRCHeadChop Component
+Partial,See Avatar Rig Requirements for more information.,詳細はAvatar Rig Requirementsを参照してください。
+Partial,There are multiple pipeline manager components on this avatar. There should only be one at the avatar's root. Click Auto Fix to remove all pipeline managers except for the first one found on the avatar root.,このアバターには複数のPipeline Managerコンポーネントがあります。アバターのRootには1つだけ存在する必要があります。Auto Fixをクリックすると、Rootで最初に見つかったもの以外のPipeline Managerを削除します。
+Partial,Remove Excess Pipeline Managers,余分なPipeline Managerを削除
+Partial,This avatar has no pipeline manager component. Click Auto Fix to add one.,このアバターにはPipeline Managerコンポーネントがありません。Auto Fixをクリックして追加してください。
+Partial,"This avatar does not have a humanoid rig, so it can not be used as a custom fallback.",このアバターにはHumanoid Rigがないため、カスタムFallbackとして使用できません。
+Partial,"This avatar does not have an overall rating of Good or better, so it can not be used as a custom fallback. See the link below for details on Avatar Optimization.",このアバターの総合Performance RatingがGood以上ではないため、カスタムFallbackとして使用できません。Avatar Optimizationの詳細は下のリンクを参照してください。
+Partial,This avatar can be used as a custom fallback. This avatar must be uploaded for every supported platform to be valid for fallback selection.,このアバターはカスタムFallbackとして使用できます。Fallbackとして選択可能にするには、対応するすべてのプラットフォーム向けにアップロードする必要があります。
+Partial,"This avatar uses additional animators, they will be disabled when used as a fallback.",このアバターでは追加のAnimatorを使用していますが、Fallbackとして使用される場合は無効になります。
+Partial,This avatar will be blocked by default due to performance. Your fallback will be shown instead.,このアバターはPerformance上の理由によりデフォルトでブロックされ、代わりにFallbackが表示されます。
+Partial,Other users may choose to block this avatar due to performance. Your fallback will be shown instead.,他のユーザーがPerformance上の理由でこのアバターをブロックする場合があります。その場合は代わりにFallbackが表示されます。
+Format,Review Any Alerts ({0}),警告を確認 ({0})
+Partial,Failed to locate Rebind method for animator. Humanoid avatar root hierarchy cannot be verified!,AnimatorのRebindメソッドが見つかりませんでした。HumanoidアバターのRoot階層を確認できません！
+Partial,Failed to invoke Rebind method for animator. Humanoid avatar root hierarchy cannot be verified!,AnimatorのRebindメソッドを呼び出せませんでした。HumanoidアバターのRoot階層を確認できません！
+Partial,This avatar's armature is not a direct child of its root. Click Auto-Fix to re-parent the armature and its siblings to be direct children of the avatar root.,このアバターのArmatureはRootの直接の子ではありません。Auto-Fixをクリックすると、ArmatureとそのSiblingをアバターRootの直接の子へ移動します。
+Partial,Auto-Fix Animator Root,Animator Rootを自動修正
+Partial,Gesture Layer needs valid mask on first animator layer,Gesture Layerの最初のAnimator Layerには有効なMaskが必要です
+Partial,Images used for Actions & Moods are too large.,Actions & Moodsで使用されている画像が大きすぎます。
+Partial,VRCExpressionsMenu object reference is missing.,VRCExpressionsMenuオブジェクトの参照がありません。
+Partial,VRCExpressionParameters object reference is missing.,VRCExpressionParametersオブジェクトの参照がありません。
+Partial,VRCExpressionParameters has too many parameters defined.,VRCExpressionParametersに定義されているパラメーターが多すぎます。
+Partial,VRCExpressionsMenu uses a parameter that is not defined.\nParameter: ,VRCExpressionsMenuで未定義のパラメーターが使用されています。\nパラメーター: 
+Partial,VRCExpressionsMenu uses an invalid parameter for a control.\nControl: ,VRCExpressionsMenuのControlで無効なパラメーターが使用されています。\nControl: 
+Partial,This avatar uses depreciated DynamicBone components. Please use PhysBones instead. Click Auto Fix to automatically convert DynamicBones to PhysBones.,このアバターでは非推奨のDynamicBoneコンポーネントが使用されています。代わりにPhysBoneを使用してください。Auto FixをクリックするとDynamicBoneをPhysBoneへ自動変換します。
+Format,"This avatar contains a total of {0} global PhysBone colliders, but the maximum number allowed per avatar is {1}. ",このアバターにはGlobal PhysBone Colliderが合計{0}個ありますが、アバターごとの最大数は{1}個です。 
+Partial,Reduce the global collider count by switching Global Collision to False.,Global CollisionをFalseに変更して、Global Colliderの数を減らしてください。
+Partial,This avatar uses Unity constraints. Consider using VRChat constraints instead. ,このアバターではUnity Constraintを使用しています。代わりにVRChat Constraintの使用を検討してください。 
+Partial,Click Auto Fix to attempt to replace all constraints and rebind avatar animations automatically.,Auto Fixをクリックすると、すべてのConstraintを置き換え、アバターのAnimationを自動的にRebindします。
+Partial,Unity constraints are not allowed on this platform. Consider using VRChat constraints instead. ,このプラットフォームではUnity Constraintを使用できません。代わりにVRChat Constraintの使用を検討してください。 
+Partial,The following component types are found on the Avatar and will be removed by the client: ,アバターに次の種類のコンポーネントが見つかりました。これらはクライアントによって削除されます: 
+Partial,"Audio sources found on Avatar, they will be adjusted to safe limits, if necessary.",アバター上にAudio Sourceが見つかりました。必要に応じて安全な範囲に調整されます。
+Partial,Found an audio clip with load type `Decompress On Load` which doesn't have `Load In Background` enabled.\nPlease enable `Load In Background` on the audio clip.,Load Typeが`Decompress On Load`で、`Load In Background`が有効になっていないAudio Clipが見つかりました。\nAudio Clipの`Load In Background`を有効にしてください。
+Partial,Found one or several audio clips used in state behaviours with load type `Decompress On Load` which doesn't have `Load In Background` enabled. Please enable `Load In Background` on these audio clips.,State Behaviourで使用されているAudio Clipのうち、Load Typeが`Decompress On Load`で`Load In Background`が有効になっていないものが見つかりました。これらのAudio Clipで`Load In Background`を有効にしてください。
+Partial,"Stations found on Avatar, they will be adjusted to safe limits, if necessary.",アバター上にStationが見つかりました。必要に応じて安全な範囲に調整されます。
+Partial,"This avatar has one or more Substance materials, which is not supported and may break in-game. Please bake your Substances to regular materials.",このアバターには1つ以上のSubstance Materialがあります。これはサポートされておらず、ゲーム内で正常に動作しない可能性があります。Substanceを通常のMaterialへBakeしてください。
+Partial,This avatar contains one or more particle systems configured to destroy themselves when they stop. This is not allowed. Please use a different stop action.,このアバターには、停止時に自身を破棄するよう設定されたParticle Systemがあります。この設定は使用できません。別のStop Actionを使用してください。
+Partial,This avatar contains a particle system on the avatar root configured to disable itself when it stops. This is not allowed. Please use a different stop action.,アバターRoot上に、停止時に自身を無効化するよう設定されたParticle Systemがあります。この設定は使用できません。別のStop Actionを使用してください。
+Partial,This avatar contains one or more trail renderers configured to auto-destruct when the trail ends. This is not allowed. Please disable auto-destruction.,このアバターには、Trail終了時に自動破棄するよう設定されたTrail Rendererがあります。この設定は使用できません。Auto Destructを無効にしてください。
+Partial,"This avatar contains one or more particle systems configured to apply collision forces to Pickups and/or Items. This is not allowed. Please either disable collision against these layers, or set the collider force to zero.",このアバターには、PickupやItemへCollision Forceを加えるよう設定されたParticle Systemがあります。この設定は使用できません。これらのLayerとのCollisionを無効にするか、Collider Forceを0にしてください。
+Partial,Particle Collision,Particle Collision
+Partial,How would you like to resolve collision problems for the affected particle systems?,対象のParticle SystemのCollision問題をどの方法で解決しますか？
+Partial,Disable collision against protected layers,保護されたLayerとのCollisionを無効化
+Partial,Set collider force to zero,Collider Forceを0に設定
+Partial,"This avatar contains one or more particle systems configured to emit dynamic lights. These lights will be included in the overall Light count for this avatar, which may impact its performance rank. Click Auto Fix to clear lights from these particle systems.",このアバターにはDynamic Lightを放出するよう設定されたParticle Systemがあります。これらのLightはアバター全体のLight数に含まれ、Performance Rankに影響する可能性があります。Auto FixをクリックするとParticle SystemからLightを削除します。
+Format,Avatar uses unsupported shader '{0}'. You can only use the shaders provided in 'VRChat/Mobile' for Quest avatars.,アバターでサポートされていないShader「{0}」が使用されています。Quest向けアバターでは「VRChat/Mobile」で提供されているShaderのみ使用できます。
+Partial,"This avatar uses a mixture of Write Defaults in its animator states. To avoid animation issues, VRChat recommends using the same Write Defaults setting across all animator states.",このアバターのAnimator StateではWrite Defaultsの設定が混在しています。Animationの問題を避けるため、VRChatではすべてのAnimator Stateで同じWrite Defaults設定を使用することを推奨しています。
+Partial,Write Defaults Guidelines,Write Defaultsのガイドライン
+Partial,"This avatar contains one or more animator states with Write Defaults disabled where the animation clip is either missing or empty. To avoid animation issues, assign animation clips containing at least one property.",このアバターには、Write Defaultsが無効でAnimation Clipが未設定または空のAnimator Stateがあります。Animationの問題を避けるため、少なくとも1つのPropertyを含むAnimation Clipを割り当ててください。
+Format,This avatar contains VRCPhysBone or VRCPhysBoneCollider components which exceed the maximum dependency depth of {0}.  Remove or move these components to change their dependencies.  See console for more information.,このアバターには最大依存深度{0}を超えるVRCPhysBoneまたはVRCPhysBoneColliderコンポーネントがあります。コンポーネントを削除または移動して依存関係を変更してください。詳細はConsoleを確認してください。
+Partial,This avatar contains VRCPhysBone or VRCPhysBoneCollider components which have cyclic dependencies.  As a result some components will run out of order.  Remove or move these components to change their dependencies.  See console for more information.,このアバターには循環依存しているVRCPhysBoneまたはVRCPhysBoneColliderコンポーネントがあります。そのため、一部のコンポーネントが順序どおりに実行されません。コンポーネントを削除または移動して依存関係を変更してください。詳細はConsoleを確認してください。
+Partial,Avatar Optimization Tips,アバター最適化のヒント
+Partial,Unknown performance display level.,不明なPerformance表示レベルです。
+Partial,You must accept the terms below to upload content to VRChat,VRChatへコンテンツをアップロードするには、以下の規約に同意する必要があります
+Partial,A VRCAvatarDescriptor is required to build a VRChat Avatar,VRChat AvatarをビルドするにはVRCAvatarDescriptorが必要です
+Partial,Add a VRCAvatarDescriptor,VRCAvatarDescriptorを追加
+Partial,Adds a VRCAvatarDescriptor to the selected GameObject,選択したGameObjectにVRCAvatarDescriptorを追加します
+Partial,"A VRCAvatarDescriptor is required to build a VRChat Avatar"" + (hasSelection ? """" : "".\nSelect a GameObject to add a VRCAvatarDescriptor to it.","【要確認・元ソース参照】A VRCAvatarDescriptor is required to build a VRChat Avatar"" + (hasSelection ? """" : "".\nSelect a GameObject to add a VRCAvatarDescriptor to it."
+Partial,This avatar cannot be used as a fallback. Check Validations below for more info,このアバターはFallbackとして使用できません。詳細は下のValidationを確認してください
+Partial,This avatar can be used as a fallback. Check Validations below for more info.,このアバターはFallbackとして使用できます。詳細は下のValidationを確認してください。
+Partial,This avatar can be used as a fallback. Switch to the Android platform to select it.,このアバターはFallbackとして使用できます。選択するにはAndroidプラットフォームへ切り替えてください。
+Partial,Failed to set fallback,フォールバックの設定に失敗しました
+Partial,Set this avatar as fallback,このアバターをフォールバックに設定
+Partial,This avatar is currently set as your fallback,このアバターは現在フォールバックに設定されています
+Partial,"No PipelineManager found on the avatar, make sure you added an Avatar Descriptor",アバターにPipelineManagerが見つかりません。Avatar Descriptorが追加されていることを確認してください
+Partial,"Loaded data for an avatar we do not own, clearing blueprint ID",所有していないアバターのデータを読み込んだため、Blueprint IDをクリアします
+Partial,Clear Unowned Blueprint ID,所有していないBlueprint IDをクリア
+Partial,Name cannot be empty,名前を空にすることはできません
+Partial,Saving Avatar Changes...,アバターの変更を保存中...
+Partial,Updating avatar,アバターを更新中
+Partial,Updated avatar,アバターを更新しました
+Partial,Build & Publish Your Avatar Online,アバターをビルドしてオンライン公開
+Partial,Build & Test Your Avatar,アバターをビルドしてテスト
+Format,Unknown SDK Build Action {0},不明なSDK Build Actionです: {0}
+Partial,You need to select at least one platform,少なくとも1つのプラットフォームを選択する必要があります
+Partial,Multi-Platform Build & Publish,マルチプラットフォームでビルドして公開
+Partial,Build & Publish,ビルドして公開
+Partial,This avatar is linked to a product,このアバターは商品にリンクされています
+Partial,"Since this avatar has been marked for sale, it will be <b>reviewed</b> by our moderators before becoming available for purchase inside VRChat.",このアバターは販売対象に設定されているため、VRChat内で購入可能になる前にモデレーターによる<b>審査</b>が行われます。
+Partial,Upload Succeeded!,アップロード成功!
+Partial,We’ll notify you via email as soon as your avatar has been reviewed.,アバターの審査が完了すると、メールで通知されます。
+Format,Failed to send AVM notes: {0},AVM Noteの送信に失敗しました: {0}
+Partial,Build & Test,ビルドしてテスト
+Partial,Build Target Switcher,ビルドターゲット切り替え
+Format,Are you sure you want to switch your build target to {0}? This could take a while.,Build Targetを{0}へ切り替えますか？この処理には時間がかかる場合があります。
+Format,Failed to switch to {0} target platform,{0} Target Platformへの切り替えに失敗しました
+Format,Check if the Platform Support for {0} is installed in the Unity Hub,Unity Hubに{0}のPlatform Supportがインストールされているか確認してください
+Partial,Unity Console might have more information,Unity Consoleに詳細情報がある可能性があります
+Partial,Show Console,Consoleを表示
+Format,Unable to identify selected build action {0},選択されたBuild Action {0}を識別できません
+Partial,Building & testing on this platform is not supported,このプラットフォームではビルドとテストはサポートされていません
+Partial,Please set a name and thumbnail before uploading,アップロード前に名前とサムネイルを設定してください
+Partial,Timed out waiting for user to log in,ユーザーのログイン待機中にタイムアウトしました
+Partial,Multi-Platform Upload Finished,マルチプラットフォームのアップロードが完了しました
+Partial,Set BlueprintId,BlueprintIdを設定
+Partial,Build was blocked by the SDK callback,SDK callbackによってビルドがブロックされました
+Partial,Open the SDK panel to build and upload avatars,アバターをビルド・アップロードするにはSDK Panelを開いてください
+Partial,This avatar does not have a PipelineManager,このアバターにはPipelineManagerがありません
+Format,Avatar testing is not supported on platform '{0}',プラットフォーム「{0}」ではアバターのテストはサポートされていません
+Partial,Unexpected Error Occurred,予期しないエラーが発生しました
+Partial,Encountered the following validation issues during build:,ビルド中に次のValidation問題が発生しました:
+Partial,Avatar build finished,アバターのビルドが完了しました
+Partial,"Failed to find the built avatar bundle, the build likely failed",ビルド済みのアバターBundleが見つかりません。ビルドに失敗した可能性があります
+Format,Avatar download size is too large for the target platform. {0} > {1},アバターのDownload Sizeが対象プラットフォームの上限を超えています。{0} > {1}
+Format,Avatar uncompressed size is too large for the target platform. {0} > {1},アバターのUncompressed Sizeが対象プラットフォームの上限を超えています。{0} > {1}
+Partial,"Target avatar does not have a PipelineManager, make sure a PipelineManager component is present before uploading",対象のアバターにPipelineManagerがありません。アップロード前にPipelineManagerコンポーネントが存在することを確認してください
+Partial,Avatar info does not contain an ID. Make sure to acquire an ID from the API before uploading,アバター情報にIDがありません。アップロード前にAPIからIDを取得してください
+Partial,"Avatar's current ID belongs to a different user, assign a different ID",現在のアバターIDは別のユーザーのものです。別のIDを割り当ててください
+Format,Failed to load avatar data: {0},アバターデータの読み込みに失敗しました: {0}
+Partial,Thumbnail image is required for avatar creation,アバターの作成にはサムネイル画像が必要です
+Partial,Target avatar does not have a blueprint id assigned. Make sure an id is created and assigned before uploading,対象のアバターにBlueprint IDが割り当てられていません。アップロード前にIDを作成して割り当ててください
+Partial,Target avatar's assigned ID doesn't match the API id. Make sure the PipelineManager component has the correct ID assigned before uploading,対象アバターに割り当てられたIDがAPIのIDと一致しません。アップロード前にPipelineManagerコンポーネントへ正しいIDが割り当てられていることを確認してください
+Partial,Uploading an avatar for a pending avatar record,保留中のアバターレコードへアバターをアップロード中
+Partial,Updating avatar info due to local changes,ローカルの変更によりアバター情報を更新中
+Partial,Updating avatar thumbnail,アバターのサムネイルを更新中
+Partial,Updating avatar bundle,アバターのBundleを更新中
+Partial,Failed to send VPM manifest data to analytics,VPM ManifestデータをAnalyticsへ送信できませんでした
+Partial,Request cancelled,リクエストがキャンセルされました
+Partial,Request Cancelled,リクエストがキャンセルされました
+Partial,Avatar upload finished,アバターのアップロードが完了しました
+Partial,Current User does not have permissions to build and upload avatars,現在のユーザーにはアバターをビルド・アップロードする権限がありません
+Partial,Building Avatar,アバターをビルド中
+Partial,Failed to build avatar!,アバターのビルドに失敗しました!
+Partial,Build Failed,ビルド失敗
+Format,{0} bundle failed to build,{0} Bundleのビルドに失敗しました
+Partial,Avatar Built,アバターのビルド完了
+Partial,Avatar Upload,アバターのアップロード
+Partial,Uploading Avatar to VRChat,VRChatへアバターをアップロード中
+Partial,Failed to upload avatar!,アバターのアップロードに失敗しました!
+Partial,Upload Failed,アップロード失敗
+Partial,Failed to update avatar info!,アバター情報の更新に失敗しました!
+Partial,Update Failed,更新失敗
+Partial,Content Guidelines Check,コンテンツガイドライン確認
+Format,{0} bundle failed to upload,{0} Bundleのアップロードに失敗しました
+Partial,Build Succeeded!,ビルド成功!
+Partial,Clearing id after a failed build,ビルド失敗後にIDをクリア中
+Partial,Failed to reserve an avatar ID,アバターIDの予約に失敗しました
+Partial,Assigning a new ID,新しいIDを割り当て中
+Partial,"Avatar ID is empty, while blueprint ID is not, this is not supported, please make sure that avatar.ID is populated",Blueprint IDが設定されている一方でAvatar IDが空です。この状態はサポートされていません。avatar.IDが設定されていることを確認してください
+Partial,Avatar upload canceled,アバターのアップロードがキャンセルされました
+Partial,"Custom cancellation token passed, you should cancel via its token source instead",カスタムCancellation Tokenが渡されています。代わりにそのToken Sourceからキャンセルしてください
+Partial,Avatar validation failed,アバターのValidationに失敗しました
+Partial,This avatar has mipmapped textures without 'Streaming Mip Maps' enabled.,このアバターには「Streaming Mip Maps」が有効になっていないMipMap付きTextureがあります。
+Partial,Set Mip Map Streaming,Mip Map Streamingを設定
+Format,This avatar has textures bigger than {0}. Please reduce them to save memory for users.,このアバターには{0}を超えるTextureがあります。ユーザーのメモリ使用量を抑えるため、サイズを小さくしてください。
+Format,Set Max Texture Size to {0},Max Texture Sizeを{0}に設定
+Format,"This avatar uses textures with 'Box' mipmap filtering, which blurs distant textures. Switch to 'Kaiser' for improved sharpness{0}.",このアバターでは「Box」MipMap Filteringが使用されているため、遠距離のTextureがぼやけます。より鮮明にするには「Kaiser」へ切り替えてください{0}。
+Partial,Set texture filtering to 'Kaiser',Texture Filteringを「Kaiser」に設定
+Partial,"Humanoid avatar must have head, hands and feet bones mapped.",HumanoidアバターではHead、Hand、FootのBoneをマッピングする必要があります。
+Partial,"Spine hierarchy missing elements, please map: ",Spine階層に不足している要素があります。マッピングしてください: 
+Partial,Spine hierarchy incorrect. Make sure that the parent of both Shoulders and the Neck is the Chest (or UpperChest if set).,Spine階層が正しくありません。両ShoulderとNeckの親がChest（設定されている場合はUpperChest）になっていることを確認してください。
+Partial,LowerArm is not first child of UpperArm or Hand is not first child of LowerArm: you may have problems with Forearm rotations.,LowerArmがUpperArmの最初の子ではない、またはHandがLowerArmの最初の子ではありません。Forearmの回転で問題が発生する可能性があります。
+Partial,LowerLeg is not first child of UpperLeg or Foot is not first child of LowerLeg: you may have problems with Shin rotations.,LowerLegがUpperLegの最初の子ではない、またはFootがLowerLegの最初の子ではありません。Shinの回転で問題が発生する可能性があります。
+Partial,This avatar has a split hierarchy (Hips bone is not the ancestor of all humanoid bones). IK may not work correctly.,このアバターはHierarchyが分断されています（Hips BoneがすべてのHumanoid Boneの祖先になっていません）。IKが正しく動作しない可能性があります。
+Format,The angle between pelvis and thigh bones should be close to 180 degrees (this avatar's angle is {0}). Your avatar may not work well with full-body IK and Tracking.,PelvisとThigh Boneの角度は180度に近い値にする必要があります（このアバターの角度: {0}）。Full-Body IKやTrackingが正しく動作しない可能性があります。
+Partial,Could not check for legacy blend shape normals because 'legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes' was not found.,「legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes」が見つからなかったため、Legacy Blend Shape Normalsを確認できませんでした。
+Partial,This avatar contains skinned meshes that were imported with Blendshape Normals set to 'Calculate' but aren't using 'Legacy Blendshape Normals'. This will significantly increase the size of the uploaded avatar. This must be fixed in the mesh import settings before uploading.,このアバターにはBlendshape Normalsを「Calculate」に設定してインポートされている一方、「Legacy Blendshape Normals」を使用していないSkinned Meshがあります。これによりアップロードされるアバターのサイズが大幅に増加します。アップロード前にMesh Import Settingsで修正する必要があります。
+Partial,This avatar contains meshes that were imported with Read/Write disabled. This must be fixed in the mesh import settings before uploading.,このアバターにはRead/Writeを無効にしてインポートされたMeshがあります。アップロード前にMesh Import Settingsで修正する必要があります。
+Partial,SDK V3 pipeline is not enabled.,SDK V3 pipelineが有効ではありません。

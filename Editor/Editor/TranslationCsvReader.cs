@@ -26,6 +26,7 @@ internal static class TranslationCsvReader
         Exact,
         Partial,
         Format,
+        PartialFormat,
         Debug
     }
 
@@ -138,7 +139,7 @@ internal static class TranslationCsvReader
                 warning?.Invoke(
                     $"CSVの{record.Line}行目のType " +
                     $"\"{typeText}\" は不正です。" +
-                    "Exact、Partial、Format または Debug を指定してください。" +
+                    "Exact、Partial、Format、PartialFormat または Debug を指定してください。" +
                     "このレコードを無視します。");
 
                 continue;
@@ -285,6 +286,15 @@ internal static class TranslationCsvReader
                 StringComparison.Ordinal))
         {
             type = TranslationType.Format;
+            return true;
+        }
+
+        if (string.Equals(
+                value,
+                "PartialFormat",
+                StringComparison.Ordinal))
+        {
+            type = TranslationType.PartialFormat;
             return true;
         }
 

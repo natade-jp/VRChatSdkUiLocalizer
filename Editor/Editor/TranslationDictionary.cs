@@ -303,6 +303,13 @@ internal static class TranslationDictionary
                             translation.TranslationText);
                         break;
 
+                    case TranslationCsvReader.TranslationType.PartialFormat:
+                        AddPartialFormat(
+                            targetSet,
+                            translation.Source,
+                            translation.TranslationText);
+                        break;
+
                     case TranslationCsvReader.TranslationType.Partial:
                         AddPartial(
                             targetSet,
@@ -396,6 +403,25 @@ internal static class TranslationDictionary
         }
 
         string result = text;
+
+        foreach (
+            FormatTranslationEntry entry
+            in translationSet.PartialFormat)
+        {
+            if (!string.IsNullOrEmpty(entry.Prefix) &&
+                !result.Contains(entry.Prefix))
+            {
+                continue;
+            }
+
+            result =
+                entry.Pattern.Replace(
+                    result,
+                    match =>
+                        ApplyFormatTranslation(
+                            entry,
+                            match));
+        }
 
         foreach (
             TranslationEntry entry
@@ -576,6 +602,38 @@ internal static class TranslationDictionary
     }
 
     /// <summary>
+    /// PartialFormat翻訳を追加
+    /// </summary>
+    private static void AddPartialFormat(
+        TargetTranslationSet translationSet,
+        string source,
+        string translation)
+    {
+        foreach (
+            FormatTranslationEntry entry
+            in translationSet.PartialFormat)
+        {
+            if (entry.Source == source)
+            {
+                return;
+            }
+        }
+
+        Regex pattern =
+            CreatePartialFormatPattern(source);
+
+        string prefix =
+            GetFormatPrefix(source);
+
+        translationSet.PartialFormat.Add(
+            new FormatTranslationEntry(
+                source,
+                translation,
+                prefix,
+                pattern));
+    }
+
+    /// <summary>
     /// 部分一致翻訳を追加
     /// </summary>
     private static void AddPartial(
@@ -620,8 +678,36 @@ internal static class TranslationDictionary
     private static Regex CreateFormatPattern(
         string source)
     {
+        return CreateFormatPattern(
+            source,
+            true);
+    }
+
+    /// <summary>
+    /// PartialFormat用正規表現を生成
+    /// </summary>
+    private static Regex CreatePartialFormatPattern(
+        string source)
+    {
+        return CreateFormatPattern(
+            source,
+            false);
+    }
+
+    /// <summary>
+    /// Format用正規表現を生成
+    /// </summary>
+    private static Regex CreateFormatPattern(
+        string source,
+        bool wholeMatch)
+    {
         var pattern =
-            new StringBuilder("^");
+            new StringBuilder();
+
+        if (wholeMatch)
+        {
+            pattern.Append("^");
+        }
 
         int position = 0;
 
@@ -656,7 +742,10 @@ internal static class TranslationDictionary
                     source.Substring(position)));
         }
 
-        pattern.Append("$");
+        if (wholeMatch)
+        {
+            pattern.Append("$");
+        }
 
         return new Regex(
             pattern.ToString(),
@@ -753,12 +842,16 @@ internal static class TranslationDictionary
         internal List<FormatTranslationEntry> Format { get; } =
             new List<FormatTranslationEntry>();
 
+        internal List<FormatTranslationEntry> PartialFormat { get; } =
+            new List<FormatTranslationEntry>();
+
         internal List<TranslationEntry> Partial { get; } =
             new List<TranslationEntry>();
 
         internal int Count =>
             Exact.Count +
             Format.Count +
+            PartialFormat.Count +
             Partial.Count;
     }
 

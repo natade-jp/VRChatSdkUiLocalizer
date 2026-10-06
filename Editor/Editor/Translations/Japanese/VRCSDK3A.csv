@@ -7,365 +7,173 @@
 # Packages\com.vrchat.avatars\Editor\VRCSDK\SDK3A
 # ---------------------
 
-SDK,Partial,No avatars found.  Please select an avatar in the hierarchy window before using this feature.,アバターが見つかりません。この機能を使用する前に、Hierarchyウィンドウでアバターを選択してください。
-SDK,Partial,This operation will remove all DynamicBone components and replace them with PhysBone components on your avatar. This process attempts to match settings but the result may not appear to be the same. This is not reversible so please make a backup before continuing!,この操作では、アバター上のすべてのDynamicBoneコンポーネントを削除し、PhysBoneコンポーネントに置き換えます。設定が一致するよう変換を試みますが、結果が同じ見た目になるとは限りません。この操作は元に戻せないため、続行する前にバックアップを作成してください！
-SDK,Partial,DynamicBone not found in the project.,プロジェクト内にDynamicBoneが見つかりません。
-SDK,Partial,Encountered critical error while attempting to this operation.,この操作の実行中に重大なエラーが発生しました。
-SDK,Partial,A mixture of game objects and animation clips are selected. Please select only game objects or only animation clips and try again.,GameObjectとAnimation Clipが混在して選択されています。GameObjectのみ、またはAnimation Clipのみを選択して、もう一度お試しください。
-SDK,Partial,"No convertible objects are selected. Please select a game object, prefab or animation clip to use this feature.",変換可能なオブジェクトが選択されていません。この機能を使用するには、GameObject、Prefab、またはAnimation Clipを選択してください。
-SDK,Partial,Auto Convert Constraints,Constraintを自動変換
-SDK,Format,All Unity constraints on {0} will be replaced with equivalent VRChat constraints.\n\n,「{0}」上のすべてのUnity Constraintは、同等のVRChat Constraintに置き換えられます。\n\n
-SDK,Partial,"If {(hasMultiple ? ""an"" : ""this"")} {subject} references any animation clips that animate the replaced Unity constraints, those animation ","【要確認・元ソース参照】If {(hasMultiple ? ""an"" : ""this"")} {subject} references any animation clips that animate the replaced Unity constraints, those animation "
-SDK,Partial,clips will be automatically updated so they target the newly created VRChat constraints instead.\n\n,【要確認・元ソース参照】clips will be automatically updated so they target the newly created VRChat constraints instead.\n\n
-SDK,Partial,"If your animator setup is very complex, you may want to back up your project first!",Animatorの構成が非常に複雑な場合は、先にプロジェクトをバックアップすることをおすすめします！
-SDK,Partial,Multiple Objects,複数のオブジェクト
-SDK,Format,All animation tracks targeting Unity constraints in the selected animation {0} will be updated to target VRChat constraints instead.\n\n,選択したAnimation {0}内でUnity Constraintを対象としているすべてのAnimation Trackは、代わりにVRChat Constraintを対象とするよう更新されます。\n\n
-SDK,Format,Please note that only the first {0} sources of a VRChat constraint can be animated due to engine limitations.\n\n,エンジンの制限により、VRChat Constraintでアニメーションできるのは最初の{0}個のSourceだけです。\n\n
-SDK,Partial,Multiple Clips,複数のクリップ
-SDK,Format,"Auto Convert Constraints: The game object \""{0}\"" already contains one or more VRChat constraints of type {1}. ",Constraint自動変換: GameObject「{0}」には、すでに{1}型のVRChat Constraintが1つ以上存在します。 
-SDK,Partial,Animating components of the same type on the same game object is not supported. You may need to move the duplicate types to their own game objects.,同じGameObject上にある同種のコンポーネントをアニメーションさせることはサポートされていません。重複するコンポーネントをそれぞれ別のGameObjectへ移動する必要がある場合があります。
-SDK,Format,Convert Constraints ({0}),Constraintを変換 ({0})
-SDK,Partial,Convert Constraints,Constraintを変換
-SDK,Partial,Constraint conversion failed! Please check for associated errors in the console for more information.,Constraintの変換に失敗しました。詳細についてはConsoleの関連エラーを確認してください。
-SDK,Partial,Constraint conversion finished with one or more issues. Please check for associated warnings and errors in the console for more information.,Constraintの変換は完了しましたが、1件以上の問題があります。詳細についてはConsoleの関連する警告とエラーを確認してください。
-SDK,Format,Rebind Property {0},PropertyをRebind {0}
-SDK,Format,"Auto Convert Constraints: The clip \""{0}\"" animates the transform reference of one or more sources. ",Constraint自動変換: Clip「{0}」は1つ以上のSourceのTransform参照をアニメーションさせています。 
-SDK,Partial,"VRChat constraints do not support animating per-source transform references. You may need to use an alternative approach instead, such as having multiple sources referring to different transforms and animating their weights to switch between them.",VRChat Constraintでは、SourceごとのTransform参照をアニメーションさせることはできません。異なるTransformを参照する複数のSourceを用意し、Weightをアニメーションさせて切り替えるなど、別の方法を使用する必要があります。
-SDK,Partial,Auto Convert Constraints: Cannot perform binding mapping because the given Unity constraint type is null.,Constraint自動変換: 指定されたUnity Constraintの型がnullのため、Bindingのマッピングを実行できません。
-SDK,Partial,Auto Convert Constraints: Cannot perform binding mapping because the given Unity constraint property name is null or empty.,Constraint自動変換: 指定されたUnity Constraintのプロパティ名がnullまたは空のため、Bindingのマッピングを実行できません。
-SDK,Format,Auto Convert Constraints: Failed to map the type {0} to a VRChat constraint type.,Constraint自動変換: 型{0}をVRChat Constraintの型へマッピングできませんでした。
-SDK,Format,"Auto Convert Constraints: Failed to convert animation property \""{0}\"" because it is out of range. Only the first {1} sources of a VRChat constraint can be animated due to engine limitations.",Constraint自動変換: Animation Property「{0}」は範囲外のため変換できませんでした。エンジンの制限により、VRChat Constraintでアニメーションできるのは最初の{1}個のSourceだけです。
-SDK,Format,"Auto Convert Constraints: Failed to convert animation property \""{0}\"" because it wasn't recognized by the converter.",Constraint自動変換: Animation Property「{0}」をConverterが認識できなかったため変換できませんでした。
-SDK,Partial,"An animation is currently being previewed. The animation preview must be stopped first, otherwise previewed values could become permanent.\n\nPlease stop previewing the animation before using this feature.",現在Animationをプレビュー中です。先にAnimationのプレビューを停止しないと、プレビュー中の値がそのまま適用される可能性があります。\n\nこの機能を使用する前にAnimationのプレビューを停止してください。
-SDK,Partial,"Auto Convert Constraints: An animation is currently being previewed. The animation preview must be stopped first, otherwise previewed values could become permanent.",Constraint自動変換: 現在Animationをプレビュー中です。先にAnimationのプレビューを停止しないと、プレビュー中の値がそのまま適用される可能性があります。
-SDK,Partial,Locomotion Control,ロコモーション制御
-SDK,Partial,Debug String,デバッグ文字列
-SDK,Format,Parameter '{0}' not found. Make sure you defined in the Animator window's Parameters tab.,パラメーター「{0}」が見つかりません。AnimatorウィンドウのParametersタブで定義されていることを確認してください。
-SDK,Partial,Unable to find animator window.,Animatorウィンドウが見つかりません。
-SDK,Partial,Drag & drop your AudioSource below to automatically fill the path relative to the avatar root.,下にAudioSourceをドラッグ＆ドロップすると、アバターのRootからの相対パスが自動入力されます。
-SDK,Partial,This audio source is not part of the hierarchy of an avatar with a valid descriptor.,このAudioSourceは、有効なDescriptorを持つアバターのHierarchy内にありません。
-SDK,Partial,Select an 'Int' avatar parameter below. The value of this parameter will determine which clip is selected.,下からInt型のアバターパラメーターを選択してください。このパラメーターの値によって選択されるClipが決まります。
-SDK,Partial,Parameter Name,パラメーター名
-SDK,Partial,AudioSource settings,AudioSource設定
-SDK,Partial,Random Volume,ランダム音量
-SDK,Partial,Random Pitch,ランダムピッチ
-SDK,Partial,Play settings,再生設定
-SDK,Partial,Stop Audio Source,Audio Sourceを停止
-SDK,Partial,Play Audio Source,Audio Sourceを再生
-SDK,Partial,On Enter,開始時
-SDK,Partial,On Exit,終了時
-SDK,Partial,Play On Enter Delay In Seconds,Enter時の再生遅延（秒）
-SDK,Partial,"If the audio source has not finished playing when entering this state, settings with 'Apply If Stopped' will not be applied.",このStateへ入った時点でAudioSourceの再生が終了していない場合、「Apply If Stopped」の設定は適用されません。
-SDK,Partial,Pose Space,Pose Space
-SDK,Partial,Enter or exit a pose space based on the avatar's current pose.,アバターの現在のPoseに基づいてPose Spaceへ入る、またはPose Spaceから出ます。
-SDK,Partial,Delay Time (s),遅延時間（秒）
-SDK,Partial,Delay Time (%),遅延時間（%）
-SDK,Partial,Tracking Control,トラッキング制御
-SDK,Partial,No Change,変更なし
-SDK,Partial,Left Hand,左手
-SDK,Partial,Right Hand,右手
-SDK,Partial,Left Foot,左足
-SDK,Partial,Right Foot,右足
-SDK,Partial,Left Fingers,左手の指
-SDK,Partial,Right Fingers,右手の指
-SDK,Partial,Eyes & Eyelids,目とまぶた
-SDK,Partial,Mouth & Jaw,口と顎
-SDK,Partial,Select this avatar in the SDK control panel,SDK Control Panelでこのアバターを選択
-SDK,Partial,Unity Version: ,Unityバージョン: 
-SDK,Partial,Rig Type: ,Rigタイプ: 
-SDK,Partial,Playable Layers,Playable Layers
-SDK,Partial,Reset to Default,デフォルトに戻す
-SDK,Partial,This will erase any custom layer settings. Are you sure?,カスタムLayer設定がすべて消去されます。よろしいですか？
-SDK,Partial,Lower Body,下半身
-SDK,Partial,Use Auto-Footsteps for 3 and 4 point tracking,3点・4点トラッキングでAuto-Footstepsを使用
-SDK,Partial,Force Locomotion animations for 6 point tracking,6点トラッキングでLocomotion Animationを強制
-SDK,Partial,Default BlendShapes,デフォルトBlendShape
-SDK,Format,Link Left + Right for '{0}'?\n(using values of: {1}),「{0}」のLeft + Rightをリンクしますか？\n（使用する値: {1}）
-SDK,Partial,Eye Look,視線
-SDK,Partial,Eye Movements,目の動き
-SDK,Partial,Left Eye Bone,左目のボーン
-SDK,Partial,Right Eye Bone,右目のボーン
-SDK,Partial,Rotation States,回転状態
-SDK,Partial,Looking Straight,正面を見る
-SDK,Partial,Looking Up,上を見る
-SDK,Partial,Looking Down,下を見る
-SDK,Partial,Looking Left,左を見る
-SDK,Partial,Looking Right,右を見る
-SDK,Partial,Upper Eyelids,上まぶた
-SDK,Partial,Lower Eyelids,下まぶた
-SDK,Partial,Eyelids Mesh,まぶたのメッシュ
-SDK,Partial,Blendshape States,BlendShape状態
-SDK,Partial,Auto Detect!,自動検出!
-SDK,Partial,Face Mesh,顔のメッシュ
-SDK,Partial,Jaw Flap Blend Shape,顎のBlendShape
-SDK,Partial,Jaw Bone,顎のボーン
-SDK,Partial,Finger Index,人差し指
-SDK,Partial,Finger Middle,中指
-SDK,Partial,Finger Ring,薬指
-SDK,Partial,Finger Little,小指
-SDK,Format,{0} L,{0} L
-SDK,Format,{0} R,{0} R
-SDK,Partial,Reset To Default,デフォルトに戻す
-SDK,Partial,This will erase any custom expression settings. Are you sure?,カスタムExpression設定がすべて消去されます。よろしいですか？
-SDK,Partial,"This behaviour modifies parameters on this and all other animation controllers referenced on the avatar descriptor.\n\nKeep in mind only parameters defined in your VRCExpressionParameter object will be synced across the network.\n\nAdditionally, synced parameters are clamped between Int [0,255] and Float [-1,1]. Operations that modify these parameters will be clipped inside those bounds.","このBehaviourは、このAnimation ControllerとAvatar Descriptorから参照されている他のすべてのAnimation Controllerのパラメーターを変更します。\n\nネットワーク経由で同期されるのは、VRCExpressionParameterオブジェクトで定義されているパラメーターだけです。\n\nまた、同期されるパラメーターはInt [0,255]、Float [-1,1]の範囲に制限されます。これらのパラメーターを変更する操作は、その範囲内に制限されます。"
-SDK,Partial,Using Add & Random may not produce the same result when run on remote instance of the avatar.  When using these modes it's suggested you use a synced parameter and use the local only option.,AddおよびRandomを使用すると、リモート側のアバターでは同じ結果にならない場合があります。これらのModeを使用する場合は、同期パラメーターを使用し、Local Onlyオプションを利用することをおすすめします。
-SDK,Format,{0} parameters don't support the {1} type,{0}型のパラメーターは{1}タイプをサポートしていません
-SDK,Partial,Min Value,最小値
-SDK,Partial,Max Value,最大値
-SDK,Partial,Source parameter can't be the Trigger type,SourceパラメーターにTrigger型は使用できません
-SDK,Format,Value will be converted from a {0} to a {1}.,値は{0}から{1}へ変換されます。
-SDK,Partial,Player Mobility,プレイヤーの移動
-SDK,Partial,Can Use Station From Station,Stationから別のStationを使用可能
-SDK,Partial,Animator Controller,Animator Controller
-SDK,Partial,Disable Station Exit,Stationからの退出を無効化
-SDK,Partial,Player Enter Location,プレイヤーの進入位置
-SDK,Partial,Player Exit Location,プレイヤーの退出位置
-SDK,Partial,API Object,APIオブジェクト
-SDK,Partial,Advanced Options,詳細オプション
-SDK,Partial,Volumetric Radius,ボリューム半径
-SDK,Partial,Enable Spatialization,空間化を有効化
-SDK,Partial,Use AudioSource Volume Curve,AudioSourceの音量カーブを使用
-SDK,Partial,Add Default Parameters,デフォルトパラメーターを追加
-SDK,Partial,Copy from Animator,Animatorからコピー
-SDK,Format,{0}/{1} Synced Bits,{0}/{1} 同期Bit
-SDK,Partial,VRC SDK,VRC SDK
-SDK,Partial,No Animator selected.,Animatorが選択されていません。
-SDK,Partial,No new variables found to add to your parameters.,パラメーターに追加できる新しい変数が見つかりません。
-SDK,Format,Do you want to add these {0} parameters to your list?\n{1},これら{0}個のパラメーターを一覧へ追加しますか？\n{1}
-SDK,Partial,Added parameters from animator.,Animatorからパラメーターを追加しました。
-SDK,Partial,New Control,新しいControl
-SDK,Partial,Your avatar was built successfully!,アバターのビルドに成功しました!
-SDK,Partial,You can find it in the &quot;SDK Test Avatars&quot; section of your avatars list,アバター一覧の「SDK Test Avatars」セクションから確認できます
-SDK,Partial,Something went wrong when setting your avatar as a fallback,アバターをフォールバックに設定する際に問題が発生しました
-SDK,Partial,We recommend taking a look at the console for more details,詳細についてはConsoleを確認することをおすすめします
-SDK,Partial,Check Console for more details,詳細はConsoleを確認してください
-SDK,Partial,Selected Avatar,選択中のアバター
-SDK,Partial,Per-Platform Overrides Active,プラットフォーム別オーバーライド有効
-SDK,Partial,Configure Per-Platform Overrides,プラットフォーム別オーバーライド設定
-SDK,Partial,Your avatar failed to build or upload because of the following reason,次の理由によりアバターのビルドまたはアップロードに失敗しました
-SDK,Partial,Your avatar was uploaded to VRChat!,アバターがVRChatにアップロードされました!
-SDK,Partial,See it on the VRChat Website,VRChatのWebサイトで確認
-SDK,Partial,Click or hold to activate. The button remains active for a minimum 0.2s.\n,クリックまたは長押しで有効化します。ボタンは最低0.2秒間有効になります。\n
-SDK,Format,"While active, the (Parameter) is set to {0}.\n",有効な間、(Parameter)は{0}に設定されます。\n
-SDK,Format,"When inactive, the (Parameter) is reset to {0}.",無効になると、(Parameter)は{0}に戻ります。
-SDK,Partial,Click to toggle on or off.\n,クリックするたびにオン／オフを切り替えます。\n
-SDK,Format,"When turned on, the (Parameter) is set to {0}.\n",オンになると、(Parameter)は{0}に設定されます。\n
-SDK,Format,"When turned off, the (Parameter) is reset to {0}.",オフになると、(Parameter)は{0}に戻ります。
-SDK,Partial,Opens another expression menu.\n,別のExpression Menuを開きます。\n
-SDK,Format,"When opened, the (Parameter) is set to {0}.\n",開くと、(Parameter)は{0}に設定されます。\n
-SDK,Format,"When closed, (Parameter) is reset to {0}.",閉じると、(Parameter)は{0}に戻ります。
-SDK,Partial,Puppet menu that maps the joystick to two parameters (-1 to +1).\n,ジョイスティックを2つのパラメーター（-1～+1）に割り当てるPuppet Menuです。\n
-SDK,Partial,Puppet menu that maps the joystick to four parameters (0 to 1).\n,ジョイスティックを4つのパラメーター（0～1）に割り当てるPuppet Menuです。\n
-SDK,Partial,Puppet menu that sets a value based on joystick rotation. (0 to 1)\n,ジョイスティックの回転に基づいて値（0～1）を設定するPuppet Menuです。\n
-SDK,Partial,This parameter does not exist on the current parameter list.,このパラメーターは現在のパラメーター一覧に存在しません。
-SDK,Partial,[Bool] is not a valid parameter type for this control.,このControlでは[Bool]は有効なパラメーター型ではありません。
-SDK,Partial,"The Value set when this control is activated should be a value other than zero, so it doesn't match the value set when the control is deactivated. Otherwise, the control may not behave correctly.",このControlを有効にしたときに設定するValueは、無効時の値と同じにならないよう0以外にしてください。同じ値の場合、Controlが正しく動作しないことがあります。
-SDK,Partial,Sub Menu,サブメニュー
-SDK,Partial,Up Label,上ラベル
-SDK,Partial,Right Label,右ラベル
-SDK,Partial,Down Label,下ラベル
-SDK,Partial,Left Label,左ラベル
-SDK,Partial,Up Param,上パラメーター
-SDK,Partial,Right Param,右パラメーター
-SDK,Partial,Down Param,下パラメーター
-SDK,Partial,Left Param,左パラメーター
-SDK,Partial,This allows you to override the uploaded avatar object for specific platforms.,特定のプラットフォーム向けに、アップロードするアバターオブジェクトを上書きできます。
-SDK,Partial,Add per-platform override,プラットフォーム別オーバーライドを追加
-SDK,Partial,Not Specified,未指定
-SDK,Partial,Build process has encountered an error,ビルド処理中にエラーが発生しました
-SDK,Partial,Build was blocked by the SDK Callback,SDK Callbackによってビルドがブロックされました
-SDK,Partial,Content has validation errors,コンテンツにValidationエラーがあります
-SDK,Partial,Current User does not own the target content,現在のユーザーは対象コンテンツを所有していません
-SDK,Partial,Content failed to upload,コンテンツのアップロードに失敗しました
-SDK,Partial,This exact bundle was already uploaded,同一のBundleはすでにアップロードされています
-SDK,Partial,0/256 Synced Bits,0/256 同期Bit
-SDK,Partial,"Expression Parameters are values used to control your avatar either through your Expressions Menu, or through tools like OSC.",Expression Parametersは、Expressions MenuやOSCなどのツールからアバターを制御するために使用する値です。
-SDK,Partial,Learn More,詳細を見る
-SDK,Partial,Build Type,ビルドタイプ
-SDK,Partial,You must fix the issues listed above before you can Upload a Build,Buildをアップロードする前に、上記の問題を修正する必要があります
-SDK,Partial,Run Performance Streaming,Performance Streamingを実行
-SDK,Partial,Add notes to streamline the review process,審査を円滑にするためのメモを追加
-SDK,Partial,This avatar is marked for sale &amp; will be reviewed before being available for purchase.,このアバターは販売対象に設定されているため、購入可能になる前に審査されます。
-SDK,Partial,Primary Style,プライマリースタイル
-SDK,Partial,Secondary Style,セカンダリースタイル
-SDK,Partial,Content Warnings,コンテンツ警告
-SDK,Partial,Last Updated,最終更新
-SDK,Partial,Supported Platforms,対応プラットフォーム
-SDK,Partial,Failed to find avatar for Multi Platform Build,マルチプラットフォームビルド用のアバターが見つかりませんでした
-SDK,Partial,Avatar Options,アバターオプション
-SDK,Partial,Show All Avatar Performance Details,アバターのPerformance詳細をすべて表示
-SDK,Partial,Multiple pipelines are present. V3 pipeline will take priority,複数のPipelineが存在します。V3 Pipelineが優先されます
-SDK,Partial,A VRCSceneDescriptor or VRCAvatarDescriptor\nis required to build VRChat SDK Content,VRChat SDK ContentをビルドするにはVRCSceneDescriptorまたはVRCAvatarDescriptorが必要です
-SDK,Partial,Building – Please Wait ...,ビルド中 – お待ちください...
-SDK,Partial,This avatar uses Visemes but the Face Mesh is not specified.,このアバターではVisemeを使用していますが、Face Meshが指定されていません。
-SDK,Partial,"This avatar does not contain an Animator, you need to add an Animator component for the avatar to work",このアバターにはAnimatorがありません。アバターを動作させるにはAnimatorコンポーネントを追加する必要があります
-SDK,Partial,"This avatar does not contain an Animator, and will not animate in VRChat.",このアバターにはAnimatorがないため、VRChat上でアニメーションしません。
-SDK,Partial,This avatar is not imported as a humanoid rig and will not play VRChat's provided animation set.,このアバターはHumanoid Rigとしてインポートされていないため、VRChatが提供するAnimation Setは再生されません。
-SDK,Partial,Your avatar is disabled in the scene hierarchy!,Scene Hierarchyでアバターが無効になっています！
-SDK,Partial,"Your avatar is humanoid, but its feet aren't specified!",アバターはHumanoidですが、足が指定されていません！
-SDK,Partial,Avatar feet are beneath the avatar's origin (the floor). That's probably not what you want.,アバターの足がアバターの原点（床）より下にあります。意図した配置ではない可能性があります。
-SDK,Partial,"Your avatar is humanoid, but its upper arms aren't specified!",アバターはHumanoidですが、上腕が指定されていません！
-SDK,Partial,This avatar is too short. The minimum is 20cm shoulder height.,このアバターは低すぎます。肩の高さは最低20cm必要です。
-SDK,Partial,This avatar is shorter than average.,このアバターは平均より低めです。
-SDK,Partial,This avatar is too tall. The maximum is 5m shoulder height.,このアバターは高すぎます。肩の高さは最大5mです。
-SDK,Partial,This avatar is taller than average.,このアバターは平均より高めです。
-SDK,Format,"Your avatar contains too many VRCHeadChop components. The maximum allowed count is {0}, but this avatar contains a total of {1}. Please remove {2} of them.",アバターのVRCHeadChopコンポーネントが多すぎます。最大{0}個までですが、このアバターには合計{1}個あります。{2}個削除してください。
-SDK,Partial,Your avatar contains one or more VRCHeadChop components. Be sure to read the documentation and make sure you know what you're doing!,アバターに1つ以上のVRCHeadChopコンポーネントがあります。ドキュメントを読み、設定内容を理解したうえで使用してください！
-SDK,Partial,VRCHeadChop Component,VRCHeadChop Component
-SDK,Partial,See Avatar Rig Requirements for more information.,詳細はAvatar Rig Requirementsを参照してください。
-SDK,Partial,There are multiple pipeline manager components on this avatar. There should only be one at the avatar's root. Click Auto Fix to remove all pipeline managers except for the first one found on the avatar root.,このアバターには複数のPipeline Managerコンポーネントがあります。アバターのRootには1つだけ存在する必要があります。Auto Fixをクリックすると、Rootで最初に見つかったもの以外のPipeline Managerを削除します。
-SDK,Partial,Remove Excess Pipeline Managers,余分なPipeline Managerを削除
-SDK,Partial,This avatar has no pipeline manager component. Click Auto Fix to add one.,このアバターにはPipeline Managerコンポーネントがありません。Auto Fixをクリックして追加してください。
-SDK,Partial,"This avatar does not have a humanoid rig, so it can not be used as a custom fallback.",このアバターにはHumanoid Rigがないため、カスタムFallbackとして使用できません。
-SDK,Partial,"This avatar does not have an overall rating of Good or better, so it can not be used as a custom fallback. See the link below for details on Avatar Optimization.",このアバターの総合Performance RatingがGood以上ではないため、カスタムFallbackとして使用できません。Avatar Optimizationの詳細は下のリンクを参照してください。
-SDK,Partial,This avatar can be used as a custom fallback. This avatar must be uploaded for every supported platform to be valid for fallback selection.,このアバターはカスタムFallbackとして使用できます。Fallbackとして選択可能にするには、対応するすべてのプラットフォーム向けにアップロードする必要があります。
-SDK,Partial,"This avatar uses additional animators, they will be disabled when used as a fallback.",このアバターでは追加のAnimatorを使用していますが、Fallbackとして使用される場合は無効になります。
-SDK,Partial,This avatar will be blocked by default due to performance. Your fallback will be shown instead.,このアバターはPerformance上の理由によりデフォルトでブロックされ、代わりにFallbackが表示されます。
-SDK,Partial,Other users may choose to block this avatar due to performance. Your fallback will be shown instead.,他のユーザーがPerformance上の理由でこのアバターをブロックする場合があります。その場合は代わりにFallbackが表示されます。
-SDK,Format,Review Any Alerts ({0}),警告を確認 ({0})
-SDK,Partial,Failed to locate Rebind method for animator. Humanoid avatar root hierarchy cannot be verified!,AnimatorのRebindメソッドが見つかりませんでした。HumanoidアバターのRoot階層を確認できません！
-SDK,Partial,Failed to invoke Rebind method for animator. Humanoid avatar root hierarchy cannot be verified!,AnimatorのRebindメソッドを呼び出せませんでした。HumanoidアバターのRoot階層を確認できません！
-SDK,Partial,This avatar's armature is not a direct child of its root. Click Auto-Fix to re-parent the armature and its siblings to be direct children of the avatar root.,このアバターのArmatureはRootの直接の子ではありません。Auto-Fixをクリックすると、ArmatureとそのSiblingをアバターRootの直接の子へ移動します。
-SDK,Partial,Auto-Fix Animator Root,Animator Rootを自動修正
-SDK,Partial,Gesture Layer needs valid mask on first animator layer,Gesture Layerの最初のAnimator Layerには有効なMaskが必要です
-SDK,Partial,Images used for Actions & Moods are too large.,Actions & Moodsで使用されている画像が大きすぎます。
-SDK,Partial,VRCExpressionsMenu object reference is missing.,VRCExpressionsMenuオブジェクトの参照がありません。
-SDK,Partial,VRCExpressionParameters object reference is missing.,VRCExpressionParametersオブジェクトの参照がありません。
-SDK,Partial,VRCExpressionParameters has too many parameters defined.,VRCExpressionParametersに定義されているパラメーターが多すぎます。
-SDK,Partial,VRCExpressionsMenu uses a parameter that is not defined.\nParameter: ,VRCExpressionsMenuで未定義のパラメーターが使用されています。\nパラメーター: 
-SDK,Partial,VRCExpressionsMenu uses an invalid parameter for a control.\nControl: ,VRCExpressionsMenuのControlで無効なパラメーターが使用されています。\nControl: 
-SDK,Partial,This avatar uses depreciated DynamicBone components. Please use PhysBones instead. Click Auto Fix to automatically convert DynamicBones to PhysBones.,このアバターでは非推奨のDynamicBoneコンポーネントが使用されています。代わりにPhysBoneを使用してください。Auto FixをクリックするとDynamicBoneをPhysBoneへ自動変換します。
+SDK,Exact,Prepare Your Content,コンテンツの準備
+SDK,Partial,Review Any Alerts,警告を確認
+SDK,Exact,Build,ビルド
+
+SDK,Exact,Selected Avatar,選択中アバター
+SDK,Partial,Name,名前
+SDK,Exact,Primary Style,プライマリースタイル
+SDK,Exact,Secondary Style,セカンダリースタイル
+SDK,Exact,Content Warnings,コンテンツ警告
+SDK,Exact,Tags,タグ
+SDK,Exact,Description,説明
+SDK,Exact,Last Updated,最終更新
+SDK,Exact,Version,バージョン
+SDK,Exact,Supported Platforms,対応プラットフォーム
+SDK,Exact,Visibility,公開
+
+SDK,Exact,Select Image,画像選択
+SDK,Exact,Capture In Scene,シーン取込
+
+SDK,Exact,Build & Publish Your Avatar Online,アバターをビルドしてオンライン公開
+SDK,Exact,Build & Test Your Avatar,アバターをビルドしてテスト
+SDK,Exact,Multi-Platform Build & Publish,マルチプラットフォームでビルドして公開
+SDK,Exact,Build & Publish,ビルドして公開
+
+SDK,Exact,Avatar Optimization Tips,アバター最適化のヒント
+SDK,Exact,Unknown performance display level.,不明なPerformance表示レベルです。
+
+SDK,Exact,Show All Avatar Performance Details,アバターのPerformance詳細をすべて表示
+SDK,Exact,Multiple pipelines are present. V3 pipeline will take priority,複数のPipelineが存在します。V3 Pipelineが優先されます
+SDK,Exact,A VRCSceneDescriptor or VRCAvatarDescriptor\nis required to build VRChat SDK Content,VRChat SDK ContentをビルドするにはVRCSceneDescriptorまたはVRCAvatarDescriptorが必要です
+SDK,Exact,Building – Please Wait ...,ビルド中 – お待ちください...
+SDK,Exact,This avatar uses Visemes but the Face Mesh is not specified.,このアバターではVisemeを使用していますが、Face Meshが指定されていません。
+SDK,Exact,"This avatar does not contain an Animator, you need to add an Animator component for the avatar to work",このアバターにはAnimatorがありません。アバターを動作させるにはAnimatorコンポーネントを追加する必要があります
+SDK,Exact,"This avatar does not contain an Animator, and will not animate in VRChat.",このアバターにはAnimatorがないため、VRChat上でアニメーションしません。
+SDK,Exact,This avatar is not imported as a humanoid rig and will not play VRChat's provided animation set.,このアバターはHumanoid Rigとしてインポートされていないため、VRChatが提供するAnimation Setは再生されません。
+SDK,Exact,Your avatar is disabled in the scene hierarchy!,Scene Hierarchyでアバターが無効になっています！
+SDK,Exact,"Your avatar is humanoid, but its feet aren't specified!",アバターはHumanoidですが、足が指定されていません！
+SDK,Exact,Avatar feet are beneath the avatar's origin (the floor). That's probably not what you want.,アバターの足がアバターの原点（床）より下にあります。意図した配置ではない可能性があります。
+SDK,Exact,"Your avatar is humanoid, but its upper arms aren't specified!",アバターはHumanoidですが、上腕が指定されていません！
+SDK,Exact,This avatar is too short. The minimum is 20cm shoulder height.,このアバターは低すぎます。肩の高さは最低20cm必要です。
+SDK,Exact,This avatar is shorter than average.,このアバターは平均より低めです。
+SDK,Exact,This avatar is too tall. The maximum is 5m shoulder height.,このアバターは高すぎます。肩の高さは最大5mです。
+SDK,Exact,This avatar is taller than average.,このアバターは平均より高めです。
+SDK,Exact,"Your avatar contains too many VRCHeadChop components. The maximum allowed count is {0}, but this avatar contains a total of {1}. Please remove {2} of them.",アバターのVRCHeadChopコンポーネントが多すぎます。最大{0}個までですが、このアバターには合計{1}個あります。{2}個削除してください。
+SDK,Exact,Your avatar contains one or more VRCHeadChop components. Be sure to read the documentation and make sure you know what you're doing!,アバターに1つ以上のVRCHeadChopコンポーネントがあります。ドキュメントを読み、設定内容を理解したうえで使用してください！
+SDK,Exact,VRCHeadChop Component,VRCHeadChop Component
+SDK,Exact,See Avatar Rig Requirements for more information.,詳細はAvatar Rig Requirementsを参照してください。
+SDK,Exact,There are multiple pipeline manager components on this avatar. There should only be one at the avatar's root. Click Auto Fix to remove all pipeline managers except for the first one found on the avatar root.,このアバターには複数のPipeline Managerコンポーネントがあります。アバターのRootには1つだけ存在する必要があります。Auto Fixをクリックすると、Rootで最初に見つかったもの以外のPipeline Managerを削除します。
+SDK,Exact,Remove Excess Pipeline Managers,余分なPipeline Managerを削除
+SDK,Exact,This avatar has no pipeline manager component. Click Auto Fix to add one.,このアバターにはPipeline Managerコンポーネントがありません。Auto Fixをクリックして追加してください。
+SDK,Exact,"This avatar does not have a humanoid rig, so it can not be used as a custom fallback.",このアバターにはHumanoid Rigがないため、カスタムFallbackとして使用できません。
+SDK,Exact,"This avatar does not have an overall rating of Good or better, so it can not be used as a custom fallback. See the link below for details on Avatar Optimization.",このアバターの総合Performance RatingがGood以上ではないため、カスタムFallbackとして使用できません。Avatar Optimizationの詳細は下のリンクを参照してください。
+SDK,Exact,This avatar can be used as a custom fallback. This avatar must be uploaded for every supported platform to be valid for fallback selection.,このアバターはカスタムFallbackとして使用できます。Fallbackとして選択可能にするには、対応するすべてのプラットフォーム向けにアップロードする必要があります。
+SDK,Exact,"This avatar uses additional animators, they will be disabled when used as a fallback.",このアバターでは追加のAnimatorを使用していますが、Fallbackとして使用される場合は無効になります。
+SDK,Exact,This avatar will be blocked by default due to performance. Your fallback will be shown instead.,このアバターはPerformance上の理由によりデフォルトでブロックされ、代わりにFallbackが表示されます。
+SDK,Exact,Other users may choose to block this avatar due to performance. Your fallback will be shown instead.,他のユーザーがPerformance上の理由でこのアバターをブロックする場合があります。その場合は代わりにFallbackが表示されます。
+SDK,Exact,Failed to locate Rebind method for animator. Humanoid avatar root hierarchy cannot be verified!,AnimatorのRebindメソッドが見つかりませんでした。HumanoidアバターのRoot階層を確認できません！
+SDK,Exact,Failed to invoke Rebind method for animator. Humanoid avatar root hierarchy cannot be verified!,AnimatorのRebindメソッドを呼び出せませんでした。HumanoidアバターのRoot階層を確認できません！
+SDK,Exact,This avatar's armature is not a direct child of its root. Click Auto-Fix to re-parent the armature and its siblings to be direct children of the avatar root.,このアバターのArmatureはRootの直接の子ではありません。Auto-Fixをクリックすると、ArmatureとそのSiblingをアバターRootの直接の子へ移動します。
+SDK,Exact,Auto-Fix Animator Root,Animator Rootを自動修正
+SDK,Exact,Gesture Layer needs valid mask on first animator layer,Gesture Layerの最初のAnimator Layerには有効なMaskが必要です
+SDK,Exact,Images used for Actions & Moods are too large.,Actions & Moodsで使用されている画像が大きすぎます。
+SDK,Exact,VRCExpressionsMenu object reference is missing.,VRCExpressionsMenuオブジェクトの参照がありません。
+SDK,Exact,VRCExpressionParameters object reference is missing.,VRCExpressionParametersオブジェクトの参照がありません。
+SDK,Exact,VRCExpressionParameters has too many parameters defined.,VRCExpressionParametersに定義されているパラメーターが多すぎます。
+SDK,Exact,VRCExpressionsMenu uses a parameter that is not defined.\nParameter: ,VRCExpressionsMenuで未定義のパラメーターが使用されています。\nパラメーター: 
+SDK,Exact,VRCExpressionsMenu uses an invalid parameter for a control.\nControl: ,VRCExpressionsMenuのControlで無効なパラメーターが使用されています。\nControl: 
+SDK,Exact,This avatar uses depreciated DynamicBone components. Please use PhysBones instead. Click Auto Fix to automatically convert DynamicBones to PhysBones.,このアバターでは非推奨のDynamicBoneコンポーネントが使用されています。代わりにPhysBoneを使用してください。Auto FixをクリックするとDynamicBoneをPhysBoneへ自動変換します。
 SDK,Format,"This avatar contains a total of {0} global PhysBone colliders, but the maximum number allowed per avatar is {1}. ",このアバターにはGlobal PhysBone Colliderが合計{0}個ありますが、アバターごとの最大数は{1}個です。 
-SDK,Partial,Reduce the global collider count by switching Global Collision to False.,Global CollisionをFalseに変更して、Global Colliderの数を減らしてください。
-SDK,Partial,This avatar uses Unity constraints. Consider using VRChat constraints instead. ,このアバターではUnity Constraintを使用しています。代わりにVRChat Constraintの使用を検討してください。 
-SDK,Partial,Click Auto Fix to attempt to replace all constraints and rebind avatar animations automatically.,Auto Fixをクリックすると、すべてのConstraintを置き換え、アバターのAnimationを自動的にRebindします。
-SDK,Partial,Unity constraints are not allowed on this platform. Consider using VRChat constraints instead. ,このプラットフォームではUnity Constraintを使用できません。代わりにVRChat Constraintの使用を検討してください。 
-SDK,Partial,The following component types are found on the Avatar and will be removed by the client: ,アバターに次の種類のコンポーネントが見つかりました。これらはクライアントによって削除されます: 
-SDK,Partial,"Audio sources found on Avatar, they will be adjusted to safe limits, if necessary.",アバター上にAudio Sourceが見つかりました。必要に応じて安全な範囲に調整されます。
-SDK,Partial,Found an audio clip with load type `Decompress On Load` which doesn't have `Load In Background` enabled.\nPlease enable `Load In Background` on the audio clip.,Load Typeが`Decompress On Load`で、`Load In Background`が有効になっていないAudio Clipが見つかりました。\nAudio Clipの`Load In Background`を有効にしてください。
-SDK,Partial,Found one or several audio clips used in state behaviours with load type `Decompress On Load` which doesn't have `Load In Background` enabled. Please enable `Load In Background` on these audio clips.,State Behaviourで使用されているAudio Clipのうち、Load Typeが`Decompress On Load`で`Load In Background`が有効になっていないものが見つかりました。これらのAudio Clipで`Load In Background`を有効にしてください。
-SDK,Partial,"Stations found on Avatar, they will be adjusted to safe limits, if necessary.",アバター上にStationが見つかりました。必要に応じて安全な範囲に調整されます。
-SDK,Partial,"This avatar has one or more Substance materials, which is not supported and may break in-game. Please bake your Substances to regular materials.",このアバターには1つ以上のSubstance Materialがあります。これはサポートされておらず、ゲーム内で正常に動作しない可能性があります。Substanceを通常のMaterialへBakeしてください。
-SDK,Partial,This avatar contains one or more particle systems configured to destroy themselves when they stop. This is not allowed. Please use a different stop action.,このアバターには、停止時に自身を破棄するよう設定されたParticle Systemがあります。この設定は使用できません。別のStop Actionを使用してください。
-SDK,Partial,This avatar contains a particle system on the avatar root configured to disable itself when it stops. This is not allowed. Please use a different stop action.,アバターRoot上に、停止時に自身を無効化するよう設定されたParticle Systemがあります。この設定は使用できません。別のStop Actionを使用してください。
-SDK,Partial,This avatar contains one or more trail renderers configured to auto-destruct when the trail ends. This is not allowed. Please disable auto-destruction.,このアバターには、Trail終了時に自動破棄するよう設定されたTrail Rendererがあります。この設定は使用できません。Auto Destructを無効にしてください。
-SDK,Partial,"This avatar contains one or more particle systems configured to apply collision forces to Pickups and/or Items. This is not allowed. Please either disable collision against these layers, or set the collider force to zero.",このアバターには、PickupやItemへCollision Forceを加えるよう設定されたParticle Systemがあります。この設定は使用できません。これらのLayerとのCollisionを無効にするか、Collider Forceを0にしてください。
-SDK,Partial,Particle Collision,Particle Collision
-SDK,Partial,How would you like to resolve collision problems for the affected particle systems?,対象のParticle SystemのCollision問題をどの方法で解決しますか？
-SDK,Partial,Disable collision against protected layers,保護されたLayerとのCollisionを無効化
-SDK,Partial,Set collider force to zero,Collider Forceを0に設定
-SDK,Partial,"This avatar contains one or more particle systems configured to emit dynamic lights. These lights will be included in the overall Light count for this avatar, which may impact its performance rank. Click Auto Fix to clear lights from these particle systems.",このアバターにはDynamic Lightを放出するよう設定されたParticle Systemがあります。これらのLightはアバター全体のLight数に含まれ、Performance Rankに影響する可能性があります。Auto FixをクリックするとParticle SystemからLightを削除します。
+SDK,Exact,Reduce the global collider count by switching Global Collision to False.,Global CollisionをFalseに変更して、Global Colliderの数を減らしてください。
+SDK,Exact,This avatar uses Unity constraints. Consider using VRChat constraints instead. ,このアバターではUnity Constraintを使用しています。代わりにVRChat Constraintの使用を検討してください。 
+SDK,Exact,Click Auto Fix to attempt to replace all constraints and rebind avatar animations automatically.,Auto Fixをクリックすると、すべてのConstraintを置き換え、アバターのAnimationを自動的にRebindします。
+SDK,Exact,Unity constraints are not allowed on this platform. Consider using VRChat constraints instead. ,このプラットフォームではUnity Constraintを使用できません。代わりにVRChat Constraintの使用を検討してください。 
+SDK,Exact,The following component types are found on the Avatar and will be removed by the client: ,アバターに次の種類のコンポーネントが見つかりました。これらはクライアントによって削除されます: 
+SDK,Exact,"Audio sources found on Avatar, they will be adjusted to safe limits, if necessary.",アバター上にAudio Sourceが見つかりました。必要に応じて安全な範囲に調整されます。
+SDK,Exact,Found an audio clip with load type `Decompress On Load` which doesn't have `Load In Background` enabled.\nPlease enable `Load In Background` on the audio clip.,Load Typeが`Decompress On Load`で、`Load In Background`が有効になっていないAudio Clipが見つかりました。\nAudio Clipの`Load In Background`を有効にしてください。
+SDK,Exact,Found one or several audio clips used in state behaviours with load type `Decompress On Load` which doesn't have `Load In Background` enabled. Please enable `Load In Background` on these audio clips.,State Behaviourで使用されているAudio Clipのうち、Load Typeが`Decompress On Load`で`Load In Background`が有効になっていないものが見つかりました。これらのAudio Clipで`Load In Background`を有効にしてください。
+SDK,Exact,"Stations found on Avatar, they will be adjusted to safe limits, if necessary.",アバター上にStationが見つかりました。必要に応じて安全な範囲に調整されます。
+SDK,Exact,"This avatar has one or more Substance materials, which is not supported and may break in-game. Please bake your Substances to regular materials.",このアバターには1つ以上のSubstance Materialがあります。これはサポートされておらず、ゲーム内で正常に動作しない可能性があります。Substanceを通常のMaterialへBakeしてください。
+SDK,Exact,This avatar contains one or more particle systems configured to destroy themselves when they stop. This is not allowed. Please use a different stop action.,このアバターには、停止時に自身を破棄するよう設定されたParticle Systemがあります。この設定は使用できません。別のStop Actionを使用してください。
+SDK,Exact,This avatar contains a particle system on the avatar root configured to disable itself when it stops. This is not allowed. Please use a different stop action.,アバターRoot上に、停止時に自身を無効化するよう設定されたParticle Systemがあります。この設定は使用できません。別のStop Actionを使用してください。
+SDK,Exact,This avatar contains one or more trail renderers configured to auto-destruct when the trail ends. This is not allowed. Please disable auto-destruction.,このアバターには、Trail終了時に自動破棄するよう設定されたTrail Rendererがあります。この設定は使用できません。Auto Destructを無効にしてください。
+SDK,Exact,"This avatar contains one or more particle systems configured to apply collision forces to Pickups and/or Items. This is not allowed. Please either disable collision against these layers, or set the collider force to zero.",このアバターには、PickupやItemへCollision Forceを加えるよう設定されたParticle Systemがあります。この設定は使用できません。これらのLayerとのCollisionを無効にするか、Collider Forceを0にしてください。
+SDK,Exact,Particle Collision,Particle Collision
+SDK,Exact,How would you like to resolve collision problems for the affected particle systems?,対象のParticle SystemのCollision問題をどの方法で解決しますか？
+SDK,Exact,Disable collision against protected layers,保護されたLayerとのCollisionを無効化
+SDK,Exact,Set collider force to zero,Collider Forceを0に設定
+SDK,Exact,"This avatar contains one or more particle systems configured to emit dynamic lights. These lights will be included in the overall Light count for this avatar, which may impact its performance rank. Click Auto Fix to clear lights from these particle systems.",このアバターにはDynamic Lightを放出するよう設定されたParticle Systemがあります。これらのLightはアバター全体のLight数に含まれ、Performance Rankに影響する可能性があります。Auto FixをクリックするとParticle SystemからLightを削除します。
 SDK,Format,Avatar uses unsupported shader '{0}'. You can only use the shaders provided in 'VRChat/Mobile' for Quest avatars.,アバターでサポートされていないShader「{0}」が使用されています。Quest向けアバターでは「VRChat/Mobile」で提供されているShaderのみ使用できます。
-SDK,Partial,"This avatar uses a mixture of Write Defaults in its animator states. To avoid animation issues, VRChat recommends using the same Write Defaults setting across all animator states.",このアバターのAnimator StateではWrite Defaultsの設定が混在しています。Animationの問題を避けるため、VRChatではすべてのAnimator Stateで同じWrite Defaults設定を使用することを推奨しています。
-SDK,Partial,Write Defaults Guidelines,Write Defaultsのガイドライン
-SDK,Partial,"This avatar contains one or more animator states with Write Defaults disabled where the animation clip is either missing or empty. To avoid animation issues, assign animation clips containing at least one property.",このアバターには、Write Defaultsが無効でAnimation Clipが未設定または空のAnimator Stateがあります。Animationの問題を避けるため、少なくとも1つのPropertyを含むAnimation Clipを割り当ててください。
+SDK,Exact,"This avatar uses a mixture of Write Defaults in its animator states. To avoid animation issues, VRChat recommends using the same Write Defaults setting across all animator states.",このアバターのAnimator StateではWrite Defaultsの設定が混在しています。Animationの問題を避けるため、VRChatではすべてのAnimator Stateで同じWrite Defaults設定を使用することを推奨しています。
+SDK,Exact,Write Defaults Guidelines,Write Defaultsのガイドライン
+SDK,Exact,"This avatar contains one or more animator states with Write Defaults disabled where the animation clip is either missing or empty. To avoid animation issues, assign animation clips containing at least one property.",このアバターには、Write Defaultsが無効でAnimation Clipが未設定または空のAnimator Stateがあります。Animationの問題を避けるため、少なくとも1つのPropertyを含むAnimation Clipを割り当ててください。
 SDK,Format,This avatar contains VRCPhysBone or VRCPhysBoneCollider components which exceed the maximum dependency depth of {0}.  Remove or move these components to change their dependencies.  See console for more information.,このアバターには最大依存深度{0}を超えるVRCPhysBoneまたはVRCPhysBoneColliderコンポーネントがあります。コンポーネントを削除または移動して依存関係を変更してください。詳細はConsoleを確認してください。
-SDK,Partial,This avatar contains VRCPhysBone or VRCPhysBoneCollider components which have cyclic dependencies.  As a result some components will run out of order.  Remove or move these components to change their dependencies.  See console for more information.,このアバターには循環依存しているVRCPhysBoneまたはVRCPhysBoneColliderコンポーネントがあります。そのため、一部のコンポーネントが順序どおりに実行されません。コンポーネントを削除または移動して依存関係を変更してください。詳細はConsoleを確認してください。
-SDK,Partial,Avatar Optimization Tips,アバター最適化のヒント
-SDK,Partial,Unknown performance display level.,不明なPerformance表示レベルです。
-SDK,Partial,You must accept the terms below to upload content to VRChat,VRChatへコンテンツをアップロードするには、以下の規約に同意する必要があります
-SDK,Partial,A VRCAvatarDescriptor is required to build a VRChat Avatar,VRChat AvatarをビルドするにはVRCAvatarDescriptorが必要です
-SDK,Partial,Add a VRCAvatarDescriptor,VRCAvatarDescriptorを追加
-SDK,Partial,Adds a VRCAvatarDescriptor to the selected GameObject,選択したGameObjectにVRCAvatarDescriptorを追加します
-SDK,Partial,"A VRCAvatarDescriptor is required to build a VRChat Avatar"" + (hasSelection ? """" : "".\nSelect a GameObject to add a VRCAvatarDescriptor to it.","【要確認・元ソース参照】A VRCAvatarDescriptor is required to build a VRChat Avatar"" + (hasSelection ? """" : "".\nSelect a GameObject to add a VRCAvatarDescriptor to it."
-SDK,Partial,This avatar cannot be used as a fallback. Check Validations below for more info,このアバターはFallbackとして使用できません。詳細は下のValidationを確認してください
-SDK,Partial,This avatar can be used as a fallback. Check Validations below for more info.,このアバターはFallbackとして使用できます。詳細は下のValidationを確認してください。
-SDK,Partial,This avatar can be used as a fallback. Switch to the Android platform to select it.,このアバターはFallbackとして使用できます。選択するにはAndroidプラットフォームへ切り替えてください。
-SDK,Partial,Failed to set fallback,フォールバックの設定に失敗しました
-SDK,Partial,Set this avatar as fallback,このアバターをフォールバックに設定
-SDK,Partial,This avatar is currently set as your fallback,このアバターは現在フォールバックに設定されています
-SDK,Partial,"No PipelineManager found on the avatar, make sure you added an Avatar Descriptor",アバターにPipelineManagerが見つかりません。Avatar Descriptorが追加されていることを確認してください
-SDK,Partial,"Loaded data for an avatar we do not own, clearing blueprint ID",所有していないアバターのデータを読み込んだため、Blueprint IDをクリアします
-SDK,Partial,Clear Unowned Blueprint ID,所有していないBlueprint IDをクリア
-SDK,Partial,Name cannot be empty,名前を空にすることはできません
-SDK,Partial,Saving Avatar Changes...,アバターの変更を保存中...
-SDK,Partial,Updating avatar,アバターを更新中
-SDK,Partial,Updated avatar,アバターを更新しました
-SDK,Partial,Build & Publish Your Avatar Online,アバターをビルドしてオンライン公開
-SDK,Partial,Build & Test Your Avatar,アバターをビルドしてテスト
-SDK,Format,Unknown SDK Build Action {0},不明なSDK Build Actionです: {0}
-SDK,Partial,You need to select at least one platform,少なくとも1つのプラットフォームを選択する必要があります
-SDK,Partial,Multi-Platform Build & Publish,マルチプラットフォームでビルドして公開
-SDK,Partial,Build & Publish,ビルドして公開
-SDK,Partial,This avatar is linked to a product,このアバターは商品にリンクされています
-SDK,Partial,"Since this avatar has been marked for sale, it will be <b>reviewed</b> by our moderators before becoming available for purchase inside VRChat.",このアバターは販売対象に設定されているため、VRChat内で購入可能になる前にモデレーターによる<b>審査</b>が行われます。
-SDK,Partial,Upload Succeeded!,アップロード成功!
-SDK,Partial,We’ll notify you via email as soon as your avatar has been reviewed.,アバターの審査が完了すると、メールで通知されます。
-SDK,Format,Failed to send AVM notes: {0},AVM Noteの送信に失敗しました: {0}
-SDK,Partial,Build & Test,ビルドしてテスト
-SDK,Partial,Build Target Switcher,ビルドターゲット切り替え
-SDK,Format,Are you sure you want to switch your build target to {0}? This could take a while.,Build Targetを{0}へ切り替えますか？この処理には時間がかかる場合があります。
-SDK,Format,Failed to switch to {0} target platform,{0} Target Platformへの切り替えに失敗しました
-SDK,Format,Check if the Platform Support for {0} is installed in the Unity Hub,Unity Hubに{0}のPlatform Supportがインストールされているか確認してください
-SDK,Partial,Unity Console might have more information,Unity Consoleに詳細情報がある可能性があります
-SDK,Partial,Show Console,Consoleを表示
-SDK,Format,Unable to identify selected build action {0},選択されたBuild Action {0}を識別できません
-SDK,Partial,Building & testing on this platform is not supported,このプラットフォームではビルドとテストはサポートされていません
-SDK,Partial,Please set a name and thumbnail before uploading,アップロード前に名前とサムネイルを設定してください
-SDK,Partial,Timed out waiting for user to log in,ユーザーのログイン待機中にタイムアウトしました
-SDK,Partial,Multi-Platform Upload Finished,マルチプラットフォームのアップロードが完了しました
-SDK,Partial,Set BlueprintId,BlueprintIdを設定
-SDK,Partial,Build was blocked by the SDK callback,SDK callbackによってビルドがブロックされました
-SDK,Partial,Open the SDK panel to build and upload avatars,アバターをビルド・アップロードするにはSDK Panelを開いてください
-SDK,Partial,This avatar does not have a PipelineManager,このアバターにはPipelineManagerがありません
-SDK,Format,Avatar testing is not supported on platform '{0}',プラットフォーム「{0}」ではアバターのテストはサポートされていません
-SDK,Partial,Unexpected Error Occurred,予期しないエラーが発生しました
-SDK,Partial,Encountered the following validation issues during build:,ビルド中に次のValidation問題が発生しました:
-SDK,Partial,Avatar build finished,アバターのビルドが完了しました
-SDK,Partial,"Failed to find the built avatar bundle, the build likely failed",ビルド済みのアバターBundleが見つかりません。ビルドに失敗した可能性があります
+SDK,Exact,This avatar contains VRCPhysBone or VRCPhysBoneCollider components which have cyclic dependencies.  As a result some components will run out of order.  Remove or move these components to change their dependencies.  See console for more information.,このアバターには循環依存しているVRCPhysBoneまたはVRCPhysBoneColliderコンポーネントがあります。そのため、一部のコンポーネントが順序どおりに実行されません。コンポーネントを削除または移動して依存関係を変更してください。詳細はConsoleを確認してください。
+SDK,Exact,Avatar Optimization Tips,アバター最適化のヒント
+SDK,Exact,Unknown performance display level.,不明なPerformance表示レベルです。
+SDK,Exact,You must accept the terms below to upload content to VRChat,VRChatへコンテンツをアップロードするには、以下の規約に同意する必要があります
+SDK,Exact,A VRCAvatarDescriptor is required to build a VRChat Avatar,VRChat AvatarをビルドするにはVRCAvatarDescriptorが必要です
+SDK,Exact,Add a VRCAvatarDescriptor,VRCAvatarDescriptorを追加
+SDK,Exact,Adds a VRCAvatarDescriptor to the selected GameObject,選択したGameObjectにVRCAvatarDescriptorを追加します
+SDK,Exact,This avatar cannot be used as a fallback. Check Validations below for more info,このアバターはFallbackとして使用できません。詳細は下のValidationを確認してください
+SDK,Exact,This avatar can be used as a fallback. Check Validations below for more info.,このアバターはFallbackとして使用できます。詳細は下のValidationを確認してください。
+SDK,Exact,This avatar can be used as a fallback. Switch to the Android platform to select it.,このアバターはFallbackとして使用できます。選択するにはAndroidプラットフォームへ切り替えてください。
+SDK,Exact,Failed to set fallback,フォールバックの設定に失敗しました
+SDK,Exact,Set this avatar as fallback,このアバターをフォールバックに設定
+SDK,Exact,This avatar is currently set as your fallback,このアバターは現在フォールバックに設定されています
+SDK,Exact,"Failed to find the built avatar bundle, the build likely failed",ビルド済みのアバターBundleが見つかりません。ビルドに失敗した可能性があります
 SDK,Format,Avatar download size is too large for the target platform. {0} > {1},アバターのDownload Sizeが対象プラットフォームの上限を超えています。{0} > {1}
 SDK,Format,Avatar uncompressed size is too large for the target platform. {0} > {1},アバターのUncompressed Sizeが対象プラットフォームの上限を超えています。{0} > {1}
-SDK,Partial,"Target avatar does not have a PipelineManager, make sure a PipelineManager component is present before uploading",対象のアバターにPipelineManagerがありません。アップロード前にPipelineManagerコンポーネントが存在することを確認してください
-SDK,Partial,Avatar info does not contain an ID. Make sure to acquire an ID from the API before uploading,アバター情報にIDがありません。アップロード前にAPIからIDを取得してください
-SDK,Partial,"Avatar's current ID belongs to a different user, assign a different ID",現在のアバターIDは別のユーザーのものです。別のIDを割り当ててください
-SDK,Format,Failed to load avatar data: {0},アバターデータの読み込みに失敗しました: {0}
-SDK,Partial,Thumbnail image is required for avatar creation,アバターの作成にはサムネイル画像が必要です
-SDK,Partial,Target avatar does not have a blueprint id assigned. Make sure an id is created and assigned before uploading,対象のアバターにBlueprint IDが割り当てられていません。アップロード前にIDを作成して割り当ててください
-SDK,Partial,Target avatar's assigned ID doesn't match the API id. Make sure the PipelineManager component has the correct ID assigned before uploading,対象アバターに割り当てられたIDがAPIのIDと一致しません。アップロード前にPipelineManagerコンポーネントへ正しいIDが割り当てられていることを確認してください
-SDK,Partial,Uploading an avatar for a pending avatar record,保留中のアバターレコードへアバターをアップロード中
-SDK,Partial,Updating avatar info due to local changes,ローカルの変更によりアバター情報を更新中
-SDK,Partial,Updating avatar thumbnail,アバターのサムネイルを更新中
-SDK,Partial,Updating avatar bundle,アバターのBundleを更新中
-SDK,Partial,Failed to send VPM manifest data to analytics,VPM ManifestデータをAnalyticsへ送信できませんでした
-SDK,Partial,Request cancelled,リクエストがキャンセルされました
-SDK,Partial,Request Cancelled,リクエストがキャンセルされました
-SDK,Partial,Avatar upload finished,アバターのアップロードが完了しました
-SDK,Partial,Current User does not have permissions to build and upload avatars,現在のユーザーにはアバターをビルド・アップロードする権限がありません
-SDK,Partial,Building Avatar,アバターをビルド中
-SDK,Partial,Failed to build avatar!,アバターのビルドに失敗しました!
-SDK,Partial,Build Failed,ビルド失敗
-SDK,Format,{0} bundle failed to build,{0} Bundleのビルドに失敗しました
-SDK,Partial,Avatar Built,アバターのビルド完了
-SDK,Partial,Avatar Upload,アバターのアップロード
-SDK,Partial,Uploading Avatar to VRChat,VRChatへアバターをアップロード中
-SDK,Partial,Failed to upload avatar!,アバターのアップロードに失敗しました!
-SDK,Partial,Upload Failed,アップロード失敗
-SDK,Partial,Failed to update avatar info!,アバター情報の更新に失敗しました!
-SDK,Partial,Update Failed,更新失敗
-SDK,Partial,Content Guidelines Check,コンテンツガイドライン確認
-SDK,Format,{0} bundle failed to upload,{0} Bundleのアップロードに失敗しました
-SDK,Partial,Build Succeeded!,ビルド成功!
-SDK,Partial,Clearing id after a failed build,ビルド失敗後にIDをクリア中
-SDK,Partial,Failed to reserve an avatar ID,アバターIDの予約に失敗しました
-SDK,Partial,Assigning a new ID,新しいIDを割り当て中
-SDK,Partial,"Avatar ID is empty, while blueprint ID is not, this is not supported, please make sure that avatar.ID is populated",Blueprint IDが設定されている一方でAvatar IDが空です。この状態はサポートされていません。avatar.IDが設定されていることを確認してください
-SDK,Partial,Avatar upload canceled,アバターのアップロードがキャンセルされました
-SDK,Partial,"Custom cancellation token passed, you should cancel via its token source instead",カスタムCancellation Tokenが渡されています。代わりにそのToken Sourceからキャンセルしてください
-SDK,Partial,Avatar validation failed,アバターのValidationに失敗しました
-SDK,Partial,This avatar has mipmapped textures without 'Streaming Mip Maps' enabled.,このアバターには「Streaming Mip Maps」が有効になっていないMipMap付きTextureがあります。
-SDK,Partial,Set Mip Map Streaming,Mip Map Streamingを設定
+SDK,Exact,"Target avatar does not have a PipelineManager, make sure a PipelineManager component is present before uploading",対象のアバターにPipelineManagerがありません。アップロード前にPipelineManagerコンポーネントが存在することを確認してください
+SDK,Exact,Avatar info does not contain an ID. Make sure to acquire an ID from the API before uploading,アバター情報にIDがありません。アップロード前にAPIからIDを取得してください
+SDK,Exact,"Avatar's current ID belongs to a different user, assign a different ID",現在のアバターIDは別のユーザーのものです。別のIDを割り当ててください
+SDK,Exact,Thumbnail image is required for avatar creation,アバターの作成にはサムネイル画像が必要です
+SDK,Exact,Target avatar does not have a blueprint id assigned. Make sure an id is created and assigned before uploading,対象のアバターにBlueprint IDが割り当てられていません。アップロード前にIDを作成して割り当ててください
+SDK,Exact,Target avatar's assigned ID doesn't match the API id. Make sure the PipelineManager component has the correct ID assigned before uploading,対象アバターに割り当てられたIDがAPIのIDと一致しません。アップロード前にPipelineManagerコンポーネントへ正しいIDが割り当てられていることを確認してください
+SDK,Exact,This avatar has mipmapped textures without 'Streaming Mip Maps' enabled.,このアバターには「Streaming Mip Maps」が有効になっていないMipMap付きTextureがあります。
+SDK,Exact,Failed to reserve an avatar ID,アバターIDの予約に失敗しました
+SDK,Exact,Assigning a new ID,新しいIDを割り当て中
+SDK,Exact,"Avatar ID is empty, while blueprint ID is not, this is not supported, please make sure that avatar.ID is populated",Blueprint IDが設定されている一方でAvatar IDが空です。この状態はサポートされていません。avatar.IDが設定されていることを確認してください
+SDK,Exact,Avatar upload canceled,アバターのアップロードがキャンセルされました
+SDK,Exact,"Custom cancellation token passed, you should cancel via its token source instead",カスタムCancellation Tokenが渡されています。代わりにそのToken Sourceからキャンセルしてください
+SDK,Exact,Avatar validation failed,アバターのValidationに失敗しました
+SDK,Exact,This avatar has mipmapped textures without 'Streaming Mip Maps' enabled.,このアバターには「Streaming Mip Maps」が有効になっていないMipMap付きTextureがあります。
+SDK,Exact,Set Mip Map Streaming,Mip Map Streamingを設定
 SDK,Format,This avatar has textures bigger than {0}. Please reduce them to save memory for users.,このアバターには{0}を超えるTextureがあります。ユーザーのメモリ使用量を抑えるため、サイズを小さくしてください。
 SDK,Format,Set Max Texture Size to {0},Max Texture Sizeを{0}に設定
 SDK,Format,"This avatar uses textures with 'Box' mipmap filtering, which blurs distant textures. Switch to 'Kaiser' for improved sharpness{0}.",このアバターでは「Box」MipMap Filteringが使用されているため、遠距離のTextureがぼやけます。より鮮明にするには「Kaiser」へ切り替えてください{0}。
-SDK,Partial,Set texture filtering to 'Kaiser',Texture Filteringを「Kaiser」に設定
-SDK,Partial,"Humanoid avatar must have head, hands and feet bones mapped.",HumanoidアバターではHead、Hand、FootのBoneをマッピングする必要があります。
-SDK,Partial,"Spine hierarchy missing elements, please map: ",Spine階層に不足している要素があります。マッピングしてください: 
-SDK,Partial,Spine hierarchy incorrect. Make sure that the parent of both Shoulders and the Neck is the Chest (or UpperChest if set).,Spine階層が正しくありません。両ShoulderとNeckの親がChest（設定されている場合はUpperChest）になっていることを確認してください。
-SDK,Partial,LowerArm is not first child of UpperArm or Hand is not first child of LowerArm: you may have problems with Forearm rotations.,LowerArmがUpperArmの最初の子ではない、またはHandがLowerArmの最初の子ではありません。Forearmの回転で問題が発生する可能性があります。
-SDK,Partial,LowerLeg is not first child of UpperLeg or Foot is not first child of LowerLeg: you may have problems with Shin rotations.,LowerLegがUpperLegの最初の子ではない、またはFootがLowerLegの最初の子ではありません。Shinの回転で問題が発生する可能性があります。
-SDK,Partial,This avatar has a split hierarchy (Hips bone is not the ancestor of all humanoid bones). IK may not work correctly.,このアバターはHierarchyが分断されています（Hips BoneがすべてのHumanoid Boneの祖先になっていません）。IKが正しく動作しない可能性があります。
+SDK,Exact,Set texture filtering to 'Kaiser',Texture Filteringを「Kaiser」に設定
+SDK,Exact,"Humanoid avatar must have head, hands and feet bones mapped.",HumanoidアバターではHead、Hand、FootのBoneをマッピングする必要があります。
+SDK,Exact,"Spine hierarchy missing elements, please map: ",Spine階層に不足している要素があります。マッピングしてください: 
+SDK,Exact,Spine hierarchy incorrect. Make sure that the parent of both Shoulders and the Neck is the Chest (or UpperChest if set).,Spine階層が正しくありません。両ShoulderとNeckの親がChest（設定されている場合はUpperChest）になっていることを確認してください。
+SDK,Exact,LowerArm is not first child of UpperArm or Hand is not first child of LowerArm: you may have problems with Forearm rotations.,LowerArmがUpperArmの最初の子ではない、またはHandがLowerArmの最初の子ではありません。Forearmの回転で問題が発生する可能性があります。
+SDK,Exact,LowerLeg is not first child of UpperLeg or Foot is not first child of LowerLeg: you may have problems with Shin rotations.,LowerLegがUpperLegの最初の子ではない、またはFootがLowerLegの最初の子ではありません。Shinの回転で問題が発生する可能性があります。
+SDK,Exact,This avatar has a split hierarchy (Hips bone is not the ancestor of all humanoid bones). IK may not work correctly.,このアバターはHierarchyが分断されています（Hips BoneがすべてのHumanoid Boneの祖先になっていません）。IKが正しく動作しない可能性があります。
 SDK,Format,The angle between pelvis and thigh bones should be close to 180 degrees (this avatar's angle is {0}). Your avatar may not work well with full-body IK and Tracking.,PelvisとThigh Boneの角度は180度に近い値にする必要があります（このアバターの角度: {0}）。Full-Body IKやTrackingが正しく動作しない可能性があります。
-SDK,Partial,Could not check for legacy blend shape normals because 'legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes' was not found.,「legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes」が見つからなかったため、Legacy Blend Shape Normalsを確認できませんでした。
-SDK,Partial,This avatar contains skinned meshes that were imported with Blendshape Normals set to 'Calculate' but aren't using 'Legacy Blendshape Normals'. This will significantly increase the size of the uploaded avatar. This must be fixed in the mesh import settings before uploading.,このアバターにはBlendshape Normalsを「Calculate」に設定してインポートされている一方、「Legacy Blendshape Normals」を使用していないSkinned Meshがあります。これによりアップロードされるアバターのサイズが大幅に増加します。アップロード前にMesh Import Settingsで修正する必要があります。
-SDK,Partial,This avatar contains meshes that were imported with Read/Write disabled. This must be fixed in the mesh import settings before uploading.,このアバターにはRead/Writeを無効にしてインポートされたMeshがあります。アップロード前にMesh Import Settingsで修正する必要があります。
-SDK,Partial,SDK V3 pipeline is not enabled.,SDK V3 pipelineが有効ではありません。
+SDK,Exact,Could not check for legacy blend shape normals because 'legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes' was not found.,「legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes」が見つからなかったため、Legacy Blend Shape Normalsを確認できませんでした。
+SDK,Exact,This avatar contains skinned meshes that were imported with Blendshape Normals set to 'Calculate' but aren't using 'Legacy Blendshape Normals'. This will significantly increase the size of the uploaded avatar. This must be fixed in the mesh import settings before uploading.,このアバターにはBlendshape Normalsを「Calculate」に設定してインポートされている一方、「Legacy Blendshape Normals」を使用していないSkinned Meshがあります。これによりアップロードされるアバターのサイズが大幅に増加します。アップロード前にMesh Import Settingsで修正する必要があります。
+SDK,Exact,This avatar contains meshes that were imported with Read/Write disabled. This must be fixed in the mesh import settings before uploading.,このアバターにはRead/Writeを無効にしてインポートされたMeshがあります。アップロード前にMesh Import Settingsで修正する必要があります。
+SDK,Exact,SDK V3 pipeline is not enabled.,SDK V3 pipelineが有効ではありません。
+
+SDK,Exact,Build Type,ビルドタイプ
+SDK,Exact,Platform(s),プラットフォーム
+SDK,Exact,You must fix the issues listed above before you can Upload a Build,Buildをアップロードする前に、上記の問題を修正する必要があります
+
+SDK,Exact,Uploading an avatar for a pending avatar record,保留中のアバターレコードへアバターをアップロード中
+SDK,Exact,Updating avatar info due to local changes,ローカルの変更によりアバター情報を更新中
+SDK,Exact,Updating avatar thumbnail,アバターのサムネイルを更新中
+SDK,Exact,Updating avatar bundle,アバターのBundleを更新中
+SDK,Exact,Failed to send VPM manifest data to analytics,VPM ManifestデータをAnalyticsへ送信できませんでした
+SDK,Exact,Request cancelled,リクエストがキャンセルされました
+SDK,Exact,Request Cancelled,リクエストがキャンセルされました
+SDK,Exact,Avatar upload finished,アバターのアップロードが完了しました
+SDK,Exact,Current User does not have permissions to build and upload avatars,現在のユーザーにはアバターをビルド・アップロードする権限がありません
+SDK,Exact,Building Avatar,アバターをビルド中
+SDK,Exact,Failed to build avatar!,アバターのビルドに失敗しました!
+SDK,Exact,Build Failed,ビルド失敗
+SDK,Format,{0} bundle failed to build,{0} Bundleのビルドに失敗しました
+SDK,Exact,Avatar Built,アバターのビルド完了
+SDK,Exact,Avatar Upload,アバターのアップロード
+SDK,Exact,Uploading Avatar to VRChat,VRChatへアバターをアップロード中
+SDK,Exact,Failed to upload avatar!,アバターのアップロードに失敗しました!
+SDK,Exact,Upload Failed,アップロード失敗
+SDK,Exact,Failed to update avatar info!,アバター情報の更新に失敗しました!
+SDK,Exact,Update Failed,更新失敗
+SDK,Exact,Content Guidelines Check,コンテンツガイドライン確認
+SDK,Format,{0} bundle failed to upload,{0} Bundleのアップロードに失敗しました
+SDK,Exact,Build Succeeded!,ビルド成功!
+
+SDK,Exact,Show All Avatar Performance Details,アバターのPerformance詳細をすべて表示
+

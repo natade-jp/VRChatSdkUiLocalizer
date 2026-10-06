@@ -7,583 +7,142 @@
 # Packages\com.vrchat.base\Editor\VRCSDK\
 # ---------------------
 
-SDK,Partial,Please use a VRC_SpatialAudioSource in the future.,【要確認】Please use a VRC_SpatialAudioSource in the future.
-SDK,Partial,Spatialization Enabled,【要確認】Spatialization Enabled
-SDK,Partial,Reflections Enabled,【要確認】Reflections Enabled
-SDK,Partial,OCULUS ATTENUATION,【要確認】OCULUS ATTENUATION
-SDK,Partial,RANGE (0.0 - 1000000.0 meters),【要確認】RANGE (0.0 - 1000000.0 meters)
-SDK,Partial,VOLUMETRIC RADIUS (0.0 - 1000.0 meters),【要確認】VOLUMETRIC RADIUS (0.0 - 1000.0 meters)
-SDK,Partial,REVERB SEND LEVEL (-60.0 - 20.0 decibels),【要確認】REVERB SEND LEVEL (-60.0 - 20.0 decibels)
-SDK,Partial,Failed to serialize data to JSON,【要確認】Failed to serialize data to JSON
-SDK,Partial,Request cancelled,【要確認】Request cancelled
-SDK,Partial,Request timeout,【要確認】Request timeout
-SDK,Partial,Failed to send request,【要確認】Failed to send request
-SDK,Partial,"Unauthorized, try logging out and in again","【要確認】Unauthorized, try logging out and in again"
-SDK,Format,"Failed to deserialize data from JSON, original text: {0}","【要確認】Failed to deserialize data from JSON, original text: {0}"
-SDK,Partial,"World - "" + data.Name + "" - Image - "" + Application.unityVersion + ""_","【要確認】World - "" + data.Name + "" - Image - "" + Application.unityVersion + ""_"
-SDK,Partial,"new image url is empty, aborting","【要確認】new image url is empty, aborting"
-SDK,Partial,Bundle path cannot be empty,【要確認】Bundle path cannot be empty
-SDK,Partial,"World - "" + data.Name + "" - Asset bundle - "" + Application.unityVersion + ""_","【要確認】World - "" + data.Name + "" - Asset bundle - "" + Application.unityVersion + ""_"
-SDK,Partial,"New bundle url is empty, aborting","【要確認】New bundle url is empty, aborting"
-SDK,Partial,Fetching latest,【要確認】Fetching latest
-SDK,Partial,Both bundle and image paths must be provided,【要確認】Both bundle and image paths must be provided
-SDK,Partial,"New image url is empty, aborting","【要確認】New image url is empty, aborting"
-SDK,Partial,Created a new World,【要確認】Created a new World
-SDK,Partial,"Avatar - "" + data.Name + "" - Image - "" + Application.unityVersion + ""_","【要確認】Avatar - "" + data.Name + "" - Image - "" + Application.unityVersion + ""_"
-SDK,Partial,"Avatar - "" + data.Name + "" - Asset bundle - "" + Application.unityVersion + ""_","【要確認】Avatar - "" + data.Name + "" - Asset bundle - "" + Application.unityVersion + ""_"
-SDK,Partial,"new bundle url is empty, aborting","【要確認】new bundle url is empty, aborting"
-SDK,Partial,Avatar creation is only allowed for a reserved avatar ID pending first upload,【要確認】Avatar creation is only allowed for a reserved avatar ID pending first upload
-SDK,Partial,"Avatar review doesn't exist, cannot submit notes","【要確認】Avatar review doesn't exist, cannot submit notes"
-SDK,Partial,Preparing for file upload...,【要確認】Preparing for file upload...
-SDK,Partial,"Failed to load file info, aborting","【要確認】Failed to load file info, aborting"
-SDK,Partial,"Existing file is not fully uploaded, cleaning up","【要確認】Existing file is not fully uploaded, cleaning up"
-SDK,Partial,Cleaned up leftover queued uploads,【要確認】Cleaned up leftover queued uploads
-SDK,Partial,"Existing file failed to upload, cleaning up","【要確認】Existing file failed to upload, cleaning up"
-SDK,Partial,Cleaned up leftover errored uploads,【要確認】Cleaned up leftover errored uploads
-SDK,Partial,Processing file...,【要確認】Processing file...
-SDK,Partial,"Failed to get file MD5, exiting upload","【要確認】Failed to get file MD5, exiting upload"
-SDK,Partial,"Failed to create temp file for signature, exiting upload","【要確認】Failed to create temp file for signature, exiting upload"
-SDK,Partial,"failed to get signature file size, exiting upload","【要確認】failed to get signature file size, exiting upload"
-SDK,Partial,"Failed to get signature MD5, exiting upload","【要確認】Failed to get signature MD5, exiting upload"
-SDK,Partial,"failed to get file size, exiting upload","【要確認】failed to get file size, exiting upload"
-SDK,Partial,Checking existing records...,【要確認】Checking existing records...
-SDK,Partial,file with the same hash is already uploaded,【要確認】file with the same hash is already uploaded
-SDK,Partial,This file was already uploaded,【要確認】This file was already uploaded
-SDK,Partial,"File MD5 match, going to retry the file upload","【要確認】File MD5 match, going to retry the file upload"
-SDK,Partial,"Latest file upload failed and we have a new file, we're going to clean up","【要確認】Latest file upload failed and we have a new file, we're going to clean up"
-SDK,Partial,"Files match, will attempt to re-upload","【要確認】Files match, will attempt to re-upload"
-SDK,Partial,"Files do not fully match, removing latest version","【要確認】Files do not fully match, removing latest version"
-SDK,Partial,"Failed to create new file version, exiting upload","【要確認】Failed to create new file version, exiting upload"
-SDK,Partial,"File already exists, skipping record creation","【要確認】File already exists, skipping record creation"
-SDK,Partial,File upload type: ,【要確認】File upload type: 
-SDK,Partial,Starting file upload...,【要確認】Starting file upload...
-SDK,Partial,Starting file upload,【要確認】Starting file upload
-SDK,Partial,"Cleanup, deleting created file","【要確認】Cleanup, deleting created file"
-SDK,Partial,Failed to upload file,【要確認】Failed to upload file
-SDK,Partial,File Uploaded!,【要確認】File Uploaded!
-SDK,Partial,"File upload not waiting, thus isn't needed","【要確認】File upload not waiting, thus isn't needed"
-SDK,Partial,"This file was already uploaded, you should make a new build","【要確認】This file was already uploaded, you should make a new build"
-SDK,Partial,Starting signature upload...,【要確認】Starting signature upload...
-SDK,Partial,Starting signature upload,【要確認】Starting signature upload
-SDK,Partial,Signature Uploaded!,【要確認】Signature Uploaded!
-SDK,Partial,"Signature upload not waiting, thus isn't needed","【要確認】Signature upload not waiting, thus isn't needed"
-SDK,Partial,Everything should be now uploaded,【要確認】Everything should be now uploaded
-SDK,Partial,waiting for file to finish processing,【要確認】waiting for file to finish processing
-SDK,Partial,Refreshing data...,【要確認】Refreshing data...
-SDK,Partial,waiting for 5s,【要確認】waiting for 5s
-SDK,Partial,Everything should be good now,【要確認】Everything should be good now
-SDK,Partial,Cleaning up Temp Files...,【要確認】Cleaning up Temp Files...
-SDK,Partial,File upload finished,【要確認】File upload finished
-SDK,Partial,"Got invalid upload url, exiting upload","【要確認】Got invalid upload url, exiting upload"
-SDK,Format,{0} upload complete,【要確認】{0} upload complete
-SDK,Partial,"Failed to get current file status, aborting upload","【要確認】Failed to get current file status, aborting upload"
-SDK,Partial,Resuming upload...,【要確認】Resuming upload...
-SDK,Partial,Upload cancelled,【要確認】Upload cancelled
-SDK,Format,Failed to start upload for part {0},【要確認】Failed to start upload for part {0}
-SDK,Partial,"Could not read file, aborting","【要確認】Could not read file, aborting"
-SDK,Partial,Failed to finish upload,【要確認】Failed to finish upload
-SDK,Partial,Build Confirmation,ビルドの確認
-SDK,Partial,Are you sure you want to build?,ビルドしてもよろしいですか？
-SDK,Partial,Not Yes,【要確認】Not Yes
-SDK,Partial,Enabling spatialization on 3D AudioSources...,3D AudioSourceのSpatializationを有効化しています...
-SDK,Partial,"Automatically added VRC_SpatialAudioSource component to "" + GetGameObjectPath(src.gameObject) + ""!","【要確認】Automatically added VRC_SpatialAudioSource component to "" + GetGameObjectPath(src.gameObject) + ""!"
-SDK,Partial,Add Events via the VRC_Trigger on this object.,このオブジェクトのVRC_TriggerからEventを追加してください。
-SDK,Partial,Deferred Events,遅延Event
-SDK,Partial,Please use a VRC_Trigger in the future.,今後はVRC_Triggerを使用してください。
-SDK,Partial,Add Event Handler,Event Handlerを追加
-SDK,Partial,Event Name,Event名
-SDK,Partial,Event Type,Event Type
-SDK,Partial,Custom Message,Custom Message
-SDK,Partial,Align Room To Destination,RoomをDestinationへ整列
-SDK,Partial,Unsupported event type,サポートされていないEvent Type
-SDK,Partial,"Delete "" + myTarget.Events[i].Name + ""?","【要確認】Delete "" + myTarget.Events[i].Name + ""?"
-SDK,Format,Name: {0},名前: {0}
-SDK,Format,Type: {0},Type: {0}
-SDK,Format,Bool: {0},Bool: {0}
-SDK,Format,Float: {0},Float: {0}
-SDK,Format,Int: {0},Int: {0}
-SDK,Format,String: {0},String: {0}
-SDK,Partial,New Event Type,新しいEvent Type
-SDK,Partial,Event Handlers are not supported in VRCSDK3.,VRCSDK3ではEvent Handlerはサポートされていません。
-SDK,Partial,replace me with the correct VRC_EventHandler,【要確認】replace me with the correct VRC_EventHandler
-SDK,Partial,delete me,【要確認】delete me
-SDK,Partial,Obsolete. Please use a VRC_Trigger instead.,非推奨です。代わりにVRC_Triggerを使用してください。
-SDK,Partial,Select this avatar in the SDK control panel,SDK Control Panelでこのアバターを選択
-SDK,Partial,View Position,View Position
-SDK,Partial,Avatar Name,アバター名
-SDK,Partial,Default Animation Set,デフォルトAnimation Set
-SDK,Partial,Custom Standing Anims,カスタムStanding Animation
-SDK,Partial,Custom Sitting Anims,カスタムSitting Animation
-SDK,Partial,Scale IPD,IPDをスケール
-SDK,Partial,Lip Sync,Lip Sync
-SDK,Partial,Auto Detect!,自動検出！
-SDK,Partial,Face Mesh,Face Mesh
-SDK,Partial,Jaw Flap Blend Shape,Jaw Flap Blend Shape
-SDK,Partial,Jaw Bone,Jaw Bone
-SDK,Partial,Unity Version,Unityバージョン
-SDK,Partial,This avatar has no Animator and can have no lipsync.,このアバターにはAnimatorがないため、Lip Syncを使用できません。
-SDK,Partial,Synchronize Physics,Physicsを同期
-SDK,Partial,Allow Collision Transfer,Collision Transferを許可
-SDK,Partial,Add Mod,Modを追加
-SDK,Partial,Mod Name: ,【要確認】Mod Name: 
-SDK,Partial,Remove Mod,Modを削除
-SDK,Partial,Add Mods,Modを追加
-SDK,Partial,Player Mobility,Player Mobility
-SDK,Partial,Can Use Station From Station,Stationから別のStationを使用可能
-SDK,Partial,Animator Controller,Animator Controller
-SDK,Partial,Disable Station Exit,Stationからの退出を無効化
-SDK,Partial,Player Enter Location,Player Enter Location
-SDK,Partial,Player Exit Location,Player Exit Location
-SDK,Partial,API Object,API Object
-SDK,Partial,On Remote Player Enter,Remote Player Enter時
-SDK,Partial,On Remote Player Exit,Remote Player Exit時
-SDK,Partial,On Local Player Enter,Local Player Enter時
-SDK,Partial,On Local Player Exit,Local Player Exit時
-SDK,Partial,Consider either removing the VRC_ObjectSync or disabling SynchronizePhysics.,VRC_ObjectSyncを削除するか、SynchronizePhysicsを無効にすることを検討してください。
-SDK,Partial,Max Health,最大Health
-SDK,Partial,Current Health,現在のHealth
-SDK,Partial,Is Healable,回復可能
-SDK,Partial,On Damaged Trigger,Damage時のTrigger
-SDK,Partial,On Damaged Action,Damage時のAction
-SDK,Partial,On Destructed Trigger,破壊時のTrigger
-SDK,Partial,On Destructed Action,破壊時のAction
-SDK,Partial,On Healed Trigger,回復時のTrigger
-SDK,Partial,On Healed Action,回復時のAction
-SDK,Partial,On Full Healed Trigger,全回復時のTrigger
-SDK,Partial,On Full Healed Action,全回復時のAction
-SDK,Partial,If the Animator or Animation moves the root position of this object then it will conflict with physics synchronization.,【要確認】If the Animator or Animation moves the root position of this object then it will conflict with physics synchronization.
-SDK,Partial,Consider either removing the VRC_DataStorage or disabling SynchronizePhysics.,【要確認】Consider either removing the VRC_DataStorage or disabling SynchronizePhysics.
-SDK,Partial,Momentum Transfer Method,Momentum Transfer Method
-SDK,Partial,Disallow Theft,盗難を禁止
-SDK,Partial,Exact Gun,Exact Gun
-SDK,Partial,Exact Grip,Exact Grip
-SDK,Partial,Allow Manipulation When Equipped,装備中の操作を許可
-SDK,Partial,"If the pickup is supposed to be aligned to the hand (i.e. orientation field is set to Gun or Grip), auto-detect means that it will be Equipped(not dropped when they release trigger),  otherwise just hold as a normal pickup.","【要確認】If the pickup is supposed to be aligned to the hand (i.e. orientation field is set to Gun or Grip), auto-detect means that it will be Equipped(not dropped when they release trigger),  otherwise just hold as a normal pickup."
-SDK,Partial,Interaction Text,Interaction Text
-SDK,Partial,Text displayed when user hovers over the pickup.,Pickupにカーソルを合わせたときに表示するTextです。
-SDK,Partial,Use Text,Use Text
-SDK,Partial,"Text to display describing action for clicking button, when this pickup is already being held.","【要確認】Text to display describing action for clicking button, when this pickup is already being held."
-SDK,Partial,Throw Velocity Boost Min Speed,Throw Velocity Boost最小速度
-SDK,Partial,Throw Velocity Boost Scale,Throw Velocity Boost Scale
-SDK,Partial,Voice Settings,Voice設定
-SDK,Partial,Advanced Options,詳細オプション
-SDK,Partial,Volumetric Radius,Volumetric Radius
-SDK,Partial,Disable Lowpass Filter,Lowpass Filterを無効化
-SDK,Partial,Avatar Audio Limits,Avatar Audio制限
-SDK,Partial,Gain Limit,Gain上限
-SDK,Partial,Far Limit,Far上限
-SDK,Partial,Near Limit,Near上限
-SDK,Partial,Volumetric Radius Limit,Volumetric Radius上限
-SDK,Partial,Force Spatial,Spatialを強制
-SDK,Partial,Allow Custom Curve,Custom Curveを許可
-SDK,Partial,Enable Spatialization,Spatializationを有効化
-SDK,Partial,Use AudioSource Volume Curve,AudioSource Volume Curveを使用
-SDK,Partial,Aspect Ratio,Aspect Ratio
-SDK,Partial,Playback Speed,再生速度
-SDK,Partial,Trigger Editor disabled while application is running.,Application実行中はTrigger Editorを使用できません。
-SDK,Partial,Do not use VRC_Trigger in combination with deprecated event components.,VRC_Triggerを非推奨のEvent Componentと併用しないでください。
-SDK,Partial,Take Ownership of Action Targets,Action TargetのOwnershipを取得
-SDK,Partial,Draw Lines,Lineを描画
-SDK,Partial,Consider using unbuffered broadcasts with RPCs.,RPCではUnbuffered Broadcastの使用を検討してください。
-SDK,Partial,Delay in Seconds,遅延時間（秒）
-SDK,Partial,Triggers for each particle in attached particle system that collides with something.,【要確認】Triggers for each particle in attached particle system that collides with something.
-SDK,Partial,"Custom"" ? s + "" ("" + nameProperty.stringValue + "")","【要確認】Custom"" ? s + "" ("" + nameProperty.stringValue + "")"
-SDK,Partial,"All are able to activate the trigger for everyone, and late-joiners will also trigger it.","【要確認】All are able to activate the trigger for everyone, and late-joiners will also trigger it."
-SDK,Partial,"All are able to activate the trigger for everyone, but late-joiners will not trigger it.","【要確認】All are able to activate the trigger for everyone, but late-joiners will not trigger it."
-SDK,Partial,All are able to activate the trigger for themselves only.,【要確認】All are able to activate the trigger for themselves only.
-SDK,Partial,"Only the Master is able to activate the trigger for everyone, and late-joiners will also trigger it.","【要確認】Only the Master is able to activate the trigger for everyone, and late-joiners will also trigger it."
-SDK,Partial,"Only the Master is able to activate the trigger for everyone, but late-joiners will not trigger it.","【要確認】Only the Master is able to activate the trigger for everyone, but late-joiners will not trigger it."
-SDK,Partial,"Only the Owner is able to activate the trigger for everyone, and late-joiners will also trigger it.","【要確認】Only the Owner is able to activate the trigger for everyone, and late-joiners will also trigger it."
-SDK,Partial,"Only the Owner is able to activate the trigger for everyone, but late-joiners will not trigger it.","【要確認】Only the Owner is able to activate the trigger for everyone, but late-joiners will not trigger it."
-SDK,Partial,"All are able to activate the trigger for everyone, and late-joiners will trigger the most recent one.","【要確認】All are able to activate the trigger for everyone, and late-joiners will trigger the most recent one."
-SDK,Partial,"Only the Master is able to activate the trigger for everyone, and late-joiners will trigger the most recent one.","【要確認】Only the Master is able to activate the trigger for everyone, and late-joiners will trigger the most recent one."
-SDK,Partial,"Only the Owner is able to activate the trigger for everyone, and late-joiners will trigger the most recent one.","【要確認】Only the Owner is able to activate the trigger for everyone, and late-joiners will trigger the most recent one."
-SDK,Partial,Basic Events/,【要確認】Basic Events/
-SDK,Partial,"Events from Scene/"" + (provider as MonoBehaviour).name + ""/","【要確認】Events from Scene/"" + (provider as MonoBehaviour).name + ""/"
-SDK,Partial,Data Storage Triggers require a VRC_DataStorage Component.,Data Storage TriggerにはVRC_DataStorage Componentが必要です。
-SDK,Partial,Any Data Element,任意のData Element
-SDK,Partial,Data Element,Data Element
-SDK,Partial,Receivers: This GameObject,【要確認】Receivers: This GameObject
-SDK,Partial,"This trigger will target the GameObject it's on, because the receivers list is empty.",Receiver一覧が空のため、このTriggerは自身のGameObjectを対象にします。
-SDK,Partial,Trigger with no object set will be ignored!,Objectが設定されていないTriggerは無視されます！
-SDK,Partial,"Could not locate "" + parameterStringProperty.stringValue + "" on "" + obj.name + ""; is it legacy?","【要確認】Could not locate "" + parameterStringProperty.stringValue + "" on "" + obj.name + ""; is it legacy?"
-SDK,Partial,Lerp On Remote Clients,【要確認】Lerp On Remote Clients
-SDK,Partial,Not all clients will destroy the object.,【要確認】Not all clients will destroy the object.
-SDK,Partial,Angular Velocity,【要確認】Angular Velocity
-SDK,Partial,Method Name,【要確認】Method Name
-SDK,Partial,Use World Space,World Spaceを使用
-SDK,Partial,"Will execute on all clients, except for those that join later.",後から参加したClientを除く、すべてのClientで実行されます。
-SDK,Partial,"Will execute on all clients, including those that join later.",後から参加したClientを含む、すべてのClientで実行されます。
-SDK,Partial,Will execute for the instigator only.,実行者のみで実行されます。
-SDK,Partial,Will execute on the Master.,Masterで実行されます。
-SDK,Partial,"Will execute for others but not locally, except for those that join later.","【要確認】Will execute for others but not locally, except for those that join later."
-SDK,Partial,"Will execute for others but not locally, including those that join later.","【要確認】Will execute for others but not locally, including those that join later."
-SDK,Partial,Will execute on the Owner.,Ownerで実行されます。
-SDK,Partial,"Will execute on all clients, and only the most recent is executed for those that join later.","【要確認】Will execute on all clients, and only the most recent is executed for those that join later."
-SDK,Partial,"Will execute for others but not locally, and only the most recent is executed for those that join later.","【要確認】Will execute for others but not locally, and only the most recent is executed for those that join later."
-SDK,Partial,No applicable methods found.,適用可能なMethodが見つかりません。
-SDK,Partial,Unable to handle ,【要確認】Unable to handle 
-SDK,Partial,Custom Method,Custom Method
-SDK,Partial,"Do not play any videos with Web Panels, use VRC_SyncVideoPlayer instead!",Web PanelでVideoを再生しないでください。代わりにVRC_SyncVideoPlayerを使用してください！
-SDK,Partial,Proximity for Interactivity,操作可能距離
-SDK,Partial,Web Root,Web Root
-SDK,Partial, files imported,【要確認】 files imported
-SDK,Partial,Path To Web Content,Web ContentへのPath
-SDK,Partial,Start URI,開始URI
-SDK,Partial,Start Page,開始Page
-SDK,Partial,"Javascript API bindings are called with engine.call('methodName', ...), which returns a promise-like object.","【要確認】Javascript API bindings are called with engine.call('methodName', ...), which returns a promise-like object."
-SDK,Partial,Javascript may call ListBindings() to discover available API bindings.,【要確認】Javascript may call ListBindings() to discover available API bindings.
-SDK,Partial,Javascript may listen for the 'onBindingsReady' event to execute script when the page is fully loaded and API bindings are available.,【要確認】Javascript may listen for the 'onBindingsReady' event to execute script when the page is fully loaded and API bindings are available.
-SDK,Partial,Enable Cookies,Cookieを有効化
-SDK,Partial,Is Interactive,操作可能
-SDK,Partial,Only Visible Locally,Localでのみ表示
-SDK,Partial,Synchronize URI,URIを同期
-SDK,Partial,Synchronize Mouse Position,Mouse位置を同期
-SDK,Partial,Transparent Background,背景を透明化
-SDK,Partial,Input should Submit Forms,InputでFormを送信
-SDK,Partial,Interaction Station,Interaction Station
-SDK,Partial,Mouse Cursor Object,Mouse Cursor Object
-SDK,Partial,Resolution Width,解像度の幅
-SDK,Partial,Resolution Height,解像度の高さ
-SDK,Partial,Display Region,表示領域
-SDK,Partial,Duplicate Screens,画面を複製
-SDK,Partial,No Web Content Directory,Web Content Directoryがありません
-SDK,Partial,No suitable html files found in Web Content path.,Web Content Pathに適切なHTMLファイルが見つかりません。
-SDK,Partial,"This component is deprecated, please use the VRC_SyncVideoPlayer component instead.",このComponentは非推奨です。代わりにVRC_SyncVideoPlayer Componentを使用してください。
-SDK,Partial,VRChat SDK,【要確認】VRChat SDK
-SDK,Partial,Unity Application is running ...\nStop it to access the Control Panel,Unity Applicationが実行中です...\nControl Panelへアクセスするには停止してください
-SDK,Partial,Invalid server environment name - ,【要確認】Invalid server environment name - 
-SDK,Partial,"Failed to load user information, please log in again",User情報を読み込めませんでした。もう一度ログインしてください
-SDK,Partial,"Signing in as "" + username + "".","【要確認】Signing in as "" + username + ""."
-SDK,Partial,Use API,【要確認】Use API
-SDK,Partial,Sign In,【要確認】Sign In
-SDK,Partial,Sign up,【要確認】Sign up
-SDK,Partial,Logged in as:,ログイン中:
-SDK,Partial,Developer Status: ,Developer Status: 
-SDK,Partial,World Creator Status: ,World Creator Status: 
-SDK,Partial,"Allowed to publish worlds"" : ""Not yet allowed to publish worlds","【要確認】Allowed to publish worlds"" : ""Not yet allowed to publish worlds"
-SDK,Partial,Avatar Creator Status: ,Avatar Creator Status: 
-SDK,Partial,"Allowed to publish avatars"" : ""Not yet allowed to publish avatars","【要確認】Allowed to publish avatars"" : ""Not yet allowed to publish avatars"
-SDK,Partial,More Info...,詳細...
-SDK,Partial,Could not fetch remote config.,Remote Configを取得できませんでした。
-SDK,Partial,Learn More,詳細を見る
-SDK,Partial,Wrong Unity version. Please use ,Unityのバージョンが正しくありません。次のバージョンを使用してください: 
-SDK,Partial,Enter a numeric code from your authenticator app.,Authenticator Appに表示された数字のCodeを入力してください。
-SDK,Partial,Check your email for a numeric code.,メールに届いた数字のCodeを確認してください。
-SDK,Partial,Checking code...,Codeを確認中...
-SDK,Partial,"Oops, that code didn't work.\nTry again!",Codeが正しくありません。\nもう一度お試しください！
-SDK,Partial,Enter Code,Codeを入力
-SDK,Partial,"Please log in."" : ""Error in authenticating: ","【要確認】Please log in."" : ""Error in authenticating: "
-SDK,Partial,Logging in.,ログイン中...
-SDK,Partial,Connected to ,【要確認】Connected to 
-SDK,Partial,Error logging in,ログインエラー
-SDK,Partial,Error logging in: ,【要確認】Error logging in: 
-SDK,Partial,Please enter a valid username and password.,有効なUsernameとPasswordを入力してください。
-SDK,Partial,"Before you can upload avatars or worlds, you will need to spend some time in VRChat.",AvatarやWorldをアップロードするには、VRChatをしばらく利用する必要があります。
-SDK,Partial,"Before you can upload avatars, you will need to spend some time in VRChat.",Avatarをアップロードするには、VRChatをしばらく利用する必要があります。
-SDK,Partial,"Before you can upload worlds, you will need to spend some time in VRChat.",Worldをアップロードするには、VRChatをしばらく利用する必要があります。
-SDK,Partial,You must address the above issues before you can build or test this content!,このContentをBuildまたはTestする前に、上記の問題を解決する必要があります！
-SDK,Partial,Auto Fix,【要確認】Auto Fix
-SDK,Partial,Open Link,リンクを開く
-SDK,Partial,"Cannot get builder, SDK window is not open",Builderを取得できません。SDK Windowが開いていません
-SDK,Partial,Could not find valid sdk builders,有効なSDK Builderが見つかりませんでした
-SDK,Partial,You are not using the recommended Unity version for the VRChat SDK. Content built with this version may not work correctly. Please use Unity ,【要確認】You are not using the recommended Unity version for the VRChat SDK. Content built with this version may not work correctly. Please use Unity 
-SDK,Partial,This scene contains components from the VRChat SDK version 2 and version 3. Version two elements will have to be replaced with their version 3 counterparts to build with SDK3 and UDON.,【要確認】This scene contains components from the VRChat SDK version 2 and version 3. Version two elements will have to be replaced with their version 3 counterparts to build with SDK3 and UDON.
-SDK,Partial,Default texture format on Android should be set to the newer ASTC format to reduce VRAM usage (this could take a while). Texture settings can be overridden on an individual basis.,【要確認】Default texture format on Android should be set to the newer ASTC format to reduce VRAM usage (this could take a while). Texture settings can be overridden on an individual basis.
-SDK,Partial,iOS is not supported as a build target.,【要確認】iOS is not supported as a build target.
-SDK,Partial,"Automatic lightmap generation is enabled, which may stall the Unity build process. Before building and uploading, consider turning off 'Auto Generate' at the bottom of the Lighting Window.","【要確認】Automatic lightmap generation is enabled, which may stall the Unity build process. Before building and uploading, consider turning off 'Auto Generate' at the bottom of the Lighting Window."
-SDK,Partial,A VRCSceneDescriptor is required to build a World,【要確認】A VRCSceneDescriptor is required to build a World
-SDK,Partial,A VRCAvatarDescriptor is required to build an Avatar,【要確認】A VRCAvatarDescriptor is required to build an Avatar
-SDK,Partial,The SDK did not load properly. Try selecting VRChat SDK -> Reload SDK in the Unity menu bar.,【要確認】The SDK did not load properly. Try selecting VRChat SDK -> Reload SDK in the Unity menu bar.
-SDK,Partial,Unsupported Target Platform,サポートされていないTarget Platform
-SDK,Partial,Developer FAQ,Developer FAQ
-SDK,Partial,VRChat Discord,VRChat Discord
-SDK,Partial,Error fetching your uploaded avatars:\n,【要確認】Error fetching your uploaded avatars:\n
-SDK,Partial,Error fetching your uploaded worlds:\n,【要確認】Error fetching your uploaded worlds:\n
-SDK,Partial,Open on web,Webで開く
-SDK,Partial,Release Status: ,Release Status: 
-SDK,Partial,Avatar Updated,Avatarを更新しました
-SDK,Partial,Failed to change avatar release status,AvatarのRelease Statusを変更できませんでした
-SDK,Partial,Copy ID,IDをコピー
-SDK,Partial,"Delete "" + a.name + ""?","【要確認】Delete "" + a.name + ""?"
-SDK,Partial,"Are you sure you want to delete "" + a.name + ""? This cannot be undone.","【要確認】Are you sure you want to delete "" + a.name + ""? This cannot be undone."
-SDK,Partial,Test Avatars,Test Avatar
-SDK,Partial,Set Current,Currentに設定
-SDK,Partial,Set Current World,Current Worldに設定
-SDK,Partial,"Delete "" + w.name + ""?","【要確認】Delete "" + w.name + ""?"
-SDK,Partial,"Are you sure you want to delete "" + w.name + ""? This cannot be undone.","【要確認】Are you sure you want to delete "" + w.name + ""? This cannot be undone."
-SDK,Partial,We recommend that you use the VRChat website to manage your content.,Contentの管理にはVRChat Webサイトの使用をおすすめします。
-SDK,Partial,Fetching Records,Recordを取得中
-SDK,Partial,Fetch updated records from the VRChat server,VRChat Serverから最新のRecordを取得
-SDK,Partial,Show Extra Options on account page,Account Pageに追加Optionを表示
-SDK,Partial,Show Help Boxes on SDK components,SDK ComponentにHelp Boxを表示
-SDK,Partial,API Logging Enabled,API Loggingを有効化
-SDK,Partial,Dry Run Builds,Dry Run Build
-SDK,Partial,This will skip actual builds and uploads and instead pass as if they succeeded,実際のBuildとUploadを行わず、成功したものとして処理します
-SDK,Partial,Override Kaiser mipmapping with Detail-Preserving Image Downscaling (BETA),Kaiser MipmappingをDetail-Preserving Image Downscaling（BETA）で上書き
-SDK,Partial,Use a state of the art algorithm (DPID) for mipmap generation when Kaiser is selected. This can improve the quality of mipmaps.,Kaiser選択時のMipMap生成にDPIDアルゴリズムを使用します。MipMapの品質が向上する場合があります。
-SDK,Partial,Use conservative settings for DPID mipmapping,DPID Mipmappingで控えめな設定を使用
-SDK,Partial,Use conservative settings for DPID mipmapping. This can avoid issues with over-emphasis of details.,【要確認】Use conservative settings for DPID mipmapping. This can avoid issues with over-emphasis of details.
-SDK,Partial,"DPID mipmaps setting changed, marking all textures as dirty","【要確認】DPID mipmaps setting changed, marking all textures as dirty"
-SDK,Partial,Execute VRChat Constraints in Edit Mode,Edit ModeでVRChat Constraintを実行
-SDK,Partial,Allow VRChat Constraints to run while Unity is in Edit mode.,UnityのEdit Mode中にVRChat Constraintを実行できるようにします。
-SDK,Partial,Show Local IP Address,Local IP Addressを表示
-SDK,Partial,All Logging Enabled,すべてのLoggingを有効化
-SDK,Partial,VRChat Client,VRChat Client
-SDK,Partial,Installed Client Path: ,インストール済みClient Path: 
-SDK,Partial,Choose VRC Client Exe,VRC Client Exeを選択
-SDK,Partial,Revert to Default,デフォルトに戻す
-SDK,Partial,Unable to get local IP address,Local IP Addressを取得できません
-SDK,Partial,Closing WebSocket connection,【要確認】Closing WebSocket connection
-SDK,Partial,Closing WebSocket Connection,【要確認】Closing WebSocket Connection
-SDK,Partial,Sexually Suggestive,性的に示唆的
-SDK,Partial,Adult Language and Themes,成人向けの言葉・テーマ
-SDK,Partial,Graphic Violence,生々しい暴力表現
-SDK,Partial,Excessive Gore,過度な流血表現
-SDK,Partial,Extreme Horror,極端なホラー表現
-SDK,Partial,Content Guidelines Check,Content Guidelinesの確認
-SDK,Format,Please update your {0} to remove or revise wording that does not meet our content guidelines.,Content Guidelinesを満たしていない表現を削除または修正するため、{0}を更新してください。
-SDK,Format,A word or phrase in your {0} does not align with our content guidelines and must be adjusted. Please check out our content guidelines below.\nWas this detection wrong? Let us know!,{0}内の単語または表現がContent Guidelinesに沿っていないため、修正が必要です。以下のContent Guidelinesをご確認ください。\nこの検出が誤りの場合はお知らせください！
-SDK,Partial,This detection was wrong,この検出は誤りです
-SDK,Partial,View Content Guidelines,Content Guidelinesを見る
-SDK,Partial,Thank you for letting us know! We will look into what happened.,お知らせいただきありがとうございます。内容を確認します。
-SDK,Format,{0}/{1} Selected,{0}/{1} 選択済み
-SDK,Partial,0/5 Selected,【要確認】0/5 Selected
-SDK,Partial,None Selected,未選択
-SDK,Partial,All Platforms,すべてのPlatform
-SDK,Format,Manage Your Tags ({0}),Tagを管理 ({0})
-SDK,Format,{0} Tag(s),{0} Tag
-SDK,Partial,No Image,画像なし
-SDK,Partial,Image Size\n(1200 x 900),画像サイズ\n(1200 x 900)
-SDK,Partial,Background Color,背景色
-SDK,Partial,Custom Camera,Custom Camera
-SDK,Partial,Select thumbnail,Thumbnailを選択
-SDK,Partial,You can pick a new image to be used as a thumbnail,Thumbnailとして使用する新しい画像を選択できます
-SDK,Partial,You can also capture the new thumbnail directly from the scene,Sceneから新しいThumbnailを直接撮影することもできます
-SDK,Partial,Move your scene view to capture the desired thumbnail,Scene Viewを移動して目的のThumbnailを撮影してください
-SDK,Partial,Setting required PlayerSettings...,必要なPlayerSettingsを設定中...
-SDK,Partial,Setting virtual reality SDKs in PlayerSettings: ,【要確認】Setting virtual reality SDKs in PlayerSettings: 
-SDK,Format,Failed to assign loader '{0}'. Ensure the plugin is configured for the project correctly.,【要確認】Failed to assign loader '{0}'. Ensure the plugin is configured for the project correctly.
-SDK,Partial,Setting Graphics APIs,Graphics APIを設定中
-SDK,Partial,Setting Quality Settings,Quality Settingsを設定中
-SDK,Format,Serialized property for quality setting '{0}' could not be found.,Quality Setting「{0}」のSerialized Propertyが見つかりませんでした。
-SDK,Partial,Setting Graphics Settings,Graphics Settingsを設定中
-SDK,Partial,Spatializer Settings Updated,Spatializer Settingsを更新しました
-SDK,Partial,VRChat SDK detected incorrect Audio Spatializer settings and corrected them.,VRChat SDKが正しくないAudio Spatializer設定を検出し、修正しました。
-SDK,Partial,\n\nFor the changes to fully apply - you need to restart your editor,\n\n変更を完全に適用するにはEditorを再起動する必要があります
-SDK,Partial,Restart Later,後で再起動
-SDK,Partial,Save and Restart,保存して再起動
-SDK,Partial,Setting build target,Build Targetを設定中
-SDK,Partial,"Target not supported, switching to one that is.",Targetがサポートされていないため、サポートされているTargetへ切り替えます。
-SDK,Partial,Please select one or more HDR materials to convert.,変換するHDR Materialを1つ以上選択してください。
-SDK,Partial,"prev: "" + prev + "", current: ","【要確認】prev: "" + prev + "", current: "
-SDK,Partial,"Found no HDR Color properties in the selected material"" + (matCount > 1 ? ""s."" : "".","【要確認】Found no HDR Color properties in the selected material"" + (matCount > 1 ? ""s."" : ""."
-SDK,Partial,"Converted "" + colorCount + "" HDR Color propert""+ (colorCount > 1 ? ""ies"" : ""y"") + "" in ""+matCount+"" material""+(matCount > 1 ? ""s"":"""") + "" to "" + (toLinear ? ""Linear"" : ""Gamma"") + "" color space.","【要確認】Converted "" + colorCount + "" HDR Color propert""+ (colorCount > 1 ? ""ies"" : ""y"") + "" in ""+matCount+"" material""+(matCount > 1 ? ""s"":"""") + "" to "" + (toLinear ? ""Linear"" : ""Gamma"") + "" color space."
-SDK,Format,"Something tried to change {0}, which is part of a VRC Package, and will not be changed. Use \""Save As...\"" instead if you want to make your own version.","【要確認】Something tried to change {0}, which is part of a VRC Package, and will not be changed. Use \""Save As...\"" instead if you want to make your own version."
-SDK,Partial,Descriptor Error,【要確認】Descriptor Error
-SDK,Partial,"This utility lists all custom keywords enabled on your avatar's materials.\n\nFor the full list of internal keywords, see 'ShaderKeywordsUtility.cs'","【要確認】This utility lists all custom keywords enabled on your avatar's materials.\n\nFor the full list of internal keywords, see 'ShaderKeywordsUtility.cs'"
-SDK,Partial,Shader Keywords Utility,Shader Keywords Utility
-SDK,Partial,Refresh Avatars,【要確認】Refresh Avatars
-SDK,Partial,"Hide"" : ""Show"") + "" Info about Keywords","【要確認】Hide"" : ""Show"") + "" Info about Keywords"
-SDK,Partial,Total Custom Keywords on Avatar: ,Avatar上のCustom Keyword合計: 
-SDK,Partial,Delete ALL Keywords on this Material,このMaterialのすべてのKeywordを削除
-SDK,Partial,Delete All Keywords on this Material,このMaterialのすべてのKeywordを削除
-SDK,Partial,Are you sure you want to delete all Shader Keywords on this material?\nSome shaders might use these!,このMaterialのすべてのShader Keywordを削除してもよろしいですか？\n一部のShaderで使用されている可能性があります！
-SDK,Partial,Caching avatars,【要確認】Caching avatars
-SDK,Format,Overall Performance Estimate: {0},総合Performance推定: {0}
-SDK,Format,Overall Performance Estimate: {0} - This avatar may not perform well on many systems.,総合Performance推定: {0} - このアバターは多くのSystemで十分なPerformanceが得られない可能性があります。
+Inspector,Exact,Account,アカウント
+Inspector,Exact,Login,ログイン
+Inspector,Exact,Logout,ログアウト
+
+Inspector,Exact,We recommend that you use the VRChat website to manage your content.,Contentの管理にはVRChat Webサイトの使用をおすすめします。
+Inspector,Exact,Fetching Records,Recordを取得中
+Inspector,Exact,Fetch updated records from the VRChat server,VRChat Serverから最新のRecordを取得
+
+Inspector,Exact,Fetch updated records from the VRChat server,VRChat Serverから最新のRecordを取得
+Inspector,Exact,Show Extra Options on account page,Account Pageに追加Optionを表示
+Inspector,Exact,Show Help Boxes on SDK components,SDK ComponentにHelp Boxを表示
+Inspector,Exact,API Logging Enabled,API Loggingを有効化
+Inspector,Exact,Override Kaiser mipmapping with Detail-Preserving Image Downscaling (BETA),Kaiser MipmappingをDetail-Preserving Image Downscaling（BETA）で上書き
+Inspector,Exact,Use a state of the art algorithm (DPID) for mipmap generation when Kaiser is selected. This can improve the quality of mipmaps.,Kaiser選択時のMipMap生成にDPIDアルゴリズムを使用します。MipMapの品質が向上する場合があります。
+Inspector,Exact,Execute VRChat Constraints in Edit Mode,Edit ModeでVRChat Constraintを実行
+
+Inspector,Exact,Show Local IP Address,Local IP Addressを表示
+Inspector,Exact,Revert to Default,デフォルトに戻す
+
+Inspector,Exact,Fetch,フェッチ
+Inspector,Exact,Open on web,Webで開く
+Inspector,Exact,Avatar Updated,Avatarを更新しました
+Inspector,Exact,Failed to change avatar release status,AvatarのRelease Statusを変更できませんでした
+Inspector,Exact,Copy ID,IDをコピー
+
+SDK,PartialFormat,Overall Performance Estimate: {0},総合Performance推定: {0}
+SDK,PartialFormat,Overall Performance Estimate: {0} - This avatar may not perform well on many systems.,総合Performance推定: {0} - このアバターは多くのSystemで十分なPerformanceが得られない可能性があります。
 SDK,Partial, See additional warnings for suggestions on how to improve performance. Click 'Avatar Optimization Tips' below for more information.,【要確認】 See additional warnings for suggestions on how to improve performance. Click 'Avatar Optimization Tips' below for more information.
-SDK,Format,Overall Performance Estimate: {0} - This avatar does not meet minimum performance requirements for VRChat. ,【要確認】Overall Performance Estimate: {0} - This avatar does not meet minimum performance requirements for VRChat. 
+SDK,PartialFormat,Overall Performance Estimate: {0} - This avatar does not meet minimum performance requirements for VRChat. ,【要確認】Overall Performance Estimate: {0} - This avatar does not meet minimum performance requirements for VRChat. 
 SDK,Partial,"It will be blocked by default on VRChat for Quest, and will not show unless a user chooses to show your avatar.","【要確認】It will be blocked by default on VRChat for Quest, and will not show unless a user chooses to show your avatar."
 SDK,Partial,It may be blocked by users depending on their Performance settings.,【要確認】It may be blocked by users depending on their Performance settings.
-SDK,Format,Triangles: {0},Triangles: {0}
-SDK,Format,Triangles: {0} (Recommended: {1}),Triangles: {0}（推奨: {1}）
-SDK,Format,Triangles: {0} - Please try to reduce your avatar triangle count to less than {1} (Recommended: {2}),Triangles: {0} - アバターのTriangle数を{1}未満まで減らしてください（推奨: {2}）
-SDK,Format,Triangles: {0} - This avatar has too many triangles. ,【要確認】Triangles: {0} - This avatar has too many triangles. 
-SDK,Format, It should have less than {0}. VRChat recommends having less than {1}.,【要確認】 It should have less than {0}. VRChat recommends having less than {1}.
-SDK,Format,Bounding box (AABB) size: {0},Bounding Box (AABB) Size: {0}
-SDK,Format,Bounding box (AABB) size: {0} (Recommended: {1}),Bounding Box (AABB) Size: {0}（推奨: {1}）
-SDK,Format,"This avatar's bounding box (AABB) is too large on at least one axis. Current size: {0}, Maximum size: {1}","【要確認】This avatar's bounding box (AABB) is too large on at least one axis. Current size: {0}, Maximum size: {1}"
-SDK,Format,Skinned Mesh Renderers: {0},Skinned Mesh Renderer: {0}
-SDK,Format,Skinned Mesh Renderers: {0} (Recommended: {1}) - Combine multiple skinned meshes for optimal performance.,Skinned Mesh Renderer: {0}（推奨: {1}） - Combine multiple skinned meshes for optimal performance.
-SDK,Format,"Skinned Mesh Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many skinned meshes.",Skinned Mesh Renderer: {0}（最大: {1}、推奨: {2}）- このアバターにはSkinned Meshが多すぎます。
+SDK,PartialFormat,Triangles: {0},Triangles: {0}
+SDK,PartialFormat,Triangles: {0} (Recommended: {1}),Triangles: {0}（推奨: {1}）
+SDK,PartialFormat,Triangles: {0} - Please try to reduce your avatar triangle count to less than {1} (Recommended: {2}),Triangles: {0} - アバターのTriangle数を{1}未満まで減らしてください（推奨: {2}）
+SDK,PartialFormat,Triangles: {0} - This avatar has too many triangles. ,【要確認】Triangles: {0} - This avatar has too many triangles. 
+SDK,PartialFormat, It should have less than {0}. VRChat recommends having less than {1}.,【要確認】 It should have less than {0}. VRChat recommends having less than {1}.
+SDK,PartialFormat,Bounding box (AABB) size: {0},Bounding Box (AABB) Size: {0}
+SDK,PartialFormat,Bounding box (AABB) size: {0} (Recommended: {1}),Bounding Box (AABB) Size: {0}（推奨: {1}）
+SDK,PartialFormat,"This avatar's bounding box (AABB) is too large on at least one axis. Current size: {0}, Maximum size: {1}","【要確認】This avatar's bounding box (AABB) is too large on at least one axis. Current size: {0}, Maximum size: {1}"
+SDK,PartialFormat,Skinned Mesh Renderers: {0},Skinned Mesh Renderer: {0}
+SDK,PartialFormat,Skinned Mesh Renderers: {0} (Recommended: {1}) - Combine multiple skinned meshes for optimal performance.,Skinned Mesh Renderer: {0}（推奨: {1}） - Combine multiple skinned meshes for optimal performance.
+SDK,PartialFormat,"Skinned Mesh Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many skinned meshes.",Skinned Mesh Renderer: {0}（最大: {1}、推奨: {2}）- このアバターにはSkinned Meshが多すぎます。
 SDK,Partial, Combine multiple skinned meshes for optimal performance.,【要確認】 Combine multiple skinned meshes for optimal performance.
-SDK,Format,Mesh Renderers: {0},Mesh Renderer: {0}
-SDK,Format,Mesh Renderers: {0} (Recommended: {1}) - Combine multiple meshes for optimal performance.,Mesh Renderer: {0}（推奨: {1}） - Combine multiple meshes for optimal performance.
-SDK,Format,"Mesh Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many meshes. Combine multiple meshes for optimal performance.",Mesh Renderer: {0}（最大: {1}、推奨: {2}）- このアバターにはMeshが多すぎます。Performance向上のため複数のMeshを統合してください。
-SDK,Format,Material Slots: {0},Material Slot: {0}
-SDK,Format,Material Slots: {0} (Recommended: {1}) - Combine materials and atlas textures for optimal performance.,Material Slot: {0}（推奨: {1}） - Combine materials and atlas textures for optimal performance.
-SDK,Format,"Material Slots: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many materials. Combine materials and atlas textures for optimal performance.",Material Slot: {0}（最大: {1}、推奨: {2}）- このアバターにはMaterialが多すぎます。Performance向上のためMaterialを統合し、TextureをAtlas化してください。
-SDK,Format,Animator Count: {0},Animator数: {0}
-SDK,Format,Animator Count: {0} (Recommended: {1}) - Avoid using extra Animators for optimal performance.,Animator数: {0}（推奨: {1}） - Avoid using extra Animators for optimal performance.
-SDK,Format,"Animator Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many Animators. Avoid using extra Animators for optimal performance.",Animator数: {0}（最大: {1}、推奨: {2}）- このアバターにはAnimatorが多すぎます。Performance向上のため不要なAnimatorの使用を避けてください。
-SDK,Format,Bones: {0},Bone: {0}
-SDK,Format,Bones: {0} (Recommended: {1}) - Reduce number of bones for optimal performance.,Bone: {0}（推奨: {1}） - Reduce number of bones for optimal performance.
-SDK,Format,"Bones: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many bones. Reduce number of bones for optimal performance.",Bone: {0}（最大: {1}、推奨: {2}）- このアバターにはBoneが多すぎます。Performance向上のためBone数を減らしてください。
-SDK,Format,Lights: {0},Light: {0}
-SDK,Format,Lights: {0} (Recommended: {1}) - Avoid use of dynamic lights for optimal performance.,Light: {0}（推奨: {1}） - Avoid use of dynamic lights for optimal performance.
-SDK,Format,"Lights: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many dynamic lights. Avoid use of dynamic lights for optimal performance.","【要確認】Lights: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many dynamic lights. Avoid use of dynamic lights for optimal performance."
-SDK,Format,Particle Systems: {0},Particle System: {0}
-SDK,Format,Particle Systems: {0} (Recommended: {1}) - Reduce number of particle systems for better performance.,Particle System: {0}（推奨: {1}） - Reduce number of particle systems for better performance.
-SDK,Format,"Particle Systems: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many particle systems.","【要確認】Particle Systems: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many particle systems."
+SDK,PartialFormat,Mesh Renderers: {0},Mesh Renderer: {0}
+SDK,PartialFormat,Mesh Renderers: {0} (Recommended: {1}) - Combine multiple meshes for optimal performance.,Mesh Renderer: {0}（推奨: {1}） - Combine multiple meshes for optimal performance.
+SDK,PartialFormat,"Mesh Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many meshes. Combine multiple meshes for optimal performance.",Mesh Renderer: {0}（最大: {1}、推奨: {2}）- このアバターにはMeshが多すぎます。Performance向上のため複数のMeshを統合してください。
+SDK,PartialFormat,Material Slots: {0},Material Slot: {0}
+SDK,PartialFormat,Material Slots: {0} (Recommended: {1}) - Combine materials and atlas textures for optimal performance.,Material Slot: {0}（推奨: {1}） - Combine materials and atlas textures for optimal performance.
+SDK,PartialFormat,"Material Slots: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many materials. Combine materials and atlas textures for optimal performance.",Material Slot: {0}（最大: {1}、推奨: {2}）- このアバターにはMaterialが多すぎます。Performance向上のためMaterialを統合し、TextureをAtlas化してください。
+SDK,PartialFormat,Animator Count: {0},Animator数: {0}
+SDK,PartialFormat,Animator Count: {0} (Recommended: {1}) - Avoid using extra Animators for optimal performance.,Animator数: {0}（推奨: {1}） - Avoid using extra Animators for optimal performance.
+SDK,PartialFormat,"Animator Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many Animators. Avoid using extra Animators for optimal performance.",Animator数: {0}（最大: {1}、推奨: {2}）- このアバターにはAnimatorが多すぎます。Performance向上のため不要なAnimatorの使用を避けてください。
+SDK,PartialFormat,"Bones: {0}",Bone: {0}
+SDK,PartialFormat,"Bones: {0} (Recommended: {1}) - Reduce number of bones for optimal performance.",Bone: {0}（推奨: {1}） - Reduce number of bones for optimal performance.
+SDK,PartialFormat,"Bones: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many bones. Reduce number of bones for optimal performance.",Bone: {0}（最大: {1}、推奨: {2}）- このアバターにはBoneが多すぎます。Performance向上のためBone数を減らしてください。
+SDK,PartialFormat,Lights: {0},Light: {0}
+SDK,PartialFormat,Lights: {0} (Recommended: {1}) - Avoid use of dynamic lights for optimal performance.,Light: {0}（推奨: {1}） - Avoid use of dynamic lights for optimal performance.
+SDK,PartialFormat,"Lights: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many dynamic lights. Avoid use of dynamic lights for optimal performance.","【要確認】Lights: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many dynamic lights. Avoid use of dynamic lights for optimal performance."
+SDK,PartialFormat,Particle Systems: {0},Particle System: {0}
+SDK,PartialFormat,Particle Systems: {0} (Recommended: {1}) - Reduce number of particle systems for better performance.,Particle System: {0}（推奨: {1}） - Reduce number of particle systems for better performance.
+SDK,PartialFormat,"Particle Systems: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many particle systems.","【要確認】Particle Systems: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many particle systems."
 SDK,Partial, Reduce number of particle systems for better performance.,【要確認】 Reduce number of particle systems for better performance.
-SDK,Format,Total Combined Max Particle Count: {0},合計最大Particle数: {0}
-SDK,Format,Total Combined Max Particle Count: {0} (Recommended: {1}) - Reduce 'Max Particles' across all particle systems for better performance.,合計最大Particle数: {0}（推奨: {1}） - Reduce 'Max Particles' across all particle systems for better performance.
-SDK,Format,"Total Combined Max Particle Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many particles.","【要確認】Total Combined Max Particle Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many particles."
+SDK,PartialFormat,Total Combined Max Particle Count: {0},合計最大Particle数: {0}
+SDK,PartialFormat,Total Combined Max Particle Count: {0} (Recommended: {1}) - Reduce 'Max Particles' across all particle systems for better performance.,合計最大Particle数: {0}（推奨: {1}） - Reduce 'Max Particles' across all particle systems for better performance.
+SDK,PartialFormat,"Total Combined Max Particle Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many particles.","【要確認】Total Combined Max Particle Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many particles."
 SDK,Partial, Reduce 'Max Particles' across all particle systems for better performance.,【要確認】 Reduce 'Max Particles' across all particle systems for better performance.
-SDK,Format,Mesh Particle Total Max Poly Count: {0},Mesh Particle合計最大Polygon数: {0}
-SDK,Format,"Mesh Particle Total Max Poly Count: {0} (Recommended: {1}) - Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance.","Mesh Particle合計最大Polygon数: {0}（推奨: {1}） - Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance."
-SDK,Format,"Mesh Particle Total Max Poly Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many mesh particle triangles.","【要確認】Mesh Particle Total Max Poly Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many mesh particle triangles."
+SDK,PartialFormat,Mesh Particle Total Max Poly Count: {0},Mesh Particle合計最大Polygon数: {0}
+SDK,PartialFormat,"Mesh Particle Total Max Poly Count: {0} (Recommended: {1}) - Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance.","Mesh Particle合計最大Polygon数: {0}（推奨: {1}） - Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance."
+SDK,PartialFormat,"Mesh Particle Total Max Poly Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many mesh particle triangles.","【要確認】Mesh Particle Total Max Poly Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many mesh particle triangles."
 SDK,Partial," Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance.","【要確認】 Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance."
-SDK,Format,Particle Trails Enabled: {0},Particle Trail有効: {0}
-SDK,Format,Particle Trails Enabled: {0} (Recommended: {1}) - Avoid particle trails for better performance.,Particle Trail有効: {0}（推奨: {1}） - Avoid particle trails for better performance.
-SDK,Format,Particle Collision Enabled: {0},Particle Collision有効: {0}
-SDK,Format,Particle Collision Enabled: {0} (Recommended: {1}) - Avoid particle collision for better performance.,Particle Collision有効: {0}（推奨: {1}） - Avoid particle collision for better performance.
-SDK,Format,Trail Renderers: {0},Trail Renderer: {0}
-SDK,Format,Trail Renderers: {0} (Recommended: {1}) - Reduce number of TrailRenderers for better performance.,Trail Renderer: {0}（推奨: {1}） - Reduce number of TrailRenderers for better performance.
-SDK,Format,"Trail Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many TrailRenderers. Reduce number of TrailRenderers for better performance.","【要確認】Trail Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many TrailRenderers. Reduce number of TrailRenderers for better performance."
-SDK,Format,Line Renderers: {0},Line Renderer: {0}
-SDK,Format,Line Renderers: {0} (Recommended: {1}) - Reduce number of LineRenderers for better performance.,Line Renderer: {0}（推奨: {1}） - Reduce number of LineRenderers for better performance.
-SDK,Format,"Line Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many LineRenderers. Reduce number of LineRenderers for better performance.","【要確認】Line Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many LineRenderers. Reduce number of LineRenderers for better performance."
-SDK,Format,Phys Bone Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBone components on this avatar.,【要確認】Phys Bone Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBone components on this avatar.
-SDK,Format,Phys Bone Components: {0},Phys Bone Component: {0}
-SDK,Format,Phys Bone Components: {0} (Recommended: {1}) - Reduce the number of VRCPhysBone components for better performance.,Phys Bone Component: {0}（推奨: {1}） - Reduce the number of VRCPhysBone components for better performance.
-SDK,Format,"Phys Bone Components: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone components.","【要確認】Phys Bone Components: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone components."
+SDK,PartialFormat,Particle Trails Enabled: {0},Particle Trail有効: {0}
+SDK,PartialFormat,Particle Trails Enabled: {0} (Recommended: {1}) - Avoid particle trails for better performance.,Particle Trail有効: {0}（推奨: {1}） - Avoid particle trails for better performance.
+SDK,PartialFormat,Particle Collision Enabled: {0},Particle Collision有効: {0}
+SDK,PartialFormat,Particle Collision Enabled: {0} (Recommended: {1}) - Avoid particle collision for better performance.,Particle Collision有効: {0}（推奨: {1}） - Avoid particle collision for better performance.
+SDK,PartialFormat,Trail Renderers: {0},Trail Renderer: {0}
+SDK,PartialFormat,Trail Renderers: {0} (Recommended: {1}) - Reduce number of TrailRenderers for better performance.,Trail Renderer: {0}（推奨: {1}） - Reduce number of TrailRenderers for better performance.
+SDK,PartialFormat,"Trail Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many TrailRenderers. Reduce number of TrailRenderers for better performance.","【要確認】Trail Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many TrailRenderers. Reduce number of TrailRenderers for better performance."
+SDK,PartialFormat,Line Renderers: {0},Line Renderer: {0}
+SDK,PartialFormat,Line Renderers: {0} (Recommended: {1}) - Reduce number of LineRenderers for better performance.,Line Renderer: {0}（推奨: {1}） - Reduce number of LineRenderers for better performance.
+SDK,PartialFormat,"Line Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many LineRenderers. Reduce number of LineRenderers for better performance.","【要確認】Line Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many LineRenderers. Reduce number of LineRenderers for better performance."
+SDK,PartialFormat,Phys Bone Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBone components on this avatar.,【要確認】Phys Bone Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBone components on this avatar.
+SDK,PartialFormat,Phys Bone Components: {0},Phys Bone Component: {0}
+SDK,PartialFormat,Phys Bone Components: {0} (Recommended: {1}) - Reduce the number of VRCPhysBone components for better performance.,Phys Bone Component: {0}（推奨: {1}） - Reduce the number of VRCPhysBone components for better performance.
+SDK,PartialFormat,"Phys Bone Components: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone components.","【要確認】Phys Bone Components: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone components."
 SDK,Partial,"All PhysBone components will be removed at runtime."" : ""Reduce the number of VRCPhysBone components for better performance.","【要確認】All PhysBone components will be removed at runtime."" : ""Reduce the number of VRCPhysBone components for better performance."
-SDK,Format,Phys Bone Transform Count: {0},Phys Bone Transform数: {0}
-SDK,Format,Phys Bone Transform Count: {0} (Recommended: {1}) - This avatar has many VRCPhysBone transforms and may perform poorly.,Phys Bone Transform数: {0}（推奨: {1}） - This avatar has many VRCPhysBone transforms and may perform poorly.
+SDK,PartialFormat,Phys Bone Transform Count: {0},Phys Bone Transform数: {0}
+SDK,PartialFormat,Phys Bone Transform Count: {0} (Recommended: {1}) - This avatar has many VRCPhysBone transforms and may perform poorly.,Phys Bone Transform数: {0}（推奨: {1}） - This avatar has many VRCPhysBone transforms and may perform poorly.
 SDK,Partial,Reduce number of transforms in hierarchy under VRCPhysBone components.,【要確認】Reduce number of transforms in hierarchy under VRCPhysBone components.
-SDK,Format,"Phys Bone Transform Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone transforms and will perform poorly.","【要確認】Phys Bone Transform Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone transforms and will perform poorly."
+SDK,PartialFormat,"Phys Bone Transform Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone transforms and will perform poorly.","【要確認】Phys Bone Transform Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone transforms and will perform poorly."
 SDK,Partial,"All PhysBone components will be removed at runtime."" : ""Reduce the number of affected transforms by adding exclusions or removing components.","【要確認】All PhysBone components will be removed at runtime."" : ""Reduce the number of affected transforms by adding exclusions or removing components."
-SDK,Format,Phys Bone Colliders: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBoneCollider components on this avatar.,【要確認】Phys Bone Colliders: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBoneCollider components on this avatar.
-SDK,Format,Phys Bone Collider Count: {0},Phys Bone Collider数: {0}
-SDK,Format,Phys Bone Collider Count: {0} (Recommended: {1}) - Reduce the number of VRCPhysBoneColliders for better performance.,Phys Bone Collider数: {0}（推奨: {1}） - Reduce the number of VRCPhysBoneColliders for better performance.
-SDK,Format,"Phys Bone Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders.","【要確認】Phys Bone Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders."
+SDK,PartialFormat,Phys Bone Colliders: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBoneCollider components on this avatar.,【要確認】Phys Bone Colliders: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBoneCollider components on this avatar.
+SDK,PartialFormat,Phys Bone Collider Count: {0},Phys Bone Collider数: {0}
+SDK,PartialFormat,Phys Bone Collider Count: {0} (Recommended: {1}) - Reduce the number of VRCPhysBoneColliders for better performance.,Phys Bone Collider数: {0}（推奨: {1}） - Reduce the number of VRCPhysBoneColliders for better performance.
+SDK,PartialFormat,"Phys Bone Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders.","【要確認】Phys Bone Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders."
 SDK,Partial,"All PhysBone colliders will be removed at runtime."" : ""Reduce the number of VRCPhysBoneColliders for better performance.","【要確認】All PhysBone colliders will be removed at runtime."" : ""Reduce the number of VRCPhysBoneColliders for better performance."
-SDK,Format,Phys Bone Collision Check Count: {0},Phys Bone Collision Check数: {0}
-SDK,Format,Phys Bone Collision Check Count: {0} (Recommended: {1}) - Reduce the number of VRCPhysBoneColliders for better performance.,Phys Bone Collision Check数: {0}（推奨: {1}） - Reduce the number of VRCPhysBoneColliders for better performance.
-SDK,Format,"Phys Bone Collision Check Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders.","【要確認】Phys Bone Collision Check Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders."
-SDK,Format,Contact Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type. Reduce the number of VRCContact components on this avatar.,【要確認】Contact Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type. Reduce the number of VRCContact components on this avatar.
-SDK,Format,Non-Local Contact Component Count: {0},Non-Local Contact Component数: {0}
-SDK,Format,"Non-Local Contact Component Count: {0} (Recommended: {1}) - Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible.","Non-Local Contact Component数: {0}（推奨: {1}） - Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible."
-SDK,Format,"Non-Local Contact Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many non-local VRCContact components. {3}","【要確認】Non-Local Contact Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many non-local VRCContact components. {3}"
+SDK,PartialFormat,Phys Bone Collision Check Count: {0},Phys Bone Collision Check数: {0}
+SDK,PartialFormat,Phys Bone Collision Check Count: {0} (Recommended: {1}) - Reduce the number of VRCPhysBoneColliders for better performance.,Phys Bone Collision Check数: {0}（推奨: {1}） - Reduce the number of VRCPhysBoneColliders for better performance.
+SDK,PartialFormat,"Phys Bone Collision Check Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders.","【要確認】Phys Bone Collision Check Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders."
+SDK,PartialFormat,Contact Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type. Reduce the number of VRCContact components on this avatar.,【要確認】Contact Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type. Reduce the number of VRCContact components on this avatar.
+SDK,PartialFormat,Non-Local Contact Component Count: {0},Non-Local Contact Component数: {0}
+SDK,PartialFormat,"Non-Local Contact Component Count: {0} (Recommended: {1}) - Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible.","Non-Local Contact Component数: {0}（推奨: {1}） - Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible."
+SDK,PartialFormat,"Non-Local Contact Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many non-local VRCContact components. {3}","【要確認】Non-Local Contact Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many non-local VRCContact components. {3}"
 SDK,Partial,"All VRCContact components will be removed at runtime."" : ""Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible.","【要確認】All VRCContact components will be removed at runtime."" : ""Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible."
-SDK,Format,Constraint Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of constraint components on this avatar.,【要確認】Constraint Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of constraint components on this avatar.
-SDK,Format,Constraint Component Count: {0},Constraint Component数: {0}
-SDK,Format,Constraint Component Count: {0} (Recommended: {1}) - Reduce the number of constraint components for optimal performance.,Constraint Component数: {0}（推奨: {1}） - Reduce the number of constraint components for optimal performance.
-SDK,Format,"Constraint Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many constraint components. {3}","【要確認】Constraint Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many constraint components. {3}"
+SDK,PartialFormat,Constraint Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of constraint components on this avatar.,【要確認】Constraint Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of constraint components on this avatar.
+SDK,PartialFormat,Constraint Component Count: {0},Constraint Component数: {0}
+SDK,PartialFormat,Constraint Component Count: {0} (Recommended: {1}) - Reduce the number of constraint components for optimal performance.,Constraint Component数: {0}（推奨: {1}） - Reduce the number of constraint components for optimal performance.
+SDK,PartialFormat,"Constraint Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many constraint components. {3}","【要確認】Constraint Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many constraint components. {3}"
 SDK,Partial,"All constraint components will be removed at runtime."" : ""Reduce the number of constraint components for optimal performance.","【要確認】All constraint components will be removed at runtime."" : ""Reduce the number of constraint components for optimal performance."
-SDK,Format,Constraint Depth: {0},Constraint Depth: {0}
-SDK,Format,Constraint Depth: {0} (Recommended: {1}) - Reorganize your constraints to reduce dependencies for optimal performance.,Constraint Depth: {0}（推奨: {1}） - Reorganize your constraints to reduce dependencies for optimal performance.
-SDK,Format,"Constraint Depth: {0} (Maximum: {1}, Recommended: {2}) - This avatar's constraints are nested too deeply. {3}","【要確認】Constraint Depth: {0} (Maximum: {1}, Recommended: {2}) - This avatar's constraints are nested too deeply. {3}"
+SDK,PartialFormat,Constraint Depth: {0},Constraint Depth: {0}
+SDK,PartialFormat,Constraint Depth: {0} (Recommended: {1}) - Reorganize your constraints to reduce dependencies for optimal performance.,Constraint Depth: {0}（推奨: {1}） - Reorganize your constraints to reduce dependencies for optimal performance.
+SDK,PartialFormat,"Constraint Depth: {0} (Maximum: {1}, Recommended: {2}) - This avatar's constraints are nested too deeply. {3}","【要確認】Constraint Depth: {0} (Maximum: {1}, Recommended: {2}) - This avatar's constraints are nested too deeply. {3}"
 SDK,Partial,"All VRCConstraint components will be removed at runtime."" : ""Reorganize your constraints to reduce dependencies for optimal performance.","【要確認】All VRCConstraint components will be removed at runtime."" : ""Reorganize your constraints to reduce dependencies for optimal performance."
-SDK,Format,VRCRaycast Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCRaycast components on this avatar.,【要確認】VRCRaycast Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCRaycast components on this avatar.
-SDK,Format,Raycasts: {0},Raycast: {0}
-SDK,Format,Raycasts: {0} (Recommended: {1}) - Reduce the number of VRCRaycast components for optimal performance.,Raycast: {0}（推奨: {1}） - Reduce the number of VRCRaycast components for optimal performance.
-SDK,Format,"Raycasts: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many raycast components. Reduce number of VRCRaycast components for better performance.","【要確認】Raycasts: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many raycast components. Reduce number of VRCRaycast components for better performance."
-SDK,Format,Cloth Component Count: {0},Cloth Component数: {0}
-SDK,Format,Cloth Component Count: {0} (Recommended: {1}) - Avoid use of cloth for optimal performance.,Cloth Component数: {0}（推奨: {1}） - Avoid use of cloth for optimal performance.
-SDK,Format,"Cloth Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many Cloth components. Avoid use of cloth for optimal performance.","【要確認】Cloth Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many Cloth components. Avoid use of cloth for optimal performance."
-SDK,Format,Cloth Total Vertex Count: {0},Cloth合計Vertex数: {0}
-SDK,Format,Cloth Total Vertex Count: {0} (Recommended: {1}) - Reduce number of vertices in cloth meshes for improved performance.,Cloth合計Vertex数: {0}（推奨: {1}） - Reduce number of vertices in cloth meshes for improved performance.
-SDK,Format,"Cloth Total Vertex Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many vertices in cloth meshes.","【要確認】Cloth Total Vertex Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many vertices in cloth meshes."
+SDK,PartialFormat,VRCRaycast Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCRaycast components on this avatar.,【要確認】VRCRaycast Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCRaycast components on this avatar.
+SDK,PartialFormat,Raycasts: {0},Raycast: {0}
+SDK,PartialFormat,Raycasts: {0} (Recommended: {1}) - Reduce the number of VRCRaycast components for optimal performance.,Raycast: {0}（推奨: {1}） - Reduce the number of VRCRaycast components for optimal performance.
+SDK,PartialFormat,"Raycasts: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many raycast components. Reduce number of VRCRaycast components for better performance.","【要確認】Raycasts: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many raycast components. Reduce number of VRCRaycast components for better performance."
+SDK,PartialFormat,Cloth Component Count: {0},Cloth Component数: {0}
+SDK,PartialFormat,Cloth Component Count: {0} (Recommended: {1}) - Avoid use of cloth for optimal performance.,Cloth Component数: {0}（推奨: {1}） - Avoid use of cloth for optimal performance.
+SDK,PartialFormat,"Cloth Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many Cloth components. Avoid use of cloth for optimal performance.","【要確認】Cloth Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many Cloth components. Avoid use of cloth for optimal performance."
+SDK,PartialFormat,Cloth Total Vertex Count: {0},Cloth合計Vertex数: {0}
+SDK,PartialFormat,Cloth Total Vertex Count: {0} (Recommended: {1}) - Reduce number of vertices in cloth meshes for improved performance.,Cloth合計Vertex数: {0}（推奨: {1}） - Reduce number of vertices in cloth meshes for improved performance.
+SDK,PartialFormat,"Cloth Total Vertex Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many vertices in cloth meshes.","【要確認】Cloth Total Vertex Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many vertices in cloth meshes."
 SDK,Partial, Reduce number of vertices in cloth meshes for improved performance.,【要確認】 Reduce number of vertices in cloth meshes for improved performance.
-SDK,Format,Physics Collider Count: {0},Physics Collider数: {0}
-SDK,Format,Physics Collider Count: {0} (Recommended: {1}) - Avoid use of colliders for optimal performance.,Physics Collider数: {0}（推奨: {1}） - Avoid use of colliders for optimal performance.
-SDK,Format,"Physics Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many colliders. Avoid use of colliders for optimal performance.","【要確認】Physics Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many colliders. Avoid use of colliders for optimal performance."
-SDK,Format,Physics Rigidbody Count: {0},Physics Rigidbody数: {0}
-SDK,Format,Physics Rigidbody Count: {0} (Recommended: {1}) - Avoid use of rigidbodies for optimal performance.,Physics Rigidbody数: {0}（推奨: {1}） - Avoid use of rigidbodies for optimal performance.
-SDK,Format,"Physics Rigidbody Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many rigidbodies. Avoid use of rigidbodies for optimal performance.","【要確認】Physics Rigidbody Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many rigidbodies. Avoid use of rigidbodies for optimal performance."
-SDK,Format,Audio Sources: {0},Audio Source: {0}
-SDK,Format,Audio Sources: {0} (Recommended: {1}) - Reduce number of audio sources for better performance.,Audio Source: {0}（推奨: {1}） - Reduce number of audio sources for better performance.
-SDK,Format,"Audio Sources: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many audio sources. Reduce number of audio sources for better performance.",Audio Source: {0}（最大: {1}、推奨: {2}）- このアバターにはAudio Sourceが多すぎます。Performance向上のためAudio Source数を減らしてください。
-SDK,Format,Texture Memory Usage: {0} MB,Texture Memory使用量: {0} MB
-SDK,Format,Texture Memory Usage: {0} MB (Recommended: {1} MB) - Lower the resolution of your textures in the texture import settings.,Texture Memory使用量: {0} MB（推奨: {1} MB）- Texture Import SettingsでTextureの解像度を下げてください。
-SDK,Format,"Texture Memory Usage: {0} MB (Maximum: {1} MB, Recommended: {2} MB) - This avatar's total texture resolution is too high. ","【要確認】Texture Memory Usage: {0} MB (Maximum: {1} MB, Recommended: {2} MB) - This avatar's total texture resolution is too high. "
+SDK,PartialFormat,Physics Collider Count: {0},Physics Collider数: {0}
+SDK,PartialFormat,Physics Collider Count: {0} (Recommended: {1}) - Avoid use of colliders for optimal performance.,Physics Collider数: {0}（推奨: {1}） - Avoid use of colliders for optimal performance.
+SDK,PartialFormat,"Physics Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many colliders. Avoid use of colliders for optimal performance.","【要確認】Physics Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many colliders. Avoid use of colliders for optimal performance."
+SDK,PartialFormat,Physics Rigidbody Count: {0},Physics Rigidbody数: {0}
+SDK,PartialFormat,Physics Rigidbody Count: {0} (Recommended: {1}) - Avoid use of rigidbodies for optimal performance.,Physics Rigidbody数: {0}（推奨: {1}） - Avoid use of rigidbodies for optimal performance.
+SDK,PartialFormat,"Physics Rigidbody Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many rigidbodies. Avoid use of rigidbodies for optimal performance.","【要確認】Physics Rigidbody Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many rigidbodies. Avoid use of rigidbodies for optimal performance."
+SDK,PartialFormat,Audio Sources: {0},Audio Source: {0}
+SDK,PartialFormat,Audio Sources: {0} (Recommended: {1}) - Reduce number of audio sources for better performance.,Audio Source: {0}（推奨: {1}） - Reduce number of audio sources for better performance.
+SDK,PartialFormat,"Audio Sources: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many audio sources. Reduce number of audio sources for better performance.",Audio Source: {0}（最大: {1}、推奨: {2}）- このアバターにはAudio Sourceが多すぎます。Performance向上のためAudio Source数を減らしてください。
+SDK,PartialFormat,Texture Memory Usage: {0} MB,Texture Memory使用量: {0} MB
+SDK,PartialFormat,Texture Memory Usage: {0} MB (Recommended: {1} MB) - Lower the resolution of your textures in the texture import settings.,Texture Memory使用量: {0} MB（推奨: {1} MB）- Texture Import SettingsでTextureの解像度を下げてください。
+SDK,PartialFormat,"Texture Memory Usage: {0} MB (Maximum: {1} MB, Recommended: {2} MB) - This avatar's total texture resolution is too high. ","【要確認】Texture Memory Usage: {0} MB (Maximum: {1} MB, Recommended: {2} MB) - This avatar's total texture resolution is too high. "
 SDK,Partial,Lower the resolution of your largest textures in the texture import settings. ,【要確認】Lower the resolution of your largest textures in the texture import settings. 
 SDK,Partial,Consider using shader features like decals or tiling. Check your shader's documentation for more information. ,【要確認】Consider using shader features like decals or tiling. Check your shader's documentation for more information. 
 SDK,Partial,You can also check your model's UV layouts to better utilize texture space. These techniques may help you reduce texture memory usage.,【要確認】You can also check your model's UV layouts to better utilize texture space. These techniques may help you reduce texture memory usage.
-SDK,Partial,Changing to an older version may reintroduce issues that were fixed in newer versions.\n,古いVersionへ変更すると、新しいVersionで修正された問題が再発する可能性があります。\n
-SDK,Partial,Consider keeping the current version for best compatibility.,互換性を保つため、現在のVersionを維持することを検討してください。
-SDK,Format,This component uses an older version. Upgrade to {0} for improved compatibility.,【要確認】This component uses an older version. Upgrade to {0} for improved compatibility.
-SDK,Format,Upgrade to {0},【要確認】Upgrade to {0}
-SDK,Partial,"Version Downgrade Warning"" : ""Upgrade Complete","【要確認】Version Downgrade Warning"" : ""Upgrade Complete"
-SDK,Partial,"Continue"" : ""OK","【要確認】Continue"" : ""OK"
-SDK,Partial,Failed to get package list from vpm-manifest.json,【要確認】Failed to get package list from vpm-manifest.json
-SDK,Partial,"By clicking OK, I certify that I have the necessary rights to upload this content and that it will not infringe on any third-party legal or intellectual property rights.","【要確認】By clicking OK, I certify that I have the necessary rights to upload this content and that it will not infringe on any third-party legal or intellectual property rights."
-SDK,Partial,No blueprint ID set,Blueprint IDが設定されていません
-SDK,Partial,Copyright ownership agreement,著作権所有に関する同意
-SDK,Partial,You must agree to the ownership agreement to upload,Uploadするには所有権に関する同意が必要です
-SDK,Partial,Failed to agree to the ownership agreement,所有権に関する同意に失敗しました
-SDK,Format,Building for {0},{0}向けにBuild中
-SDK,Partial,Multi Platform Build,Multi Platform Build
-SDK,Format,Publishing for {0},{0}向けにPublish中
-SDK,Format,Built & Uploaded for {0},{0}向けのBuildとUploadが完了しました
-SDK,Format,"{0} bundle already uploaded, upload skipped",{0} BundleはすでにUpload済みのため、UploadをSkipしました
-SDK,Partial,"No valid next target found for MultiPlatformBuild, you should install the required modules for Android and iOS","【要確認】No valid next target found for MultiPlatformBuild, you should install the required modules for Android and iOS"
-SDK,Partial,Failed to switch platform,Platformの切り替えに失敗しました
-SDK,Partial,Identifier Mismatch,Identifierの不一致
-SDK,Partial,Object Mismatch,Objectの不一致
-SDK,Partial,Object not in Scene,ObjectがSceneにありません
-SDK,Partial,New Identifier from File,Fileから新しいIdentifier
-SDK,Partial,Network Components Changed,Network Componentが変更されました
-SDK,Partial,Ignore All,すべて無視
-SDK,Partial,Accept All,すべて受け入れる
-SDK,Partial,Network ID Utility,Network ID Utility
-SDK,Partial,Please load a scene with a Scene or Avatar Descriptor.,SceneまたはAvatar Descriptorを含むSceneを読み込んでください。
-SDK,Partial,Clear Scene IDs,Scene IDをクリア
-SDK,Partial,Regenerate Scene IDs,Scene IDを再生成
-SDK,Partial,Scan For Conflicts,ConflictをScan
-SDK,Partial,Auto Scan,自動Scan
-SDK,Partial,"<<"" : ""<< First Page","【要確認】<<"" : ""<< First Page"
-SDK,Partial,"<"" : ""< Previous Page","【要確認】<"" : ""< Previous Page"
-SDK,Partial,">"" : ""Next Page >","【要確認】>"" : ""Next Page >"
-SDK,Partial,">>"" : ""Last Page >>","【要確認】>>"" : ""Last Page >>"
-SDK,Partial,Page Size,Page Size
-SDK,Partial,Do you wish to clear all recorded network IDs from the scene?,Sceneに記録されているすべてのNetwork IDをクリアしますか？
-SDK,Partial,Clear IDs,IDをクリア
-SDK,Partial,Generate New Scene IDs,新しいScene IDを生成
-SDK,Partial,"Do you wish to clear all recorded network IDs from the scene, and create new ones?",Sceneに記録されているすべてのNetwork IDをクリアし、新しいIDを作成しますか？
-SDK,Partial,Generate New IDs,新しいIDを生成
-SDK,Format,Ran into {0} errors while regenerating IDs.,IDの再生成中に{0}件のErrorが発生しました。
-SDK,Partial,Duplicate Paths Found,重複するPathが見つかりました
-SDK,Partial,"Some networked behaviours share the same transform path, and so an ID export will not contain all objects. Should export continue?","【要確認】Some networked behaviours share the same transform path, and so an ID export will not contain all objects. Should export continue?"
-SDK,Partial,Continue Export,Exportを続行
-SDK,Partial,The following game objects staged for export have forward slashes (/) in their names:,【要確認】The following game objects staged for export have forward slashes (/) in their names:
-SDK,Format,\t...and {0} more.,【要確認】\t...and {0} more.
-SDK,Partial,"You should rename these game objects so their names do not contain any forward slashes before exporting. If you continue exporting anyway, you may have issues when importing the data again later.","【要確認】You should rename these game objects so their names do not contain any forward slashes before exporting. If you continue exporting anyway, you may have issues when importing the data again later."
-SDK,Partial,Malformed Paths Found,【要確認】Malformed Paths Found
-SDK,Partial,Save Network ID Associations,Network ID Associationを保存
-SDK,Partial,Open Network ID Associations,Network ID Associationを開く
-SDK,Partial,Network ID Dictionary,Network ID Dictionary
-SDK,Format,"Failed to load object, instead had {0}",Objectを読み込めませんでした。代わりに{0}がありました
-SDK,Format,"Failed to read object, could not parse key {0}",Objectを読み込めませんでした。Key {0}をParseできません
-SDK,Format,"Failed to read object, found value type {0}",Objectを読み込めませんでした。Value Type {0}が見つかりました
-SDK,Format,Duplicate Path using ID {0} was loaded from json: {1},ID {0}を使用する重複PathがJSONから読み込まれました: {1}
-SDK,Partial,Expected a valid and resolved reference,有効で解決済みのReferenceが必要です
-SDK,Partial, is not an Enum,【要確認】 is not an Enum
-SDK,Partial,Predicate filtered out all options,PredicateによってすべてのOptionが除外されました
-SDK,Partial,Expected a string for customProperty,customPropertyにはStringが必要です
-SDK,Partial,Expected an object or array for triggersProperty,triggersPropertyにはObjectまたはArrayが必要です
-SDK,Partial,Receivers do not have Custom Triggers which share names.,Receiverには同名のCustom Triggerがありません。
-SDK,Partial,Failed to get scene view,Scene Viewを取得できません
-SDK,Partial,Failed to get scene camera,Scene Cameraを取得できません
-SDK,Partial,Failed to get string for build target,Build TargetのStringを取得できません
-SDK,Format,"Failed to check build target support for {0}, assume not installed: {1}","【要確認】Failed to check build target support for {0}, assume not installed: {1}"
-SDK,Partial,Welcome to VRChat SDK,VRChat SDKへようこそ
-SDK,Partial,Join other Creators in our Discord,Discordで他のCreatorと交流
-SDK,Partial,Click here to see great assets for VRChat creation,VRChat制作に役立つAssetを見る
-SDK,Partial,UniTask Tracker,UniTask Tracker
-SDK,Partial,Enable AutoReload,AutoReloadを有効化
-SDK,Partial,Reload automatically.,自動的にReloadします。
-SDK,Partial,Reload View.,ViewをReloadします。
-SDK,Partial,Invoke GC.Collect.,GC.Collectを実行します。
-SDK,Partial,Enable Tracking,Trackingを有効化
-SDK,Partial,Start to track async/await UniTask. Performance impact: low,async/await UniTaskのTrackingを開始します。Performanceへの影響: 低
-SDK,Partial,Enable StackTrace,StackTraceを有効化
-SDK,Partial,Capture StackTrace when task is started. Performance impact: high,Task開始時にStackTraceを取得します。Performanceへの影響: 高
-SDK,Partial,VRChat SDK Settings,VRChat SDK設定
-SDK,Partial,Android App Package Name,Android App Package名
-SDK,Partial,Quest App Package Name,Quest App Package名
-SDK,Partial,Position is out of bounds,Positionが範囲外です
-SDK,Format,Seek operation is not supported for {0},【要確認】Seek operation is not supported for {0}
+

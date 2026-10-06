@@ -37,7 +37,7 @@ https://github.com/natade-jp/VRChatSdkUiLocalizer.git
 
 ## Usage
 
-Unity Editorの次の設定から使用する言語を選択します。
+Unity Hubで対象Editorの日本語Language Packを追加し、Unity Editorの次の設定から使用する言語を選択します。
 
 ```text
 Edit
@@ -46,7 +46,9 @@ Edit
       └─ Editor language
 ```
 
-例えば`日本語`を選択すると、`Translations/Japanese/`の翻訳データが使用されます。英語の場合はVRChat SDK本来の表示になります。
+分からない場合は[Unity Editorを日本語化する手順](https://blog.natade.net/2026/10/03/unity-editor-japanese/)を確認してください。
+
+`日本語`を選択すると、`Translations/Japanese/`の翻訳データが使用されます。英語の場合はVRChat SDK本来の表示になります。
 
 言語変更や翻訳データの再読み込み後、表示中のInspectorやSDK Control Panelへすぐに反映されない場合は、対象の選択やウィンドウの表示をやり直してください。
 
@@ -82,31 +84,31 @@ SDK,Format,"Triangles: {0} (Recommended: {1})","ポリゴン数: {0}（推奨: {
 
 ### Columns
 
-| 列 | 内容 |
-| --- | --- |
-| `Target` | 翻訳対象のUI |
-| `Type` | 翻訳方法 |
-| `Source` | 元のテキスト |
+| 列            | 内容             |
+| ------------- | ---------------- |
+| `Target`      | 翻訳対象のUI     |
+| `Type`        | 翻訳方法         |
+| `Source`      | 元のテキスト     |
 | `Translation` | 翻訳後のテキスト |
 
 ### Target
 
-| Target | 対象 |
-| --- | --- |
-| `Inspector` | VRChat SDKのInspectorなどのIMGUI |
-| `SDK` | SDK Control PanelなどのVRChat SDK UI |
+| Target      | 対象                                 |
+| ----------- | ------------------------------------ |
+| `Inspector` | VRChat SDKのInspectorなどのIMGUI     |
+| `SDK`       | SDK Control PanelなどのVRChat SDK UI |
 
 Targetごとに翻訳データを分けて処理するため、`SDK`用の翻訳が`Inspector`へ適用されることはありません。
 
 ### Type
 
-| Type | 動作 | 主な用途 |
-| --- | --- | --- |
-| `Exact` | テキスト全体が一致した場合に翻訳 | 固定ラベル・メッセージ |
-| `Format` | `{0}`などを可変部分として全体一致 | 数値などを含むテキスト |
-| `PartialFormat` | `{0}`などを含むパターンを部分一致で置換 | 可変部分を含む長いテキストの一部 |
-| `Partial` | 一致した部分だけを置換 | 固定文字列を含むテキスト |
-| `Debug` | 一致した実際の表示テキストをConsoleへ出力 | 翻訳対象の調査 |
+| Type            | 動作                                      | 主な用途                         |
+| --------------- | ----------------------------------------- | -------------------------------- |
+| `Exact`         | テキスト全体が一致した場合に翻訳          | 固定ラベル・メッセージ           |
+| `Format`        | `{0}`などを可変部分として全体一致         | 数値などを含むテキスト           |
+| `PartialFormat` | `{0}`などを含むパターンを部分一致で置換   | 可変部分を含む長いテキストの一部 |
+| `Partial`       | 一致した部分だけを置換                    | 固定文字列を含むテキスト         |
+| `Debug`         | 一致した実際の表示テキストをConsoleへ出力 | 翻訳対象の調査                   |
 
 #### Exact
 
@@ -205,15 +207,15 @@ Partial
 
 ## CSV Rules
 
-| 項目 | 仕様 |
-| --- | --- |
-| 文字コード | UTF-8（BOMあり・なし） |
-| 改行コード | LF / CRLF |
-| CSV内の改行 | `\n` |
-| カンマ | フィールドを`"`で囲む |
-| `"` | `""`と記述 |
-| コメント | 空白を除く行頭が`#` |
-| `#` | 引用符内では通常の文字 |
+| 項目        | 仕様                   |
+| ----------- | ---------------------- |
+| 文字コード  | UTF-8（BOMあり・なし） |
+| 改行コード  | LF / CRLF              |
+| CSV内の改行 | `\n`                   |
+| カンマ      | フィールドを`"`で囲む  |
+| `"`         | `""`と記述             |
+| コメント    | 空白を除く行頭が`#`    |
+| `#`         | 引用符内では通常の文字 |
 
 例：
 

@@ -227,6 +227,8 @@ internal static class TranslationDictionary
                 translationSet);
         }
 
+        SortFormatTranslations(translationSet);
+
         translations.Add(
             language,
             translationSet);
@@ -326,6 +328,59 @@ internal static class TranslationDictionary
                 $"CSVの読み込みに失敗しました: {path}\n" +
                 ex.Message);
         }
+    }
+
+    /// <summary>
+    /// Format系翻訳を優先度順に並べ替え
+    /// </summary>
+    private static void SortFormatTranslations(
+        TranslationSet translationSet)
+    {
+        foreach (
+            TargetTranslationSet targetSet
+            in translationSet.Targets.Values)
+        {
+            targetSet.Format.Sort(
+                CompareFormatTranslation);
+
+            targetSet.PartialFormat.Sort(
+                CompareFormatTranslation);
+        }
+    }
+
+    /// <summary>
+    /// Format系翻訳の優先度を比較
+    /// </summary>
+    private static int CompareFormatTranslation(
+        FormatTranslationEntry x,
+        FormatTranslationEntry y)
+    {
+        int xLength =
+            GetFormatLiteralLength(x.Source);
+
+        int yLength =
+            GetFormatLiteralLength(y.Source);
+
+        int result =
+            yLength.CompareTo(xLength);
+
+        if (result != 0)
+        {
+            return result;
+        }
+
+        return y.Source.Length.CompareTo(x.Source.Length);
+    }
+
+    /// <summary>
+    /// Formatの固定文字列長を取得
+    /// </summary>
+    private static int GetFormatLiteralLength(
+        string source)
+    {
+        return PlaceholderPattern
+            .Replace(source, string.Empty)
+            .Length;
     }
 
     /// <summary>

@@ -2,58 +2,41 @@
 
 VRChat SDKのInspectorやSDK Control Panelなど、Unity Editor上に表示されるVRChat SDK独自のUIを、Unity Editorの言語設定に応じて翻訳するUnity Editor拡張です。
 
-Unity標準のローカライズでは翻訳されないVRChat SDK独自の表示を補完します。
+Unity標準のローカライズでは翻訳されないVRChat SDKのUIを補完します。
 
 ## Features
 
 - Unity Editorの言語設定に応じてVRChat SDKのUIを翻訳
-- VRChat SDKのInspectorに対応
-- VRChat SDK Control Panelに対応
+- Inspector / SDK Control Panelに対応
 - Unity本体やVRChat SDKのファイルを変更せずに動作
-- CSVファイルによる翻訳データの管理
-- Inspector用とSDK UI用の翻訳データを分離
-- 言語ごとに翻訳データを分離
-- 複数言語への拡張に対応
+- CSVによる翻訳データの管理
+- UI・言語ごとに翻訳データを分離
+- 複数言語へ拡張可能
+
+## Installation
+
+あらかじめUnityプロジェクトへVRChat SDKをインストールしてから、本パッケージをインストールしてください。
+
+本ツールはVRChat SDKに含まれるHarmonyを利用して実行時にUIを翻訳するため、Unity本体やVRChat SDKのファイルを直接変更しません。
 
 ## Usage
 
-### インストール
-
-あらかじめUnityプロジェクトへVRChat SDKをインストールしてください。
-
-その後、本パッケージをUnityプロジェクトへインストールします。
-
-本ツールはVRChat SDKに含まれるHarmonyを利用するため、VRChat SDKがインストールされている必要があります。
-
-Avatar用SDKなどの個別パッケージに含まれる型を直接依存関係として参照せず、利用可能なUIに対して翻訳処理を適用します。
-
-### Unity Editorの言語設定
-
-翻訳に使用する言語は、Unity Editorの言語設定に連動します。
-
-Unity Editorの言語を変更するには、次の設定を開きます。
+Unity Editorの次の設定から使用する言語を選択します。
 
 ```text
 Edit
 └─ Preferences
    └─ Languages
+      └─ Editor language
 ```
 
-`Editor language`から使用する言語を選択します。
+例えば`日本語`を選択すると、`Translations/Japanese/`の翻訳データが使用されます。英語の場合はVRChat SDK本来の表示になります。
 
-例えば`日本語`を選択すると、`Translations/Japanese/`に配置された翻訳データが使用されます。
-
-Unity Editorを英語に戻した場合は、VRChat SDKの元の英語表示が使用されます。
-
-### 翻訳の確認
-
-言語を変更した後、VRChat SDKのコンポーネントをInspectorで表示するか、VRChat SDK Control Panelを開いて翻訳を確認します。
-
-すでに表示されているInspectorやSDK Control Panelには変更がすぐに反映されない場合があります。その場合は、対象を選択し直すかSDK Control Panelを開き直してください。
+言語変更や翻訳データの再読み込み後、表示中のInspectorやSDK Control Panelへすぐに反映されない場合は、対象の選択やウィンドウの表示をやり直してください。
 
 ## Translations
 
-翻訳データは次のように言語ごとのフォルダへ配置します。
+翻訳データはUnityの`SystemLanguage`名ごとのフォルダに配置します。
 
 ```text
 Translations/
@@ -66,13 +49,13 @@ Translations/
 └─ ...
 ```
 
-言語フォルダ名にはUnityの`SystemLanguage`の名前を使用します。
-
 現在は日本語への翻訳を対象としています。
+
+同じ言語フォルダには複数のCSVを配置でき、ファイル名は自由です。翻訳対象はファイル名ではなくCSVの`Target`で決まります。
 
 ## Translation CSV
 
-翻訳データはCSV形式で記述します。
+CSVは次の形式で記述します。
 
 ```csv
 Target,Type,Source,Translation
@@ -81,222 +64,154 @@ SDK,Exact,Prepare Your Content,コンテンツの準備
 SDK,Format,"Triangles: {0} (Recommended: {1})","ポリゴン数: {0}（推奨: {1}）"
 ```
 
-各列の意味は次のとおりです。
+### Columns
 
-| 列            | 内容                               |
-| ------------- | ---------------------------------- |
-| `Target`      | 翻訳対象                           |
-| `Type`        | 翻訳方法                           |
-| `Source`      | VRChat SDKで表示される元のテキスト |
-| `Translation` | 翻訳後のテキスト                   |
+| 列 | 内容 |
+| --- | --- |
+| `Target` | 翻訳対象のUI |
+| `Type` | 翻訳方法 |
+| `Source` | 元のテキスト |
+| `Translation` | 翻訳後のテキスト |
 
 ### Target
 
-`Target`では翻訳を適用するUIの種類を指定します。
+| Target | 対象 |
+| --- | --- |
+| `Inspector` | VRChat SDKのInspectorなどのIMGUI |
+| `SDK` | SDK Control PanelなどのVRChat SDK UI |
 
-現在は次の2種類に対応しています。
+Targetごとに翻訳データを分けて処理するため、`SDK`用の翻訳が`Inspector`へ適用されることはありません。
 
-| Target      | 対象                                                          |
-| ----------- | ------------------------------------------------------------- |
-| `Inspector` | VRChat SDKのInspectorなど、UnityのIMGUIを使用して表示されるUI |
-| `SDK`       | SDK Control Panelなど、VRChat SDK側で構築されるUI             |
+### Type
 
-例えば、Inspectorの`Gravity`を翻訳する場合は次のように記述します。
+| Type | 動作 | 主な用途 |
+| --- | --- | --- |
+| `Exact` | テキスト全体が一致した場合に翻訳 | 固定ラベル・メッセージ |
+| `Format` | `{0}`などを可変部分として全体一致 | 数値などを含むテキスト |
+| `PartialFormat` | `{0}`などを含むパターンを部分一致で置換 | 可変部分を含む長いテキストの一部 |
+| `Partial` | 一致した部分だけを置換 | 固定文字列を含むテキスト |
+| `Debug` | 一致した実際の表示テキストをConsoleへ出力 | 翻訳対象の調査 |
 
-```csv
-Inspector,Exact,Gravity,重力
-```
-
-SDK Control Panelの表示を翻訳する場合は`SDK`を指定します。
-
-```csv
-SDK,Exact,Prepare Your Content,コンテンツの準備
-```
-
-翻訳データはTargetごとに分けて処理されるため、`SDK`用の翻訳がInspector側へ適用されることはありません。
-
-### Exact
-
-`Source`と表示テキスト全体が完全に一致した場合に翻訳します。
+#### Exact
 
 ```csv
 Inspector,Exact,Gravity,重力
-SDK,Exact,Build,ビルド
 ```
 
-固定されたラベルやメッセージなど、表示内容が変化しないテキストに使用します。
+前後の空白や改行は保持されます。
 
-前後の空白や改行は翻訳処理時に保持されます。
+#### Format
 
-### Partial
-
-表示テキストに`Source`が含まれている場合、その部分だけを置き換えます。
-
-```csv
-SDK,Partial,Review Any Alerts,警告を確認
-```
-
-例えば、実際の表示が次の場合、
-
-```text
-Review Any Alerts (10)
-```
-
-翻訳後は次のようになります。
-
-```text
-警告を確認 (10)
-```
-
-数値など一部だけが変化するテキストにも利用できますが、文章中の可変部分を扱う場合は、可能であれば後述する`Format`の使用を推奨します。
-
-`Partial`は部分一致したすべての箇所を置き換えるため、短すぎる単語や一般的な表現を指定すると、意図しない場所まで翻訳される可能性があります。
-
-### Format
-
-`{0}`、`{1}`などを可変部分として扱う翻訳方法です。
+`{0}`、`{1}`などを可変部分として扱います。
 
 ```csv
 SDK,Format,"Triangles: {0} (Recommended: {1})","ポリゴン数: {0}（推奨: {1}）"
 ```
 
-例えば、
-
 ```text
 Triangles: 35836 (Recommended: 32000)
-```
-
-と表示された場合、
-
-```text
+↓
 ポリゴン数: 35836（推奨: 32000）
 ```
 
-へ翻訳されます。
-
-複数の可変部分を使用できます。
-
-```csv
-SDK,Format,"Mesh Renderers: {0} (Maximum: {1}, Recommended: {2})","Mesh Renderer: {0}（最大: {1}、推奨: {2}）"
-```
-
-`Translation`側ではプレースホルダーの順序を変更することもできます。
+Translation側ではプレースホルダーの順序も変更できます。
 
 ```csv
 SDK,Format,"{0} of {1}","全{1}件中{0}件"
 ```
 
-そのため、英語と翻訳先の言語で語順が異なる場合にも対応できます。
+#### PartialFormat
 
-### Debug
-
-`Debug`は、実際にUnity上で使用されているテキストを確認するための調査用Typeです。
-
-`Source`に指定した文字列が表示テキストに含まれている場合、その表示テキスト全体をUnity Consoleへ出力します。
+`Format`と同様に可変部分を扱いますが、テキスト全体ではなく一致した部分だけを置換します。
 
 ```csv
-SDK,Debug,Mesh Renderers,
+SDK,PartialFormat,"Overall Performance Estimate: {0} - ","総合パフォーマンス推定: {0} - "
 ```
 
-例えば、実際の表示テキストが次の場合、
+`PartialFormat`では可変部分の範囲を特定できるよう、最後のプレースホルダーの後にも固定文字を含めることを推奨します。
+
+#### Partial
+
+```csv
+SDK,Partial,Review Any Alerts,警告を確認
+```
 
 ```text
-Mesh Renderers: 17 (Maximum: 16, Recommended: 8)
+Review Any Alerts (10)
+↓
+警告を確認 (10)
 ```
 
-`Source`の`Mesh Renderers`が含まれているため、このテキスト全体がConsoleへ出力されます。
+一致するすべての箇所を置換するため、短すぎる単語や一般的な表現の指定には注意してください。
 
-`Debug`では翻訳は行われません。`Translation`は使用しないため空欄にできます。
+#### Debug
 
-また、Debugによる検出後も通常の翻訳処理は継続されます。
-
-同一の表示テキストは繰り返し描画されても1回だけConsoleへ出力されます。翻訳データを再読み込みすると、この出力履歴もリセットされます。
-
-誤って大量のテキストへ一致することを防ぐため、`Debug`の`Source`には5文字以上を指定する必要があります。
-
-### 翻訳の優先順位
-
-表示テキストに対して、まず`Debug`による検出が行われます。
-
-その後、翻訳は次の順序で試行されます。
-
-1. `Exact`
-2. `Format`
-3. `Partial`
-
-`Exact`または`Format`で一致した場合は、その翻訳結果が使用されます。
-
-どちらにも一致しなかった場合、`Partial`による部分置換が行われます。
-
-`Debug`は翻訳方法ではなく調査用の機能であるため、通常の翻訳処理を妨げません。
-
-### 改行
-
-CSV内では`\n`を使用して改行を記述できます。
+実際にUnity上で使用されているテキストを調査できます。
 
 ```csv
-SDK,Exact,"Are you sure?\nSome shaders might use these!","本当によろしいですか？\n一部のShaderでは使用されている可能性があります！"
+,Debug,Mesh Renderers,
 ```
 
-`\n`はCSVの読み込み時に実際の改行へ変換されます。
+`Source`を含む表示テキスト全体をUnity Consoleへ出力し、翻訳処理自体はそのまま継続します。
 
-これにより、CSVの1レコードを複数の物理行に分割せずに、改行を含むメッセージを記述できます。
-
-### CSVの記述
-
-カンマを含むフィールドはダブルクォートで囲みます。
-
-```csv
-SDK,Exact,"Hello, World","こんにちは、世界"
+```text
+[VRChatSdkUiLocalizer] Debug: "Mesh Renderers: 17 (Maximum: 16, Recommended: 8)"
 ```
 
-ダブルクォート自体を含める場合は、CSVの仕様に従って`""`と記述します。
+- `Target`は使用しないため空欄
+- `Translation`も空欄
+- `Source`は5文字以上必要
+- 同じテキストは1回だけ出力
+- 翻訳データの再読み込みで出力履歴をリセット
+- 最大20件まで出力
 
-```csv
-SDK,Exact,"Click ""Build"" to continue.","「Build」をクリックして続行してください。"
+### Translation Priority
+
+翻訳は次の順序で処理されます。
+
+```text
+Debug
+  ↓
+Exact
+  ↓
+Format
+  ↓
+PartialFormat
+  ↓
+Partial
 ```
 
-UTF-8のBOMあり・BOMなしの両方に対応しています。
+`Exact`または`Format`で一致した場合はその結果を使用します。
 
-改行コードはLFとCRLFの両方に対応しています。
+`Format`と`PartialFormat`では、より具体的なパターンが優先されるよう、固定文字列部分の長いものから評価されます。
 
-### コメント
+`PartialFormat`と`Partial`は順番に部分置換されます。
 
-行の先頭（空白を除く）が`#`の行はコメントとして扱われます。
+## CSV Rules
+
+| 項目 | 仕様 |
+| --- | --- |
+| 文字コード | UTF-8（BOMあり・なし） |
+| 改行コード | LF / CRLF |
+| CSV内の改行 | `\n` |
+| カンマ | フィールドを`"`で囲む |
+| `"` | `""`と記述 |
+| コメント | 空白を除く行頭が`#` |
+| `#` | 引用符内では通常の文字 |
+
+例：
 
 ```csv
 # VRCPhysBone
-# Reference source:
-# Packages/com.vrchat.base/Editor/...
-
-Target,Type,Source,Translation
 Inspector,Exact,Gravity,重力
+SDK,Exact,"Hello, World","こんにちは、世界"
+SDK,Exact,"Click ""Build"" to continue.","「Build」をクリックして続行してください。"
+SDK,Exact,"Are you sure?\nContinue?","本当によろしいですか？\n続行しますか？"
 ```
 
-ダブルクォートで囲まれたフィールド内の`#`は通常の文字として扱われます。
+## Reload Translations
 
-### 翻訳ファイルの分割
-
-同じ言語フォルダ内には複数のCSVファイルを配置できます。
-
-```text
-Translations/
-└─ Japanese/
-   ├─ VRCPhysBone.csv
-   ├─ VRCContactReceiver.csv
-   ├─ VRCAvatarDescriptor.csv
-   └─ VRCSDKControlPanel.csv
-```
-
-ファイル名そのものは翻訳処理には使用されないため、コンポーネントや機能ごとに自由に分割できます。
-
-翻訳対象はファイル名ではなく、各レコードの`Target`によって決まります。
-
-同じ`Target`および`Type`で同じ`Source`が複数のCSVファイルに存在する場合は、先に読み込まれた翻訳が使用されます。
-
-### 翻訳の再読み込み
-
-CSVを編集した場合は、Unityのメニューから翻訳データを再読み込みできます。
+CSVを編集した場合、Unityを再起動せずに次のメニューから再読み込みできます。
 
 ```text
 VRChat SDK
@@ -304,22 +219,16 @@ VRChat SDK
    └─ Reload Translations
 ```
 
-CSVを変更するたびにUnityを再起動する必要はありません。
+表示済みのInspectorやSDK Control Panelは、再表示が必要になる場合があります。
 
-表示済みのInspectorやSDK Control Panelについては、再表示や再構築が必要になる場合があります。
-
-`Debug`で一度Consoleへ出力されたテキストの記録も、翻訳データの再読み込み時にリセットされます。
+`Debug`の出力履歴も再読み込み時にリセットされます。
 
 ## Requirements
 
 - Unity 2022.3
 - VRChat SDK
 
-本パッケージはVRChat SDKに含まれるHarmonyを利用します。
-
-Harmonyによる実行時の処理を利用しているため、Unity本体やVRChat SDKのファイルを直接変更する必要はありません。
-
-Avatar用SDKなどの個別パッケージに含まれるUIについては、そのパッケージがインストールされている場合に翻訳対象となります。
+Avatar用SDKなど個別パッケージのUIは、そのパッケージがインストールされている場合に翻訳対象となります。
 
 ## License
 

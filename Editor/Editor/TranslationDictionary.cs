@@ -15,6 +15,17 @@ internal static class TranslationDictionary
     private const string TranslationDirectory =
         "Translations";
 
+    /// <summary>
+    /// Debugログの最大出力件数
+    /// </summary>
+    private const int MaxDebugLogCount = 20;
+
+    /// <summary>
+    /// Debugログの識別文字列
+    /// </summary>
+    private const string DebugLogPrefix =
+        "[VRChatSdkUiLocalizer] Debug:";
+
     private static readonly Dictionary<SystemLanguage, TranslationSet>
         translations =
             new Dictionary<SystemLanguage, TranslationSet>();
@@ -79,6 +90,10 @@ internal static class TranslationDictionary
             return text;
         }
 
+        LogDebugText(
+            translationSet,
+            text);
+
         if (!translationSet.Targets.TryGetValue(
                 target,
                 out TargetTranslationSet targetSet))
@@ -96,11 +111,6 @@ internal static class TranslationDictionary
         {
             return text;
         }
-
-        LogDebugText(
-            target,
-            targetSet,
-            body);
 
         string translated =
             TranslateBody(
@@ -258,9 +268,24 @@ internal static class TranslationDictionary
                 TranslationCsvReader.Translation translation
                 in csvTranslations)
             {
+                if (translation.Type ==
+                    TranslationCsvReader.TranslationType.Debug)
+                {
+                    AddDebug(
+                        translationSet,
+                        translation.Source);
+
+                    continue;
+                }
+
+                if (!translation.Target.HasValue)
+                {
+                    continue;
+                }
+
                 TargetTranslationSet targetSet =
                     translationSet.GetOrCreate(
-                        translation.Target);
+                        translation.Target.Value);
 
                 switch (translation.Type)
                 {
@@ -284,12 +309,6 @@ internal static class TranslationDictionary
                             translation.Source,
                             translation.TranslationText);
                         break;
-
-                    case TranslationCsvReader.TranslationType.Debug:
-                        AddDebug(
-                            targetSet,
-                            translation.Source);
-                        break;
                 }
             }
         }
@@ -306,10 +325,20 @@ internal static class TranslationDictionary
     /// デバッグ対象の文字列を出力
     /// </summary>
     private static void LogDebugText(
-        TranslationCsvReader.TranslationTarget target,
-        TargetTranslationSet translationSet,
+        TranslationSet translationSet,
         string text)
     {
+        if (DebugLoggedTexts.Count >= MaxDebugLogCount)
+        {
+            return;
+        }
+
+        // 自身が出力したDebugログは対象外
+        if (text.Contains(DebugLogPrefix))
+        {
+            return;
+        }
+
         foreach (string source in translationSet.Debug)
         {
             if (!text.Contains(source))
@@ -317,18 +346,31 @@ internal static class TranslationDictionary
                 continue;
             }
 
-            string key =
-                target + "\n" + text;
-
-            if (DebugLoggedTexts.Add(key))
+            if (!DebugLoggedTexts.Add(text))
             {
-                Debug.Log(
-                    $"[VRChatSdkUiLocalizer] Debug ({target}): " +
-                    text);
+                return;
             }
+
+            Debug.Log(
+                $"{DebugLogPrefix} " +
+                $"\"{EscapeDebugText(text)}\"");
 
             return;
         }
+    }
+
+    /// <summary>
+    /// Debugログ用文字列をエスケープ
+    /// </summary>
+    private static string EscapeDebugText(
+        string text)
+    {
+        return text
+            .Replace("\\", "\\\\")
+            .Replace("\"", "\\\"")
+            .Replace("\r", "\\r")
+            .Replace("\n", "\\n")
+            .Replace("\t", "\\t");
     }
 
     /// <summary>
@@ -561,7 +603,7 @@ internal static class TranslationDictionary
     /// デバッグ対象を追加
     /// </summary>
     private static void AddDebug(
-        TargetTranslationSet translationSet,
+        TranslationSet translationSet,
         string source)
     {
         if (translationSet.Debug.Contains(source))
@@ -671,6 +713,9 @@ internal static class TranslationDictionary
                     TranslationCsvReader.TranslationTarget,
                     TargetTranslationSet>();
 
+        internal List<string> Debug { get; } =
+            new List<string>();
+
         internal int Count =>
             Targets.Values.Sum(set => set.Count);
 
@@ -711,14 +756,10 @@ internal static class TranslationDictionary
         internal List<TranslationEntry> Partial { get; } =
             new List<TranslationEntry>();
 
-        internal List<string> Debug { get; } =
-            new List<string>();
-
         internal int Count =>
             Exact.Count +
             Format.Count +
-            Partial.Count +
-            Debug.Count;
+            Partial.Count;
     }
 
     /// <summary>

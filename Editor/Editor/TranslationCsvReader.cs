@@ -34,7 +34,7 @@ internal static class TranslationCsvReader
     /// </summary>
     internal sealed class Translation
     {
-        internal TranslationTarget Target { get; }
+        internal TranslationTarget? Target { get; }
         internal TranslationType Type { get; }
         internal string Source { get; }
         internal string TranslationText { get; }
@@ -44,7 +44,7 @@ internal static class TranslationCsvReader
         /// 翻訳レコードを初期化
         /// </summary>
         internal Translation(
-            TranslationTarget target,
+            TranslationTarget? target,
             TranslationType type,
             string source,
             string translationText,
@@ -121,25 +121,11 @@ internal static class TranslationCsvReader
             string source = DecodeEscapes(record.Fields[2]);
             string translation = DecodeEscapes(record.Fields[3]);
 
-            if (string.IsNullOrWhiteSpace(targetText) ||
-                string.IsNullOrWhiteSpace(typeText) ||
+            if (string.IsNullOrWhiteSpace(typeText) ||
                 string.IsNullOrWhiteSpace(source))
             {
                 warning?.Invoke(
                     $"CSVの{record.Line}行目に空欄があります。" +
-                    "このレコードを無視します。");
-
-                continue;
-            }
-
-            if (!TryParseTarget(
-                    targetText,
-                    out TranslationTarget target))
-            {
-                warning?.Invoke(
-                    $"CSVの{record.Line}行目のTarget " +
-                    $"\"{targetText}\" は不正です。" +
-                    "Inspector または SDK を指定してください。" +
                     "このレコードを無視します。");
 
                 continue;
@@ -156,6 +142,36 @@ internal static class TranslationCsvReader
                     "このレコードを無視します。");
 
                 continue;
+            }
+
+            TranslationTarget? target = null;
+
+            if (type != TranslationType.Debug)
+            {
+                if (string.IsNullOrWhiteSpace(targetText))
+                {
+                    warning?.Invoke(
+                        $"CSVの{record.Line}行目のTargetが空です。" +
+                        "Inspector または SDK を指定してください。" +
+                        "このレコードを無視します。");
+
+                    continue;
+                }
+
+                if (!TryParseTarget(
+                        targetText,
+                        out TranslationTarget parsedTarget))
+                {
+                    warning?.Invoke(
+                        $"CSVの{record.Line}行目のTarget " +
+                        $"\"{targetText}\" は不正です。" +
+                        "Inspector または SDK を指定してください。" +
+                        "このレコードを無視します。");
+
+                    continue;
+                }
+
+                target = parsedTarget;
             }
 
             if (type != TranslationType.Debug &&

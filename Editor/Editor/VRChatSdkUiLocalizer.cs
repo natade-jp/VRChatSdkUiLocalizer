@@ -12,7 +12,7 @@ using UnityEngine.UIElements;
 internal static class VRChatSdkUiLocalizer
 {
     private const string HarmonyId =
-        "net.natade.vrchat-sdk-inspector-jp-localization";
+        "net.natade.vrchat-sdk-ui-localizer";
 
     private static readonly PropertyInfo EditorLanguageProperty =
         FindEditorLanguageProperty();

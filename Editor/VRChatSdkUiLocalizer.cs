@@ -22,19 +22,29 @@ internal static class VRChatSdkUiLocalizer
     /// </summary>
     static VRChatSdkUiLocalizer()
     {
+        EditorApplication.delayCall += Initialize;
+    }
+
+    /// <summary>
+    /// 初期化処理
+    /// </summary>
+    private static void Initialize()
+    {
         try
         {
             TranslationDictionary.Load();
+
             InstallPatches();
 
             Debug.Log(
-                $"[VRChatSdkUiLocalizer] 初期化しました " +
-                $"({TranslationDictionary.Count}件の翻訳)");
+                $"[VRChatSdkUiLocalizer] " +
+                $"初期化完了: {TranslationDictionary.Count} 件");
         }
         catch (Exception ex)
         {
             Debug.LogError(
-                $"[VRChatSdkUiLocalizer] 初期化に失敗しました\n{ex}");
+                $"[VRChatSdkUiLocalizer] " +
+                $"初期化に失敗しました\n{ex}");
         }
     }
 

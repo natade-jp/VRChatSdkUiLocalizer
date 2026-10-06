@@ -32,117 +32,122 @@ Inspector,Exact,Avatar Updated,Avatarを更新しました
 Inspector,Exact,Failed to change avatar release status,AvatarのRelease Statusを変更できませんでした
 Inspector,Exact,Copy ID,IDをコピー
 
-SDK,PartialFormat,Overall Performance Estimate: {0},総合Performance推定: {0}
-SDK,PartialFormat,Overall Performance Estimate: {0} - This avatar may not perform well on many systems.,総合Performance推定: {0} - このアバターは多くのSystemで十分なPerformanceが得られない可能性があります。
-SDK,Partial, See additional warnings for suggestions on how to improve performance. Click 'Avatar Optimization Tips' below for more information.,【要確認】 See additional warnings for suggestions on how to improve performance. Click 'Avatar Optimization Tips' below for more information.
-SDK,PartialFormat,Overall Performance Estimate: {0} - This avatar does not meet minimum performance requirements for VRChat. ,【要確認】Overall Performance Estimate: {0} - This avatar does not meet minimum performance requirements for VRChat. 
-SDK,Partial,"It will be blocked by default on VRChat for Quest, and will not show unless a user chooses to show your avatar.","【要確認】It will be blocked by default on VRChat for Quest, and will not show unless a user chooses to show your avatar."
-SDK,Partial,It may be blocked by users depending on their Performance settings.,【要確認】It may be blocked by users depending on their Performance settings.
-SDK,PartialFormat,Triangles: {0},Triangles: {0}
-SDK,PartialFormat,Triangles: {0} (Recommended: {1}),Triangles: {0}（推奨: {1}）
-SDK,PartialFormat,Triangles: {0} - Please try to reduce your avatar triangle count to less than {1} (Recommended: {2}),Triangles: {0} - アバターのTriangle数を{1}未満まで減らしてください（推奨: {2}）
-SDK,PartialFormat,Triangles: {0} - This avatar has too many triangles. ,【要確認】Triangles: {0} - This avatar has too many triangles. 
-SDK,PartialFormat, It should have less than {0}. VRChat recommends having less than {1}.,【要確認】 It should have less than {0}. VRChat recommends having less than {1}.
-SDK,PartialFormat,Bounding box (AABB) size: {0},Bounding Box (AABB) Size: {0}
-SDK,PartialFormat,Bounding box (AABB) size: {0} (Recommended: {1}),Bounding Box (AABB) Size: {0}（推奨: {1}）
-SDK,PartialFormat,"This avatar's bounding box (AABB) is too large on at least one axis. Current size: {0}, Maximum size: {1}","【要確認】This avatar's bounding box (AABB) is too large on at least one axis. Current size: {0}, Maximum size: {1}"
-SDK,PartialFormat,Skinned Mesh Renderers: {0},Skinned Mesh Renderer: {0}
-SDK,PartialFormat,Skinned Mesh Renderers: {0} (Recommended: {1}) - Combine multiple skinned meshes for optimal performance.,Skinned Mesh Renderer: {0}（推奨: {1}） - Combine multiple skinned meshes for optimal performance.
-SDK,PartialFormat,"Skinned Mesh Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many skinned meshes.",Skinned Mesh Renderer: {0}（最大: {1}、推奨: {2}）- このアバターにはSkinned Meshが多すぎます。
-SDK,Partial, Combine multiple skinned meshes for optimal performance.,【要確認】 Combine multiple skinned meshes for optimal performance.
-SDK,PartialFormat,Mesh Renderers: {0},Mesh Renderer: {0}
-SDK,PartialFormat,Mesh Renderers: {0} (Recommended: {1}) - Combine multiple meshes for optimal performance.,Mesh Renderer: {0}（推奨: {1}） - Combine multiple meshes for optimal performance.
-SDK,PartialFormat,"Mesh Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many meshes. Combine multiple meshes for optimal performance.",Mesh Renderer: {0}（最大: {1}、推奨: {2}）- このアバターにはMeshが多すぎます。Performance向上のため複数のMeshを統合してください。
-SDK,PartialFormat,Material Slots: {0},Material Slot: {0}
-SDK,PartialFormat,Material Slots: {0} (Recommended: {1}) - Combine materials and atlas textures for optimal performance.,Material Slot: {0}（推奨: {1}） - Combine materials and atlas textures for optimal performance.
-SDK,PartialFormat,"Material Slots: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many materials. Combine materials and atlas textures for optimal performance.",Material Slot: {0}（最大: {1}、推奨: {2}）- このアバターにはMaterialが多すぎます。Performance向上のためMaterialを統合し、TextureをAtlas化してください。
+SDK,PartialFormat,Overall Performance Estimate: {0},総合パフォーマンス推定: {0}
+SDK,PartialFormat,Overall Performance Estimate: {0} - This avatar may not perform well on many systems.,総合パフォーマンス推定: {0} - このアバターは多くのSystemで十分なパフォーマンスが得られない可能性があります。
+SDK,Partial, See additional warnings for suggestions on how to improve performance. Click 'Avatar Optimization Tips' below for more information., パフォーマンス改善方法については追加の警告を確認してください。詳しくは下の「Avatar Optimization Tips」をクリックしてください。
+SDK,PartialFormat,Overall Performance Estimate: {0} - This avatar does not meet minimum performance requirements for VRChat. ,総合パフォーマンス推定: {0} - このアバターはVRChatの最低パフォーマンス要件を満たしていません。 
+SDK,Partial,"It will be blocked by default on VRChat for Quest, and will not show unless a user chooses to show your avatar.",Quest版VRChatではデフォルトでブロックされ、ユーザーがこのアバターを表示するよう選択しない限り表示されません。
+SDK,Partial,It may be blocked by users depending on their Performance settings.,ユーザーのパフォーマンス設定によってはブロックされる場合があります。
+SDK,PartialFormat,Triangles: {0},ポリゴン数: {0}
+SDK,PartialFormat,Triangles: {0} (Recommended: {1}),ポリゴン数: {0}（推奨: {1}）
+SDK,PartialFormat,Triangles: {0} - Please try to reduce your avatar triangle count to less than {1} (Recommended: {2}),ポリゴン数: {0} - アバターのポリゴン数を{1}未満まで減らしてください（推奨: {2}）
+SDK,PartialFormat,Triangles: {0} - This avatar has too many triangles. ,ポリゴン数: {0} - このアバターにはポリゴンが多すぎます。 
+SDK,PartialFormat, It should have less than {0}. VRChat recommends having less than {1}., {0}未満にする必要があります。VRChatでは{1}未満を推奨しています。
+SDK,PartialFormat,Bounding box (AABB) size: {0},バウンディングボックス (AABB) サイズ: {0}
+SDK,PartialFormat,Bounding box (AABB) size: {0} (Recommended: {1}),バウンディングボックス (AABB) サイズ: {0}（推奨: {1}）
+SDK,PartialFormat,"This avatar's bounding box (AABB) is too large on at least one axis. Current size: {0}, Maximum size: {1}",このアバターのバウンディングボックス（AABB）は少なくとも1軸で大きすぎます。現在のサイズ: {0}、最大サイズ: {1}
+SDK,PartialFormat,Skinned Mesh Renderers: {0},スキンメッシュレンダラー: {0}
+SDK,PartialFormat,Skinned Mesh Renderers: {0} (Recommended: {1}) - Combine multiple skinned meshes for optimal performance.,スキンメッシュレンダラー: {0}（推奨: {1}） - パフォーマンス向上のため複数のスキンメッシュを統合してください。
+SDK,PartialFormat,"Skinned Mesh Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many skinned meshes.",スキンメッシュレンダラー: {0}（最大: {1}、推奨: {2}）- このアバターにはスキンメッシュが多すぎます。
+SDK,Partial, Combine multiple skinned meshes for optimal performance., パフォーマンス向上のため複数のスキンメッシュを統合してください。
+SDK,PartialFormat,Mesh Renderers: {0},メッシュレンダラー: {0}
+SDK,PartialFormat,Mesh Renderers: {0} (Recommended: {1}) - Combine multiple meshes for optimal performance.,メッシュレンダラー: {0}（推奨: {1}） - パフォーマンス向上のため複数のメッシュを統合してください。
+SDK,PartialFormat,"Mesh Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many meshes. Combine multiple meshes for optimal performance.",メッシュレンダラー: {0}（最大: {1}、推奨: {2}）- このアバターにはメッシュが多すぎます。パフォーマンス向上のため複数のメッシュを統合してください。
+SDK,PartialFormat,Material Slots: {0},マテリアルスロット: {0}
+SDK,PartialFormat,Material Slots: {0} (Recommended: {1}) - Combine materials and atlas textures for optimal performance.,マテリアルスロット: {0}（推奨: {1}） - パフォーマンス向上のためマテリアルを統合し、テクスチャをアトラス化してください。
+SDK,PartialFormat,"Material Slots: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many materials. Combine materials and atlas textures for optimal performance.",マテリアルスロット: {0}（最大: {1}、推奨: {2}）- このアバターにはマテリアルが多すぎます。パフォーマンス向上のためマテリアルを統合し、テクスチャをアトラス化してください。
 SDK,PartialFormat,Animator Count: {0},Animator数: {0}
-SDK,PartialFormat,Animator Count: {0} (Recommended: {1}) - Avoid using extra Animators for optimal performance.,Animator数: {0}（推奨: {1}） - Avoid using extra Animators for optimal performance.
-SDK,PartialFormat,"Animator Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many Animators. Avoid using extra Animators for optimal performance.",Animator数: {0}（最大: {1}、推奨: {2}）- このアバターにはAnimatorが多すぎます。Performance向上のため不要なAnimatorの使用を避けてください。
-SDK,PartialFormat,"Bones: {0}",Bone: {0}
-SDK,PartialFormat,"Bones: {0} (Recommended: {1}) - Reduce number of bones for optimal performance.",Bone: {0}（推奨: {1}） - Reduce number of bones for optimal performance.
-SDK,PartialFormat,"Bones: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many bones. Reduce number of bones for optimal performance.",Bone: {0}（最大: {1}、推奨: {2}）- このアバターにはBoneが多すぎます。Performance向上のためBone数を減らしてください。
-SDK,PartialFormat,Lights: {0},Light: {0}
-SDK,PartialFormat,Lights: {0} (Recommended: {1}) - Avoid use of dynamic lights for optimal performance.,Light: {0}（推奨: {1}） - Avoid use of dynamic lights for optimal performance.
-SDK,PartialFormat,"Lights: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many dynamic lights. Avoid use of dynamic lights for optimal performance.","【要確認】Lights: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many dynamic lights. Avoid use of dynamic lights for optimal performance."
-SDK,PartialFormat,Particle Systems: {0},Particle System: {0}
-SDK,PartialFormat,Particle Systems: {0} (Recommended: {1}) - Reduce number of particle systems for better performance.,Particle System: {0}（推奨: {1}） - Reduce number of particle systems for better performance.
-SDK,PartialFormat,"Particle Systems: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many particle systems.","【要確認】Particle Systems: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many particle systems."
-SDK,Partial, Reduce number of particle systems for better performance.,【要確認】 Reduce number of particle systems for better performance.
+SDK,PartialFormat,Animator Count: {0} (Recommended: {1}) - Avoid using extra Animators for optimal performance.,Animator数: {0}（推奨: {1}） - パフォーマンス向上のため不要なAnimatorの使用を避けてください。
+SDK,PartialFormat,"Animator Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many Animators. Avoid using extra Animators for optimal performance.",Animator数: {0}（最大: {1}、推奨: {2}）- このアバターにはAnimatorが多すぎます。パフォーマンス向上のため不要なAnimatorの使用を避けてください。
+SDK,PartialFormat,Bones: {0},ボーン: {0}
+SDK,PartialFormat,Bones: {0} (Recommended: {1}) - Reduce number of bones for optimal performance.,ボーン: {0}（推奨: {1}） - パフォーマンス向上のためボーン数を減らしてください。
+SDK,PartialFormat,"Bones: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many bones. Reduce number of bones for optimal performance.",ボーン: {0}（最大: {1}、推奨: {2}）- このアバターにはボーンが多すぎます。パフォーマンス向上のためボーン数を減らしてください。
+SDK,PartialFormat,Lights: {0},ライト: {0}
+SDK,PartialFormat,Lights: {0} (Recommended: {1}) - Avoid use of dynamic lights for optimal performance.,ライト: {0}（推奨: {1}） - パフォーマンス向上のため動的ライトの使用を避けてください。
+SDK,PartialFormat,"Lights: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many dynamic lights. Avoid use of dynamic lights for optimal performance.",ライト: {0}（最大: {1}、推奨: {2}）- このアバターには動的ライトが多すぎます。パフォーマンス向上のため動的ライトの使用を避けてください。
+SDK,PartialFormat,Particle Systems: {0},パーティクルシステム: {0}
+SDK,PartialFormat,Particle Systems: {0} (Recommended: {1}) - Reduce number of particle systems for better performance.,パーティクルシステム: {0}（推奨: {1}） - パフォーマンス向上のためパーティクルシステム数を減らしてください。
+SDK,PartialFormat,"Particle Systems: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many particle systems.",パーティクルシステム: {0}（最大: {1}、推奨: {2}）- このアバターにはパーティクルシステムが多すぎます。
+SDK,Partial, Reduce number of particle systems for better performance., パフォーマンス向上のためパーティクルシステム数を減らしてください。
 SDK,PartialFormat,Total Combined Max Particle Count: {0},合計最大Particle数: {0}
-SDK,PartialFormat,Total Combined Max Particle Count: {0} (Recommended: {1}) - Reduce 'Max Particles' across all particle systems for better performance.,合計最大Particle数: {0}（推奨: {1}） - Reduce 'Max Particles' across all particle systems for better performance.
-SDK,PartialFormat,"Total Combined Max Particle Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many particles.","【要確認】Total Combined Max Particle Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many particles."
-SDK,Partial, Reduce 'Max Particles' across all particle systems for better performance.,【要確認】 Reduce 'Max Particles' across all particle systems for better performance.
-SDK,PartialFormat,Mesh Particle Total Max Poly Count: {0},Mesh Particle合計最大Polygon数: {0}
-SDK,PartialFormat,"Mesh Particle Total Max Poly Count: {0} (Recommended: {1}) - Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance.","Mesh Particle合計最大Polygon数: {0}（推奨: {1}） - Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance."
-SDK,PartialFormat,"Mesh Particle Total Max Poly Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many mesh particle triangles.","【要確認】Mesh Particle Total Max Poly Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many mesh particle triangles."
-SDK,Partial," Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance.","【要確認】 Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance."
-SDK,PartialFormat,Particle Trails Enabled: {0},Particle Trail有効: {0}
-SDK,PartialFormat,Particle Trails Enabled: {0} (Recommended: {1}) - Avoid particle trails for better performance.,Particle Trail有効: {0}（推奨: {1}） - Avoid particle trails for better performance.
-SDK,PartialFormat,Particle Collision Enabled: {0},Particle Collision有効: {0}
-SDK,PartialFormat,Particle Collision Enabled: {0} (Recommended: {1}) - Avoid particle collision for better performance.,Particle Collision有効: {0}（推奨: {1}） - Avoid particle collision for better performance.
+SDK,PartialFormat,Total Combined Max Particle Count: {0} (Recommended: {1}) - Reduce 'Max Particles' across all particle systems for better performance.,合計最大Particle数: {0}（推奨: {1}） - パフォーマンス向上のため、すべてのパーティクルシステムの「Max Particles」を減らしてください。
+SDK,PartialFormat,"Total Combined Max Particle Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many particles.",合計最大Particle数: {0}（最大: {1}、推奨: {2}）- このアバターではParticle数が多すぎます。
+SDK,Partial, Reduce 'Max Particles' across all particle systems for better performance., パフォーマンス向上のため、すべてのパーティクルシステムの「Max Particles」を減らしてください。
+SDK,PartialFormat,Mesh Particle Total Max Poly Count: {0},メッシュ Particle合計最大ポリゴン数: {0}
+SDK,PartialFormat,"Mesh Particle Total Max Poly Count: {0} (Recommended: {1}) - Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance.",メッシュ Particle合計最大ポリゴン数: {0}（推奨: {1}） - パフォーマンス向上のためParticle メッシュのポリゴン数と「Max Particles」を減らしてください。
+SDK,PartialFormat,"Mesh Particle Total Max Poly Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar uses too many mesh particle triangles.",メッシュ Particle合計最大ポリゴン数: {0}（最大: {1}、推奨: {2}）- このアバターではメッシュ Particleのポリゴン数が多すぎます。
+SDK,Partial," Reduce number of triangles in particle meshes, and reduce 'Max Particles' for better performance.", パフォーマンス向上のためParticle メッシュのポリゴン数と「Max Particles」を減らしてください。
+SDK,PartialFormat,Particle Trails Enabled: {0},パーティクルトレイル有効: {0}
+SDK,PartialFormat,Particle Trails Enabled: {0} (Recommended: {1}) - Avoid particle trails for better performance.,パーティクルトレイル有効: {0}（推奨: {1}） - パフォーマンス向上のためパーティクルトレイルの使用を避けてください。
+SDK,PartialFormat,Particle Collision Enabled: {0},パーティクルコリジョン有効: {0}
+SDK,PartialFormat,Particle Collision Enabled: {0} (Recommended: {1}) - Avoid particle collision for better performance.,パーティクルコリジョン有効: {0}（推奨: {1}） - パフォーマンス向上のためパーティクルコリジョンの使用を避けてください。
 SDK,PartialFormat,Trail Renderers: {0},Trail Renderer: {0}
-SDK,PartialFormat,Trail Renderers: {0} (Recommended: {1}) - Reduce number of TrailRenderers for better performance.,Trail Renderer: {0}（推奨: {1}） - Reduce number of TrailRenderers for better performance.
-SDK,PartialFormat,"Trail Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many TrailRenderers. Reduce number of TrailRenderers for better performance.","【要確認】Trail Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many TrailRenderers. Reduce number of TrailRenderers for better performance."
+SDK,PartialFormat,Trail Renderers: {0} (Recommended: {1}) - Reduce number of TrailRenderers for better performance.,Trail Renderer: {0}（推奨: {1}） - パフォーマンス向上のためTrail Renderer数を減らしてください。
+SDK,PartialFormat,"Trail Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many TrailRenderers. Reduce number of TrailRenderers for better performance.",Trail Renderer: {0}（最大: {1}、推奨: {2}）- このアバターにはTrail Rendererが多すぎます。パフォーマンス向上のためTrail Renderer数を減らしてください。
 SDK,PartialFormat,Line Renderers: {0},Line Renderer: {0}
-SDK,PartialFormat,Line Renderers: {0} (Recommended: {1}) - Reduce number of LineRenderers for better performance.,Line Renderer: {0}（推奨: {1}） - Reduce number of LineRenderers for better performance.
-SDK,PartialFormat,"Line Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many LineRenderers. Reduce number of LineRenderers for better performance.","【要確認】Line Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many LineRenderers. Reduce number of LineRenderers for better performance."
-SDK,PartialFormat,Phys Bone Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBone components on this avatar.,【要確認】Phys Bone Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBone components on this avatar.
+SDK,PartialFormat,Line Renderers: {0} (Recommended: {1}) - Reduce number of LineRenderers for better performance.,Line Renderer: {0}（推奨: {1}） - パフォーマンス向上のためLine Renderer数を減らしてください。
+SDK,PartialFormat,"Line Renderers: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many LineRenderers. Reduce number of LineRenderers for better performance.",Line Renderer: {0}（最大: {1}、推奨: {2}）- このアバターにはLine Rendererが多すぎます。パフォーマンス向上のためLine Renderer数を減らしてください。
+SDK,PartialFormat,Phys Bone Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBone components on this avatar.,Phys Bone Component: {0} - このComponent種別の最大数（{1}）を超えています。このアバターのVRCPhysBone Component数を減らしてください。
 SDK,PartialFormat,Phys Bone Components: {0},Phys Bone Component: {0}
-SDK,PartialFormat,Phys Bone Components: {0} (Recommended: {1}) - Reduce the number of VRCPhysBone components for better performance.,Phys Bone Component: {0}（推奨: {1}） - Reduce the number of VRCPhysBone components for better performance.
-SDK,PartialFormat,"Phys Bone Components: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone components.","【要確認】Phys Bone Components: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone components."
-SDK,Partial,"All PhysBone components will be removed at runtime."" : ""Reduce the number of VRCPhysBone components for better performance.","【要確認】All PhysBone components will be removed at runtime."" : ""Reduce the number of VRCPhysBone components for better performance."
+SDK,PartialFormat,Phys Bone Components: {0} (Recommended: {1}) - Reduce the number of VRCPhysBone components for better performance.,Phys Bone Component: {0}（推奨: {1}） - パフォーマンス向上のためVRCPhysBone Component数を減らしてください。
+SDK,PartialFormat,"Phys Bone Components: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone components.",Phys Bone Component: {0}（最大: {1}、推奨: {2}）- このアバターにはVRCPhysBone Componentが多すぎます。
+SDK,Partial,"All PhysBone components will be removed at runtime.","すべてのPhysボーン ComponentはRuntimeで削除されます。"
+SDK,Partial,"Reduce the number of VRCPhysBone components for better performance.","パフォーマンス向上のためVRCPhysBone Component数を減らしてください。"
 SDK,PartialFormat,Phys Bone Transform Count: {0},Phys Bone Transform数: {0}
-SDK,PartialFormat,Phys Bone Transform Count: {0} (Recommended: {1}) - This avatar has many VRCPhysBone transforms and may perform poorly.,Phys Bone Transform数: {0}（推奨: {1}） - This avatar has many VRCPhysBone transforms and may perform poorly.
-SDK,Partial,Reduce number of transforms in hierarchy under VRCPhysBone components.,【要確認】Reduce number of transforms in hierarchy under VRCPhysBone components.
-SDK,PartialFormat,"Phys Bone Transform Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone transforms and will perform poorly.","【要確認】Phys Bone Transform Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone transforms and will perform poorly."
-SDK,Partial,"All PhysBone components will be removed at runtime."" : ""Reduce the number of affected transforms by adding exclusions or removing components.","【要確認】All PhysBone components will be removed at runtime."" : ""Reduce the number of affected transforms by adding exclusions or removing components."
-SDK,PartialFormat,Phys Bone Colliders: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBoneCollider components on this avatar.,【要確認】Phys Bone Colliders: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBoneCollider components on this avatar.
+SDK,PartialFormat,Phys Bone Transform Count: {0} (Recommended: {1}) - This avatar has many VRCPhysBone transforms and may perform poorly.,Phys Bone Transform数: {0}（推奨: {1}） - このアバターにはVRCPhysBoneのTransformが多く、パフォーマンスが低下する可能性があります。
+SDK,Partial,Reduce number of transforms in hierarchy under VRCPhysBone components.,VRCPhysBone Component配下のHierarchyにあるTransform数を減らしてください。
+SDK,PartialFormat,"Phys Bone Transform Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBone transforms and will perform poorly.",Phys Bone Transform数: {0}（最大: {1}、推奨: {2}）- このアバターにはVRCPhysBoneのTransformが多すぎるため、パフォーマンスが低下します。
+SDK,Partial,"All PhysBone components will be removed at runtime.","すべてのPhysボーン ComponentはRuntimeで削除されます。"
+SDK,Partial,"Reduce the number of affected transforms by adding exclusions or removing components.","Exclusionを追加するかComponentを削除して、影響を受けるTransform数を減らしてください。"
+SDK,PartialFormat,Phys Bone Colliders: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCPhysBoneCollider components on this avatar.,Phys Bone Collider: {0} - このComponent種別の最大数（{1}）を超えています。このアバターのVRCPhysBoneCollider Component数を減らしてください。
 SDK,PartialFormat,Phys Bone Collider Count: {0},Phys Bone Collider数: {0}
-SDK,PartialFormat,Phys Bone Collider Count: {0} (Recommended: {1}) - Reduce the number of VRCPhysBoneColliders for better performance.,Phys Bone Collider数: {0}（推奨: {1}） - Reduce the number of VRCPhysBoneColliders for better performance.
-SDK,PartialFormat,"Phys Bone Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders.","【要確認】Phys Bone Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders."
-SDK,Partial,"All PhysBone colliders will be removed at runtime."" : ""Reduce the number of VRCPhysBoneColliders for better performance.","【要確認】All PhysBone colliders will be removed at runtime."" : ""Reduce the number of VRCPhysBoneColliders for better performance."
+SDK,PartialFormat,Phys Bone Collider Count: {0} (Recommended: {1}) - Reduce the number of VRCPhysBoneColliders for better performance.,Phys Bone Collider数: {0}（推奨: {1}） - パフォーマンス向上のためVRCPhysBoneCollider数を減らしてください。
+SDK,PartialFormat,"Phys Bone Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders.",Phys Bone Collider数: {0}（最大: {1}、推奨: {2}）- このアバターにはVRCPhysBoneColliderが多すぎます。
+SDK,Partial,"All PhysBone colliders will be removed at runtime.","すべてのPhysボーン コライダーはRuntimeで削除されます。"
+SDK,Partial,"Reduce the number of VRCPhysBoneColliders for better performance.","パフォーマンス向上のためVRCPhysBoneCollider数を減らしてください。"
 SDK,PartialFormat,Phys Bone Collision Check Count: {0},Phys Bone Collision Check数: {0}
-SDK,PartialFormat,Phys Bone Collision Check Count: {0} (Recommended: {1}) - Reduce the number of VRCPhysBoneColliders for better performance.,Phys Bone Collision Check数: {0}（推奨: {1}） - Reduce the number of VRCPhysBoneColliders for better performance.
-SDK,PartialFormat,"Phys Bone Collision Check Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders.","【要確認】Phys Bone Collision Check Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders."
-SDK,PartialFormat,Contact Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type. Reduce the number of VRCContact components on this avatar.,【要確認】Contact Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type. Reduce the number of VRCContact components on this avatar.
+SDK,PartialFormat,Phys Bone Collision Check Count: {0} (Recommended: {1}) - Reduce the number of VRCPhysBoneColliders for better performance.,Phys Bone Collision Check数: {0}（推奨: {1}） - パフォーマンス向上のためVRCPhysBoneCollider数を減らしてください。
+SDK,PartialFormat,"Phys Bone Collision Check Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many VRCPhysBoneColliders.",Phys Bone Collision Check数: {0}（最大: {1}、推奨: {2}）- このアバターにはVRCPhysBoneColliderが多すぎます。
+SDK,PartialFormat,Contact Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type. Reduce the number of VRCContact components on this avatar.,Contact Component数: {0} - このComponent種別の最大数（{1}）を超えています。このアバターのVRCContact Component数を減らしてください。
 SDK,PartialFormat,Non-Local Contact Component Count: {0},Non-Local Contact Component数: {0}
-SDK,PartialFormat,"Non-Local Contact Component Count: {0} (Recommended: {1}) - Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible.","Non-Local Contact Component数: {0}（推奨: {1}） - Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible."
-SDK,PartialFormat,"Non-Local Contact Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many non-local VRCContact components. {3}","【要確認】Non-Local Contact Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many non-local VRCContact components. {3}"
-SDK,Partial,"All VRCContact components will be removed at runtime."" : ""Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible.","【要確認】All VRCContact components will be removed at runtime."" : ""Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible."
-SDK,PartialFormat,Constraint Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of constraint components on this avatar.,【要確認】Constraint Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of constraint components on this avatar.
+SDK,PartialFormat,"Non-Local Contact Component Count: {0} (Recommended: {1}) - Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible.",Non-Local Contact Component数: {0}（推奨: {1}） - パフォーマンス向上のためVRCContact Component数を減らすか、可能な場合はContact ReceiverをLocal Onlyに設定してください。
+SDK,PartialFormat,"Non-Local Contact Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many non-local VRCContact components. {3}",Non-Local Contact Component数: {0}（最大: {1}、推奨: {2}）- このアバターにはNon-Local VRCContact Componentが多すぎます。{3}
+SDK,Partial,"All VRCContact components will be removed at runtime.","すべてのVRCContact ComponentはRuntimeで削除されます。"
+SDK,Partial,"Reduce the number of VRCContact components for optimal performance, or mark contact receivers as local only where possible.","パフォーマンス向上のためVRCContact Component数を減らすか、可能な場合はContact ReceiverをLocal Onlyに設定してください。"
+SDK,PartialFormat,Constraint Component Count: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of constraint components on this avatar.,Constraint Component数: {0} - このComponent種別の最大数（{1}）を超えています。このアバターのConstraint Component数を減らしてください。
 SDK,PartialFormat,Constraint Component Count: {0},Constraint Component数: {0}
-SDK,PartialFormat,Constraint Component Count: {0} (Recommended: {1}) - Reduce the number of constraint components for optimal performance.,Constraint Component数: {0}（推奨: {1}） - Reduce the number of constraint components for optimal performance.
-SDK,PartialFormat,"Constraint Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many constraint components. {3}","【要確認】Constraint Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many constraint components. {3}"
-SDK,Partial,"All constraint components will be removed at runtime."" : ""Reduce the number of constraint components for optimal performance.","【要確認】All constraint components will be removed at runtime."" : ""Reduce the number of constraint components for optimal performance."
+SDK,PartialFormat,Constraint Component Count: {0} (Recommended: {1}) - Reduce the number of constraint components for optimal performance.,Constraint Component数: {0}（推奨: {1}） - パフォーマンス向上のためConstraint Component数を減らしてください。
+SDK,PartialFormat,"Constraint Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many constraint components. {3}",Constraint Component数: {0}（最大: {1}、推奨: {2}）- このアバターにはConstraint Componentが多すぎます。{3}
+SDK,Partial,"All constraint components will be removed at runtime.","すべてのConstraint ComponentはRuntimeで削除されます。"
+SDK,Partial,"Reduce the number of constraint components for optimal performance.","パフォーマンス向上のためConstraint Component数を減らしてください。"
 SDK,PartialFormat,Constraint Depth: {0},Constraint Depth: {0}
-SDK,PartialFormat,Constraint Depth: {0} (Recommended: {1}) - Reorganize your constraints to reduce dependencies for optimal performance.,Constraint Depth: {0}（推奨: {1}） - Reorganize your constraints to reduce dependencies for optimal performance.
-SDK,PartialFormat,"Constraint Depth: {0} (Maximum: {1}, Recommended: {2}) - This avatar's constraints are nested too deeply. {3}","【要確認】Constraint Depth: {0} (Maximum: {1}, Recommended: {2}) - This avatar's constraints are nested too deeply. {3}"
-SDK,Partial,"All VRCConstraint components will be removed at runtime."" : ""Reorganize your constraints to reduce dependencies for optimal performance.","【要確認】All VRCConstraint components will be removed at runtime."" : ""Reorganize your constraints to reduce dependencies for optimal performance."
-SDK,PartialFormat,VRCRaycast Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCRaycast components on this avatar.,【要確認】VRCRaycast Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCRaycast components on this avatar.
+SDK,PartialFormat,Constraint Depth: {0} (Recommended: {1}) - Reorganize your constraints to reduce dependencies for optimal performance.,Constraint Depth: {0}（推奨: {1}） - パフォーマンス向上のためConstraintを再構成し、依存関係を減らしてください。
+SDK,PartialFormat,"Constraint Depth: {0} (Maximum: {1}, Recommended: {2}) - This avatar's constraints are nested too deeply. {3}",Constraint Depth: {0}（最大: {1}、推奨: {2}）- このアバターのConstraintは入れ子が深すぎます。{3}
+SDK,Partial,"All VRCConstraint components will be removed at runtime.","すべてのVRCConstraint ComponentはRuntimeで削除されます。"
+SDK,Partial,"Reorganize your constraints to reduce dependencies for optimal performance.","パフォーマンス向上のためConstraintを再構成し、依存関係を減らしてください。"
+SDK,PartialFormat,VRCRaycast Components: {0} - Avatar exceeds the maximum limit ({1}) of this component type.  Reduce the number of VRCRaycast components on this avatar.,VRCRaycast Component: {0} - このComponent種別の最大数（{1}）を超えています。このアバターのVRCRaycast Component数を減らしてください。
 SDK,PartialFormat,Raycasts: {0},Raycast: {0}
-SDK,PartialFormat,Raycasts: {0} (Recommended: {1}) - Reduce the number of VRCRaycast components for optimal performance.,Raycast: {0}（推奨: {1}） - Reduce the number of VRCRaycast components for optimal performance.
-SDK,PartialFormat,"Raycasts: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many raycast components. Reduce number of VRCRaycast components for better performance.","【要確認】Raycasts: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many raycast components. Reduce number of VRCRaycast components for better performance."
+SDK,PartialFormat,Raycasts: {0} (Recommended: {1}) - Reduce the number of VRCRaycast components for optimal performance.,Raycast: {0}（推奨: {1}） - パフォーマンス向上のためVRCRaycast Component数を減らしてください。
+SDK,PartialFormat,"Raycasts: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many raycast components. Reduce number of VRCRaycast components for better performance.",Raycast: {0}（最大: {1}、推奨: {2}）- このアバターにはRaycast Componentが多すぎます。パフォーマンス向上のためVRCRaycast Component数を減らしてください。
 SDK,PartialFormat,Cloth Component Count: {0},Cloth Component数: {0}
-SDK,PartialFormat,Cloth Component Count: {0} (Recommended: {1}) - Avoid use of cloth for optimal performance.,Cloth Component数: {0}（推奨: {1}） - Avoid use of cloth for optimal performance.
-SDK,PartialFormat,"Cloth Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many Cloth components. Avoid use of cloth for optimal performance.","【要確認】Cloth Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many Cloth components. Avoid use of cloth for optimal performance."
-SDK,PartialFormat,Cloth Total Vertex Count: {0},Cloth合計Vertex数: {0}
-SDK,PartialFormat,Cloth Total Vertex Count: {0} (Recommended: {1}) - Reduce number of vertices in cloth meshes for improved performance.,Cloth合計Vertex数: {0}（推奨: {1}） - Reduce number of vertices in cloth meshes for improved performance.
-SDK,PartialFormat,"Cloth Total Vertex Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many vertices in cloth meshes.","【要確認】Cloth Total Vertex Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many vertices in cloth meshes."
-SDK,Partial, Reduce number of vertices in cloth meshes for improved performance.,【要確認】 Reduce number of vertices in cloth meshes for improved performance.
-SDK,PartialFormat,Physics Collider Count: {0},Physics Collider数: {0}
-SDK,PartialFormat,Physics Collider Count: {0} (Recommended: {1}) - Avoid use of colliders for optimal performance.,Physics Collider数: {0}（推奨: {1}） - Avoid use of colliders for optimal performance.
-SDK,PartialFormat,"Physics Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many colliders. Avoid use of colliders for optimal performance.","【要確認】Physics Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many colliders. Avoid use of colliders for optimal performance."
+SDK,PartialFormat,Cloth Component Count: {0} (Recommended: {1}) - Avoid use of cloth for optimal performance.,Cloth Component数: {0}（推奨: {1}） - パフォーマンス向上のためClothの使用を避けてください。
+SDK,PartialFormat,"Cloth Component Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many Cloth components. Avoid use of cloth for optimal performance.",Cloth Component数: {0}（最大: {1}、推奨: {2}）- このアバターにはCloth Componentが多すぎます。パフォーマンス向上のためClothの使用を避けてください。
+SDK,PartialFormat,Cloth Total Vertex Count: {0},Cloth合計頂点数: {0}
+SDK,PartialFormat,Cloth Total Vertex Count: {0} (Recommended: {1}) - Reduce number of vertices in cloth meshes for improved performance.,Cloth合計頂点数: {0}（推奨: {1}） - パフォーマンス向上のためCloth メッシュの頂点数を減らしてください。
+SDK,PartialFormat,"Cloth Total Vertex Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many vertices in cloth meshes.",Cloth合計頂点数: {0}（最大: {1}、推奨: {2}）- このアバターのCloth メッシュには頂点が多すぎます。
+SDK,Partial, Reduce number of vertices in cloth meshes for improved performance., パフォーマンス向上のためCloth メッシュの頂点数を減らしてください。
+SDK,PartialFormat,Physics Collider Count: {0},Physics コライダー数: {0}
+SDK,PartialFormat,Physics Collider Count: {0} (Recommended: {1}) - Avoid use of colliders for optimal performance.,Physics コライダー数: {0}（推奨: {1}） - パフォーマンス向上のためコライダーの使用を避けてください。
+SDK,PartialFormat,"Physics Collider Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many colliders. Avoid use of colliders for optimal performance.",Physics コライダー数: {0}（最大: {1}、推奨: {2}）- このアバターにはコライダーが多すぎます。パフォーマンス向上のためコライダーの使用を避けてください。
 SDK,PartialFormat,Physics Rigidbody Count: {0},Physics Rigidbody数: {0}
-SDK,PartialFormat,Physics Rigidbody Count: {0} (Recommended: {1}) - Avoid use of rigidbodies for optimal performance.,Physics Rigidbody数: {0}（推奨: {1}） - Avoid use of rigidbodies for optimal performance.
-SDK,PartialFormat,"Physics Rigidbody Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many rigidbodies. Avoid use of rigidbodies for optimal performance.","【要確認】Physics Rigidbody Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many rigidbodies. Avoid use of rigidbodies for optimal performance."
+SDK,PartialFormat,Physics Rigidbody Count: {0} (Recommended: {1}) - Avoid use of rigidbodies for optimal performance.,Physics Rigidbody数: {0}（推奨: {1}） - パフォーマンス向上のためRigidbodyの使用を避けてください。
+SDK,PartialFormat,"Physics Rigidbody Count: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many rigidbodies. Avoid use of rigidbodies for optimal performance.",Physics Rigidbody数: {0}（最大: {1}、推奨: {2}）- このアバターにはRigidbodyが多すぎます。パフォーマンス向上のためRigidbodyの使用を避けてください。
 SDK,PartialFormat,Audio Sources: {0},Audio Source: {0}
-SDK,PartialFormat,Audio Sources: {0} (Recommended: {1}) - Reduce number of audio sources for better performance.,Audio Source: {0}（推奨: {1}） - Reduce number of audio sources for better performance.
-SDK,PartialFormat,"Audio Sources: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many audio sources. Reduce number of audio sources for better performance.",Audio Source: {0}（最大: {1}、推奨: {2}）- このアバターにはAudio Sourceが多すぎます。Performance向上のためAudio Source数を減らしてください。
-SDK,PartialFormat,Texture Memory Usage: {0} MB,Texture Memory使用量: {0} MB
-SDK,PartialFormat,Texture Memory Usage: {0} MB (Recommended: {1} MB) - Lower the resolution of your textures in the texture import settings.,Texture Memory使用量: {0} MB（推奨: {1} MB）- Texture Import SettingsでTextureの解像度を下げてください。
-SDK,PartialFormat,"Texture Memory Usage: {0} MB (Maximum: {1} MB, Recommended: {2} MB) - This avatar's total texture resolution is too high. ","【要確認】Texture Memory Usage: {0} MB (Maximum: {1} MB, Recommended: {2} MB) - This avatar's total texture resolution is too high. "
-SDK,Partial,Lower the resolution of your largest textures in the texture import settings. ,【要確認】Lower the resolution of your largest textures in the texture import settings. 
-SDK,Partial,Consider using shader features like decals or tiling. Check your shader's documentation for more information. ,【要確認】Consider using shader features like decals or tiling. Check your shader's documentation for more information. 
-SDK,Partial,You can also check your model's UV layouts to better utilize texture space. These techniques may help you reduce texture memory usage.,【要確認】You can also check your model's UV layouts to better utilize texture space. These techniques may help you reduce texture memory usage.
-
+SDK,PartialFormat,Audio Sources: {0} (Recommended: {1}) - Reduce number of audio sources for better performance.,Audio Source: {0}（推奨: {1}） - パフォーマンス向上のためAudio Source数を減らしてください。
+SDK,PartialFormat,"Audio Sources: {0} (Maximum: {1}, Recommended: {2}) - This avatar has too many audio sources. Reduce number of audio sources for better performance.",Audio Source: {0}（最大: {1}、推奨: {2}）- このアバターにはAudio Sourceが多すぎます。パフォーマンス向上のためAudio Source数を減らしてください。
+SDK,PartialFormat,Texture Memory Usage: {0} MB,テクスチャメモリ使用量: {0} MB
+SDK,PartialFormat,Texture Memory Usage: {0} MB (Recommended: {1} MB) - Lower the resolution of your textures in the texture import settings.,テクスチャメモリ使用量: {0} MB（推奨: {1} MB）- テクスチャインポート設定でテクスチャの解像度を下げてください。
+SDK,PartialFormat,"Texture Memory Usage: {0} MB (Maximum: {1} MB, Recommended: {2} MB) - This avatar's total texture resolution is too high. ",テクスチャメモリ使用量: {0} MB（最大: {1} MB、推奨: {2} MB）- このアバターのテクスチャ総解像度が高すぎます。 
+SDK,Partial,Lower the resolution of your largest textures in the texture import settings. ,テクスチャインポート設定で最も大きいテクスチャの解像度を下げてください。 
+SDK,Partial,Consider using shader features like decals or tiling. Check your shader's documentation for more information. ,デカールやタイリングなどのシェーダー機能の使用を検討してください。詳しくは使用しているシェーダーのDocumentationを確認してください。 
+SDK,Partial,You can also check your model's UV layouts to better utilize texture space. These techniques may help you reduce texture memory usage.,テクスチャ領域をより有効活用するため、モデルのUVレイアウトも確認してください。これらの方法でテクスチャメモリ使用量を削減できる場合があります。

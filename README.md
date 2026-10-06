@@ -19,7 +19,7 @@ Unity標準のローカライズでは翻訳されないVRChat SDKのUIを補完
 
 Avatar 3.0についてもすべてのUIを網羅しているわけではありませんが、Avatar作成でよく使用するコンポーネントやSDK Control Panelを中心に翻訳を追加しています。
 
-翻訳されていないUIや追加してほしい翻訳がある場合は、[GitHub Issues](https://github.com/natade-jp/VRChatSdkUiLocalizer/issues) からご連絡ください。
+翻訳されていないUIや追加してほしい翻訳がある場合は、[GitHub Issues](https://github.com/natade-jp/VRChatSdkUiLocalizer/issues) 及び [X](https://x.com/natadea) からご連絡ください。
 
 ## Installation
 

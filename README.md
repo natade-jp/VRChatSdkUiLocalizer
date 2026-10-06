@@ -13,11 +13,27 @@ Unity標準のローカライズでは翻訳されないVRChat SDKのUIを補完
 - UI・言語ごとに翻訳データを分離
 - 複数言語へ拡張可能
 
+## Translation Coverage
+
+現在は**Avatar 3.0関連のUIを中心に翻訳**しており、World関連のUIはまだ十分に翻訳されていません。
+
+Avatar 3.0についてもすべてのUIを網羅しているわけではありませんが、Avatar作成でよく使用するコンポーネントやSDK Control Panelを中心に翻訳を追加しています。
+
+翻訳されていないUIや追加してほしい翻訳がある場合は、[GitHub Issues](https://github.com/natade-jp/VRChatSdkUiLocalizer/issues) からご連絡ください。
+
 ## Installation
 
-あらかじめUnityプロジェクトへVRChat SDKをインストールしてから、本パッケージをインストールしてください。
+あらかじめUnityプロジェクトへVRChat SDKをインストールしてください。
 
-本ツールはVRChat SDKに含まれるHarmonyを利用して実行時にUIを翻訳するため、Unity本体やVRChat SDKのファイルを直接変更しません。
+Unityの`Window > Package Manager`を開き、左上の`+`から`Add package from git URL...`を選択して、次のURLを入力します。
+
+```text
+https://github.com/natade-jp/VRChatSdkUiLocalizer.git
+```
+
+本ツールはVRChat SDKに含まれるHarmonyを利用するため、VRChat SDKがインストールされている必要があります。
+
+アンインストールする場合は、Package Managerから`VRChat SDK UI Localizer`を削除してください。
 
 ## Usage
 

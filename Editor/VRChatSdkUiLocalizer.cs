@@ -311,7 +311,7 @@ internal static class VRChatSdkUiLocalizer
             return;
         }
 
-        TranslateVisualElement(builderPanel);
+        TranslateVisualElement(builderPanel, "VRCSdkControlPanel.ShowBuilders");
     }
 
     /// <summary>
@@ -320,7 +320,7 @@ internal static class VRChatSdkUiLocalizer
     private static void CreateIssuesGuiPostfix(
         VisualElement __result)
     {
-        TranslateVisualElement(__result);
+        TranslateVisualElement(__result, "VRCSdkControlPanel.CreateIssuesGUI");
     }
 
     /// <summary>
@@ -332,23 +332,29 @@ internal static class VRChatSdkUiLocalizer
         title =
             Translate(
                 title,
-                TranslationCsvReader.TranslationTarget.SDK);
+                TranslationCsvReader.TranslationTarget.SDK,
+                "StepFoldout.SetTitle");
     }
 
     /// <summary>
     /// Avatar BuilderのUIを翻訳
     /// </summary>
     private static void AvatarBuilderGuiPostfix(
-        VisualElement root)
+        VisualElement root,
+        MethodBase __originalMethod)
     {
-        TranslateVisualElement(root);
+        string hook =
+            __originalMethod.DeclaringType.Name +
+            "." + __originalMethod.Name;
+        TranslateVisualElement(root, hook);
     }
 
     /// <summary>
     /// VisualElement配下の表示文字列を翻訳
     /// </summary>
     private static void TranslateVisualElement(
-        VisualElement root)
+        VisualElement root,
+        string hook)
     {
         if (root == null)
         {
@@ -361,12 +367,14 @@ internal static class VRChatSdkUiLocalizer
             label.text =
                 Translate(
                     label.text,
-                    TranslationCsvReader.TranslationTarget.SDK);
+                    TranslationCsvReader.TranslationTarget.SDK,
+                    hook);
 
             label.tooltip =
                 Translate(
                     label.tooltip,
-                    TranslationCsvReader.TranslationTarget.SDK);
+                    TranslationCsvReader.TranslationTarget.SDK,
+                    hook);
         }
 
         foreach (Button button
@@ -375,12 +383,14 @@ internal static class VRChatSdkUiLocalizer
             button.text =
                 Translate(
                     button.text,
-                    TranslationCsvReader.TranslationTarget.SDK);
+                    TranslationCsvReader.TranslationTarget.SDK,
+                    hook);
 
             button.tooltip =
                 Translate(
                     button.tooltip,
-                    TranslationCsvReader.TranslationTarget.SDK);
+                    TranslationCsvReader.TranslationTarget.SDK,
+                    hook);
         }
 
         foreach (VisualElement element
@@ -389,7 +399,8 @@ internal static class VRChatSdkUiLocalizer
             element.tooltip =
                 Translate(
                     element.tooltip,
-                    TranslationCsvReader.TranslationTarget.SDK);
+                    TranslationCsvReader.TranslationTarget.SDK,
+                    hook);
         }
     }
 
@@ -465,7 +476,8 @@ internal static class VRChatSdkUiLocalizer
     /// </summary>
     private static string Translate(
         string text,
-        TranslationCsvReader.TranslationTarget target)
+        TranslationCsvReader.TranslationTarget target,
+        string hook)
     {
         if (string.IsNullOrEmpty(text))
         {
@@ -481,14 +493,16 @@ internal static class VRChatSdkUiLocalizer
         return TranslationDictionary.Translate(
             language,
             target,
-            text);
+            text,
+            hook);
     }
 
     /// <summary>
     /// GUIContentの表示文字列を翻訳
     /// </summary>
     private static void TranslateContent(
-        GUIContent content)
+        GUIContent content,
+        string hook)
     {
         if (content == null)
         {
@@ -500,12 +514,14 @@ internal static class VRChatSdkUiLocalizer
             content.text =
                 Translate(
                     content.text,
-                    TranslationCsvReader.TranslationTarget.Inspector);
+                    TranslationCsvReader.TranslationTarget.Inspector,
+                    hook);
 
             content.tooltip =
                 Translate(
                     content.tooltip,
-                    TranslationCsvReader.TranslationTarget.Inspector);
+                    TranslationCsvReader.TranslationTarget.Inspector,
+                    hook);
         }
         catch
         {
@@ -519,7 +535,7 @@ internal static class VRChatSdkUiLocalizer
     private static void GuiStyleDrawPrefix(
         GUIContent content)
     {
-        TranslateContent(content);
+        TranslateContent(content, "GUIStyle.Draw");
     }
 
     /// <summary>
@@ -528,7 +544,7 @@ internal static class VRChatSdkUiLocalizer
     private static void BeginPropertyPostfix(
         ref GUIContent __result)
     {
-        TranslateContent(__result);
+        TranslateContent(__result, "EditorGUI.BeginPropertyInternal");
     }
 
     /// <summary>
@@ -537,6 +553,6 @@ internal static class VRChatSdkUiLocalizer
     private static void HandlePrefixLabelInternalPrefix(
         GUIContent label)
     {
-        TranslateContent(label);
+        TranslateContent(label, "EditorGUI.HandlePrefixLabelInternal");
     }
 }

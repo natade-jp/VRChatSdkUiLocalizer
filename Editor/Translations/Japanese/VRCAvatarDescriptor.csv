@@ -144,7 +144,7 @@ Inspector,Exact,Default IKPose,デフォルトのIKポーズ
 # ---------------------
 
 Inspector,Exact,Lower Body,下半身
-Inspector,Exact,Use Auto-Footsteps for 3 and 4 point tracking,3点・4点トラッキングで自動足音を使用
+Inspector,Exact,Use Auto-Footsteps for 3 and 4 point tracking,3点・4点トラッキングで自動ステップを使用
 Inspector,Exact,Force Locomotion animations for 6 point tracking,6点トラッキングで移動アニメーションを強制
 
 # ---------------------

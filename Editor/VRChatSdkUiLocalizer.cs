@@ -200,7 +200,7 @@ internal static class VRChatSdkUiLocalizer
                 avatarBuilderType,
                 "CreateContentInfoGUI",
                 new[] { typeof(VisualElement) }),
-            nameof(AvatarBuilderGuiPostfix),
+            nameof(BuilderGuiPostfix),
             "VRC.SDK3A.Editor.VRCSdkControlPanelAvatarBuilder.CreateContentInfoGUI");
 
         // AvatarビルドUIの構築完了後に翻訳
@@ -211,8 +211,34 @@ internal static class VRChatSdkUiLocalizer
                 avatarBuilderType,
                 "CreateBuildGUI",
                 new[] { typeof(VisualElement) }),
-            nameof(AvatarBuilderGuiPostfix),
+            nameof(BuilderGuiPostfix),
             "VRC.SDK3A.Editor.VRCSdkControlPanelAvatarBuilder.CreateBuildGUI");
+
+        Type worldBuilderType =
+            AccessTools.TypeByName(
+                "VRC.SDK3.Editor.VRCSdkControlPanelWorldBuilder");
+
+        // World情報UIの構築完了後に翻訳
+        // Name、Max. Capacity、World Debuggingなどで使用
+        PatchPostfix(
+            harmony,
+            AccessTools.Method(
+                worldBuilderType,
+                "CreateContentInfoGUI",
+                new[] { typeof(VisualElement) }),
+            nameof(BuilderGuiPostfix),
+            "VRC.SDK3.Editor.VRCSdkControlPanelWorldBuilder.CreateContentInfoGUI");
+
+        // WorldビルドUIの構築完了後に翻訳
+        // Build Type、Platform(s)、Build & Testなどで使用
+        PatchPostfix(
+            harmony,
+            AccessTools.Method(
+                worldBuilderType,
+                "CreateBuildGUI",
+                new[] { typeof(VisualElement) }),
+            nameof(BuilderGuiPostfix),
+            "VRC.SDK3.Editor.VRCSdkControlPanelWorldBuilder.CreateBuildGUI");
     }
 
     /// <summary>
@@ -350,9 +376,9 @@ internal static class VRChatSdkUiLocalizer
     }
 
     /// <summary>
-    /// Avatar BuilderのUIを翻訳
+    /// Avatar / World BuilderのUIを翻訳
     /// </summary>
-    private static void AvatarBuilderGuiPostfix(
+    private static void BuilderGuiPostfix(
         VisualElement root,
         MethodBase __originalMethod)
     {

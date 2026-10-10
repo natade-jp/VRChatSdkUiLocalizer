@@ -10,6 +10,12 @@
 Inspector,Exact,Account,アカウント
 Inspector,Exact,Sign In,サインイン
 Inspector,Exact,Sign up,サインアップ
+Inspector,Exact,Logout,ログアウト
+Inspector,Exact,Check your email for a numeric code.,メールに届いた数字の認証コードを確認してください。
+Inspector,Exact,Code:,コード:
+Inspector,Exact,Verify,認証
+Inspector,Exact,Help,ヘルプ
+Inspector,Exact,Cancel,キャンセル
 
 Inspector,Exact,We recommend that you use the VRChat website to manage your content.,Contentの管理にはVRChat Webサイトの使用をおすすめします。
 Inspector,Exact,Fetching Records,Recordを取得中

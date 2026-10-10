@@ -1,0 +1,324 @@
+﻿Target,Type,Source,Translation
+
+# ---------------------
+# VRChat Worlds - SDK Control Panel
+#
+# Reference source:
+# Packages\com.vrchat.worlds\Editor\VRCSDK\SDK3
+# \com.vrchat.worlds\Editor\VRCSDK\SDK3\Resources\VRCSdkWorldBuilderContentInfo.uxml
+# \com.vrchat.worlds\Editor\VRCSDK\SDK3\VRCSdkControlPanelWorldBuilder.cs
+# ---------------------
+
+# Content Information
+SDK,Exact,Name*,名前*
+SDK,Exact,Enter your world's public name...,ワールドの公開名を入力...
+SDK,Exact,Max. Capacity,最大収容人数
+SDK,Exact,Rec. Capacity,推奨収容人数
+SDK,Exact,Content Warnings,コンテンツ警告
+SDK,Exact,Tags,タグ
+SDK,Exact,Description,説明
+SDK,Exact,Describe world so it is easier to find!,ワールドを見つけやすくするための説明を入力してください！
+SDK,Exact,No Image,画像なし
+SDK,Exact,Select Image,画像を選択
+SDK,Exact,Capture In Scene,シーン内で撮影
+SDK,Exact,World Debugging,ワールドのデバッグ
+
+# Build
+SDK,Exact,Build Type,ビルドの種類
+SDK,Exact,Platform(s),プラットフォーム
+SDK,Exact,Clients,クライアント数
+SDK,Exact,Build & Test Your World,ワールドをビルドしてテスト
+SDK,Exact,Force Non-VR,非VRモードを強制
+SDK,Exact,Enable World Reload,ワールドの再読み込みを有効化
+SDK,Exact,Build & Test,ビルドしてテスト
+
+# Validation
+SDK,Exact,Auto Fix,自動修正
+SDK,Exact,Everything looks good,問題はありません
+SDK,Exact,"This scene uses textures with 'Box' mipmap filtering, which blurs distant textures. Switch to 'Kaiser' for improved sharpness.",このシーンではミップマップのフィルタリングに「Box」が使用されているため、遠くのテクスチャがぼやけます。鮮明さを改善するには「Kaiser」に変更してください。
+
+
+# Tooltips
+SDK,Exact,What is Maximum Capacity,最大収容人数について
+SDK,Exact,Maximum capacity,最大収容人数
+SDK,Exact,What is Recommended Capacity,推奨収容人数について
+SDK,Exact,Recommended Capacity,推奨収容人数
+SDK,Exact,Learn more about Community Labs,Community Labsについて詳しく見る
+SDK,Exact,What is World Debugging,ワールドのデバッグについて
+
+# World Information
+SDK,Exact,Last Updated,最終更新日
+SDK,Exact,Supported Platforms,対応プラットフォーム
+SDK,Exact,Current Visibility,現在の公開範囲
+SDK,Exact,Loading...,読み込み中...
+
+# Community Labs
+SDK,Exact,Publish to Community Labs,Community Labsに公開
+SDK,Exact,Publishing this world will put it in to the Community Labs,このワールドをCommunity Labsに公開します。
+SDK,Exact,"Other users will be able to see your world, and it will either stay in the Labs, get promoted to Public status, or be placed back in to Private status, based on community response.",ほかのユーザーがワールドを閲覧できるようになります。コミュニティの反応に応じて、Labsに残るか、Publicに昇格するか、Privateに戻されます。
+SDK,Exact,"We encourage you to get the word out about your world if you want it to survive! If your world violates our Community Guidelines, you could get in trouble by posting it!",ワールドをLabsに残したい場合は、積極的に宣伝することをおすすめします。ただし、コミュニティガイドラインに違反するワールドを宣伝すると、問題になる可能性があります。
+SDK,Exact,"You're only allowed to publish one world per week, so make sure to put your best foot forward!",ワールドを公開できるのは週に1つだけです。自信のあるワールドを公開してください。
+SDK,Exact,"Yes, do it!",はい、実行します
+SDK,Exact,"No, keep the world private",いいえ、非公開のままにします
+
+# Unpublish
+SDK,Exact,Unpublishing a World,ワールドの公開を取り消す
+SDK,Exact,Unpublishing this world will remove it from Public.,このワールドをPublicから取り下げます。
+SDK,Exact,"If you want to make it public again, it will need to go through Community Labs.","再び公開するには、Community Labsでの審査を経る必要があります。"
+SDK,Exact,"You're only allowed to publish one world per week, and when you remove a world from the labs, you don't get your one world back. Are you sure?",公開できるワールドは週に1つまでです。Labsからワールドを取り下げても、その週の公開枠は戻りません。よろしいですか？
+SDK,Exact,"No, keep the world public",いいえ、公開したままにします
+
+# 全部
+Inspector,Exact,On Apply Damage,ダメージ適用時
+Inspector,Exact,On Apply Healing,回復適用時
+Inspector,Exact,Current Health Variable,現在の体力の変数
+Inspector,Exact,On Max Health Variable,最大体力の変数変更時
+Inspector,Exact,Max Health Variable,最大体力の変数
+Inspector,Exact,Editor was created without Midi File.,MIDIファイルが指定されていない状態でエディターが作成されました。
+Inspector,Exact,Channels:,チャンネル:
+Inspector,Exact,✔ Midi Player is Ready!,✔ MIDIプレイヤーの準備ができました！
+Inspector,Exact,Not Ready - see messages below.,準備未完了 - 以下のメッセージを確認してください。
+Inspector,Exact,Midi File,MIDIファイル
+Inspector,Exact,The MIDI file in SMF format whose data you want to trigger.,イベントの発火に使用するSMF形式のMIDIファイルです。
+Inspector,Exact,Choose a Midi File to continue setting up the Player.,MIDIファイルを選択してプレイヤーの設定を続けてください。
+Inspector,Exact,Audio Source,オーディオソース
+Inspector,Exact,The AudioSource component with the audio clip corresponding to your MIDI data.,MIDIデータに対応するオーディオクリップが設定されたAudioSourceコンポーネントです。
+Inspector,Exact,Set or Create an AudioSource to continue.,AudioSourceを設定または作成して続けてください。
+Inspector,Exact,Create One Here,ここで作成
+Inspector,Exact,You need to set the AudioClip in the AudioSource.,AudioSourceにAudioClipを設定する必要があります。
+Inspector,Exact,Target Behaviours,対象のBehaviour
+Inspector,Exact,An array of UdonBehaviours which will have MIDI Note On and Off events sent to them,MIDIのノートオン／オフイベントを送信するUdonBehaviourの配列です。
+Inspector,Exact,Set some target UdonBehaviours above to continue.,上で対象のUdonBehaviourを設定して続けてください。
+Inspector,Exact,Open Visualizer,ビジュアライザーを開く
+Inspector,Exact,Text displayed when user hovers over the pickup.,ユーザーがPickupにカーソルを合わせたときに表示するテキストです。
+Inspector,Exact,"Text to display describing action for clicking button, when this pickup is already being held.",このPickupをすでに持っているとき、ボタンを押す操作を説明するテキストです。
+Inspector,Exact,"If the pickup is supposed to be aligned to the hand (i.e. orientation field is set to Gun or Grip), auto-detect means that it will be Equipped(not dropped when they release trigger),  otherwise just hold as a normal pickup.",Pickupを手に合わせる設定（GunまたはGrip）の場合、自動検出ではトリガーを離しても落とさず装備状態にします。それ以外の場合は通常どおり保持します。
+Inspector,Exact,World ID,ワールドID
+Inspector,Exact,"Interaction through User layers is blocked by default. Use the ""Interact Passthrough"" mask to define layers that will be transparent to interaction (allow interactions to pass through).",Userレイヤーを通したインタラクトは標準でブロックされます。「インタラクト透過」で指定したレイヤーでは、インタラクトがそのレイヤーを通過できるようになります。
+Inspector,Exact,Move Respawn Height Y,リスポーン高度 Y を移動
+Inspector,Exact,Grabbed new Spawn Position,新しいスポーン位置を取得しました
+Inspector,Exact,Network IDs,ネットワークID
+Inspector,Exact,The Network ID Collection,ネットワークIDのコレクション
+Inspector,Exact,Interact Passthrough,インタラクト透過
+Inspector,Exact,Docs,ドキュメント
+Inspector,Exact,Advanced Options,詳細オプション
+Inspector,Exact,Default,デフォルト
+Inspector,Exact,New Text,新しいテキスト
+Inspector,Exact,Create ,作成 
+Inspector,Exact,Canvas,キャンバス
+SDK,Exact,Your world was built successfully!,ワールドのビルドに成功しました！
+SDK,Exact,Your world failed to build or upload because of the following reason,次の理由により、ワールドのビルドまたはアップロードに失敗しました
+SDK,Exact,We recommend taking a look at the console for more details,詳細についてはコンソールを確認してください
+SDK,Exact,Check Console for more details,詳細はコンソールを確認
+SDK,Exact,Your world was published to VRChat!,ワールドをVRChatに公開しました！
+SDK,Exact,See it on the VRChat Website,VRChatのWebサイトで表示
+SDK,Exact,Build Type,ビルドタイプ
+SDK,Exact,Platform(s),プラットフォーム
+SDK,Exact,Clients,クライアント数
+SDK,Exact,Force Non-VR,非VRモードを強制
+SDK,Exact,Enable World Reload,ワールドの再読み込みを有効化
+SDK,Exact,You must fix the issues listed above before you can Upload a Build,ビルドをアップロードするには、上記の問題を修正してください
+SDK,Exact,Run Performance Streaming,パフォーマンスストリーミングを実行
+SDK,Exact,Name,名前
+SDK,Exact,Enter your world's public name...,ワールドの公開名を入力...
+SDK,Exact,Max. Capacity,最大収容人数
+SDK,Exact,What is Maximum Capacity,最大収容人数について
+SDK,Exact,Maximum capacity,最大収容人数
+SDK,Exact,Rec. Capacity,推奨収容人数
+SDK,Exact,What is Recommended Capacity,推奨収容人数について
+SDK,Exact,Recommended Capacity,推奨収容人数
+SDK,Exact,Content Warnings,コンテンツ警告
+SDK,Exact,Tags,タグ
+SDK,Exact,Description,説明
+SDK,Exact,Describe world so it is easier to find!,ワールドを見つけやすくするための説明を入力してください！
+SDK,Exact,Last Updated,最終更新日
+SDK,Exact,Loading...,読み込み中...
+SDK,Exact,Version,バージョン
+SDK,Exact,Supported Platforms,対応プラットフォーム
+SDK,Exact,Current Visibility,現在の公開範囲
+SDK,Exact,Learn more about Community Labs,Community Labsについて詳しく見る
+SDK,Exact,Publish to Community Labs,Community Labsに公開
+SDK,Exact,Publishing this world will put it in to the Community Labs,このワールドをCommunity Labsに公開します
+SDK,Exact,"Other users will be able to see your world, and it will either stay in the Labs, get promoted to Public status, or be placed back in to Private status, based on community response.",ほかのユーザーがワールドを閲覧できるようになります。コミュニティの反応に応じて、Labsに残るか、Publicに昇格するか、Privateに戻されます。
+SDK,Exact,"We encourage you to get the word out about your world if you want it to survive! If your world violates our Community Guidelines, you could get in trouble by posting it!",ワールドをLabsに残したい場合は、積極的に宣伝することをおすすめします。ただし、コミュニティガイドラインに違反するワールドを宣伝すると、問題になる可能性があります。
+SDK,Exact,"You're only allowed to publish one world per week, so make sure to put your best foot forward!",ワールドを公開できるのは週に1つだけです。自信のあるワールドを公開してください！
+SDK,Exact,"Yes, do it!",はい、実行します！
+SDK,Exact,"No, keep the world private",いいえ、非公開のままにします
+SDK,Exact,Unpublishing a World,ワールドの公開を取り消す
+SDK,Exact,Unpublishing this world will remove it from Public.,このワールドをPublicから取り下げます。
+SDK,Exact,"If you want to make it public again, it will need to go through Community Labs.",再び公開するには、Community Labsを経由する必要があります。
+SDK,Exact,"You're only allowed to publish one world per week, and when you remove a world from the labs, you don't get your one world back. Are you sure?",公開できるワールドは週に1つまでです。Labsからワールドを取り下げても、その週の公開枠は戻りません。よろしいですか？
+SDK,Exact,"No, keep the world public",いいえ、公開したままにします
+SDK,Exact,World Debugging,ワールドのデバッグ
+SDK,Exact,What is World Debugging,ワールドのデバッグについて
+Inspector,Exact,Library,ライブラリ
+Inspector,Exact,Copy Listing ID,リスティングIDをコピー
+Inspector,Exact,Copy Group ID,グループIDをコピー
+Inspector,Exact,This listing is not used in any group.,このリスティングはどのグループでも使用されていません。
+Inspector,Exact,"Fetched product images are stored in your Unity project, which may increase the size of your world. It is recommended to only fetch the images if you plan on using them with Udon.",取得した商品画像はUnityプロジェクト内に保存され、ワールドのサイズが増える可能性があります。Udonで使用する予定がある場合にのみ画像を取得することをおすすめします。
+Inspector,Exact,Fetch image,画像を取得
+Inspector,Exact,Product A,商品A
+Inspector,Exact,"Description of the product, this is a description of the product right here as you can see. ",商品の説明文です。ここに商品の説明が表示されます。 
+Inspector,Exact,Find in project,プロジェクト内で検索
+Inspector,Exact,You need to be logged in before fetching the details of Udon products.,Udon商品の詳細を取得するにはログインが必要です。
+Inspector,Exact,Import/Refresh all UdonProducts,すべてのUdonProductsをインポート／更新
+Inspector,Exact,Import in...,インポート先...
+Inspector,Exact,Browse,参照
+Inspector,Exact,Sort by Scene/Project,シーン／プロジェクト順に並べ替え
+Inspector,Exact,Sort by Listings,リスティング順に並べ替え
+Inspector,Exact,Midi,MIDI
+Inspector,Exact,Midi Settings,MIDI設定
+Inspector,Exact,Device Name,デバイス名
+Inspector,Exact,Assets,アセット
+SDK,Exact,Multi-Platform Upload Finished,マルチプラットフォームへのアップロードが完了しました
+SDK,Exact,you must add a scene descriptor,Scene Descriptorを追加する必要があります
+SDK,Exact,Multiple pipelines are present. V3 pipeline will take priority,複数のPipelineが存在します。V3 Pipelineが優先されます
+SDK,Exact,Multiple Pipeline Managers found in scene. Please remove all but one.,シーン内にPipeline Managerが複数あります。1つだけ残してください。
+SDK,Exact,A VRCSceneDescriptor or VRCAvatarDescriptor\nis required to build VRChat SDK Content,VRChat SDKのコンテンツをビルドするには、VRCSceneDescriptorまたはVRCAvatarDescriptorが必要です
+SDK,Exact,Building – Please Wait ...,ビルド中 – しばらくお待ちください...
+SDK,Exact,"Udon Objects reference builtin Unity mesh assets, this won't work. Consider making a copy of the mesh to use instead.",UdonオブジェクトがUnity標準のメッシュアセットを参照しています。このままでは動作しません。メッシュのコピーを作成してください。
+SDK,Exact,Scene has a PostProcessVolume on the Reference Camera (Main Camera). This Camera is disabled at runtime. Please move the PostProcessVolume to another GameObject.,参照カメラ（メインカメラ）にPostProcessVolumeがあります。このカメラは実行時に無効になります。PostProcessVolumeを別のGameObjectに移動してください。
+SDK,Exact,A Unity scene containing a VRChat Scene Descriptor should only contain one Scene Descriptor.,VRChatのワールド用UnityシーンにはScene Descriptorを1つだけ配置してください。
+SDK,Exact,Everything looks good,問題はありません
+SDK,Exact,Post Processing Volume,ポストプロセスボリューム
+SDK,Exact,Untagged,タグなし
+SDK,Exact,Layers,レイヤー
+SDK,Exact,VRChat scenes must have the same Unity layer configuration as VRChat so we can all predict things like physics and collisions. Pressing this button will configure your project's layers to match VRChat.,VRChatのシーンでは、物理演算や衝突の動作を予測できるよう、Unityのレイヤー設定をVRChatと一致させる必要があります。このボタンを押すと、プロジェクトのレイヤー設定をVRChatに合わせます。
+SDK,Exact,Setup Layers for VRChat,VRChat用レイヤーを設定
+SDK,Exact,"This adds all VRChat layers to your project and pushes any custom layers down the layer list. If you have custom layers assigned to gameObjects, you'll need to reassign them. Are you sure you want to continue?",VRChatのすべてのレイヤーをプロジェクトに追加し、カスタムレイヤーをリストの下方に移動します。GameObjectにカスタムレイヤーを割り当てている場合は、再設定が必要です。続行しますか？
+SDK,Exact,Do it!,実行する！
+SDK,Exact,Don't do it,実行しない
+SDK,Exact,Step Complete!,ステップ完了！
+SDK,Exact,Collision Matrix,衝突マトリックス
+SDK,Exact,You must first configure your layers for VRChat to proceed. Please see above.,続行するには、先にVRChat用レイヤーを設定してください。上記を確認してください。
+SDK,Exact,VRChat uses specific layers for collision. In order for testing and development to run smoothly it is necessary to configure your project's collision matrix to match that of VRChat.,VRChatでは衝突判定に専用レイヤーを使用します。テストや開発を円滑に進めるため、プロジェクトの衝突マトリックスをVRChatの設定に合わせる必要があります。
+SDK,Exact,Setup Collision Matrix,衝突マトリックスを設定
+SDK,Exact,This will setup the correct physics collisions in the PhysicsManager for VRChat layers. Are you sure you want to continue?,PhysicsManager内のVRChatレイヤーの衝突設定を構成します。続行しますか？
+SDK,Exact,You have Event Handlers in your scene that are not allowed in this build configuration.,このビルド構成では使用できないイベントハンドラーがシーン内にあります。
+SDK,Exact,"Your world contains one or more Unity text components, but no TextMeshPro components. Consider using TextMeshPro instead, since it's typically clearer and easier to read than native Unity text.",シーンにUnityのTextコンポーネントがありますが、TextMeshProコンポーネントがありません。TextMeshProの方が一般的に読みやすいため、使用を検討してください。
+SDK,Exact,"Gravity vector is not straight down. Though we support different gravity, player orientation is always 'upwards' so things don't always behave as you intend.",重力ベクトルが真下を向いていません。異なる重力方向もサポートしていますが、プレイヤーの向きは常に上方向を基準とするため、意図どおりに動作しない場合があります。
+SDK,Exact,"Gravity vector is not straight down, inverted or zero gravity will make walking extremely difficult.",重力ベクトルが真下を向いていません。逆向きまたは無重力では歩行が非常に困難になります。
+SDK,Exact,"Zero gravity will make walking extremely difficult, though we support different gravity, player orientation is always 'upwards' so this may not have the effect you're looking for.",無重力では歩行が非常に困難になります。異なる重力方向もサポートしていますが、プレイヤーの向きは常に上方向を基準とするため、意図どおりにならない場合があります。
+SDK,Exact,"Fog shader stripping is set to Custom, this may lead to incorrect or unnecessary shader variants being included in the build. You should use Automatic unless you change the fog mode at runtime.",FogシェーダーのストリッピングがCustomに設定されています。不要なシェーダーバリアントが含まれたり、正しくビルドされなかったりする可能性があります。実行時にFogモードを変更しない場合はAutomaticを使用してください。
+SDK,Exact,"Your scene previously used the 'Auto Spatialize Audio Sources' feature. This has been deprecated, press 'Fix' to disable. Also, please add VRC_SpatialAudioSource to all your audio sources. Make sure Spatial Blend is set to 3D for the sources you want to spatialize.",このシーンでは以前「Auto Spatialize Audio Sources」を使用していました。この機能は非推奨です。「Fix」を押して無効化し、すべてのオーディオソースにVRC_SpatialAudioSourceを追加してください。空間化する音源はSpatial Blendを3Dに設定してください。
+SDK,Exact,"Found audio source(s) using ONSP, this is deprecated. Press 'fix' to convert to VRC_SpatialAudioSource.",ONSPを使用しているオーディオソースがあります。この機能は非推奨です。「fix」を押してVRC_SpatialAudioSourceに変換してください。
+SDK,Exact,"Found 3D audio source with no VRC Spatial Audio component, this is deprecated. Press 'fix' to add a VRC_SpatialAudioSource.",VRC Spatial Audioコンポーネントのない3Dオーディオソースがあります。この構成は非推奨です。「fix」を押してVRC_SpatialAudioSourceを追加してください。
+SDK,Exact,"Found 2D audio source with no VRC Spatial Audio component, this is deprecated. Press 'fix' to add a (disabled) VRC_SpatialAudioSource.",VRC Spatial Audioコンポーネントのない2Dオーディオソースがあります。この構成は非推奨です。「fix」を押して無効状態のVRC_SpatialAudioSourceを追加してください。
+SDK,Exact,One or more scene objects have Substance materials. This is not supported and may break in game. Please bake your Substances to regular materials.,シーン内の1つ以上のオブジェクトにSubstanceマテリアルがあります。サポートされておらず、ゲーム内で問題が発生する可能性があります。通常のマテリアルにベイクしてください。
+SDK,Exact,The Reference Camera has a Post-process Layer component that uses Temporal Anti-Aliasing. This is not supported. Please select a different anti-aliasing method.,参照カメラにTemporal Anti-Aliasingを使用するPost-process Layerコンポーネントがあります。この設定はサポートされていません。別のアンチエイリアス方式を選択してください。
+SDK,Exact,"Found one or more UI graphics using Unity's built-in UI shader. Press 'Auto Fix' to switch affected graphics to a super-sampled UI shader, which can help improve readability in VR.",Unity標準のUIシェーダーを使用しているUIグラフィックがあります。「Auto Fix」を押すと、VRでの読みやすさを改善できるスーパーサンプリング対応UIシェーダーに切り替えます。
+SDK,Exact,Switch to Super-Sampled UI,スーパーサンプリング対応UIに切り替え
+SDK,Exact,Could not find substitute super-sampled UI material in the worlds package. (VRCSuperSampledUIMaterial),Worldsパッケージ内に代替のスーパーサンプリング対応UIマテリアルが見つかりません。（VRCSuperSampledUIMaterial）
+SDK,Exact,Object Sync cannot share an object with a manually synchronized Udon Behaviour,Object Syncと手動同期のUdon Behaviourは同じオブジェクトに設定できません
+SDK,Exact,Object Sync cannot share an object with an object pool,Object Syncとオブジェクトプールは同じオブジェクトに設定できません
+SDK,Exact,You must accept the terms below to upload content to VRChat,VRChatにコンテンツをアップロードするには、以下の規約に同意する必要があります
+SDK,Exact,You can only have a single Pipeline Manager in a Scene,シーン内のPipeline Managerは1つだけにしてください
+SDK,Exact,A VRCSceneDescriptor is required to build a VRChat World,VRChatワールドをビルドするにはVRCSceneDescriptorが必要です
+SDK,Exact,Select all PipelineManagers,すべてのPipelineManagerを選択
+SDK,Exact,Add a VRCSceneDescriptor,VRCSceneDescriptorを追加
+SDK,Exact,Adds a VRCSceneDescriptor to the Scene,シーンにVRCSceneDescriptorを追加します
+SDK,Exact,Adjusted Name,調整後の名前
+SDK,Exact,Visibility,公開範囲
+SDK,Exact,What is Maximum Capacity?,最大収容人数とは？
+SDK,Exact,Maximum Capacity controls how many users are allowed into one instance of a world at a time.\n\n,最大収容人数は、ワールドの1つのインスタンスに同時に参加できるユーザー数の上限です。\n\n
+SDK,Exact,"Additional users are not allowed to join over this limit with very few exceptions, such as the world creator, instance owners, and group owners.",ワールド作成者、インスタンスオーナー、グループオーナーなど、ごく一部の例外を除き、この上限を超えて参加することはできません。
+SDK,Exact,What is Recommended Capacity?,推奨収容人数とは？
+SDK,Exact,Recommended Capacity controls how many users are allowed into one Public or Group Public instance of a world before that instance is no longer visible on the world instance list.\n\n,推奨収容人数は、PublicまたはGroup Publicインスタンスがワールドのインスタンス一覧に表示されなくなる基準となる人数です。\n\n
+SDK,Exact,"Instances above Recommended Capacity are still accessible through other methods, such as joining through a group, or off of a friend. All other instance types are not impacted by the Recommended Capacity.",推奨収容人数を超えたインスタンスにも、グループやフレンド経由などの方法で参加できます。ほかのインスタンスタイプには推奨収容人数の設定は影響しません。
+SDK,Exact,What is World Debugging?,ワールドのデバッグとは？
+SDK,Exact,"By default, World debug tools are only usable by you, the owner of the world. If you enable world debugging, then anyone can use them in your world.\n\n",標準では、ワールドのデバッグツールはワールド所有者だけが使用できます。ワールドのデバッグを有効にすると、誰でもそのワールド内でデバッグツールを使用できます。\n\n
+SDK,Exact,"Warning: Enabling world debug tools will reveal the location and state of Udon Behaviours in your world. If you are making a puzzle world, or have secrets in your world, this could ruin the fun!\n\n",警告: ワールドのデバッグツールを有効にすると、ワールド内のUdon Behaviourの位置と状態が公開されます。謎解きワールドや秘密の仕掛けがあるワールドでは、楽しみを損なう可能性があります。\n\n
+SDK,Exact,"To use the world debug tools, you'll need to pass the --enable-debug-gui flag to VRChat at startup, and press RShift and ` along with 7, 8, or 9. See the keyboard binding documentation at docs.vrchat.com for more details.",ワールドのデバッグツールを使用するには、VRChat起動時に--enable-debug-guiフラグを指定し、RShiftと「`」を押しながら7、8、9のいずれかを押します。詳しくはdocs.vrchat.comのキー操作に関するドキュメントを参照してください。
+SDK,Exact,"No PipelineManager found in scene, make sure you have added a scene descriptor",シーンにPipelineManagerがありません。Scene Descriptorが追加されていることを確認してください
+SDK,Exact,"Loaded data for a world we do not own, clearing blueprint ID",所有していないワールドのデータが読み込まれたため、Blueprint IDを消去します
+SDK,Exact,Cleared the blueprint ID we do not own,所有していないBlueprint IDを消去しました
+SDK,Exact,"Attempted to load the data for a world we do not own, clearing blueprint ID",所有していないワールドのデータを読み込もうとしたため、Blueprint IDを消去します
+SDK,Exact,Failed to get publish status: ,公開状態を取得できませんでした: 
+SDK,Exact,You can't publish worlds right now,現在ワールドを公開できません
+SDK,Exact,publish to Community Labs,Community Labsに公開
+SDK,Exact,Select thumbnail,サムネイルを選択
+SDK,Exact,Name cannot be empty,名前は空にできません
+SDK,Exact,Saving World Changes...,ワールドの変更を保存中...
+SDK,Exact,Your world was successfully updated,ワールドを更新しました
+SDK,Exact,World Updated,ワールド更新完了
+SDK,Exact,Published world to Community Labs,ワールドをCommunity Labsに公開しました
+SDK,Exact,Your world is now visible to other players!,ワールドがほかのプレイヤーに表示されるようになりました！
+SDK,Exact,Failed to publish world,ワールドの公開に失敗しました
+SDK,Exact,Something went wrong when publishing your world to Community Labs,ワールドをCommunity Labsに公開中に問題が発生しました
+SDK,Exact,Unpublished world,ワールドの公開を取り消しました
+SDK,Exact,Your world is private. You can still access it via direct links,ワールドは非公開です。直接リンクからは引き続きアクセスできます
+SDK,Exact,Failed to unpublish world,ワールドの公開取り消しに失敗しました
+SDK,Exact,Something went wrong when unpublishing your world,ワールドの公開取り消し中に問題が発生しました
+SDK,Exact,Build & Publish Your World Online,ワールドをビルドしてオンライン公開
+SDK,Exact,Build & Test Your World,ワールドをビルドしてテスト
+SDK,Exact,Build & Reload Your World,ワールドをビルドして再読み込み
+SDK,Exact,Reload Your Last Build,前回のビルドを再読み込み
+SDK,Exact,Test Your Last Build,前回のビルドをテスト
+SDK,Exact,You need to select at least one platform,プラットフォームを1つ以上選択してください
+SDK,Exact,Multi-Platform Build & Publish,マルチプラットフォームでビルドして公開
+SDK,Exact,Build & Publish,ビルドして公開
+SDK,Exact,Build & Test,ビルドしてテスト
+SDK,Exact,Build & Reload,ビルドして再読み込み
+SDK,Exact,Reload Last Build,前回のビルドを再読み込み
+SDK,Exact,Test Last Build,前回のビルドをテスト
+SDK,Exact,Build Target Switcher,ビルド対象の切り替え
+SDK,Exact,Confirm,確認
+SDK,Exact,Cancel,キャンセル
+SDK,Exact,Unity Console might have more information,Unity Consoleに詳細情報がある可能性があります
+SDK,Exact,Show Console,コンソールを表示
+SDK,Exact,Building & testing on this platform is not supported,このプラットフォームではビルドとテストはサポートされていません
+SDK,Exact,No last build found,前回のビルドが見つかりません
+SDK,Exact,Please set a name and thumbnail before uploading,アップロードする前に名前とサムネイルを設定してください
+SDK,Exact,Build was blocked by the SDK callback,SDKのコールバックによってビルドがブロックされました
+SDK,Exact,Current User does not have permissions to build and upload worlds,現在のユーザーにはワールドのビルドとアップロードの権限がありません
+SDK,Exact,Open the SDK panel to build and upload worlds,ワールドをビルドしてアップロードするにはSDKパネルを開いてください
+SDK,Exact,You must address Layers and Collision Matrix issues before you can build.,ビルドする前にレイヤーと衝突マトリックスの問題を解決してください。
+SDK,Exact,World validation failed,ワールドの検証に失敗しました
+SDK,Exact,World build finished,ワールドのビルドが完了しました
+SDK,Exact,Validation issues encountered during build:,ビルド中に検証の問題が見つかりました:
+SDK,Exact,"Failed to find the built world bundle, the build likely failed",ビルドしたワールドのバンドルが見つかりません。ビルドに失敗した可能性があります
+SDK,Exact,Upload Was Canceled,アップロードがキャンセルされました
+SDK,Exact,"The scene does not have a PipelineManager component present, make sure to add a SceneDescriptor before building and uploading",シーンにPipelineManagerコンポーネントがありません。ビルドとアップロードの前にSceneDescriptorを追加してください
+SDK,Exact,You must provide a path to the thumbnail image when creating a new world,新しいワールドを作成する際はサムネイル画像のパスを指定してください
+SDK,Exact,"World's current ID belongs to a different user, assign a different ID",現在のワールドIDは別のユーザーのものです。別のIDを割り当ててください
+SDK,Exact,Assigning a new ID,新しいIDを割り当てています
+SDK,Exact,Copyright ownership agreement,著作権所有に関する同意
+SDK,Exact,You must agree to the ownership agreement to upload,アップロードするには所有権に関する同意が必要です
+SDK,Exact,Failed to agree to the ownership agreement,所有権に関する同意に失敗しました
+SDK,Exact,Request cancelled,リクエストがキャンセルされました
+SDK,Exact,Request Cancelled,リクエストがキャンセルされました
+SDK,Exact,World upload skipped,ワールドのアップロードをスキップしました
+SDK,Exact,World upload finished,ワールドのアップロードが完了しました
+SDK,Exact,Building World,ワールドをビルド中
+SDK,Exact,Failed to build a world!,ワールドのビルドに失敗しました！
+SDK,Exact,Build Failed,ビルド失敗
+SDK,Exact,World Built,ワールドをビルドしました
+SDK,Exact,World Upload,ワールドのアップロード
+SDK,Exact,Uploading World to VRChat,ワールドをVRChatにアップロード中
+SDK,Exact,Upload Succeeded!,アップロードに成功しました！
+SDK,Exact,Failed to upload a world!,ワールドのアップロードに失敗しました！
+SDK,Exact,Upload Failed,アップロード失敗
+SDK,Exact,Build Succeeded!,ビルド成功！
+SDK,Exact,"No last build found, you must build first",前回のビルドが見つかりません。先にビルドしてください
+SDK,Exact,World upload canceled,ワールドのアップロードがキャンセルされました
+SDK,Exact,"Custom cancellation token passed, you should cancel via its token source instead",独自のキャンセルトークンが渡されました。代わりに、そのトークンソースからキャンセルしてください
+SDK,Exact,SDK V3 is not enabled.,SDK V3が有効になっていません。
+SDK,Format,Initialized {0},{0}を初期化しました
+SDK,Format,Assign SSUI to graphic {0},グラフィック {0} にSSUIを割り当て
+SDK,Format,Assign SSUI to material {0},マテリアル {0} にSSUIを割り当て
+SDK,Format,Review Any Alerts ({0}),警告を確認 ({0})
+SDK,Format,This scene has textures bigger than {0}. Please reduce them to save memory in your world.,このシーンには{0}を超えるテクスチャがあります。ワールドのメモリ使用量を抑えるため、サイズを小さくしてください。
+SDK,Format,Set Max Texture Size to {0},Max Texture Sizeを{0}に設定
+SDK,Format,World uses unsupported shader '{0}'. This could cause low performance or future compatibility issues.,このワールドではサポートされていないシェーダー「{0}」が使用されています。パフォーマンスの低下や将来の互換性の問題が発生する可能性があります。
+SDK,Format,Unknown SDK Build Action {0},不明なSDKビルド操作: {0}
+SDK,Exact,"Cannot find last built scene, please Rebuild.",前回ビルドしたシーンが見つかりません。再ビルドしてください。
+SDK,Format,Are you sure you want to switch your build target to {0}? This could take a while.,ビルド対象を{0}に切り替えますか？ 時間がかかる場合があります。
+SDK,Format,Failed to switch to {0} target platform,対象プラットフォーム{0}への切り替えに失敗しました
+SDK,Format,Check if the Platform Support for {0} is installed in the Unity Hub,Unity Hubで{0}のプラットフォームサポートがインストールされているか確認してください
+SDK,Format,Unable to identify selected build action {0},選択されたビルド操作{0}を識別できません
+SDK,Format,World download size is too large for the target platform. {0} > {1},ワールドのダウンロードサイズが対象プラットフォームの上限を超えています。{0} > {1}
+SDK,Format,World uncompressed size is too large for the target platform. {0} > {1},ワールドの展開後のサイズが対象プラットフォームの上限を超えています。{0} > {1}
+SDK,Format,{0} bundle failed to build,{0}のバンドルのビルドに失敗しました
+SDK,Format,{0} bundle failed to upload,{0}のバンドルのアップロードに失敗しました
+SDK,Exact,"Scene Descriptor spawns were empty, adding a default Spawn.",Scene Descriptorにスポーン地点がないため、既定のスポーン地点を追加します。
+SDK,Exact,Set texture filtering to 'Kaiser',テクスチャフィルタリングを「Kaiser」に設定

@@ -8,8 +8,8 @@
 # ---------------------
 
 Inspector,Exact,Account,アカウント
-Inspector,Exact,Login,ログイン
-Inspector,Exact,Logout,ログアウト
+Inspector,Exact,Sign In,サインイン
+Inspector,Exact,Sign up,サインアップ
 
 Inspector,Exact,We recommend that you use the VRChat website to manage your content.,Contentの管理にはVRChat Webサイトの使用をおすすめします。
 Inspector,Exact,Fetching Records,Recordを取得中

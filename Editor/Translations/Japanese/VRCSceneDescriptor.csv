@@ -1,0 +1,20 @@
+Target,Type,Source,Translation
+
+# ---------------------
+# VRC Scene Descriptor
+# https://creators.vrchat.com/worlds/components/vrc_scenedescriptor/
+#
+# Reference source:
+# Packages/com.vrchat.worlds/Editor/VRCSDK/SDK3/Components3/VRCSceneDescriptorEditor3.cs
+# ---------------------
+
+Inspector,Exact,Spawns,スポーン地点
+Inspector,Exact,Spawn Order,スポーン順序
+Inspector,Exact,Spawn Orientation,スポーン方向
+Inspector,Exact,Reference Camera,参照カメラ
+Inspector,Exact,Respawn Height Y,リスポーン高度 Y
+Inspector,Exact,Interact Passthrough,インタラクト透過
+Inspector,Exact,Forbid User Portals,ユーザーポータルを禁止
+Inspector,Exact,Object Behaviour At Respawn Height,リスポーン高度でのオブジェクトの動作
+Inspector,Exact,"Interaction through User layers is blocked by default. Use the ""Interact Passthrough"" mask to define layers that will be transparent to interaction (allow interactions to pass through).",Userレイヤーを通したインタラクトは標準でブロックされます。「インタラクト透過」で指定したレイヤーでは、インタラクトがそのレイヤーを通過できるようになります。
+Inspector,Exact,Docs,ドキュメント

@@ -1,0 +1,18 @@
+Target,Type,Source,Translation
+
+# ---------------------
+# Udon Behaviour
+# Reference source:
+# Packages/com.vrchat.worlds/Editor/Udon/UdonBehaviourEditor.cs
+# ---------------------
+
+Inspector,Exact,Synchronization,同期方式
+Inspector,Exact,Replication will be disabled.,ネットワーク同期は無効になります。
+Inspector,Exact,Program Source,プログラムソース
+Inspector,Exact,Serialized Udon Program Asset ID,シリアライズ済みUdonプログラムのアセットID
+Inspector,Exact,Open Udon Graph,Udonグラフを開く
+Inspector,Exact,Public Variables,公開変数
+Inspector,Exact,Compiled Graph Assembly,コンパイル済みグラフのアセンブリ
+Inspector,Exact,Serialized Udon Program Asset ID:,シリアライズ済みUdonプログラムのアセットID:
+Inspector,Exact,Assembly Code,アセンブリコード
+Inspector,Exact,Copy Assembly To Clipboard,アセンブリコードをクリップボードにコピー

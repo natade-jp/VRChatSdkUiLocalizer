@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using HarmonyLib;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -128,6 +129,16 @@ internal static class VRChatSdkUiLocalizer
                 }),
             nameof(HandlePrefixLabelInternalPrefix),
             "UnityEditor.EditorGUI.HandlePrefixLabelInternal");
+
+        // VRChat WorldsのUI Toolkit Inspector構築完了を検出
+        Type inspectorBaseType =
+            AccessTools.TypeByName("VRC.SDK3.Editor.VRCInspectorBase");
+
+        PatchPostfix(
+            harmony,
+            AccessTools.Method(inspectorBaseType, "CreateInspectorGUI"),
+            nameof(VrcInspectorCreateGuiPostfix),
+            "VRC.SDK3.Editor.VRCInspectorBase.CreateInspectorGUI");
     }
 
     /// <summary>
@@ -311,7 +322,8 @@ internal static class VRChatSdkUiLocalizer
             return;
         }
 
-        TranslateVisualElement(builderPanel);
+        TranslateVisualElement(builderPanel, "VRCSdkControlPanel.ShowBuilders",
+            TranslationCsvReader.TranslationTarget.SDK);
     }
 
     /// <summary>
@@ -320,7 +332,8 @@ internal static class VRChatSdkUiLocalizer
     private static void CreateIssuesGuiPostfix(
         VisualElement __result)
     {
-        TranslateVisualElement(__result);
+        TranslateVisualElement(__result, "VRCSdkControlPanel.CreateIssuesGUI",
+            TranslationCsvReader.TranslationTarget.SDK);
     }
 
     /// <summary>
@@ -332,65 +345,115 @@ internal static class VRChatSdkUiLocalizer
         title =
             Translate(
                 title,
-                TranslationCsvReader.TranslationTarget.SDK);
+                TranslationCsvReader.TranslationTarget.SDK,
+                "StepFoldout.SetTitle");
     }
 
     /// <summary>
     /// Avatar BuilderのUIを翻訳
     /// </summary>
     private static void AvatarBuilderGuiPostfix(
-        VisualElement root)
+        VisualElement root,
+        MethodBase __originalMethod)
     {
-        TranslateVisualElement(root);
+        string hook =
+            __originalMethod.DeclaringType.Name +
+            "." + __originalMethod.Name;
+        TranslateVisualElement(root, hook,
+            TranslationCsvReader.TranslationTarget.SDK);
     }
 
     /// <summary>
     /// VisualElement配下の表示文字列を翻訳
     /// </summary>
     private static void TranslateVisualElement(
-        VisualElement root)
+        VisualElement root,
+        string hook,
+        TranslationCsvReader.TranslationTarget target)
     {
         if (root == null)
         {
             return;
         }
 
-        foreach (Label label
-                 in root.Query<Label>().ToList())
-        {
-            label.text =
-                Translate(
-                    label.text,
-                    TranslationCsvReader.TranslationTarget.SDK);
-
-            label.tooltip =
-                Translate(
-                    label.tooltip,
-                    TranslationCsvReader.TranslationTarget.SDK);
-        }
-
-        foreach (Button button
-                 in root.Query<Button>().ToList())
-        {
-            button.text =
-                Translate(
-                    button.text,
-                    TranslationCsvReader.TranslationTarget.SDK);
-
-            button.tooltip =
-                Translate(
-                    button.tooltip,
-                    TranslationCsvReader.TranslationTarget.SDK);
-        }
-
         foreach (VisualElement element
                  in root.Query<VisualElement>().ToList())
         {
-            element.tooltip =
-                Translate(
-                    element.tooltip,
-                    TranslationCsvReader.TranslationTarget.SDK);
+            // UI Toolkitの共通Tooltip
+            element.tooltip = Translate(element.tooltip, target, hook);
+
+            // PropertyFieldはバインド前でもlabelを保持する場合がある
+            if (element is PropertyField propertyField)
+            {
+                propertyField.label =
+                    Translate(propertyField.label, target, hook);
+            }
+
+            // Label、Button、Foldout、HelpBoxなどの表示文字列
+            if (element is Label label)
+            {
+                label.text = Translate(label.text, target, hook);
+            }
+            else if (element is Button button)
+            {
+                button.text = Translate(button.text, target, hook);
+            }
+            else if (element is Foldout foldout)
+            {
+                foldout.text = Translate(foldout.text, target, hook);
+            }
+            else if (element is HelpBox helpBox)
+            {
+                helpBox.text = Translate(helpBox.text, target, hook);
+            }
+
+            // MaskField等、BaseField<T>にあるlabelも対象とする
+            // UI Toolkitの型に限定して他の要素への副作用を避ける
+            Type type = element.GetType();
+            if (type.Namespace != null &&
+                type.Namespace.StartsWith("UnityEngine.UIElements", StringComparison.Ordinal) &&
+                !(element is PropertyField))
+            {
+                PropertyInfo labelProperty = type.GetProperty("label",
+                    BindingFlags.Instance | BindingFlags.Public);
+                if (labelProperty != null &&
+                    labelProperty.PropertyType == typeof(string) &&
+                    labelProperty.CanRead && labelProperty.CanWrite)
+                {
+                    string original = labelProperty.GetValue(element) as string;
+                    string translated = Translate(original, target, hook);
+                    if (translated != original)
+                    {
+                        labelProperty.SetValue(element, translated);
+                    }
+                }
+            }
         }
+    }
+
+    /// <summary>
+    /// VRChat UI Toolkit Inspectorの表示文字列を翻訳
+    /// </summary>
+    private static void VrcInspectorCreateGuiPostfix(
+        VisualElement __result)
+    {
+        const string hook = "VRCInspectorBase.CreateInspectorGUI";
+        var target = TranslationCsvReader.TranslationTarget.Inspector;
+
+        TranslateVisualElement(__result, hook, target);
+
+        if (__result == null)
+        {
+            return;
+        }
+
+        // PropertyField内部のラベルはパネルへの追加とバインド後に生成されるため、
+        // パネル接続後にも一度翻訳する
+        __result.RegisterCallback<AttachToPanelEvent>(evt =>
+        {
+            __result.schedule.Execute(() =>
+                TranslateVisualElement(__result, hook, target)).ExecuteLater(100);
+        });
     }
 
     /// <summary>
@@ -465,7 +528,8 @@ internal static class VRChatSdkUiLocalizer
     /// </summary>
     private static string Translate(
         string text,
-        TranslationCsvReader.TranslationTarget target)
+        TranslationCsvReader.TranslationTarget target,
+        string hook)
     {
         if (string.IsNullOrEmpty(text))
         {
@@ -481,14 +545,16 @@ internal static class VRChatSdkUiLocalizer
         return TranslationDictionary.Translate(
             language,
             target,
-            text);
+            text,
+            hook);
     }
 
     /// <summary>
     /// GUIContentの表示文字列を翻訳
     /// </summary>
     private static void TranslateContent(
-        GUIContent content)
+        GUIContent content,
+        string hook)
     {
         if (content == null)
         {
@@ -500,12 +566,14 @@ internal static class VRChatSdkUiLocalizer
             content.text =
                 Translate(
                     content.text,
-                    TranslationCsvReader.TranslationTarget.Inspector);
+                    TranslationCsvReader.TranslationTarget.Inspector,
+                    hook);
 
             content.tooltip =
                 Translate(
                     content.tooltip,
-                    TranslationCsvReader.TranslationTarget.Inspector);
+                    TranslationCsvReader.TranslationTarget.Inspector,
+                    hook);
         }
         catch
         {
@@ -519,7 +587,7 @@ internal static class VRChatSdkUiLocalizer
     private static void GuiStyleDrawPrefix(
         GUIContent content)
     {
-        TranslateContent(content);
+        TranslateContent(content, "GUIStyle.Draw");
     }
 
     /// <summary>
@@ -528,7 +596,7 @@ internal static class VRChatSdkUiLocalizer
     private static void BeginPropertyPostfix(
         ref GUIContent __result)
     {
-        TranslateContent(__result);
+        TranslateContent(__result, "EditorGUI.BeginPropertyInternal");
     }
 
     /// <summary>
@@ -537,6 +605,6 @@ internal static class VRChatSdkUiLocalizer
     private static void HandlePrefixLabelInternalPrefix(
         GUIContent label)
     {
-        TranslateContent(label);
+        TranslateContent(label, "EditorGUI.HandlePrefixLabelInternal");
     }
 }

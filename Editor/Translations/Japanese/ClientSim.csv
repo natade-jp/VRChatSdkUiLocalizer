@@ -1,0 +1,103 @@
+Target,Type,Source,Translation
+
+# ---------------------
+# ClientSim Settings
+# Reference source:
+# Packages/com.vrchat.worlds/Integrations/ClientSim/Editor/Windows/ClientSimSettingsWindow.cs
+# ---------------------
+
+# General Settings
+Inspector,Exact,General Settings,一般設定
+Inspector,Exact,Enable ClientSim,ClientSimを有効化
+Inspector,Exact,Enable Console Logging,コンソールログを有効化
+Inspector,Exact,Stop On Script Changes,スクリプト変更時に停止
+Inspector,Exact,"Remove ""EditorOnly""",EditorOnlyを削除
+Inspector,Exact,Hide Menu On Launch,起動時にメニューを非表示
+Inspector,Exact,Set Target FrameRate,目標フレームレートを設定
+Inspector,Exact,Target FrameRate,目標フレームレート
+Inspector,Exact,Startup Delay,起動遅延
+
+# Player Controller Settings
+Inspector,Exact,Player Controller Settings,プレイヤー操作設定
+Inspector,Exact,Spawn Player Controller,プレイヤーコントローラーを生成
+Inspector,Exact,Show Desktop Reticle,デスクトップ照準を表示
+Inspector,Exact,Show Tooltips,ツールチップを表示
+Inspector,Exact,Invert Mouse Look,マウス視点操作を反転
+
+# Player Settings
+Inspector,Exact,Player Settings,プレイヤー設定
+Inspector,Exact,Local Player Name,ローカルプレイヤー名
+Inspector,Exact,Initial Player Height,プレイヤーの初期身長
+Inspector,Exact,Current Language,現在の言語
+Inspector,Exact,Local Player Is Master,ローカルプレイヤーをMasterに設定
+Inspector,Exact,Is Instance Owner,インスタンスオーナーに設定
+Inspector,Exact,Remote Player Name,リモートプレイヤー名
+Inspector,Exact,Spawn Remote Player,リモートプレイヤーを生成
+
+#  Tooltips
+# Enable ClientSim
+Inspector,Exact,"If enabled, all triggers will function similarly to VRChat. Note that behavior may be different than the actual game!",有効にすると、各種トリガーがVRChatと同様に動作します。ただし、実際のゲームとは動作が異なる場合があります。
+# Enable Console Logging
+Inspector,Exact,"Enabling logging will print messages to the console when certain events happen. Examples include trigger execution, pickup grabbed, station entered, etc.",ログを有効にすると、特定のイベント発生時にコンソールへメッセージを出力します。例えば、トリガーの実行、Pickupの取得、Stationへの着席などです。
+# Remove "EditorOnly"
+Inspector,Exact,"Enabling this setting will ensure that all objects with the tag ""EditorOnly"" are deleted when in playmode. This can be helpful in finding objects that will not be uploaded with your world. Enable console logging to see which objects are deleted.",有効にすると、Playモード中に「EditorOnly」タグが付いたすべてのオブジェクトを削除します。ワールドにアップロードされないオブジェクトの確認に役立ちます。削除されたオブジェクトを確認するにはコンソールログを有効にしてください。
+# Startup Delay
+Inspector,Exact,The duration that the Client Sim will wait to simulate the VRChat client loading before spawning the player and initializing Udon. This is useful to test when Unity components behave differently at startup compared to VRChat.,プレイヤーの生成とUdonの初期化を行う前に、ClientSimがVRChatクライアントの読み込みを模擬して待機する時間です。起動時にUnityコンポーネントがVRChatと異なる動作をする場合のテストに役立ちます。
+# Stop On Script Changes
+Inspector,Exact,"If enabled, the editor will stop if script changes are detected while in play mode. This will override the Unity Editor setting 'Preferences > General > Script Changes While Playing'.",有効にすると、Playモード中にスクリプトの変更が検出された場合、Editorを停止します。Unity Editorの「Preferences > General > Script Changes While Playing」の設定より優先されます。
+# Hide Menu On Launch
+Inspector,Exact,Enabling this setting will prevent the ClientSim menu from being displayed when initially entering play mode.,有効にすると、Playモード開始時にClientSimのメニューを表示しません。
+# Set Target FrameRate
+Inspector,Exact,Should ClientSim set the target framerate on startup? This will automatically set the physics delta time to match expected framerate. Disabling this setting is useful when profiling.,ClientSimの起動時に目標フレームレートを設定するかどうかを指定します。有効にすると、想定フレームレートに合わせて物理演算の時間間隔も自動設定されます。プロファイリング時には無効にすると便利です。
+# Target FrameRate
+Inspector,Exact,The target framerate unity should aim for. Default is 90 fps.,Unityが目標とするフレームレートです。初期値は90 fpsです。
+# Spawn Player Controller
+Inspector,Exact,"If enabled, a player controller will spawn and allow you to move around your world as if in desktop mode. Supports interacts and pickups.",有効にすると、プレイヤーコントローラーが生成され、デスクトップモードと同じようにワールド内を移動できます。インタラクトとPickupにも対応しています。
+# Show Desktop Reticle
+Inspector,Exact,Show or hide the center Desktop reticle image.,デスクトップモードの画面中央にある照準画像の表示・非表示を切り替えます。
+# Show Tooltips
+Inspector,Exact,"If enabled, hovering over an interactable object or pickup will display a tooltip above the object.",有効にすると、インタラクト可能なオブジェクトやPickupにマウスを合わせた際、そのオブジェクトの上にツールチップを表示します。
+# Invert Mouse Look
+Inspector,Exact,"If enabled, moving the mouse up or down will invert the direction the player will look up and down.",有効にすると、マウスを上下に動かしたときの視点の上下方向が反転します。
+# Local Player Name
+Inspector,Exact,Set a custom name for the local player. Useful for testing udon script name detection,ローカルプレイヤーの名前を任意に設定します。Udonスクリプトによるプレイヤー名の判定をテストする際に便利です。
+# Initial Player Height
+Inspector,Exact,How tall should the player be in meters at app start. Default height is 1.9. Note that the player's collision capsule is 1.6 and never changes.,アプリ起動時のプレイヤーの身長をメートル単位で指定します。初期値は1.9です。なお、プレイヤーの衝突判定用カプセルの高さは1.6で、変更されません。
+# Current Language
+Inspector,Exact,The language the player is currently using.,プレイヤーが現在使用している言語です。
+# Local Player Is Master
+Inspector,Exact,Set whether the local player starts off as the master of the instance. Setting this to false and starting Client Sim will spawn a remote player before the local player.,ローカルプレイヤーがインスタンスのMasterとして開始するかを設定します。無効にしてClientSimを開始すると、ローカルプレイヤーより先にリモートプレイヤーが生成されます。
+# Is Instance Owner
+Inspector,Exact,Set whether the local player is considered the instance owner,ローカルプレイヤーをインスタンスオーナーとして扱うかを設定します。
+# Remote Player Name
+Inspector,Exact,Set a custom name for the next spawned remote player. Useful for testing udon script name detection,次に生成するリモートプレイヤーの名前を任意に設定します。Udonスクリプトによるプレイヤー名の判定をテストする際に便利です。
+
+# Other UI text
+Inspector,Exact,You must address the following issues before you can test this content using ClientSim!,ClientSimでこのコンテンツをテストする前に、次の問題を解決してください。
+Inspector,Exact,Please exit playmode before applying these settings.,これらの設定を適用する前にPlayモードを終了してください。
+Inspector,Exact,Audio Spatializer Settings,音声空間化設定
+Inspector,Exact,VRChat uses an audio spatializer that is different from the default Unity spatializer. Clicking this button will modify the project's audio settings to use this audio spatializer.,VRChatではUnity標準とは異なる音声空間化機能を使用します。このボタンを押すと、プロジェクトの音声設定をその方式に変更します。
+Inspector,Exact,Set Audio Spatializer,音声空間化を設定
+Inspector,Exact,Input Axes Settings,入力軸設定
+Inspector,Exact,VRChat uses a custom list of Input Axes. This will allow you to test these Input Axes in Udon. Clicking this button will replace this project's input axes with VRChat's and remove any custom axes added by the user.,VRChatでは独自の入力軸一覧を使用します。これによりUdonで入力軸をテストできます。このボタンを押すと、プロジェクトの入力軸をVRChat用に置き換え、ユーザーが追加した独自の入力軸は削除されます。
+Inspector,Exact,Apply VRChat Input Axes,VRChatの入力軸を適用
+Inspector,Exact,Input Manager Settings,入力マネージャー設定
+Inspector,Exact,"VRChat and ClientSim use both the legacy Input Manager and the new Input System package. Without this setting, input will not work in playmode for ClientSim or Udon. Clicking this button will update the project settings to use both input systems and then *RESTART* Unity to apply the changes.",VRChatとClientSimは従来のInput Managerと新しいInput Systemパッケージの両方を使用します。この設定がないと、PlayモードでClientSimやUdonの入力が動作しません。このボタンを押すと両方の入力システムを使用するよう設定を変更し、適用のためUnityを再起動します。
+Inspector,Exact,Set Input Manager,入力マネージャーを設定
+Inspector,Exact,Layer Settings,レイヤー設定
+Inspector,Exact,VRChat scenes must have the same Unity layer configuration as VRChat. Please see the VRChat Build Control Panel to setup the project's layers and collision matrix.,VRChatのシーンでは、Unityのレイヤー設定をVRChatと同じ構成にする必要があります。プロジェクトのレイヤーと衝突マトリックスは、VRChat Build Control Panelで設定してください。
+Inspector,Exact,No VRC_SceneDescriptor in scene. Please add one to enable ClientSim.,シーンにVRC_SceneDescriptorがありません。ClientSimを有効にするには追加してください。
+Inspector,Exact,Please exit and re-enter playmode to enable ClientSim!,ClientSimを有効にするには、Playモードを終了してから再度開始してください。
+Inspector,Exact,Remove Player,プレイヤーを削除
+Inspector,Exact,Simulate VRC+ Gift,VRC+ギフトをシミュレート
+
+# The following dialog strings use EditorUtility.DisplayDialog.
+# They may require a separate Harmony hook.
+Inspector,Exact,Set Audio Spatializer for ClientSim,ClientSimの音声空間化を設定
+Inspector,Exact,This will modify the project's audio settings to use the  audio spatializer. Are you sure you want to continue?,プロジェクトの音声設定を変更して音声空間化機能を使用します。続行しますか？
+Inspector,Exact,Set Input Axes for ClientSim,ClientSimの入力軸を設定
+Inspector,Exact,This will replace this project's input axes with VRChat's. Any custom input axes will be removed. Are you sure you want to continue?,プロジェクトの入力軸をVRChat用に置き換えます。独自に追加した入力軸はすべて削除されます。続行しますか？
+Inspector,Exact,Set Input Manager for ClientSim,ClientSimの入力マネージャーを設定
+Inspector,Exact,"This will update the project settings to use both the legacy Input Manager and the new Input System package. Clicking ""Do it!"" will also *RESTART* Unity to apply the changes. Are you sure you want to continue?",従来のInput Managerと新しいInput Systemパッケージの両方を使用するようプロジェクト設定を変更します。「実行する」を押すと、適用のためUnityも再起動します。続行しますか？
+Inspector,Exact,Do it!,実行する
+Inspector,Exact,Don't do it,実行しない

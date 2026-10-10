@@ -1,0 +1,9 @@
+Target,Type,Source,Translation
+
+# ---------------------
+# Pipeline Manager
+# ---------------------
+
+Inspector,Exact,Unity Version,Unityバージョン
+Inspector,Exact,Blueprint ID (Optional),Blueprint ID（任意）
+Inspector,Exact,Attach (Optional),紐付け（任意）

@@ -16,23 +16,25 @@ internal static class TranslationDictionary
         "Translations";
 
     /// <summary>
-    /// Debugログの最大出力件数
-    /// </summary>
-    private const int MaxDebugLogCount = 20;
-
-    /// <summary>
     /// Debugログの識別文字列
     /// </summary>
     private const string DebugLogPrefix =
-        "[VRChatSdkUiLocalizer] Debug:";
+        "[VRChatSdkUiLocalizer] Debug";
 
     private static readonly Dictionary<SystemLanguage, TranslationSet>
         translations =
             new Dictionary<SystemLanguage, TranslationSet>();
 
-    private static readonly HashSet<string> DebugLoggedTexts =
-        new HashSet<string>(
-            StringComparer.Ordinal);
+    private static readonly HashSet<(
+        SystemLanguage Language,
+        TranslationCsvReader.TranslationTarget Target,
+        string Hook,
+        string Text)> DebugLoggedTexts =
+            new HashSet<(
+                SystemLanguage,
+                TranslationCsvReader.TranslationTarget,
+                string,
+                string)>();
 
     /// <summary>
     /// 翻訳件数
@@ -78,6 +80,18 @@ internal static class TranslationDictionary
         TranslationCsvReader.TranslationTarget target,
         string text)
     {
+        return Translate(language, target, text, null);
+    }
+
+    /// <summary>
+    /// フック元を指定して文字列を翻訳
+    /// </summary>
+    internal static string Translate(
+        SystemLanguage language,
+        TranslationCsvReader.TranslationTarget target,
+        string text,
+        string hook)
+    {
         if (string.IsNullOrEmpty(text))
         {
             return text;
@@ -92,6 +106,9 @@ internal static class TranslationDictionary
 
         LogDebugText(
             translationSet,
+            language,
+            target,
+            hook,
             text);
 
         if (!translationSet.Targets.TryGetValue(
@@ -388,15 +405,30 @@ internal static class TranslationDictionary
     /// </summary>
     private static void LogDebugText(
         TranslationSet translationSet,
+        SystemLanguage language,
+        TranslationCsvReader.TranslationTarget target,
+        string hook,
         string text)
     {
-        if (DebugLoggedTexts.Count >= MaxDebugLogCount)
+        if (translationSet.Debug.Count == 0)
         {
             return;
         }
 
         // 自身が出力したDebugログは対象外
         if (text.Contains(DebugLogPrefix))
+        {
+            return;
+        }
+
+        string hookName = string.IsNullOrEmpty(hook)
+            ? "Unknown"
+            : hook;
+
+        // 重複判定は言語・Target・フック元・原文単位
+        var key = (language, target, hookName, text);
+
+        if (DebugLoggedTexts.Contains(key))
         {
             return;
         }
@@ -408,13 +440,13 @@ internal static class TranslationDictionary
                 continue;
             }
 
-            if (!DebugLoggedTexts.Add(text))
+            if (!DebugLoggedTexts.Add(key))
             {
                 return;
             }
 
             Debug.Log(
-                $"{DebugLogPrefix} " +
+                $"{DebugLogPrefix} [{target} → {hookName}]: " +
                 $"\"{EscapeDebugText(text)}\"");
 
             return;

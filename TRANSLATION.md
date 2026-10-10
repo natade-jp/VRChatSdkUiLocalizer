@@ -8,6 +8,10 @@ Translations/
 │  ├─ VRCPhysBone.csv
 │  ├─ VRCContactReceiver.csv
 │  ├─ VRCAvatarDescriptor.csv
+│  ├─ VRCSceneDescriptor.csv
+│  ├─ VRCPipelineManager.csv
+│  ├─ VRCUdonBehaviour.csv
+│  ├─ VRCClientSim.csv
 │  └─ VRCSDKControlPanel.csv
 ├─ Korean/
 └─ ...
@@ -39,10 +43,14 @@ SDK,Format,"Triangles: {0} (Recommended: {1})","ポリゴン数: {0}（推奨: {
 
 ### Target
 
-| Target      | 対象                                 |
-| ----------- | ------------------------------------ |
-| `Inspector` | VRChat SDKのInspectorなどのIMGUI     |
-| `SDK`       | SDK Control PanelなどのVRChat SDK UI |
+| Target      | 対象                                                                     |
+| ----------- | ------------------------------------------------------------------------ |
+| `Inspector` | InspectorやIMGUI形式のEditorWindow、UI Toolkit形式のVRChat Inspectorなど |
+| `SDK`       | SDK Control PanelなどのVRChat SDK UI                                     |
+
+`Inspector`では、UnityのIMGUI描画処理を共通でフックしているため、VRChat以外のInspectorやEditorWindowにも翻訳が適用される場合があります。
+
+また、VRChat SDKの`VRCInspectorBase`を使用したUI Toolkit形式のInspectorにも対応しています。
 
 Targetごとに翻訳データを分けて処理するため、`SDK`用の翻訳が`Inspector`へ適用されることはありません。
 
@@ -112,22 +120,34 @@ Review Any Alerts (10)
 
 実際にUnity上で使用されているテキストを調査できます。
 
+通常形式：
+
 ```csv
 ,Debug,Mesh Renderers,
 ```
 
+短縮形式：
+
+```csv
+D,,,Mesh Renderers
+```
+
+どちらも同じDebug条件として扱います。
+
 `Source`を含む表示テキスト全体をUnity Consoleへ出力し、翻訳処理自体はそのまま継続します。
 
 ```text
-[VRChatSdkUiLocalizer] Debug: "Mesh Renderers: 17 (Maximum: 16, Recommended: 8)"
+[VRChatSdkUiLocalizer] Debug [Inspector → GUIStyle.Draw]: "Mesh Renderers: 17 (Maximum: 16, Recommended: 8)"
 ```
 
 - `Target`は使用しないため空欄
-- `Translation`も空欄
-- `Source`は5文字以上必要
-- 同じテキストは1回だけ出力
+- 通常形式では`Translation`を空欄にする
+- 短縮形式では4列目に検索文字列を指定する
+- 検索文字列は5文字以上必要
+- 同じ言語・Target・フック元・原文の組み合わせは1回だけ出力
+- 出力件数の上限は設けない
+- Debug条件がない場合はDebug判定をスキップ
 - 翻訳データの再読み込みで出力履歴をリセット
-- 最大20件まで出力
 
 ### Translation Priority
 
@@ -144,6 +164,8 @@ PartialFormat
   ↓
 Partial
 ```
+
+`Debug`は翻訳処理の前に元の文字列を調査します。
 
 `Exact`または`Format`で一致した場合はその結果を使用します。
 

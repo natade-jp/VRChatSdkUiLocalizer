@@ -122,6 +122,42 @@ internal static class TranslationCsvReader
             string source = DecodeEscapes(record.Fields[2]);
             string translation = DecodeEscapes(record.Fields[3]);
 
+            // D,,,検索文字列 はDebug専用の省略記法
+            if (string.Equals(targetText, "D", StringComparison.Ordinal))
+            {
+                if (!string.IsNullOrEmpty(typeText) ||
+                    !string.IsNullOrEmpty(source) ||
+                    string.IsNullOrWhiteSpace(translation))
+                {
+                    warning?.Invoke(
+                        $"CSVの{record.Line}行目のDebug省略記法が不正です。" +
+                        "D,,,検索文字列 の形式にしてください。" +
+                        "このレコードを無視します。");
+
+                    continue;
+                }
+
+                if (translation.Length < 5)
+                {
+                    warning?.Invoke(
+                        $"CSVの{record.Line}行目のDebug検索文字列は" +
+                        "5文字以上にしてください。" +
+                        "このレコードを無視します。");
+
+                    continue;
+                }
+
+                result.Add(
+                    new Translation(
+                        null,
+                        TranslationType.Debug,
+                        translation,
+                        string.Empty,
+                        record.Line));
+
+                continue;
+            }
+
             if (string.IsNullOrWhiteSpace(typeText) ||
                 string.IsNullOrWhiteSpace(source))
             {
